@@ -1,8 +1,13 @@
-const express = require('express')
-const app = express()
+var express = require('express')
+var app = express()
+var pug = require('pug')
+app.set('views', './views')
+app.set('view engine', 'pug')
+app.locals.pretty = true
+app.use('/', express.static('public'))
 
 app.get('/', function (req, res) {
-  res.send('Great Job!')
+  res.render('docs/empty-page')
 })
 
 app.listen(3000, function () {
