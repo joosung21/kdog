@@ -1,0 +1,180 @@
+.white-gray {
+  background: #EBEBEB; }
+
+.text-small, .text-small * {
+  font-size: 12px; }
+
+.text-xsmall, .text-xsmall * {
+  font-size: 10px; }
+
+.text-center {
+  text-align: center !important; }
+
+body, p, ul, li, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0; }
+
+body, body * {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #495057; }
+
+body {
+  background-color: #495057; }
+
+a {
+  text-decoration: none; }
+
+p {
+  line-height: 1.5em; }
+
+strong {
+  font-weight: 500; }
+
+ul, li {
+  list-style: none; }
+
+.icon {
+  position: relative;
+  top: -0.1em;
+  vertical-align: middle;
+  padding-right: 0.5em; }
+
+.badge {
+  font-size: 13px;
+  color: white;
+  width: 16px;
+  height: 16px;
+  padding: 4px;
+  text-align: center;
+  background-color: #FD7E14;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  -ms-border-radius: 13px;
+  border-radius: 13px; }
+
+.pop-layer {
+  position: absolute;
+  background: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); }
+  .pop-layer.listbox {
+    max-height: 600px;
+    overflow-y: scroll; }
+  .pop-layer.listbox > li {
+    position: relative;
+    border-bottom: 1px solid #EBEBEB;
+    text-align: left;
+    cursor: pointer; }
+    .pop-layer.listbox > li:hover {
+      background-color: #EBEBEB; }
+    .pop-layer.listbox > li .title {
+      font-weight: 500;
+      margin-bottom: 11px; }
+    .pop-layer.listbox > li p {
+      opacity: 0.8; }
+      .pop-layer.listbox > li p .text-xsmall {
+        opacity: 0.6; }
+    .pop-layer.listbox > li .close {
+      position: absolute;
+      top: 15px;
+      left: 200px;
+      display: block;
+      width: 22px;
+      height: 22px;
+      background: url(/images/icons/close.svg) 5px 5px no-repeat;
+      -webkit-border-radius: 13px;
+      -moz-border-radius: 13px;
+      -ms-border-radius: 13px;
+      border-radius: 13px;
+      opacity: 0.7; }
+      .pop-layer.listbox > li .close:hover {
+        background-color: rgba(0, 0, 0, 0.1); }
+
+#topbar {
+  min-width: 1020px;
+  height: 60px;
+  background-color: #D9480F;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); }
+  #topbar .left-wrapper {
+    float: left;
+    padding: 0 0 0 20px;
+    min-width: 600px; }
+    #topbar .left-wrapper > * {
+      float: left;
+      vertical-align: middle; }
+    #topbar .left-wrapper .logo img {
+      width: 51px;
+      height: 34px;
+      margin: 16px 20px 0 0;
+      opacity: 0.9; }
+      #topbar .left-wrapper .logo img:hover {
+        opacity: 1; }
+    #topbar .left-wrapper .company-name {
+      margin: 20px 40px 0 0;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 18px; }
+      #topbar .left-wrapper .company-name:hover {
+        color: rgba(255, 255, 255, 0.9); }
+    #topbar .left-wrapper .search-box {
+      margin-top: 15px;
+      width: 220px;
+      height: 14px;
+      padding: 9px 13px 7px 13px;
+      background: url(/images/icons/search.svg) no-repeat right 10px top 8px rgba(255, 255, 255, 0.1);
+      -moz-box-shadow: inset 1px 1px 0 #B83806;
+      -webkit-box-shadow: inset 1px 1px 0 #B83806;
+      box-shadow: inset 1px 1px 0 #B83806;
+      -webkit-border-radius: 21px;
+      -moz-border-radius: 21px;
+      -ms-border-radius: 21px;
+      border-radius: 21px;
+      border: none;
+      color: white; }
+      #topbar .left-wrapper .search-box:hover {
+        background-color: rgba(255, 255, 255, 0.2); }
+      #topbar .left-wrapper .search-box:focus {
+        background-color: rgba(255, 255, 255, 0.2);
+        outline: none; }
+      #topbar .left-wrapper .search-box::placeholder {
+        color: rgba(255, 255, 255, 0.4); }
+      #topbar .left-wrapper .search-box::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.4); }
+      #topbar .left-wrapper .search-box::-moz-placeholder {
+        color: rgba(255, 255, 255, 0.4); }
+      #topbar .left-wrapper .search-box:-ms-input-placeholder {
+        color: rgba(255, 255, 255, 0.4); }
+      #topbar .left-wrapper .search-box:-moz-placeholder {
+        color: rgba(255, 255, 255, 0.4); }
+  #topbar .right-wrapper {
+    float: right;
+    min-width: 400px; }
+    #topbar .right-wrapper .toptab {
+      position: relative;
+      display: block;
+      float: right;
+      width: 40px;
+      height: 30px;
+      text-align: center;
+      padding: 16px 10px 14px 10px;
+      cursor: pointer; }
+      #topbar .right-wrapper .toptab.account {
+        width: auto;
+        min-width: 48px;
+        height: 24px;
+        color: rgba(255, 255, 255, 0.8);
+        background: url(/images/icons/male.svg) no-repeat 15px 17px;
+        padding: 22px 20px 14px 45px; }
+      #topbar .right-wrapper .toptab:hover, #topbar .right-wrapper .toptab.active {
+        background-color: rgba(0, 0, 0, 0.1); }
+      #topbar .right-wrapper .toptab > .badge {
+        position: absolute;
+        top: 26px;
+        left: 31px;
+        border: 1px solid #D9480F; }
+      #topbar .right-wrapper .toptab .pop-layer {
+        top: 60px;
+        left: 0; }
+        #topbar .right-wrapper .toptab .pop-layer.listbox > li {
+          width: 192px;
+          padding: 18px 20px 16px 20px; }
