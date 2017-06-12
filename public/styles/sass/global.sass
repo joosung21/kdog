@@ -2,8 +2,9 @@
 
 $color-brand: #D9480F
 $color-priority: #FD7E14
+
 $color-dark: #495057
-$color-white-gray: #EBEBEB
+$color-white-gray: #F1F3F5
 
 $font-size-default: 14px
 $font-size-small: 12px
@@ -23,6 +24,14 @@ $font-size-xsmall: 10px
 
 .text-center
   text-align: center !important
+.text-right
+  text-align: right !important
+.text-left
+  text-align: left !important
+
+.float-right
+  float: right !important
+
 
 
 // ---------- INITAILIZE  ---------- //
@@ -38,6 +47,8 @@ body,body *
   color: $color-dark
 body
   background-color: $color-dark
+h1
+  font-size: 2em
 a
   text-decoration: none
 p
@@ -47,12 +58,19 @@ strong
 ul,li
   list-style: none
 .icon
+  display: inline-block
   position: relative
   top: -0.1em
   vertical-align: middle
   padding-right: 0.5em
 
-
+.noselect
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
 
 
 // ---------- MIXINS  ---------- //
@@ -69,7 +87,7 @@ ul,li
   border-radius:         $radius
 
 =darker-background($value)
-  background-color: rgba(0, 0, 0, $value)
+  background-color: rgba(73, 80, 87, $value)
 
 =lighten-background($value)
   background-color: rgba(255, 255, 255, $value)
@@ -121,16 +139,53 @@ ul,li
       opacity: 0.7
       &:hover
         +darker-background(0.1)
-
-
+  &.simplemenu
+    padding: 11px 0 13px 0
+  &.simplemenu > li
+    text-align: left
+    padding: 9px 20px 7px 20px
+    &:hover
+      +darker-background(0.1)
+    .icon
+      top: 0
+      width: 30px
+  .menu-divider
+    width: 100%
+    height: 1px
+    background-color: $color-white-gray
+    margin: 10px 0 10px 0
 
 // ---------- LAYOUTS  ---------- //
+.wrapper
+  z-index: 1
+  width: 100%
+  position: relative
+
+#content
+  margin-left: 140px
+  padding: 40px
+  background-color: $color-white-gray
+  &.folded
+    margin-left: 60px
+    transition: all 0.5s
+  &.unfolded
+    margin-left: 140px
+    transition: all 0.5s
+
+.board
+  background-color: #ffffff
+  padding: 40px
+  width: calc(100% - 80px)
+  min-height: 1000px
+  &.full-width
 
 #topbar
+  position: relative
+  z-index: 3
   min-width: 1020px
   height: 60px
   background-color: $color-brand
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3)
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4)
 
 
   .left-wrapper
@@ -164,12 +219,7 @@ ul,li
       +border-radius(21px)
       border: none
       color: white
-      &:hover
-        +lighten-background(0.2)
-      &:focus
-        +lighten-background(0.2)
-        outline: none
-      $placeholder-color: rgba(255, 255, 255, 0.4)
+      $placeholder-color: rgba(255, 255, 255, 0.0)
       &::placeholder
         color: $placeholder-color
       &::-webkit-input-placeholder
@@ -180,6 +230,22 @@ ul,li
         color: $placeholder-color
       &:-moz-placeholder
         color: $placeholder-color
+      &:hover
+        +lighten-background(0.2)
+      &:focus
+        +lighten-background(0.2)
+        outline: none
+        $placeholder-color: rgba(255, 255, 255, 0.4)
+        &::placeholder
+          color: $placeholder-color
+        &::-webkit-input-placeholder
+          color: $placeholder-color
+        &::-moz-placeholder
+          color: $placeholder-color
+        &:-ms-input-placeholder
+          color: $placeholder-color
+        &:-moz-placeholder
+          color: $placeholder-color
 
   .right-wrapper
     float: right
@@ -194,6 +260,7 @@ ul,li
       text-align: center
       padding: 16px 10px 14px 10px
       cursor: pointer
+      @extend .noselect
       &.account
         width: auto
         min-width: 48px
@@ -214,3 +281,57 @@ ul,li
         &.listbox > li
           width: 192px
           padding: 18px 20px 16px 20px
+      &.account .pop-layer
+        left: -50px
+        width: 162px
+        .icon
+
+#leftnav
+  @extend .noselect
+  position: absolute
+  top: 0
+  left: 0
+  width: 140px
+  cursor: pointer
+  *
+    color: white
+  > li
+    clear: both
+    display: block
+    width: 140px
+    height: 60px
+    opacity: 0.6
+    &:hover
+      +lighten-background(0.1)
+    &.active
+      opacity: 1
+      background-color: $color-priority
+      .symbol, .text
+        opacity: 0.8
+  .symbol
+    float: left
+    width: 60px
+    height: 60px
+  .text
+    float: left
+    height: 20px
+    padding: 22px 0 18px 0
+  .symbol.toogle-btn
+    position: relative
+  &.folded
+    width: 60px
+    overflow-x: hidden
+    transition: all 0.5s
+    .symbol.toogle-btn
+      left: 0
+      -ms-transform: rotate(-135deg)
+      -webkit-transform: rotate(-135deg)
+      transform: rotate(-135deg)
+      transition: all 0.5s
+  &.unfolded
+    width: 140px
+    overflow-x: hidden
+    transition: all 0.5s
+    .symbol.toogle-btn
+      left: 80px
+      transition: all 0.5s

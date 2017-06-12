@@ -1,5 +1,5 @@
 .white-gray {
-  background: #EBEBEB; }
+  background: #F1F3F5; }
 
 .text-small, .text-small * {
   font-size: 12px; }
@@ -9,6 +9,15 @@
 
 .text-center {
   text-align: center !important; }
+
+.text-right {
+  text-align: right !important; }
+
+.text-left {
+  text-align: left !important; }
+
+.float-right {
+  float: right !important; }
 
 body, p, ul, li, h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -23,6 +32,9 @@ body, body * {
 body {
   background-color: #495057; }
 
+h1 {
+  font-size: 2em; }
+
 a {
   text-decoration: none; }
 
@@ -36,10 +48,19 @@ ul, li {
   list-style: none; }
 
 .icon {
+  display: inline-block;
   position: relative;
   top: -0.1em;
   vertical-align: middle;
   padding-right: 0.5em; }
+
+.noselect, #topbar .right-wrapper .toptab, #leftnav {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
 
 .badge {
   font-size: 13px;
@@ -63,11 +84,11 @@ ul, li {
     overflow-y: scroll; }
   .pop-layer.listbox > li {
     position: relative;
-    border-bottom: 1px solid #EBEBEB;
+    border-bottom: 1px solid #F1F3F5;
     text-align: left;
     cursor: pointer; }
     .pop-layer.listbox > li:hover {
-      background-color: #EBEBEB; }
+      background-color: #F1F3F5; }
     .pop-layer.listbox > li .title {
       font-weight: 500;
       margin-bottom: 11px; }
@@ -89,13 +110,52 @@ ul, li {
       border-radius: 13px;
       opacity: 0.7; }
       .pop-layer.listbox > li .close:hover {
-        background-color: rgba(0, 0, 0, 0.1); }
+        background-color: rgba(73, 80, 87, 0.1); }
+  .pop-layer.simplemenu {
+    padding: 11px 0 13px 0; }
+  .pop-layer.simplemenu > li {
+    text-align: left;
+    padding: 9px 20px 7px 20px; }
+    .pop-layer.simplemenu > li:hover {
+      background-color: rgba(73, 80, 87, 0.1); }
+    .pop-layer.simplemenu > li .icon {
+      top: 0;
+      width: 30px; }
+  .pop-layer .menu-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #F1F3F5;
+    margin: 10px 0 10px 0; }
+
+.wrapper {
+  z-index: 1;
+  width: 100%;
+  position: relative; }
+
+#content {
+  margin-left: 140px;
+  padding: 40px;
+  background-color: #F1F3F5; }
+  #content.folded {
+    margin-left: 60px;
+    transition: all 0.5s; }
+  #content.unfolded {
+    margin-left: 140px;
+    transition: all 0.5s; }
+
+.board {
+  background-color: #ffffff;
+  padding: 40px;
+  width: calc(100% - 80px);
+  min-height: 1000px; }
 
 #topbar {
+  position: relative;
+  z-index: 3;
   min-width: 1020px;
   height: 60px;
   background-color: #D9480F;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); }
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4); }
   #topbar .left-wrapper {
     float: left;
     padding: 0 0 0 20px;
@@ -131,21 +191,31 @@ ul, li {
       border-radius: 21px;
       border: none;
       color: white; }
+      #topbar .left-wrapper .search-box::placeholder {
+        color: rgba(255, 255, 255, 0); }
+      #topbar .left-wrapper .search-box::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0); }
+      #topbar .left-wrapper .search-box::-moz-placeholder {
+        color: rgba(255, 255, 255, 0); }
+      #topbar .left-wrapper .search-box:-ms-input-placeholder {
+        color: rgba(255, 255, 255, 0); }
+      #topbar .left-wrapper .search-box:-moz-placeholder {
+        color: rgba(255, 255, 255, 0); }
       #topbar .left-wrapper .search-box:hover {
         background-color: rgba(255, 255, 255, 0.2); }
       #topbar .left-wrapper .search-box:focus {
         background-color: rgba(255, 255, 255, 0.2);
         outline: none; }
-      #topbar .left-wrapper .search-box::placeholder {
-        color: rgba(255, 255, 255, 0.4); }
-      #topbar .left-wrapper .search-box::-webkit-input-placeholder {
-        color: rgba(255, 255, 255, 0.4); }
-      #topbar .left-wrapper .search-box::-moz-placeholder {
-        color: rgba(255, 255, 255, 0.4); }
-      #topbar .left-wrapper .search-box:-ms-input-placeholder {
-        color: rgba(255, 255, 255, 0.4); }
-      #topbar .left-wrapper .search-box:-moz-placeholder {
-        color: rgba(255, 255, 255, 0.4); }
+        #topbar .left-wrapper .search-box:focus::placeholder {
+          color: rgba(255, 255, 255, 0.4); }
+        #topbar .left-wrapper .search-box:focus::-webkit-input-placeholder {
+          color: rgba(255, 255, 255, 0.4); }
+        #topbar .left-wrapper .search-box:focus::-moz-placeholder {
+          color: rgba(255, 255, 255, 0.4); }
+        #topbar .left-wrapper .search-box:focus:-ms-input-placeholder {
+          color: rgba(255, 255, 255, 0.4); }
+        #topbar .left-wrapper .search-box:focus:-moz-placeholder {
+          color: rgba(255, 255, 255, 0.4); }
   #topbar .right-wrapper {
     float: right;
     min-width: 400px; }
@@ -166,7 +236,7 @@ ul, li {
         background: url(/images/icons/male.svg) no-repeat 15px 17px;
         padding: 22px 20px 14px 45px; }
       #topbar .right-wrapper .toptab:hover, #topbar .right-wrapper .toptab.active {
-        background-color: rgba(0, 0, 0, 0.1); }
+        background-color: rgba(73, 80, 87, 0.1); }
       #topbar .right-wrapper .toptab > .badge {
         position: absolute;
         top: 26px;
@@ -178,3 +248,55 @@ ul, li {
         #topbar .right-wrapper .toptab .pop-layer.listbox > li {
           width: 192px;
           padding: 18px 20px 16px 20px; }
+      #topbar .right-wrapper .toptab.account .pop-layer {
+        left: -50px;
+        width: 162px; }
+
+#leftnav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 140px;
+  cursor: pointer; }
+  #leftnav * {
+    color: white; }
+  #leftnav > li {
+    clear: both;
+    display: block;
+    width: 140px;
+    height: 60px;
+    opacity: 0.6; }
+    #leftnav > li:hover {
+      background-color: rgba(255, 255, 255, 0.1); }
+    #leftnav > li.active {
+      opacity: 1;
+      background-color: #FD7E14; }
+      #leftnav > li.active .symbol, #leftnav > li.active .text {
+        opacity: 0.8; }
+  #leftnav .symbol {
+    float: left;
+    width: 60px;
+    height: 60px; }
+  #leftnav .text {
+    float: left;
+    height: 20px;
+    padding: 22px 0 18px 0; }
+  #leftnav .symbol.toogle-btn {
+    position: relative; }
+  #leftnav.folded {
+    width: 60px;
+    overflow-x: hidden;
+    transition: all 0.5s; }
+    #leftnav.folded .symbol.toogle-btn {
+      left: 0;
+      -ms-transform: rotate(-135deg);
+      -webkit-transform: rotate(-135deg);
+      transform: rotate(-135deg);
+      transition: all 0.5s; }
+  #leftnav.unfolded {
+    width: 140px;
+    overflow-x: hidden;
+    transition: all 0.5s; }
+    #leftnav.unfolded .symbol.toogle-btn {
+      left: 80px;
+      transition: all 0.5s; }
