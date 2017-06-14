@@ -1,0 +1,32 @@
+include ../includes/header.pug
+.wrapper
+  include ../includes/leftnav-docs.pug
+  
+  #content.unfolded(name='empty-page2')
+    #sub-menu
+      h5.title 
+        img.icon(src='/images/icons/door-black.svg')
+        | 페이지제목
+      ul
+        li.active 
+          a(href='#') 서브메뉴1
+        li 
+          a(href='#') 서브메뉴2
+        li 
+          a(href='#') 서브메뉴3
+        li 
+          a(href='#') 서브메뉴4        
+    .board
+      .title-bar
+        h5 서브페이지 제목
+      .sub-left
+        ul
+          li
+            a.active(href='#') 뎁쓰메뉴1
+          li
+            a(href='#') 뎁쓰메뉴2
+          li
+            a(href='#') 뎁쓰메뉴3
+      .sub-content
+        .content-wrapper
+          h1.uppercase Empty Page2 - Depth menu

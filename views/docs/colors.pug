@@ -1,0 +1,55 @@
+include ../includes/header.pug
+.wrapper
+  include ../includes/leftnav-docs.pug
+  
+  #content.unfolded(name='colors')
+    .board.full-width
+      h1.uppercase colors      
+      .devider
+      .colorbox
+        .view.bg-brand.text-white .bg-brand
+        .text.text-brand .text-brand
+        .sass $color-brand      
+      .colorbox
+        .view.bg-priority.text-white .bg-priority
+        .text.text-priority .text-priority
+        .sass $color-priority
+      .colorbox
+        .view.bg-dark.text-white .bg-dark
+        .text.text-dark .text-dark
+        .sass $color-dark
+      .colorbox
+        .view.bg-reverse .bg-reverse
+        .text.text-reverse .text-reverse
+        .sass $color-reverse
+      
+      .clear-fix
+      
+      .colorbox
+        .view.bg-gray .bg-gray
+        .text.text-gray .text-gray
+        .sass $gray
+      .colorbox
+        .view.bg-white-gray .bg-white-gray
+        .text.text-gray .text-white-gray
+        .sass $white-gray
+      .colorbox
+        .view.bg-red.text-white .bg-red
+        .text.text-red .text-red
+        .sass $red
+        
+        
+      
+      
+
+
+  //- 
+  //- $color-brand: #D9480F
+  //- $color-priority: #FD7E14
+  //- $color-priority-darker: #F26410
+  //- $color-dark: #495057
+  //- $color-reverse: #3BC9DB
+  //- 
+  //- $white-gray: #F1F3F5
+  //- $gray: #C9D3DC
+  //- $red: #F03E3E

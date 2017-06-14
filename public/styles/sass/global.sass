@@ -1,5 +1,5 @@
 
-// Webfont
+// Webfont Test
 // @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css)
 // @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css)
 // @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css)
@@ -8,7 +8,6 @@
 
 $color-brand: #D9480F
 $color-priority: #FD7E14
-$color-priority-darker: #F26410
 $color-dark: #495057
 $color-reverse: #3BC9DB
 
@@ -17,6 +16,7 @@ $gray: #C9D3DC
 $red: #F03E3E
 
 $font-color-defualt: rgba(73, 80, 87, 0.7)
+$font-color-title: rgba(73, 80, 87, 0.8)
 
 $font-size-default: 11pt
 $font-size-small: 10pt
@@ -51,17 +51,46 @@ $font-bold: 700
 
 // ---------- QUICK STYLE CSS  ---------- //
 
-.white-gray
-  background: $white-gray
-.dark-navy
+.bg-brand
+  background: $color-brand
+.text-brand
+  color: $color-brand
+.bg-priority
+  background: $color-priority
+.text-priority
+  color: $color-priority
+.bg-dark
   background: $color-dark
+.text-dark
+  color: $color-dark
+.bg-reverse
+  background: $color-reverse
+.text-reverse
+  color: $color-reverse
+.bg-gray
+  background: $gray
+.text-gray
+  color: $gray
+.bg-white-gray
+  background: $white-gray
+.text-white-gray
+  color: $white-gray
+.bg-red
+  background: $red
+.text-red
+  color: $red
+.text-white
+  color: white
+  font-weight: $font-normal
 
 .text-defualt, .text-defualt *
   font-size: $font-size-default
 .text-small, .text-small *
   font-size: $font-size-small
+  font-weight: $font-normal
 .text-xsmall, .text-xsmall *
   font-size: $font-size-xsmall
+  font-weight: $font-normal
 
 .font-thin
   font-weight: $font-thin
@@ -74,10 +103,8 @@ $font-bold: 700
 .font-bold
   font-weight: $font-bold
 
-.text-red
-  color: $red
-.text-white
-  color: white
+.uppercase
+  text-transform: uppercase
 
 .text-center
   text-align: center !important
@@ -85,8 +112,24 @@ $font-bold: 700
   text-align: right !important
 .text-left
   text-align: left !important
+
+.float-left
+  float: left !important
 .float-right
   float: right !important
+.float-none
+  float: none !important
+.clear-fix
+  clear: both
+
+.padding
+  padding: 20px
+.padding-2x
+  padding: 40px
+.margin
+  margin-bottom: 20px
+.margin-2x
+  margin-bottom: 40px
 
 // ---------- INITAILIZE  ---------- //
 
@@ -98,7 +141,7 @@ body,body *
   font-family: 'Roboto', sans-serif
   // font-family: 'Noto Sans KR', 'Roboto', sans-serif
   // font-family: 'Spoqa Han Sans', Sans-serif
-  font-weight: $font-normal
+  font-weight: $font-light
   font-size: $font-size-default
   color: $font-color-defualt
   text-rendering: optimizeLegibility
@@ -117,6 +160,10 @@ body
 input:focus, select:focus, textarea:focus, button:focus
   outline: none
 
+h1,h2,h3,h4,h5,h6
+  color: $font-color-title
+  text-transform: uppercase
+
 h1,h2
   font-weight: $font-light
 h3,h4
@@ -124,7 +171,8 @@ h3,h4
 h5,h6
   font-weight: $font-medium
 h1
-  font-size: 20pt
+  font-size: 22pt
+  margin-top: -0.2em
 h2
   font-size: 17pt
 h3
@@ -355,9 +403,6 @@ a.button
 
 // ---------- LAYOUTS  ---------- //
 
-.clear-fix
-  clear: both
-
 .row
   .col-2-left
     width: 48%
@@ -452,8 +497,8 @@ a.button
     padding: 40px
     border-left: 1px solid $white-gray
     min-height: 702px
-    .content-wrapper
-      max-width: 700px
+  .content-wrapper
+    max-width: 700px
   .devider
     clear: both
     width: 100%
@@ -515,7 +560,7 @@ a.button
       &:-moz-placeholder
         color: $placeholder-color
       &:hover
-        +lighten-background(0.2)        
+        +lighten-background(0.2)
       &:focus
         +lighten-background(0.2)
         outline: none
@@ -601,6 +646,7 @@ a.button
     padding: 22px 0 18px 0
     font-weight: $font-light
     color: #ADB0B4
+    text-transform: uppercase
   .symbol.toogle-btn
     position: relative
   &.folded
@@ -620,3 +666,23 @@ a.button
     .symbol.toogle-btn
       left: 80px
       transition: all 0.5s
+  &.docs
+    .text
+      text-align: center
+      float: none
+      font-size: $font-size-default
+
+
+// ---------- DOCS Demo  ---------- //
+.colorbox
+  float: left
+  width: 140px
+  margin: 20px
+  *
+    font-size: $font-size-small
+    font-weight: normal
+    text-align: center
+  .view
+    width: 100%
+    padding: 20px 0
+    margin-bottom: 5px

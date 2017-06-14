@@ -1,0 +1,69 @@
+include ../includes/header.pug
+.wrapper
+  include ../includes/leftnav-docs.pug
+  
+  #content.unfolded(name='layout')
+    .board.full-width.layout-demo
+      h1.uppercase layout
+      .devider
+      h2 CONTENT COLUMS
+      .margin 2단 레이아웃은 .row 하단에 위치하고 float속성을 종료하기 위해 .clear-fix로 닫아주면 됩니다.
+      .bg-white-gray.text-center.margin 1단      
+      .row.margin-2x
+        .bg-white-gray.col-2-left.text-center 
+          | 2단 좌측 
+          br
+          | .col-2-left
+        .bg-white-gray.col-2-right.text-center
+          | 2단 우측 
+          br
+          | .col-2-right
+        .clear-fix      
+        
+      h2 CONTENT WRAPPER
+      .content-wrapper
+        p.margin
+          i .content-wrapper
+          |  는 
+          i max-width: 700px 
+          |  속성을 가집니다. 와이드 화면에서 컨텐츠가 지나치게 길어지는 것을 방지하기 위함입니다.        
+        .bg-white-gray.text-center.margin 1단        
+        .row.margin-2x
+          .bg-white-gray.col-2-left.text-center
+            | 2단 좌측 
+            br
+            | .col-2-left
+          .bg-white-gray.col-2-right.text-center
+            | 2단 우측 
+            br
+            | .col-2-right
+          .clear-fix
+          
+        h2 Padding &amp; margin
+        p.margin 기본 Grid는 20px 입니다. Padding은 4방향 모두, Margin은 Bottom만 적용됩니다. 
+        .bg-white-gray.padding.margin .padding
+        .bg-white-gray.padding-2x.margin .padding-2x
+        .bg-white-gray.margin .margin
+        .bg-white-gray.margin-2x .margin-2x        
+        
+        h2.margin FLOAT        
+        .row.margin-2x
+          .bg-white-gray.float-left .float-left
+          .bg-white-gray.float-right .float-right
+          .clear-fix .clear-fix
+          .bg-white-gray.float-none .float-none        
+          
+        h2 TEXT ALIGN
+        .bg-white-gray.text-left .text-left
+        .bg-white-gray.text-center .text-center
+        .bg-white-gray.text-right .text-right
+        br
+        br
+          
+        h2 DEVIDER
+        p
+          i .devider
+        .devider
+        
+        
+          
