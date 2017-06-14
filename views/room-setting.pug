@@ -1,0 +1,121 @@
+include includes/header.pug
+.wrapper
+  include includes/leftnav.pug
+  
+  #content.unfolded(name='room-manage')
+    #sub-menu
+      h5.title 
+        img.icon(src='/images/icons/door-black.svg')
+        | 객실타입
+      ul
+        li.active 
+          a(href='#') 디럭스룸
+        li 
+          a(href='#') 트윈룸
+        li 
+          a(href='#') 스위트룸
+        li 
+          a(href='#') 여성4인 도미토리        
+        li 
+          a.link.text-small(href='javascript:') + 객실타입추가
+    .board
+      .title-bar
+        h5 디럭스룸
+      .sub-left
+        ul
+          li
+            a.active(href='#') 기본정보
+          li
+            a(href='#') 날짜별 가격             
+      .sub-content
+        .content-wrapper
+          .row
+            .form-group.col-2-left
+              label 객실타입 이름
+              input(type='text', placeholder='예) 더블룸, 가족룸, 여성4인 도미토리')
+            .form-group.col-2-right
+              label 
+                | 형태
+                .qbtn.icon                  
+                  .desc 도미토리는 침대별 재고관리가 가능합니다.
+              .select-wrapper
+                select
+                  option 선택하세요
+                  option 일반룸
+                  option 독채형
+                  option 도미토리
+          .clear-fix          
+          .row
+            .form-group.col-2-left
+              label 객실수
+              input(type='text', value='5' disabled)
+              .text-right(style='padding:10px')
+                a.link.text-small(href='javascript:') + 객실추가
+            .form-group.col-2-right
+              label 객실명
+              .form-inline.bottom-collapse
+                label 객실1
+                input(type='text', value='101호')
+                a.inner-text.link.text-small(href='javascript:') 삭제
+              .form-inline.bottom-collapse
+                label 객실2
+                input(type='text', placeholder='객실 번호나 이름')
+                a.inner-text.link.text-small(href='javascript:') 삭제
+              .form-inline.bottom-collapse
+                label 객실3
+                input(type='text', placeholder='객실 번호나 이름')
+                a.inner-text.link.text-small(href='javascript:') 삭제
+              .form-inline.bottom-collapse
+                label 객실4
+                input(type='text', placeholder='객실 번호나 이름')
+                a.inner-text.link.text-small(href='javascript:') 삭제
+              .form-inline
+                label 객실5
+                input(type='text', placeholder='객실 번호나 이름')
+                a.inner-text.link.text-small(href='javascript:') 삭제
+          .devider
+          .row
+            .form-group.col-2-left
+              label 기준인원
+              input(type='text', value='2')
+            .form-group.col-2-right
+              label 최대인원
+              input(type='text', value='4')
+          .row
+            .form-group.col-2-left
+              label 성인 1인당 추가가격
+              input(type='text', value='₩ 20,000')
+            .form-group.col-2-right
+              label 아동 1인당 추가가격
+              input(type='text', value='₩ 10,000')          
+          .row
+            .form-group.col-2-left
+              label 기본가격
+              input(type='text', value='₩ 130,000')              
+            .form-group.col-2-right
+              label 요일별 가격
+              .form-inline.bottom-collapse
+                label 일요일
+                input(type='text', value='₩130,000')
+              .form-inline.bottom-collapse
+                label 월요일
+                input(type='text', value='₩130,000')
+              .form-inline.bottom-collapse
+                label 화요일
+                input(type='text', value='₩130,000')
+              .form-inline.bottom-collapse
+                label 수요일
+                input(type='text', value='₩130,000')
+              .form-inline.bottom-collapse
+                label 목요일
+                input(type='text', value='₩130,000')
+              .form-inline.bottom-collapse
+                label.text-red 금요일
+                input(type='text', value='₩180,000')
+                .inner-text.text-small +60,000
+              .form-inline.bottom-collapse
+                label.text-red 토요일
+                input(type='text', value='₩180,000')
+                .inner-text.text-small +60,000                
+          .devider
+          a.button.full-width(href='#') 저장하기

@@ -1,26 +1,83 @@
+
+// Webfont
+// @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css)
+// @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css)
+// @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css)
+
 // ---------- VARIABLES ---------- //
 
 $color-brand: #D9480F
 $color-priority: #FD7E14
-
+$color-priority-darker: #F26410
 $color-dark: #495057
-$color-white-gray: #F1F3F5
+$color-reverse: #3BC9DB
 
-$font-size-default: 14px
-$font-size-small: 12px
-$font-size-xsmall: 10px
+$white-gray: #F1F3F5
+$gray: #C9D3DC
+$red: #F03E3E
+
+$font-color-defualt: rgba(73, 80, 87, 0.7)
+
+$font-size-default: 11pt
+$font-size-small: 10pt
+$font-size-xsmall: 9pt
+
+$font-thin: 100
+$font-light: 300
+$font-normal: 400
+$font-medium: 500
+$font-bold: 700
+
+
+// ---------- MIXINS  ---------- //
+
+=inner-shadow($color)
+  -moz-box-shadow:    inset 1px 1px 0 $color
+  -webkit-box-shadow: inset 1px 1px 0 $color
+  box-shadow:         inset 1px 1px 0 $color
+
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius:    $radius
+  -ms-border-radius:     $radius
+  border-radius:         $radius
+
+=darker-background($value)
+  background-color: rgba(0, 0, 0, $value)
+
+=lighten-background($value)
+  background-color: rgba(255, 255, 255, $value)
 
 
 // ---------- QUICK STYLE CSS  ---------- //
 
 .white-gray
-  background: $color-white-gray
+  background: $white-gray
+.dark-navy
+  background: $color-dark
 
+.text-defualt, .text-defualt *
+  font-size: $font-size-default
 .text-small, .text-small *
   font-size: $font-size-small
-
 .text-xsmall, .text-xsmall *
   font-size: $font-size-xsmall
+
+.font-thin
+  font-weight: $font-thin
+.font-light
+  font-weight: $font-light
+.font-normal
+  font-weight: $font-normal
+.font-medium
+  font-weight: $font-medium
+.font-bold
+  font-weight: $font-bold
+
+.text-red
+  color: $red
+.text-white
+  color: white
 
 .text-center
   text-align: center !important
@@ -28,11 +85,8 @@ $font-size-xsmall: 10px
   text-align: right !important
 .text-left
   text-align: left !important
-
 .float-right
   float: right !important
-
-
 
 // ---------- INITAILIZE  ---------- //
 
@@ -42,19 +96,55 @@ body,p,ul,li,h1,h2,h3,h4,h5,h6
 
 body,body *
   font-family: 'Roboto', sans-serif
-  font-weight: 300
+  // font-family: 'Noto Sans KR', 'Roboto', sans-serif
+  // font-family: 'Spoqa Han Sans', Sans-serif
+  font-weight: $font-normal
   font-size: $font-size-default
-  color: $color-dark
+  color: $font-color-defualt
+  text-rendering: optimizeLegibility
+  // text-rendering: geometricPrecision
+
 body
   background-color: $color-dark
+
+-moz-selection
+  color: white
+  background: $color-priority
+::selection
+  color: white
+  background: $color-priority
+
+input:focus, select:focus, textarea:focus, button:focus
+  outline: none
+
+h1,h2
+  font-weight: $font-light
+h3,h4
+  font-weight: $font-normal
+h5,h6
+  font-weight: $font-medium
 h1
-  font-size: 2em
+  font-size: 20pt
+h2
+  font-size: 17pt
+h3
+  font-size: 15pt
+h4
+  font-size: 13pt
+h5
+  font-size: 12pt
+h6
+  font-size: $font-size-default
 a
   text-decoration: none
+  &.link
+    color: $color-reverse
+    &:hover
+      opacity: 0.8
 p
   line-height: 1.5em
 strong
-  font-weight: 500
+  font-weight: $font-medium
 ul,li
   list-style: none
 .icon
@@ -72,32 +162,138 @@ ul,li
   -ms-user-select: none
   user-select: none
 
+.qbtn
+  position: relative
+  width: 15px
+  height: 15px
+  margin-left: 2px
+  background: url(/images/icons/question.svg) 0 0 no-repeat
+  .desc
+    display: none
+    position: absolute
+    top: -5px
+    left: -5px
+    width: 200px
+    background-color: #80858A
+    background: url(/images/icons/question.svg) no-repeat 5px 5px #80858A
+    color: rgba(255, 255, 255, 0.8)
+    font-size: $font-size-xsmall
+    padding: 6px 10px 4px 30px
+    +border-radius(13px)
+  &:hover
+    .desc
+      display: block
 
-// ---------- MIXINS  ---------- //
 
-=inner-shadow($color)
-  -moz-box-shadow:    inset 1px 1px 0 $color
-  -webkit-box-shadow: inset 1px 1px 0 $color
-  box-shadow:         inset 1px 1px 0 $color
+// ---------- FORM CONTROLS  ---------- //
 
-=border-radius($radius)
-  -webkit-border-radius: $radius
-  -moz-border-radius:    $radius
-  -ms-border-radius:     $radius
-  border-radius:         $radius
+.form-group
+  position: relative
+  margin-bottom: 28px
+  .form-inline
+    position: relative
+    height: 42px
+    label
+      position: absolute
+      left: 0
+      top: 0
+      width: 50px
+      display: block
+      float: left
+      background: $white-gray
+      border: 1px solid $gray
+      border-right: none
+      padding: 14px 12px 14px 12px
+      overflow-x: hidden
+      text-align: center
+    input
+      margin-left: 75px
+      width: calc(100% - 101px)
+    &.bottom-collapse
+      margin-bottom: -1px
+      input[type=text]:focus
+        height: 17px
+    .inner-text
+      position: absolute
+      right: 14px
+      top: 15px
+      opacity: 0.5
 
-=darker-background($value)
-  background-color: rgba(73, 80, 87, $value)
+  label
+    display: block
+    margin-bottom: 8px
+    height: 1em
+    font-size: $font-size-xsmall
 
-=lighten-background($value)
-  background-color: rgba(255, 255, 255, $value)
+  input, select, button
+    -moz-appearance: none
+    -webkit-appearance: none
+    appearance: none
+    margin: 0
+    padding: 0
+
+  input
+    width: calc(100% - 26px)
+    height: 18px
+    padding: 12px 12px 10px 12px
+    border: 1px solid $gray
+    &::placeholder
+      color: $gray
+      font-weight: $font-light
+    &::-webkit-input-placeholder
+      color: $gray
+      font-weight: $font-light
+    &::-moz-placeholder
+      color: $gray
+      font-weight: $font-light
+    &:-ms-input-placeholder
+      color: $gray
+      font-weight: $font-light
+    &:-moz-placeholder
+      color: $gray
+      font-weight: $font-light
+
+  input:focus
+    border: 2px solid $color-priority
+    padding: 11px 11px 9px 11px
+  input[disabled]
+    background-color: $white-gray
+    cursor: not-allowed
+
+  .select-wrapper
+    background: url(/images/icons/triangle.svg) no-repeat right 15px center
+    height: 1em
+    padding: 11px 11px 14px 11px
+    overflow: hidden
+    border: 1px solid $gray
+
+  .select-wrapper select
+    margin: 0
+    padding: 0
+    background: transparent
+    border: none
+    font-size: $font-size-default
+    width: 100%
+    font-size: $font-size-default
 
 
 
 // ---------- COMPONETS  ---------- //
 
+a.button
+  display: inlineblock
+  color: white
+  background-color: $color-priority
+  padding: 12px 20px
+  font-weight: $font-light
+  &:hover
+    background-color: darken($color-priority, 5%)
+  &.full-width
+    display: block
+    text-align: center
+
 .badge
-  font-size: 13px
+  font-size: 10pt
   color: white
   width: 16px
   height: 16px
@@ -115,13 +311,14 @@ ul,li
     overflow-y: scroll
   &.listbox > li
     position: relative
-    border-bottom: 1px solid $color-white-gray
+    border-bottom: 1px solid $white-gray
     text-align: left
     cursor: pointer
     &:hover
-      background-color: $color-white-gray
+      background-color: $white-gray
+      transition: all 0.5s
     .title
-      font-weight: 500
+      font-weight: $font-medium
       margin-bottom: 11px
     p
       opacity: 0.8
@@ -138,33 +335,47 @@ ul,li
       +border-radius(13px)
       opacity: 0.7
       &:hover
-        +darker-background(0.1)
+        background-color: white
   &.simplemenu
     padding: 11px 0 13px 0
   &.simplemenu > li
     text-align: left
     padding: 9px 20px 7px 20px
     &:hover
-      +darker-background(0.1)
+      +darker-background(0.05)
     .icon
       top: 0
       width: 30px
   .menu-divider
     width: 100%
     height: 1px
-    background-color: $color-white-gray
+    background-color: $white-gray
     margin: 10px 0 10px 0
 
+
 // ---------- LAYOUTS  ---------- //
+
+.clear-fix
+  clear: both
+
+.row
+  .col-2-left
+    width: 48%
+    float: left
+  .col-2-right
+    width: 48%
+    float: right
+
 .wrapper
   z-index: 1
   width: 100%
   position: relative
 
 #content
+  position: relative
   margin-left: 140px
   padding: 40px
-  background-color: $color-white-gray
+  background-color: $white-gray
   &.folded
     margin-left: 60px
     transition: all 0.5s
@@ -172,12 +383,83 @@ ul,li
     margin-left: 140px
     transition: all 0.5s
 
+#sub-menu
+  width: 240px
+  background-color: white
+  position: absolute
+  left: 40px
+  top: 40px
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1)
+  .title
+    padding: 20px 20px 10px 20px
+    .icon
+      opacity: 0.7
+      margin-right: 5px
+  ul
+    padding-bottom: 12px
+    li
+      padding: 13px 30px 10px 30px
+      @extend .noselect
+      cursor: pointer
+      &:hover
+        +darker-background(0.05)
+      &.active
+        background-color: $color-priority
+        a
+          color: white
+
 .board
-  background-color: #ffffff
+  position: relative
+  min-width: 580px
+  background-color: white
+  margin-left: 260px
   padding: 40px
-  width: calc(100% - 80px)
-  min-height: 1000px
+  width: calc(100% - 340px)
+  min-height: 760px
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1)
   &.full-width
+    margin-left: 0
+    width: calc(100% - 80px)
+  .title-bar
+    margin: -40px -40px 40px -40px
+    padding: 20px 20px 17px 20px
+    border-bottom: 1px solid $white-gray
+  .sub-left
+    position: absolute
+    top: 97px
+    left: 38px
+    width: 120px
+    li
+      padding: 0 30px 23px 0
+      a
+        position: relative
+        &:hover
+          color: $color-priority
+          transition: all 0.5s
+        &.active
+          color: $color-priority
+          &::before
+            position: absolute
+            top: 3px
+            left: -16px
+            width: 6px
+            height: 9px
+            content: ''
+            background: url(/images/icons/arrow-01.svg) no-repeat
+  .sub-content
+    min-width: 400px
+    margin: -40px -40px -40px 140px
+    padding: 40px
+    border-left: 1px solid $white-gray
+    min-height: 702px
+    .content-wrapper
+      max-width: 700px
+  .devider
+    clear: both
+    width: 100%
+    height: 1px
+    margin-bottom: 28px
+    background-color: $white-gray
 
 #topbar
   position: relative
@@ -193,7 +475,7 @@ ul,li
     padding: 0 0 0 20px
     min-width: 600px
 
-    > *
+    *
       float: left
       vertical-align: middle
     .logo img
@@ -203,17 +485,19 @@ ul,li
       opacity: 0.9
       &:hover
         opacity: 1
+        transition: all 0.5s
     .company-name
       margin: 20px 40px 0 0
       color: rgba(255, 255, 255, 0.8)
-      font-size: 18px
+      font-size: 13pt
       &:hover
         color: rgba(255, 255, 255, 0.9)
+        transition: all 0.5s
     .search-box
       margin-top: 15px
       width: 220px
       height: 14px
-      padding: 9px 13px 7px 13px
+      padding: 10px 13px 6px 13px
       background: url(/images/icons/search.svg) no-repeat right 10px top 8px rgba(255, 255, 255, 0.1)
       +inner-shadow(#B83806)
       +border-radius(21px)
@@ -231,7 +515,7 @@ ul,li
       &:-moz-placeholder
         color: $placeholder-color
       &:hover
-        +lighten-background(0.2)
+        +lighten-background(0.2)        
       &:focus
         +lighten-background(0.2)
         outline: none
@@ -269,7 +553,7 @@ ul,li
         background: url(/images/icons/male.svg) no-repeat 15px 17px
         padding: 22px 20px 14px 45px
       &:hover, &.active
-        +darker-background(0.1)
+        +darker-background(0.05)
       > .badge
         position: absolute
         top: 26px
@@ -293,29 +577,30 @@ ul,li
   left: 0
   width: 140px
   cursor: pointer
-  *
-    color: white
   > li
     clear: both
     display: block
     width: 140px
     height: 60px
-    opacity: 0.6
     &:hover
-      +lighten-background(0.1)
+      +darker-background(0.15)
     &.active
-      opacity: 1
       background-color: $color-priority
-      .symbol, .text
-        opacity: 0.8
+      .symbol
+        opacity: 1
+      .text
+        color: white
   .symbol
     float: left
     width: 60px
     height: 60px
+    opacity: 0.6
   .text
     float: left
     height: 20px
     padding: 22px 0 18px 0
+    font-weight: $font-light
+    color: #ADB0B4
   .symbol.toogle-btn
     position: relative
   &.folded

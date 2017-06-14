@@ -7,6 +7,12 @@ app.locals.pretty = true
 app.use('/', express.static('public'))
 
 app.get('/', function (req, res) {
+  res.render('room-setting')
+})
+app.get('/room-manage/', function (req, res) {
+  res.render('room-setting')
+})
+app.get('/docs/', function (req, res) {
   res.render('docs/empty-page')
 })
 
