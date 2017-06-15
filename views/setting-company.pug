@@ -1,0 +1,41 @@
+include includes/header.pug
+.wrapper
+  include includes/leftnav.pug
+  
+  #content.unfolded(name='setting', page='company')
+    
+    include includes/menu-setting.pug
+            
+    .board
+      .title-bar
+        h4 업체정보      
+      .content-wrapper
+        .form-group
+          label 숙소이름
+          input(type='text', value='판교 라마다 호텔')
+        .form-group
+          label 이메일
+          input(type='email', value='ramada.pangyo@gmail.com')
+        .row
+          .form-group.col-2-left
+            label 관리자 이름
+            input(type='text', value='유정연')
+          .form-group.col-2-right
+            label 연락처
+            input(type='text', value='010-2268-5399')
+          .clear-fix
+        .row
+          .form-group.col-2-left
+            label 국가
+            .select-wrapper
+              select
+                option 대한민국
+                option 미국
+                option 일본
+                option 중국
+          .clear-fix        
+        .form-group
+          label 주소
+          input(type='text', value='경기도 성남시 분당구 운중동 743-4')
+        .devider.end-page
+        a.btn.full-width 저장하기

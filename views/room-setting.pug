@@ -8,16 +8,12 @@ include includes/header.pug
         img.icon(src='/images/icons/door-black.svg')
         | 객실타입
       ul
-        li.active 
-          a(href='#') 디럭스룸
-        li 
-          a(href='#') 트윈룸
-        li 
-          a(href='#') 스위트룸
-        li 
-          a(href='#') 여성4인 도미토리        
-        li 
-          a.link.text-small(href='javascript:') + 객실타입추가
+        li.active 디럭스룸
+        li  트윈룸
+        li  스위트룸
+        li  여성4인 도미토리        
+      .padding(style='padding-top:0; margin-left:10px')
+        a.link.text-small(href='javascript:') + 객실타입추가
     .board
       .title-bar
         h4 디럭스룸
@@ -92,7 +88,7 @@ include includes/header.pug
               input(type='text', value='₩ 20,000')
             .form-group.col-2-right
               label 아동 1인당 추가가격
-              input(type='text', value='₩ 10,000')          
+              input(type='text', value='₩ 10,000')      
           .row
             .form-group.col-2-left
               label 기본가격
@@ -123,6 +119,8 @@ include includes/header.pug
                 label.text-red 토요일
                 input(type='text', value='₩180,000')
                 .inner-text-wrapper
-                  .inner-text.text-small +60,000                
-          .devider
-          a.button.full-width(href='#') 저장하기
+                  .inner-text.text-small +60,000
+            .clear-fix
+                             
+          .devider.end-page
+          a.btn.full-width(href='#') 저장하기

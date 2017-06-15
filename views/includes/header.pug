@@ -5,9 +5,11 @@ html(lang="ko")
     title KDOG
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-    link(href='/images/favicon.png', rel='shortcut icon')
-    link(href='/styles/css/global.css', rel='stylesheet', type='text/css')
-    link(href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700', rel='stylesheet')    
+    link(rel='shortcut icon', href='/images/favicon.png')
+    
+    link(rel='stylesheet', href='/assets/font-awesome-4.7.0/css/font-awesome.min.css')    
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700')
+    link(rel='stylesheet', href='/styles/css/global.css', type='text/css')
     
     // Temporary JQuery/Js for demo    
     script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js', integrity='sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n', crossorigin='anonymous')
@@ -57,7 +59,7 @@ html(lang="ko")
                 img(src='/images/icons/speech.svg')
               | 튜토리얼
               
-        .toptab.setting(onclick='location.href="#"')
+        .toptab.setting(onclick='location.href="/setting/company"')
           img(src='/images/icons/setting.svg')
         .toptab.globe
           img(src='/images/icons/globe.svg')

@@ -1,0 +1,40 @@
+include includes/header.pug
+.wrapper
+  include includes/leftnav.pug
+  
+  #content.unfolded(name='setting', page='step')
+    
+    include includes/menu-setting.pug    
+            
+    .board
+      .title-bar
+        h4 스탭관리    
+      .content-wrapper
+        table.table
+          thead
+            tr
+              th 이름
+              th 이메일
+              th 연락처
+              th 권한
+              th
+          tbody
+            tr
+              td 안주성
+              td ramada.pangyo@gmail.com
+              td 010-2268-5399
+              td 관리자
+              td.text-right
+                a.btn.btn-small.btn-white 
+                  i.fa.fa-pencil
+                  span 수정
+            tr
+              td 노리코짱
+              td norikojjang@gmail.com
+              td 010-3006-7889
+              td 스탭
+              td.text-right
+                a.btn.btn-small.btn-white 
+                  i.fa.fa-pencil
+                  span 수정
+            

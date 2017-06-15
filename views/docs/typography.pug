@@ -9,7 +9,7 @@ include ../includes/header.pug
       .row
         .col-2-left          
           h2 Titles
-          p.margin h태그는 의미가 아니라 크기에 맞게 사용하시면 됩니다.
+          p.margin h태그는 문맥적 의미가 아니라 크기에 맞게 사용하시면 됩니다.
           h1 h1
           h2 h2
           h3 h3
@@ -19,12 +19,14 @@ include ../includes/header.pug
           br
           h2 TEXT SIZE
           p.margin 렌더링 최적화를 위해 pt단위로 설정되어 있습니다.
-          h3.text-gray CSS
+          h3 CSS
+          .text-large .text-large
           .text-defualt .text-defualt
           .text-small .text-small
           .text-xsmall .text-xsmall
           br
-          h3.text-gray SASS
+          h3 SASS
+          .text-large $font-size-large
           .text-defualt $font-size-default
           .text-small $font-size-small
           .text-xsmall $font-size-xsmall

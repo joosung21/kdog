@@ -29,16 +29,28 @@ $( document ).ready(function() {
         $('#account-layer').toggle();
     });
 
-    // Left Nav: Remove active class
-    $('#leftnav > li').each(function(){
-      $(this).removeClass('active');
+    // Left Nav Active
+    $('#leftnav > li').each(function(){      
       var thisPage = $('#content').attr('name');
       if ($(this).hasClass(thisPage)) {
         $(this).addClass('active');
       }
     });
 
+    // Sub-menu Active
+    $('#sub-menu li').each(function(){
+      var thisPage = $('#content').attr('page');
+      if ($(this).hasClass(thisPage)) {
+        $(this).addClass('active');
+      }
+    });
 
-
+    // Topbar active
+    $('#topbar .toptab').each(function(){
+      var thisPage = $('#content').attr('name');
+      if ($(this).hasClass(thisPage)) {
+        $(this).addClass('active');
+      }
+    });
 
 });
