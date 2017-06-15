@@ -15,8 +15,8 @@ $white-gray: #F1F3F5
 $gray: #C9D3DC
 $red: #F03E3E
 
-$font-color-defualt: rgba(73, 80, 87, 0.7)
-$font-color-title: rgba(73, 80, 87, 0.8)
+$font-color-defualt: rgba(73, 80, 87, 0.5)
+$font-color-thic: rgba(73, 80, 87, 0.7)
 
 $font-size-default: 11pt
 $font-size-small: 10pt
@@ -81,16 +81,19 @@ $font-bold: 700
   color: $red
 .text-white
   color: white
-  font-weight: $font-normal
+.bg-white
+  background: white
+.border
+  border: 1px solid $gray
+.border-light
+  border: 1px solid $white-gray
 
 .text-defualt, .text-defualt *
   font-size: $font-size-default
 .text-small, .text-small *
   font-size: $font-size-small
-  font-weight: $font-normal
 .text-xsmall, .text-xsmall *
   font-size: $font-size-xsmall
-  font-weight: $font-normal
 
 .font-thin
   font-weight: $font-thin
@@ -105,6 +108,12 @@ $font-bold: 700
 
 .uppercase
   text-transform: uppercase
+.lowercase
+  text-transform: lowercase
+.capitalize
+  text-transform: capitalize
+.no-transform
+  text-decoration: none
 
 .text-center
   text-align: center !important
@@ -122,6 +131,8 @@ $font-bold: 700
 .clear-fix
   clear: both
 
+.padding-thin
+  padding: 10px
 .padding
   padding: 20px
 .padding-2x
@@ -141,7 +152,7 @@ body,body *
   font-family: 'Roboto', sans-serif
   // font-family: 'Noto Sans KR', 'Roboto', sans-serif
   // font-family: 'Spoqa Han Sans', Sans-serif
-  font-weight: $font-light
+  font-weight: $font-normal
   font-size: $font-size-default
   color: $font-color-defualt
   text-rendering: optimizeLegibility
@@ -161,28 +172,20 @@ input:focus, select:focus, textarea:focus, button:focus
   outline: none
 
 h1,h2,h3,h4,h5,h6
-  color: $font-color-title
+  color: $font-color-thic
   text-transform: uppercase
 
 h1,h2
   font-weight: $font-light
-h3,h4
-  font-weight: $font-normal
-h5,h6
-  font-weight: $font-medium
 h1
   font-size: 22pt
   margin-top: -0.2em
 h2
   font-size: 17pt
 h3
-  font-size: 15pt
-h4
   font-size: 13pt
-h5
-  font-size: 12pt
-h6
-  font-size: $font-size-default
+h4
+  font-weight: $font-medium
 a
   text-decoration: none
   &.link
@@ -191,6 +194,7 @@ a
       opacity: 0.8
 p
   line-height: 1.5em
+  font-weight: $font-light
 strong
   font-weight: $font-medium
 ul,li
@@ -210,24 +214,27 @@ ul,li
   -ms-user-select: none
   user-select: none
 
-.qbtn
+.tooltip
   position: relative
   width: 15px
   height: 15px
-  margin-left: 2px
+  margin-left: 4px
   background: url(/images/icons/question.svg) 0 0 no-repeat
   .desc
     display: none
     position: absolute
     top: -5px
     left: -5px
-    width: 200px
-    background-color: #80858A
-    background: url(/images/icons/question.svg) no-repeat 5px 5px #80858A
+    width: 240px
+    background: url(/images/icons/question.svg) no-repeat 5px 5px $color-reverse
     color: rgba(255, 255, 255, 0.8)
     font-size: $font-size-xsmall
-    padding: 6px 10px 4px 30px
-    +border-radius(13px)
+    padding: 6px 10px 6px 30px
+    +border-radius(2px)
+    a
+      color: white
+      font-size: $font-size-xsmall
+      text-decoration: underline
   &:hover
     .desc
       display: block
@@ -261,11 +268,16 @@ ul,li
       margin-bottom: -1px
       input[type=text]:focus
         height: 17px
+  .inner-text-wrapper
+    position: relative
     .inner-text
       position: absolute
       right: 14px
-      top: 15px
-      opacity: 0.5
+      top: -27px
+      opacity: 0.6
+      font-size: $font-size-small
+    a.inner-text:hover
+      opacity: 1
 
   label
     display: block
@@ -273,16 +285,16 @@ ul,li
     height: 1em
     font-size: $font-size-xsmall
 
-  input, select, button
+  input, select, button, textarea
     -moz-appearance: none
     -webkit-appearance: none
     appearance: none
     margin: 0
     padding: 0
+    color: $font-color-thic
 
-  input
+  input, textarea
     width: calc(100% - 26px)
-    height: 18px
     padding: 12px 12px 10px 12px
     border: 1px solid $gray
     &::placeholder
@@ -300,12 +312,15 @@ ul,li
     &:-moz-placeholder
       color: $gray
       font-weight: $font-light
+  input
+    height: 18px
 
-  input:focus
+  input:focus, textarea:focus
     border: 2px solid $color-priority
     padding: 11px 11px 9px 11px
   input[disabled]
     background-color: $white-gray
+    color: $font-color-defualt
     cursor: not-allowed
 
   .select-wrapper
@@ -341,13 +356,14 @@ a.button
     text-align: center
 
 .badge
-  font-size: 10pt
+  font-size: 9pt
   color: white
-  width: 16px
-  height: 16px
-  padding: 4px
+  width: 14px
+  height: 14px
+  padding: 3px
   text-align: center
   background-color: $color-priority
+  font-weight: $font-light
   +border-radius(13px)
 
 .pop-layer
@@ -405,11 +421,15 @@ a.button
 
 .row
   .col-2-left
-    width: 48%
+    width: 47%
     float: left
+    &.padding
+      width: calc(47% - 40px)
   .col-2-right
-    width: 48%
+    width: 47%
     float: right
+    &.padding
+      width: calc(47% - 40px)
 
 .wrapper
   z-index: 1
@@ -452,6 +472,7 @@ a.button
         background-color: $color-priority
         a
           color: white
+          font-weight: $font-light
 
 .board
   position: relative
@@ -603,7 +624,7 @@ a.button
         position: absolute
         top: 26px
         left: 31px
-        border: 1px solid $color-brand
+        border: 2px solid $color-brand
       .pop-layer
         top: 60px
         left: 0
@@ -676,13 +697,8 @@ a.button
 // ---------- DOCS Demo  ---------- //
 .colorbox
   float: left
-  width: 140px
   margin: 20px
+  width: 180px
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3)
   *
-    font-size: $font-size-small
-    font-weight: normal
     text-align: center
-  .view
-    width: 100%
-    padding: 20px 0
-    margin-bottom: 5px

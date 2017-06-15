@@ -5,40 +5,43 @@ include ../includes/header.pug
   #content.unfolded(name='typography')        
     .board.full-width
       h1.uppercase Typography
-      .devider
-      h2 Titles
-      p.margin h태그는 의미가 아니라 크기에 맞게 사용하시면 됩니다.
-      h1 h1
-      h2 h2
-      h3 h3
-      h4 h4
-      h5 h5
-      h6 h6
-      
-      br
-      br
-      h2 TEXT SIZE
-      p.margin 텍스트 사이즈는 SASS에 변수로 설정되어 있습니다.
-      h3 CSS
-      .text-defualt .text-defualt
-      .text-small .text-small
-      .text-xsmall .text-xsmall
-      h3 SASS
-      .text-defualt .text-defualt
-      .text-small .text-small
-      .text-xsmall .text-xsmall
-      
-      
-      br
-      br
-        
-      h2 TEXT WEIGHT
-      p 텍스트 사이즈는 SASS에 변수로 설정되어 있습니다.
-      .font-thin .font-thin
-      .font-light .font-light
-      .font-normal .font-normal
-      .font-medium .font-medium
-      .font-bold .font-bold
-      br
-      .uppercase .uppercase
-      
+      .devider      
+      .row
+        .col-2-left          
+          h2 Titles
+          p.margin h태그는 의미가 아니라 크기에 맞게 사용하시면 됩니다.
+          h1 h1
+          h2 h2
+          h3 h3
+          h4 h4
+          
+          br
+          br
+          h2 TEXT SIZE
+          p.margin 렌더링 최적화를 위해 pt단위로 설정되어 있습니다.
+          h3.text-gray CSS
+          .text-defualt .text-defualt
+          .text-small .text-small
+          .text-xsmall .text-xsmall
+          br
+          h3.text-gray SASS
+          .text-defualt $font-size-default
+          .text-small $font-size-small
+          .text-xsmall $font-size-xsmall
+          
+        .col-2-right
+          h2 TEXT WEIGHT
+          p.margin 큰 글씨일수록 가벼운 굵기가 어울립니다.
+          .font-thin .font-thin
+          .font-light .font-light
+          .font-normal .font-normal
+          .font-medium .font-medium
+          .font-bold .font-bold
+          br
+          br
+          h2.margin TEXT transform
+          .uppercase .uppercase
+          .lowercase .lowercase
+          .capitalize .capitalize
+          .no-transform .no-transform
+    

@@ -6,4 +6,54 @@ include ../includes/header.pug
     .board.full-width
       h1.uppercase form controls
       .devider
-        
+      .content-wrapper
+        .form-group
+          label INPUT BOX
+          input(type='text', placeholder='Place Holder')
+        .form-group
+          label
+            | TOOLTIP
+            .tooltip.icon           
+              .desc 도움이 될만한 팁을 여기에 적어주세요. 한줄 또는 여러줄도 가능합니다.              
+                a(href='#').link 링크
+                | 도 활용 가능합니다.
+          input(type='text', placeholder='Place Holder')            
+        .form-group
+          label INNER BUTTON
+          input(type='text', placeholder='Place Holder')
+          .inner-text-wrapper
+            a.inner-text.link(href='javascript:') button
+        .form-group
+          label INNER TEXT
+          input(type='text', placeholder='Place Holder')
+          .inner-text-wrapper
+            .inner-text.link(href='javascript:') text here
+        .form-group
+          label DISABLED INPUT BOX
+          input(type='text', value='Some delicate data value here', disabled)
+        .form-group
+          label INLINE LABEL
+          .form-inline
+            label LABEL
+            input(type='text', placeholder='Place Holder')
+        .form-group          
+          label TEXT AREA
+          textarea(rows='4', placeholder='Place Holder')
+        .form-group
+          .form-group.col-2-right
+            label 
+              | SELECT BOX     
+            .select-wrapper
+              select
+                option option 1
+                option option 2
+                option option 3
+                option option 4
+        .row
+          .form-group.col-2-left
+            label LEFT COLUM
+            input(type='text', placeholder='Place Holder')
+          .form-group.col-2-right
+            label RIGHT COLUM
+            input(type='text', placeholder='Place Holder')
+          .clear-fix

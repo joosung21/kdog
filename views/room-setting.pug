@@ -4,7 +4,7 @@ include includes/header.pug
   
   #content.unfolded(name='room-manage')
     #sub-menu
-      h5.title 
+      h4.title 
         img.icon(src='/images/icons/door-black.svg')
         | 객실타입
       ul
@@ -20,7 +20,7 @@ include includes/header.pug
           a.link.text-small(href='javascript:') + 객실타입추가
     .board
       .title-bar
-        h5 디럭스룸
+        h4 디럭스룸
       .sub-left
         ul
           li
@@ -36,7 +36,7 @@ include includes/header.pug
             .form-group.col-2-right
               label 
                 | 형태
-                .qbtn.icon                  
+                .tooltip.icon                  
                   .desc 도미토리는 침대별 재고관리가 가능합니다.
               .select-wrapper
                 select
@@ -56,23 +56,28 @@ include includes/header.pug
               .form-inline.bottom-collapse
                 label 객실1
                 input(type='text', value='101호')
-                a.inner-text.link.text-small(href='javascript:') 삭제
+                .inner-text-wrapper
+                  a.inner-text.link.text-small(href='javascript:') 삭제
               .form-inline.bottom-collapse
                 label 객실2
                 input(type='text', placeholder='번호나 이름')
-                a.inner-text.link.text-small(href='javascript:') 삭제
+                .inner-text-wrapper
+                  a.inner-text.link.text-small(href='javascript:') 삭제
               .form-inline.bottom-collapse
                 label 객실3
                 input(type='text', placeholder='번호나 이름')
-                a.inner-text.link.text-small(href='javascript:') 삭제
+                .inner-text-wrapper
+                  a.inner-text.link.text-small(href='javascript:') 삭제
               .form-inline.bottom-collapse
                 label 객실4
                 input(type='text', placeholder='번호나 이름')
-                a.inner-text.link.text-small(href='javascript:') 삭제
+                .inner-text-wrapper
+                  a.inner-text.link.text-small(href='javascript:') 삭제
               .form-inline
                 label 객실5
                 input(type='text', placeholder='번호나 이름')
-                a.inner-text.link.text-small(href='javascript:') 삭제
+                .inner-text-wrapper
+                  a.inner-text.link.text-small(href='javascript:') 삭제
           .devider
           .row
             .form-group.col-2-left
@@ -112,10 +117,12 @@ include includes/header.pug
               .form-inline.bottom-collapse
                 label.text-red 금요일
                 input(type='text', value='₩180,000')
-                .inner-text.text-small +60,000
+                .inner-text-wrapper
+                  .inner-text.text-small +60,000
               .form-inline.bottom-collapse
                 label.text-red 토요일
                 input(type='text', value='₩180,000')
-                .inner-text.text-small +60,000                
+                .inner-text-wrapper
+                  .inner-text.text-small +60,000                
           .devider
           a.button.full-width(href='#') 저장하기
