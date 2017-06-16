@@ -7,6 +7,14 @@ function foldNav(){
   $('#content').toggleClass('unfolded');
 }
 
+function openModal(id){
+  console.log(id)
+   $(id).show();
+}
+function closeModal(){
+  console.log('close')
+  $('.modal').hide()
+}
 
 $( document ).ready(function() {
 
@@ -14,6 +22,9 @@ $( document ).ready(function() {
     $('#notice-layer').hide();
     $('#globe-layer').hide();
     $('#account-layer').hide();
+
+    // Hide Modals
+    // $('.modal').hide();
 
     // Toggle Top menu layers
     $('.toptab.notice').click(function(){
@@ -30,7 +41,7 @@ $( document ).ready(function() {
     });
 
     // Left Nav Active
-    $('#leftnav > li').each(function(){      
+    $('#leftnav > li').each(function(){
       var thisPage = $('#content').attr('name');
       if ($(this).hasClass(thisPage)) {
         $(this).addClass('active');

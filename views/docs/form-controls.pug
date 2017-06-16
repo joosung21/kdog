@@ -7,12 +7,12 @@ include ../includes/header.pug
       h1.uppercase form controls
       .devider
       .content-wrapper
+        h2.margin Input box
         .form-group
-          label INPUT BOX
+          label DEFAULT INPUT BOX
           input(type='text', value='', placeholder='Place Holder')
         .form-group
-          label
-            | TOOLTIP
+          label TOOLTIP
             .tooltip.icon           
               .desc 도움이 될만한 팁을 여기에 적어주세요. 한줄 또는 여러줄도 가능합니다.              
                 a(href='#').link 링크
@@ -31,29 +31,74 @@ include ../includes/header.pug
         .form-group
           label DISABLED INPUT BOX
           input(type='text', value='Some delicate data value here', disabled)
+      
+        .devider
+            
+        h2.margin Select box
         .form-group
-          label INLINE LABEL
-          .form-inline
-            label LABEL
-            input(type='text', value='', placeholder='Place Holder')
-        .form-group          
-          label TEXT AREA
-          textarea(rows='4', value='', placeholder='Place Holder')
-        .form-group
-          .form-group.col-2-right
-            label 
-              | SELECT BOX     
+          .form-group
+            label LABEL  
             .select-wrapper
               select
                 option option 1
                 option option 2
                 option option 3
                 option option 4
+        
+        .devider
+        
+        h2.margin Text area
+        .form-group          
+          label LABEL
+          textarea(rows='4', value='', placeholder='Place Holder')
+            
+        .devider
+        
+        h2.margin Boxed label - Full width
+        .form-group          
+          .box-label
+            label INPUT
+            input(type='text', value='', placeholder='Place Holder')
+        .form-group          
+          .box-label
+            label SELECT
+            .select-wrapper
+              select
+                option option 1
+                option option 2
+                option option 3
+                option option 4
+        
+        .devider
+        
+        h2.margin Colum example
         .row
           .form-group.col-2-left
-            label LEFT COLUM
+            label LEFT
             input(type='text', value='', placeholder='Place Holder')
           .form-group.col-2-right
-            label RIGHT COLUM
+            label RIGHT
             input(type='text', value='', placeholder='Place Holder')
           .clear-fix
+        
+        .devider
+        
+        h2.margin inline form group
+        .form-group.form-inline
+          label INPUT
+          input(type='text', value='', placeholder='Place Holder')          
+          a.btn BUTTON
+        .form-group.form-inline
+          label SELECT
+          .select-wrapper
+            select
+              option option 1
+              option option 2
+              option option 3
+              option option 4
+          a.btn BUTTON
+        .form-group.form-inline
+          label LABEL
+          input(type='text', value='', size='50', placeholder='size="50"')
+          a.btn BUTTON          
+                   

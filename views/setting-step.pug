@@ -25,7 +25,7 @@ include includes/header.pug
               td 010-2268-5399
               td 관리자
               td.text-right
-                a.btn.btn-small.btn-white 
+                a.btn.btn-xsmall.btn-white(onclick='openModal("#step-update")')
                   i.fa.fa-pencil
                   span 수정
             tr
@@ -34,7 +34,52 @@ include includes/header.pug
               td 010-3006-7889
               td 스탭
               td.text-right
-                a.btn.btn-small.btn-white 
+                a.btn.btn-xsmall.btn-white 
                   i.fa.fa-pencil
                   span 수정
+        .text-right
+          a.btn.btn-small.float
+            i.fa.fa-plus
+            span 새로운 스탭 추가
             
+#step-update.modal
+  .modal-board
+    .modal-header 
+      h4.tigle 스탭 업데이트      
+        a.close(href='javascript:closeModal()')
+          img(src='/images/icons/close-x.svg')
+    .modal-body
+      .row
+        .form-group.col-2-left
+          label 이름
+          input(type='text', value='안주성')
+        .form-group.col-2-right
+          label 연락처
+          input(type='text', value='010-2268-5399')
+        .clear-fix
+      .form-group
+        label 이메일
+        input(type='email', value='jay.ahn@tport.io')
+      
+      .devider
+      .form-group.form-inline
+        span(style='width:350px') 해당 스탭이 비밀번호를 잊으셨나요?
+        span(style='width:170px')
+          a.btn.btn-small.btn-dark.full-width
+            i.fa.fa-key
+            span 재설정 메일 보내기
+      .devider
+      .row
+        .col-2-right
+          .form-group
+            label 스탭관리 메뉴
+            .select-wrapper
+              select
+                option 접근불가
+                option 보기가능
+                option 수정가능
+        .clear-fix
+        
+            
+    .modal-footer 모달푸터
+    

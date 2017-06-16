@@ -3,7 +3,7 @@ var app = express()
 var pug = require('pug')
 app.set('views', './views')
 app.set('view engine', 'pug')
-app.locals.pretty = true
+// app.locals.pretty = true
 app.use('/', express.static('public'))
 app.use('/assets/', express.static('assets'))
 
@@ -23,8 +23,6 @@ app.get('/docs/colors', function (req, res){res.render('docs/colors')})
 app.get('/docs/typography', function (req, res){res.render('docs/typography')})
 app.get('/docs/elements', function (req, res){res.render('docs/elements')})
 app.get('/docs/form-controls', function (req, res){res.render('docs/form-controls')})
-
-
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
