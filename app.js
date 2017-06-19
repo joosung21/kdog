@@ -9,7 +9,10 @@ app.use('/assets/', express.static('assets'))
 
 app.get('/', function (req, res){res.render('room-setting')})
 
-app.get('/login', function (req, res){res.render('room-setting')})
+app.get('/login', function (req, res){res.render('login')})
+app.get('/join-01', function (req, res){res.render('join-01')})
+app.get('/join-02', function (req, res){res.render('join-02')})
+app.get('/join-03', function (req, res){res.render('join-03')})
 
 app.get('/room-manage/', function (req, res){res.render('room-setting')})
 

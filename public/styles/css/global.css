@@ -179,7 +179,8 @@ h4 {
   font-weight: 500; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  cursor: pointer; }
   a.link {
     color: #3BC9DB; }
     a.link:hover {
@@ -202,7 +203,7 @@ ul, li {
   vertical-align: middle;
   padding-right: 0.5em; }
 
-.noselect, a.btn, #sub-menu ul li, #topbar .right-wrapper .toptab, #leftnav {
+.noselect, input[type="checkbox"] + label, input[type="radio"] + label, a.btn, #sub-menu ul li, #topbar .right-wrapper .toptab, #leftnav {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -270,7 +271,7 @@ span.empty {
     color: rgba(73, 80, 87, 0.7); }
   .form-group.form-inline a span {
     color: inherit; }
-  .form-group.form-inline input {
+  .form-group.form-inline input[type='text'], .form-group.form-inline input[type='email'], .form-group.form-inline input[type='password'], .form-group.form-inline input[type='number'] {
     display: inline-block;
     width: auto; }
   .form-group.form-inline .select-wrapper {
@@ -292,7 +293,7 @@ span.empty {
       padding: 14px 12px 14px 12px;
       overflow-x: hidden;
       text-align: center; }
-    .form-group .box-label input {
+    .form-group .box-label input[type='text'], .form-group .box-label input[type='email'], .form-group .box-label input[type='password'], .form-group .box-label input[type='number'] {
       margin-left: 75px;
       width: calc(100% - 101px); }
     .form-group .box-label .select-wrapper {
@@ -318,35 +319,35 @@ span.empty {
     padding-left: 4px;
     height: 1em;
     font-size: 9pt; }
-  .form-group input, .form-group select, .form-group button, .form-group textarea {
+  .form-group input[type='text'], .form-group input[type='email'], .form-group input[type='password'], .form-group input[type='number'], .form-group select, .form-group button, .form-group textarea {
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
     margin: 0;
     padding: 0;
     color: rgba(73, 80, 87, 0.7); }
-  .form-group input, .form-group textarea {
+  .form-group input[type='text'], .form-group input[type='email'], .form-group input[type='password'], .form-group input[type='number'], .form-group textarea {
     width: calc(100% - 26px);
     padding: 12px 12px 10px 12px;
     border: 1px solid #C9D3DC; }
-    .form-group input::placeholder, .form-group textarea::placeholder {
+    .form-group input[type='text']::placeholder, .form-group input[type='email']::placeholder, .form-group input[type='password']::placeholder, .form-group input[type='number']::placeholder, .form-group textarea::placeholder {
       color: #C9D3DC;
       font-weight: 300; }
-    .form-group input::-webkit-input-placeholder, .form-group textarea::-webkit-input-placeholder {
+    .form-group input[type='text']::-webkit-input-placeholder, .form-group input[type='email']::-webkit-input-placeholder, .form-group input[type='password']::-webkit-input-placeholder, .form-group input[type='number']::-webkit-input-placeholder, .form-group textarea::-webkit-input-placeholder {
       color: #C9D3DC;
       font-weight: 300; }
-    .form-group input::-moz-placeholder, .form-group textarea::-moz-placeholder {
+    .form-group input[type='text']::-moz-placeholder, .form-group input[type='email']::-moz-placeholder, .form-group input[type='password']::-moz-placeholder, .form-group input[type='number']::-moz-placeholder, .form-group textarea::-moz-placeholder {
       color: #C9D3DC;
       font-weight: 300; }
-    .form-group input:-ms-input-placeholder, .form-group textarea:-ms-input-placeholder {
+    .form-group input[type='text']:-ms-input-placeholder, .form-group input[type='email']:-ms-input-placeholder, .form-group input[type='password']:-ms-input-placeholder, .form-group input[type='number']:-ms-input-placeholder, .form-group textarea:-ms-input-placeholder {
       color: #C9D3DC;
       font-weight: 300; }
-    .form-group input:-moz-placeholder, .form-group textarea:-moz-placeholder {
+    .form-group input[type='text']:-moz-placeholder, .form-group input[type='email']:-moz-placeholder, .form-group input[type='password']:-moz-placeholder, .form-group input[type='number']:-moz-placeholder, .form-group textarea:-moz-placeholder {
       color: #C9D3DC;
       font-weight: 300; }
-  .form-group input {
+  .form-group input[type='text'], .form-group input[type='email'], .form-group input[type='password'], .form-group input[type='number'] {
     height: 18px; }
-  .form-group input:focus, .form-group textarea:focus {
+  .form-group input[type='text']:focus, .form-group input[type='email']:focus, .form-group input[type='password']:focus, .form-group input[type='number']:focus, .form-group textarea:focus {
     border: 2px solid #FD7E14;
     padding: 11px 11px 9px 11px; }
   .form-group input[disabled] {
@@ -356,9 +357,10 @@ span.empty {
   .form-group .select-wrapper {
     background: url(/images/icons/triangle.svg) no-repeat right 15px center;
     height: 1em;
-    padding: 11px 11px 15px 11px;
+    padding: 13px 11px 13px 11px;
     overflow: hidden;
-    border: 1px solid #C9D3DC; }
+    border: 1px solid #C9D3DC;
+    background-color: white; }
   .form-group .select-wrapper select {
     margin: 0;
     padding: 0;
@@ -367,6 +369,56 @@ span.empty {
     font-size: 11pt;
     width: 100%;
     font-size: 11pt; }
+  .form-group .counter {
+    display: block;
+    position: relative;
+    top: 3px;
+    text-align: right;
+    font-size: 9pt;
+    height: 0; }
+
+input[type="checkbox"] {
+  display: none; }
+  input[type="checkbox"] + label {
+    cursor: pointer;
+    margin-right: 2em; }
+    input[type="checkbox"] + label span {
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      margin: -3px 6px 0 0;
+      vertical-align: middle;
+      border: 1px solid #C9D3DC;
+      cursor: pointer;
+      background-color: white !important; }
+  input[type="checkbox"] + label:hover span {
+    background: url(/images/icons/checked-hover.svg) 3px 3px no-repeat; }
+  input[type="checkbox"]:checked + label span {
+    background: url(/images/icons/checked.svg) 3px 3px no-repeat; }
+input[type="radio"] {
+  display: none; }
+  input[type="radio"] + label {
+    cursor: pointer;
+    margin-right: 2em; }
+    input[type="radio"] + label span {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      margin: -3px 6px 0 0;
+      vertical-align: middle;
+      border: 1px solid #C9D3DC;
+      border-radius: 9px;
+      cursor: pointer;
+      background-color: white !important; }
+  input[type="radio"] + label:hover span {
+    background: url(/images/icons/checked-hover.svg) 3px 4px no-repeat; }
+  input[type="radio"]:checked + label span {
+    background: url(/images/icons/checked.svg) 3px 4px no-repeat; }
+
+.readonly-textbox {
+  width: 100%; }
+  .readonly-textbox pre {
+    width: 100%; }
 
 a.btn {
   color: white;
@@ -374,7 +426,7 @@ a.btn {
   vertical-align: middle;
   background-color: #FD7E14;
   border: 1px solid #FD7E14;
-  padding: 11px 16px;
+  padding: 11px 26px;
   font-size: 11pt;
   font-weight: 300;
   cursor: pointer; }
@@ -414,9 +466,10 @@ a.btn {
       background-color: #e8ebef; }
   a.btn.btn-dark {
     background-color: #59626a;
-    border-color: #59626a; }
+    border-color: #59626a;
+    color: #cccccc; }
     a.btn.btn-dark:hover {
-      background-color: #4e555d; }
+      background-color: #555d65; }
   a.btn.btn-small {
     padding: 8px 10px 6px 10px;
     font-size: 10pt; }
@@ -722,6 +775,7 @@ a.btn {
         #topbar .left-wrapper .search-box:focus:-moz-placeholder {
           color: rgba(255, 255, 255, 0.4); }
   #topbar .right-wrapper {
+    position: relative;
     float: right;
     min-width: 400px; }
     #topbar .right-wrapper .toptab {
@@ -739,7 +793,8 @@ a.btn {
         height: 24px;
         color: rgba(255, 255, 255, 0.8);
         background: url(/images/icons/male.svg) no-repeat 15px 17px;
-        padding: 22px 20px 14px 45px; }
+        padding: 22px 20px 14px 45px;
+        cursor: pointer; }
       #topbar .right-wrapper .toptab:hover, #topbar .right-wrapper .toptab.active {
         background-color: rgba(0, 0, 0, 0.05); }
       #topbar .right-wrapper .toptab > .badge {
@@ -747,15 +802,18 @@ a.btn {
         top: 26px;
         left: 31px;
         border: 2px solid #D9480F; }
-      #topbar .right-wrapper .toptab .pop-layer {
-        top: 60px;
-        left: 0; }
-        #topbar .right-wrapper .toptab .pop-layer.listbox > li {
-          width: 192px;
-          padding: 18px 20px 16px 20px; }
-      #topbar .right-wrapper .toptab.account .pop-layer {
-        left: -50px;
-        width: 162px; }
+    #topbar .right-wrapper .pop-layer {
+      display: none;
+      top: 60px;
+      right: 2px;
+      cursor: pointer; }
+      #topbar .right-wrapper .pop-layer.show {
+        display: block; }
+      #topbar .right-wrapper .pop-layer.listbox > li {
+        width: 192px;
+        padding: 18px 20px 16px 20px; }
+      #topbar .right-wrapper .pop-layer#notice-layer {
+        right: 60px; }
 
 #leftnav {
   position: absolute;
@@ -811,6 +869,60 @@ a.btn {
     text-align: center;
     float: none;
     font-size: 11pt; }
+
+body.login {
+  background-color: #D9480F; }
+
+.login-wrapper {
+  position: relative;
+  width: 420px;
+  margin: 200px auto 0 auto; }
+  .login-wrapper::before {
+    position: absolute;
+    top: -15px;
+    left: -140px;
+    display: block;
+    content: url("/images/logo.png"); }
+  .login-wrapper h1 {
+    color: white;
+    font-weight: 100; }
+  .login-wrapper .form-group label, .login-wrapper .form-group .counter {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300; }
+  .login-wrapper .btn-white {
+    width: 140px;
+    text-align: center; }
+  .login-wrapper .outer-login-button {
+    text-align: left;
+    padding: 0 0 0 0;
+    width: 200px; }
+    .login-wrapper .outer-login-button img {
+      width: 30px;
+      padding: 7px;
+      margin-right: 10px;
+      vertical-align: middle;
+      border-right: 1px solid #F1F3F5; }
+    .login-wrapper .outer-login-button span {
+      position: relative;
+      top: 2px;
+      color: rgba(73, 80, 87, 0.5);
+      font-size: 10pt; }
+  .login-wrapper a.link {
+    font-weight: 300; }
+    .login-wrapper a.link i.fa {
+      margin-right: 3px;
+      color: rgba(255, 255, 255, 0.7); }
+    .login-wrapper a.link span {
+      color: rgba(255, 255, 255, 0.7); }
+  .login-wrapper a.find-password {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    font-size: 10pt; }
+  .login-wrapper .devider {
+    border-color: rgba(255, 255, 255, 0.2); }
+  .login-wrapper input[type="checkbox"] + label {
+    color: rgba(255, 255, 255, 0.7); }
 
 .step-update .select-list .col-2-left {
   padding-top: 12px;

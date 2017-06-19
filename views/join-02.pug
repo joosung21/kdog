@@ -1,0 +1,65 @@
+include includes/header.pug
+body(class='login')
+  .login-wrapper 
+    h1.margin 회원가입
+    .row
+      .col-2-left
+        .form-group
+          label 관리자 이름
+          input(type='text')
+      .col-2-right
+        .form-group
+          label 연락처
+          input(type='text')
+      .clear-fix
+    .form-group
+      label 이메일 주소
+      input(type='email', placeholder='email@example.com')
+    .row
+      .col-2-left
+        .form-group
+          label 비밀번호
+          input(type='password')
+          .counter 0/30
+      .col-2-right
+        .form-group
+          label 비밀번호 확인
+          input(type='password')          
+      .clear-fix
+    .devider
+    .row
+      .col-2-left(style='width:300px')
+        input#c1(type='checkbox', name='cc')
+        label(for='c1')
+          span
+          | 서비스이용약관에 동의합니다.
+      .col-2-right.text-right(style='width:100px')
+        a.link
+          i.fa.fa-sort
+          span 약관보기
+      .clear-fix
+      .readonly-textbox
+        pre.
+            자리 서비스이용약관    2015년 2월 2일
+            제1조 (목적) 이 약관은 (주)자리웍스(이하 “회사”)가  제공하는 인터넷관련 서비스(이하 “서비스”)를 이용함에 있어 회사와 이용자(이하 “파트너”)의 권리·의무 및 책임사항을 규정함을 목적으로 합니다.
+            제2조 (정의)
+            “자리”란 파트너의 숙박업소를 이용하려는 자가 파트너의 홈페이지에서 예약 및 결제할 수 있도록 회사가 파트너에게 예약이 가능한 페이지를 제공하고, 예약 및 결제서비스, 예약대행, 데이터 분석 기능을 제공하는 프로그램을 홈페이지에 설치하는 등 회사가 파트너에게 제공하는 
+    .margin
+    .row
+      .col-2-left(style='width:300px')
+        input#c2(type='checkbox', name='cc')
+        label(for='c2')
+          span
+          | 개인정보이용약관에 동의합니다.
+      .col-2-right.text-right(style='width:100px')
+        a.link
+          i.fa.fa-sort
+          span 약관보기
+      .clear-fix
+      
+        
+    
+    .margin-2x    
+    a.btn.btn-white(href='/join-02') 다음으로
+    span.empty
+    a.btn.btn-dark(href='/login') 취소하기

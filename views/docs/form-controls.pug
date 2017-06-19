@@ -100,5 +100,26 @@ include ../includes/header.pug
         .form-group.form-inline
           label LABEL
           input(type='text', value='', size='50', placeholder='size="50"')
-          a.btn BUTTON          
+          a.btn BUTTON 
+        
+        .devider
+        h2.margin Check-Box / Radio-Box
+        input#c1(type='checkbox', name='cc', checked)
+        label(for='c1')
+          span
+          | 체크박스 1
+        input#c2(type='checkbox', name='cc')
+        label(for='c2')
+          span
+          | 체크박스 2
+        input#r1(type='radio', name='rr', checked)
+        label(for='r1')
+          span
+          | 라디오박스 1
+        input#r2(type='radio', name='rr')
+        label(for='r2')
+          span
+          | 라디오박스 2
+          
+        .margin-2x
                    

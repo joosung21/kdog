@@ -1,3 +1,27 @@
 include includes/header.pug
-.wrapper
-  include includes/leftnav.pug
+body(class='login')
+  .login-wrapper 
+    h1.margin 로그인
+    .form-group
+      label 이메일 주소
+      input(type='email', placeholder='email@example.com')
+    .form-group
+      label 비밀번호
+      input(type='password')
+    .margin-2x
+    .margin-2x
+      a.btn.btn-white(href='/') 로그인
+      span.empty
+      a.btn.btn-dark(href='/join-01') 회원가입
+      a.link.find-password(href='#')
+        i.fa.fa-key.fa-lg
+        span 비밀번호 찾기
+    .devider     
+    .margin  
+    a.btn.btn-white.outer-login-button
+      img(src='/images/naver.png')
+      span 네이버 아이디로 로그인
+    span.empty
+    a.btn.btn-white.outer-login-button
+      img(src='/images/google.png')
+      span 구글 아이디로 로그인

@@ -16,26 +16,33 @@ function closeModal(){
 
 $( document ).ready(function() {
 
-    // Hide Top menu layers
-    $('#notice-layer').hide();
-    $('#globe-layer').hide();
-    $('#account-layer').hide();
-
     // Hide Modals
     // $('.modal').hide();
 
-    // Toggle Top menu layers
+    // Open Top menu layers
     $('.toptab.notice').click(function(){
-        $(this).toggleClass("active");
-        $('#notice-layer').toggle();
+      if($('#notice-layer').hasClass('show') == false){
+        $('.right-wrapper .pop-layer').removeClass('show');
+        $('#notice-layer').addClass('show');
+      } else {
+        $('#notice-layer').removeClass('show');
+      }
     });
     $('.toptab.globe').click(function(){
-        $(this).toggleClass("active");
-        $('#globe-layer').toggle();
+      if($('#globe-layer').hasClass('show') == false){
+        $('.right-wrapper .pop-layer').removeClass('show');
+        $('#globe-layer').addClass('show');
+      } else {
+        $('#globe-layer').removeClass('show');
+      }
     });
     $('.toptab.account').click(function(){
-        $(this).toggleClass("active");
-        $('#account-layer').toggle();
+      if($('#account-layer').hasClass('show') == false){
+        $('.right-wrapper .pop-layer').removeClass('show');
+        $('#account-layer').addClass('show');
+      } else {
+        $('#account-layer').removeClass('show');
+      }
     });
 
     // Left Nav Active

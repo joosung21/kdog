@@ -197,6 +197,7 @@ h4
   font-weight: $font-medium
 a
   text-decoration: none
+  cursor: pointer
   &.link
     color: $color-reverse
     &:hover
@@ -283,7 +284,7 @@ span.empty
     a
       span
         color: inherit
-    input
+    input[type='text'], input[type='email'], input[type='password'], input[type='number']
       display: inline-block
       width: auto
     .select-wrapper
@@ -305,7 +306,7 @@ span.empty
       padding: 14px 12px 14px 12px
       overflow-x: hidden
       text-align: center
-    input
+    input[type='text'], input[type='email'], input[type='password'], input[type='number']
       margin-left: 75px
       width: calc(100% - 101px)
     .select-wrapper
@@ -333,7 +334,7 @@ span.empty
     height: 1em
     font-size: $font-size-xsmall
 
-  input, select, button, textarea
+  input[type='text'], input[type='email'], input[type='password'], input[type='number'], select, button, textarea
     -moz-appearance: none
     -webkit-appearance: none
     appearance: none
@@ -341,7 +342,7 @@ span.empty
     padding: 0
     color: $font-color-thic
 
-  input, textarea
+  input[type='text'], input[type='email'], input[type='password'], input[type='number'], textarea
     width: calc(100% - 26px)
     padding: 12px 12px 10px 12px
     border: 1px solid $gray
@@ -360,10 +361,10 @@ span.empty
     &:-moz-placeholder
       color: $gray
       font-weight: $font-light
-  input
+  input[type='text'], input[type='email'], input[type='password'], input[type='number']
     height: 18px
 
-  input:focus, textarea:focus
+  input[type='text']:focus, input[type='email']:focus, input[type='password']:focus, input[type='number']:focus, textarea:focus
     border: 2px solid $color-priority
     padding: 11px 11px 9px 11px
   input[disabled]
@@ -374,9 +375,10 @@ span.empty
   .select-wrapper
     background: url(/images/icons/triangle.svg) no-repeat right 15px center
     height: 1em
-    padding: 11px 11px 15px 11px
+    padding: 13px 11px 13px 11px
     overflow: hidden
     border: 1px solid $gray
+    background-color: white
 
   .select-wrapper select
     margin: 0
@@ -386,6 +388,64 @@ span.empty
     font-size: $font-size-default
     width: 100%
     font-size: $font-size-default
+
+  .counter
+    display: block
+    position: relative
+    top: 3px
+    text-align: right
+    font-size: 9pt
+    height: 0
+
+input
+  &[type="checkbox"]
+    display: none
+    + label
+      @extend .noselect
+      cursor: pointer
+      margin-right: 2em
+      span
+        display: inline-block
+        width: 17px
+        height: 17px
+        margin: -3px 6px 0 0
+        vertical-align: middle
+        border: 1px solid $gray
+        cursor: pointer
+        background-color: white !important
+    + label:hover
+      span
+        background: url(/images/icons/checked-hover.svg) 3px 3px no-repeat
+    &:checked + label span
+      background: url(/images/icons/checked.svg) 3px 3px no-repeat
+  &[type="radio"]
+    display: none
+    + label
+      @extend .noselect
+      cursor: pointer
+      margin-right: 2em
+      span
+        display: inline-block
+        width: 18px
+        height: 18px
+        margin: -3px 6px 0 0
+        vertical-align: middle
+        border: 1px solid $gray
+        border-radius: 9px
+        cursor: pointer
+        background-color: white !important
+    + label:hover
+      span
+        background: url(/images/icons/checked-hover.svg) 3px 4px no-repeat
+    &:checked + label span
+      background: url(/images/icons/checked.svg) 3px 4px no-repeat
+
+.readonly-textbox
+  width: 100%
+  
+  pre
+    width: 100%
+
 
 
 
@@ -400,7 +460,7 @@ a.btn
   vertical-align: middle
   background-color: $color-priority
   border: 1px solid $color-priority
-  padding: 11px 16px
+  padding: 11px 26px
   font-size: $font-size-default
   font-weight: $font-light
   cursor: pointer
@@ -439,8 +499,9 @@ a.btn
   &.btn-dark
     background-color: lighten($color-dark, 7%)
     border-color: lighten($color-dark, 7%)
+    color: darken(white, 20%)
     &:hover
-      background-color: lighten($color-dark, 2%)
+      background-color: lighten($color-dark, 5%)
   &.btn-small
     padding: 8px 10px 6px 10px
     font-size: $font-size-small
@@ -746,9 +807,9 @@ a.btn
           color: $placeholder-color
 
   .right-wrapper
+    position: relative
     float: right
     min-width: 400px
-
     .toptab
       position: relative
       display: block
@@ -766,6 +827,7 @@ a.btn
         color: rgba(255, 255, 255, 0.8)
         background: url(/images/icons/male.svg) no-repeat 15px 17px
         padding: 22px 20px 14px 45px
+        cursor: pointer
       &:hover, &.active
         +darker-background(0.05)
       > .badge
@@ -773,16 +835,18 @@ a.btn
         top: 26px
         left: 31px
         border: 2px solid $color-brand
-      .pop-layer
-        top: 60px
-        left: 0
-        &.listbox > li
-          width: 192px
-          padding: 18px 20px 16px 20px
-      &.account .pop-layer
-        left: -50px
-        width: 162px
-        .icon
+    .pop-layer
+      display: none
+      top: 60px
+      right: 2px
+      cursor: pointer
+      &.show
+        display: block
+      &.listbox > li
+        width: 192px
+        padding: 18px 20px 16px 20px
+      &#notice-layer
+        right: 60px
 
 #leftnav
   @extend .noselect
@@ -840,6 +904,66 @@ a.btn
       text-align: center
       float: none
       font-size: $font-size-default
+
+// login Page
+body.login
+  background-color: $color-brand
+.login-wrapper
+  position: relative
+  // width: 560px
+  width: 420px
+  margin: 200px auto 0 auto
+  &::before
+    position: absolute
+    top: -15px
+    left: -140px
+    display: block
+    content: url('/images/logo.png')
+  h1
+    color: white
+    font-weight: $font-thin
+  .form-group
+    label, .counter
+      color: rgba(white, 0.7)
+      font-weight: $font-light
+  .btn-white
+    width: 140px
+    text-align: center
+  .outer-login-button
+    text-align: left
+    padding: 0 0 0 0
+    width: 200px
+    img
+      width: 30px
+      padding: 7px
+      margin-right: 10px
+      vertical-align: middle
+      border-right: 1px solid $white-gray
+    span
+      position: relative
+      top: 2px
+      color: $font-color-defualt
+      font-size: $font-size-small
+  a.link
+    font-weight: $font-light
+    i.fa
+      margin-right: 3px
+      color: rgba(white, 0.7)
+    span
+      color: rgba(white, 0.7)
+  a.find-password
+    position: absolute
+    right: 0
+    top: 10px
+    font-size: $font-size-small
+
+  .devider
+    border-color: rgba(white, 0.2)
+
+  input
+    &[type="checkbox"]
+      + label
+        color: rgba(white, 0.7)
 
 // step-update Page
 .step-update

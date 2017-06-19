@@ -1,0 +1,46 @@
+include includes/header.pug
+body(class='login')
+  .login-wrapper 
+    h1.margin 회원가입
+    .form-group
+      label 숙소시설 이름
+      input(type='text')
+      .counter 0/30
+    .form-group
+      label 위치/국가
+      .select-wrapper
+        select
+          option 대한민국
+          option 미국
+          option 중국
+          option 일본
+    .form-group
+      label 숙박시설 주소
+      input(type='text')
+    .row
+      .col-2-left
+        .form-group
+          label 숙소형태
+          .select-wrapper
+            select
+              option 호텔
+              option 게스트하우스
+              option 펜션
+              option 모텔
+              option 리조트
+              option 캠핑장        
+      .col-2-right
+        .form-group
+          label 객실규모
+          .select-wrapper
+            select
+              option 9개 이하
+              option 10-49 객실
+              option 50-99 객실
+              option 100개 이상
+      .clear-fix    
+            
+    .margin-2x    
+    a.btn.btn-white(href='/join-02') 다음으로
+    span.empty
+    a.btn.btn-dark(href='/login') 취소하기
