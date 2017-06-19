@@ -251,14 +251,16 @@ ul,li
   clear: both
   width: 100%
   border-bottom: 1px solid $white-gray
-  margin-top: 20px
+  margin-top: 28px
   margin-bottom: 28px
   &.end-page
     padding-top: 48px
 .spacing
   clear: both
   padding: 20px
-
+span.empty
+  display: inline-block
+  width: 1em
 
 
 // ---------- FORM CONTROLS  ---------- //
@@ -390,6 +392,7 @@ ul,li
 // ---------- COMPONETS  ---------- //
 
 a.btn
+  @extend .noselect
   color: white
   *
     color: white
@@ -408,6 +411,9 @@ a.btn
   &.full-width
     display: block
     text-align: center
+  &.btn-long
+    width: 400px
+    text-align: center
   &.btn-white
     color: $font-color-thic
     *
@@ -419,11 +425,22 @@ a.btn
       color: $font-color-thic
     &:hover
       background-color: darken(white, 5%)
-  &.btn-dark
-    background-color: $color-dark
-    border-color: $color-dark
+  &.btn-white-gray
+    color: $font-color-defualt
+    *
+      color: $font-color-defualt
+    background: $white-gray
+    border-color: $white-gray
+    font-weight: $font-normal
+    i.fa
+      color: $font-color-defualt
     &:hover
-      background-color: lighten($color-dark, 5%)
+      background-color: darken($white-gray, 3%)
+  &.btn-dark
+    background-color: lighten($color-dark, 7%)
+    border-color: lighten($color-dark, 7%)
+    &:hover
+      background-color: lighten($color-dark, 2%)
   &.btn-small
     padding: 8px 10px 6px 10px
     font-size: $font-size-small
@@ -538,13 +555,21 @@ a.btn
         float: right
     .modal-body
       min-height: 200px
-      padding: 40px
+      padding: 40px 40px 0 40px
+      margin-bottom: 40px
     .modal-footer
       padding: 20px
       border-top: 1px solid $white-gray
 
-
-
+.info
+  opacity: 0.7
+  font-weight: $font-light
+  background: $color-reverse
+  padding: 20px
+  color: white
+  i.fa
+    color: white
+    padding-right: 10px
 
 
 // ---------- LAYOUTS  ---------- //
@@ -815,6 +840,17 @@ a.btn
       text-align: center
       float: none
       font-size: $font-size-default
+
+// step-update Page
+.step-update
+  .select-list
+    .col-2-left
+      padding-top: 12px
+      color: $font-color-thic
+    .col-2-right
+      width: 200px
+      .form-group
+        margin-bottom: 0
 
 
 // ---------- DOCS Demo  ---------- //

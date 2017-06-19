@@ -8,11 +8,9 @@ function foldNav(){
 }
 
 function openModal(id){
-  console.log(id)
    $(id).show();
 }
 function closeModal(){
-  console.log('close')
   $('.modal').hide()
 }
 

@@ -1,0 +1,51 @@
+include ../includes/header.pug
+.wrapper
+  include ../includes/leftnav-docs.pug
+  
+  #content.unfolded(name='buttons')
+    .board.full-width
+      h1.uppercase buttons      
+      .devider
+      .content-wrapper
+        h2.margin Defualt size
+        .margin-2x
+          a.btn DEFAULT
+          span.empty
+          a.btn.btn-white WHITE
+          span.empty
+          a.btn.btn-dark DARK
+        h2.margin small size
+        .margin-2x.text-small
+          a.btn.btn-small DEFAULT
+          span.empty
+          a.btn.btn-small.btn-white WHITE
+          span.empty
+          a.btn.btn-small.btn-dark DARK
+        h2.margin xsmall size
+        .margin-2x.text-xsmall
+          a.btn.btn-xsmall DEFAULT
+          span.empty
+          a.btn.btn-xsmall.btn-white WHITE
+          span.empty
+          a.btn.btn-xsmall.btn-dark DARK
+        h2.margin icon buttton
+        .margin-2x
+          a.btn 
+            i.fa.fa-cloud-upload.fa-lg
+            span 사진업로드            
+          span.empty
+          a.btn.btn-white 
+            i.fa.fa-cog.fa-lg
+            span Settings
+          span.empty
+          a.btn.btn-white 
+            i.fa.fa-trash-o.fa-lg              
+          span.empty
+          a.btn 
+            i.fa.fa-circle-o-notch.fa-spin.fa-lg
+            span 저장중...
+        h2.margin full width
+        .margin-2x
+          a.btn.full-width BUTTON
+            
+          

@@ -202,7 +202,7 @@ ul, li {
   vertical-align: middle;
   padding-right: 0.5em; }
 
-.noselect, #sub-menu ul li, #topbar .right-wrapper .toptab, #leftnav {
+.noselect, a.btn, #sub-menu ul li, #topbar .right-wrapper .toptab, #leftnav {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -241,7 +241,7 @@ ul, li {
   clear: both;
   width: 100%;
   border-bottom: 1px solid #F1F3F5;
-  margin-top: 20px;
+  margin-top: 28px;
   margin-bottom: 28px; }
   .devider.end-page {
     padding-top: 48px; }
@@ -249,6 +249,10 @@ ul, li {
 .spacing {
   clear: both;
   padding: 20px; }
+
+span.empty {
+  display: inline-block;
+  width: 1em; }
 
 .form-group {
   position: relative;
@@ -383,6 +387,9 @@ a.btn {
   a.btn.full-width {
     display: block;
     text-align: center; }
+  a.btn.btn-long {
+    width: 400px;
+    text-align: center; }
   a.btn.btn-white {
     color: rgba(73, 80, 87, 0.7);
     background: white;
@@ -394,11 +401,22 @@ a.btn {
       color: rgba(73, 80, 87, 0.7); }
     a.btn.btn-white:hover {
       background-color: #f2f2f2; }
+  a.btn.btn-white-gray {
+    color: rgba(73, 80, 87, 0.5);
+    background: #F1F3F5;
+    border-color: #F1F3F5;
+    font-weight: 400; }
+    a.btn.btn-white-gray * {
+      color: rgba(73, 80, 87, 0.5); }
+    a.btn.btn-white-gray i.fa {
+      color: rgba(73, 80, 87, 0.5); }
+    a.btn.btn-white-gray:hover {
+      background-color: #e8ebef; }
   a.btn.btn-dark {
-    background-color: #495057;
-    border-color: #495057; }
+    background-color: #59626a;
+    border-color: #59626a; }
     a.btn.btn-dark:hover {
-      background-color: #555d65; }
+      background-color: #4e555d; }
   a.btn.btn-small {
     padding: 8px 10px 6px 10px;
     font-size: 10pt; }
@@ -519,10 +537,21 @@ a.btn {
         float: right; }
     .modal .modal-board .modal-body {
       min-height: 200px;
-      padding: 40px; }
+      padding: 40px 40px 0 40px;
+      margin-bottom: 40px; }
     .modal .modal-board .modal-footer {
       padding: 20px;
       border-top: 1px solid #F1F3F5; }
+
+.info {
+  opacity: 0.7;
+  font-weight: 300;
+  background: #3BC9DB;
+  padding: 20px;
+  color: white; }
+  .info i.fa {
+    color: white;
+    padding-right: 10px; }
 
 .row .col-2-left {
   width: 47%;
@@ -782,6 +811,14 @@ a.btn {
     text-align: center;
     float: none;
     font-size: 11pt; }
+
+.step-update .select-list .col-2-left {
+  padding-top: 12px;
+  color: rgba(73, 80, 87, 0.7); }
+.step-update .select-list .col-2-right {
+  width: 200px; }
+  .step-update .select-list .col-2-right .form-group {
+    margin-bottom: 0; }
 
 .colorbox {
   float: left;
