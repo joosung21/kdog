@@ -8,16 +8,24 @@ function foldNav(){
 }
 
 function openModal(id){
-   $(id).show();
+  $(id).show();
 }
 function closeModal(){
   $('.modal').hide()
 }
 
+// Fold & Unfold Vertical
+function toggleFold(id){
+  $(id).toggleClass('folded');
+  $(id).toggleClass('unfolded');
+}
+
+
+
 $( document ).ready(function() {
 
     // Hide Modals
-    // $('.modal').hide();
+    $('.modal').hide();
 
     // Open Top menu layers
     $('.toptab.notice').click(function(){

@@ -6,6 +6,7 @@ app.set('view engine', 'pug')
 // app.locals.pretty = true
 app.use('/', express.static('public'))
 app.use('/assets/', express.static('assets'))
+// app.use('/node_modules/', express.static('node_modules'))
 
 app.get('/', function (req, res){res.render('room-setting')})
 
@@ -31,6 +32,7 @@ app.get('/docs/elements', function (req, res){res.render('docs/elements')})
 app.get('/docs/buttons', function (req, res){res.render('docs/buttons')})
 app.get('/docs/list-table', function (req, res){res.render('docs/list-table')})
 app.get('/docs/form-controls', function (req, res){res.render('docs/form-controls')})
+app.get('/docs/sweetalert', function (req, res){res.render('docs/sweetalert')})
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')

@@ -9,8 +9,15 @@ html(lang="ko")
     
     link(rel='stylesheet', href='/assets/font-awesome-4.7.0/css/font-awesome.min.css')    
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700')
-    link(rel='stylesheet', href='/styles/css/global.css', type='text/css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css')
+    link(rel='stylesheet', href='/styles/css/sweetalert.css')
+    link(rel='stylesheet', href='/styles/css/global.css', type='text/css')        
     
-    // Temporary JQuery/Js for demo    
     script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js', integrity='sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n', crossorigin='anonymous')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js')
+    script.
+      hljs.initHighlightingOnLoad();
+    script(src='/js/sweetalert.min.js')
     script(src='/js/demo.js')
+    
+      

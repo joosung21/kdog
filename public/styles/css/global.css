@@ -181,10 +181,11 @@ h4 {
 a {
   text-decoration: none;
   cursor: pointer; }
-  a.link {
-    color: #3BC9DB; }
-    a.link:hover {
-      opacity: 0.8; }
+
+a.link {
+  color: #3BC9DB; }
+  a.link:hover {
+    opacity: .8; }
 
 p {
   line-height: 1.5em;
@@ -201,9 +202,9 @@ ul, li {
   position: relative;
   top: -0.1em;
   vertical-align: middle;
-  padding-right: 0.5em; }
+  padding-right: .5em; }
 
-.noselect, input[type="checkbox"] + label, input[type="radio"] + label, a.btn, #sub-menu ul li, #topbar .right-wrapper .toptab, #leftnav {
+.noselect, a, input[type="checkbox"] + label, input[type="radio"] + label, a.btn, #sub-menu ul li, #topbar .right-wrapper .toptab, #leftnav {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -309,7 +310,7 @@ span.empty {
       position: absolute;
       right: 14px;
       top: -27px;
-      opacity: 0.6;
+      opacity: .6;
       font-size: 10pt; }
     .form-group .inner-text-wrapper a.inner-text:hover {
       opacity: 1; }
@@ -416,9 +417,14 @@ input[type="radio"] {
     background: url(/images/icons/checked.svg) 3px 4px no-repeat; }
 
 .readonly-textbox {
-  width: 100%; }
+  border: 1px solid #C9D3DC;
+  padding: 10px 20px;
+  background: white;
+  height: 160px;
+  overflow-y: scroll; }
   .readonly-textbox pre {
-    width: 100%; }
+    white-space: pre-line;
+    font-size: 9pt; }
 
 a.btn {
   color: white;
@@ -481,7 +487,7 @@ a.btn {
     a.btn.btn-xsmall span {
       font-size: 9pt; }
   a.btn span {
-    margin-left: 0.4em; }
+    margin-left: .4em; }
 
 .badge {
   font-size: 9pt;
@@ -511,14 +517,14 @@ a.btn {
     cursor: pointer; }
     .pop-layer.listbox > li:hover {
       background-color: #F1F3F5;
-      transition: all 0.5s; }
+      transition: all .5s; }
     .pop-layer.listbox > li .title {
       font-weight: 500;
       margin-bottom: 11px; }
     .pop-layer.listbox > li p {
-      opacity: 0.8; }
+      opacity: .8; }
       .pop-layer.listbox > li p .text-xsmall {
-        opacity: 0.6; }
+        opacity: .6; }
     .pop-layer.listbox > li .close {
       position: absolute;
       top: 15px;
@@ -531,7 +537,7 @@ a.btn {
       -moz-border-radius: 13px;
       -ms-border-radius: 13px;
       border-radius: 13px;
-      opacity: 0.7; }
+      opacity: .7; }
       .pop-layer.listbox > li .close:hover {
         background-color: white; }
   .pop-layer.simplemenu {
@@ -597,7 +603,7 @@ a.btn {
       border-top: 1px solid #F1F3F5; }
 
 .info {
-  opacity: 0.7;
+  opacity: .7;
   font-weight: 300;
   background: #3BC9DB;
   padding: 20px;
@@ -629,10 +635,10 @@ a.btn {
   background-color: #F1F3F5; }
   #content.folded {
     margin-left: 60px;
-    transition: all 0.5s; }
+    transition: all .5s; }
   #content.unfolded {
     margin-left: 140px;
-    transition: all 0.5s; }
+    transition: all .5s; }
 
 #sub-menu {
   width: 240px;
@@ -644,7 +650,7 @@ a.btn {
   #sub-menu .title {
     padding: 20px 20px 10px 20px; }
     #sub-menu .title .icon {
-      opacity: 0.7;
+      opacity: .7;
       margin-right: 5px; }
   #sub-menu ul {
     padding-bottom: 12px; }
@@ -685,7 +691,7 @@ a.btn {
         position: relative; }
         .board .sub-left li a:hover {
           color: #FD7E14;
-          transition: all 0.5s; }
+          transition: all .5s; }
         .board .sub-left li a.active {
           color: #FD7E14; }
           .board .sub-left li a.active::before {
@@ -723,17 +729,17 @@ a.btn {
       width: 51px;
       height: 34px;
       margin: 16px 20px 0 0;
-      opacity: 0.9; }
+      opacity: .9; }
       #topbar .left-wrapper .logo img:hover {
         opacity: 1;
-        transition: all 0.5s; }
+        transition: all .5s; }
     #topbar .left-wrapper .company-name {
       margin: 20px 40px 0 0;
       color: rgba(255, 255, 255, 0.8);
       font-size: 13pt; }
       #topbar .left-wrapper .company-name:hover {
         color: rgba(255, 255, 255, 0.9);
-        transition: all 0.5s; }
+        transition: all .5s; }
     #topbar .left-wrapper .search-box {
       margin-top: 15px;
       width: 220px;
@@ -838,7 +844,7 @@ a.btn {
     float: left;
     width: 60px;
     height: 60px;
-    opacity: 0.6; }
+    opacity: .6; }
   #leftnav .text {
     float: left;
     height: 20px;
@@ -851,20 +857,20 @@ a.btn {
   #leftnav.folded {
     width: 60px;
     overflow-x: hidden;
-    transition: all 0.5s; }
+    transition: all .5s; }
     #leftnav.folded .symbol.toogle-btn {
       left: 0;
       -ms-transform: rotate(-135deg);
       -webkit-transform: rotate(-135deg);
       transform: rotate(-135deg);
-      transition: all 0.5s; }
+      transition: all .5s; }
   #leftnav.unfolded {
     width: 140px;
     overflow-x: hidden;
-    transition: all 0.5s; }
+    transition: all .5s; }
     #leftnav.unfolded .symbol.toogle-btn {
       left: 80px;
-      transition: all 0.5s; }
+      transition: all .5s; }
   #leftnav.docs .text {
     text-align: center;
     float: none;
@@ -876,13 +882,15 @@ body.login {
 .login-wrapper {
   position: relative;
   width: 420px;
-  margin: 200px auto 0 auto; }
+  margin: 200px auto 100px auto; }
   .login-wrapper::before {
     position: absolute;
     top: -15px;
     left: -140px;
     display: block;
     content: url("/images/logo.png"); }
+  .login-wrapper p {
+    color: rgba(255, 255, 255, 0.7); }
   .login-wrapper h1 {
     color: white;
     font-weight: 100; }
@@ -923,6 +931,14 @@ body.login {
     border-color: rgba(255, 255, 255, 0.2); }
   .login-wrapper input[type="checkbox"] + label {
     color: rgba(255, 255, 255, 0.7); }
+  .login-wrapper .folder {
+    overflow: hidden; }
+    .login-wrapper .folder.folded {
+      height: 0; }
+    .login-wrapper .folder.unfolded {
+      height: auto; }
+  .login-wrapper .readonly-textbox {
+    margin-bottom: 20px; }
 
 .step-update .select-list .col-2-left {
   padding-top: 12px;
@@ -939,3 +955,5 @@ body.login {
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3); }
   .colorbox * {
     text-align: center; }
+
+/*# sourceMappingURL=global.css.map */

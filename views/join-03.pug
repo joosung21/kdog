@@ -1,0 +1,13 @@
+include includes/header.pug
+body(class='login')
+  .login-wrapper 
+    h1.margin 이메일 인증
+    p
+      | 가입하신 이메일로 인증 메일을 보냈습니다.      
+      br
+      | 메일의 ‘인증하기’ 버튼을 누르신 후, 다시 로그인을 해주세요.
+                  
+    .margin-2x
+    a.btn.btn-white(onclick='swal("인증메일 발송완료!", "받으신 이메일에서 인증링크를 클릭해 주세요", "success")') 인증메일 다시 보내기
+    span.empty
+    a.btn.btn-dark(href='/login') 다시 로그인하기
