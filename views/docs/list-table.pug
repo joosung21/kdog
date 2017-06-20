@@ -4,34 +4,41 @@ include ../includes/header.pug
   
   #content.unfolded(name='list-table')
     .board.full-width
-      h1.uppercase list table      
-      .devider      
+      h1.lined list table      
       table.table
         thead
           tr
-            th 이름
-            th 이메일
-            th 연락처
-            th 권한
-            th
+            th 예약번호
+            th 숙소이름
+            th 객실이름
+            th 고객명
+            th.text-center 가운데정렬
+            th.text-right 우측정렬           
+            th.text-right 버튼
         tbody
           tr
-            td 안주성
-            td ramada.pangyo@gmail.com
-            td 010-2268-5399
-            td 관리자
+            td 
+              a.link 8100514
+            td 티포트 펜션
+            td 개발트윈룸
+            td James Huh
+            td.text-center 2017-10-15
+            td.text-right ₩ 270,000
             td.text-right
-              a.btn.btn-xsmall.btn-white(onclick='location.href="/setting/step/edit"')
+              a.btn.btn-xsmall.btn-white
                 i.fa.fa-pencil
                 span 수정
           tr
-            td 노리코짱
-            td norikojjang@gmail.com
-            td 010-3006-7889
-            td 스탭
+            td 
+              a.link 8100513
+            td 판교라마다호텔
+            td Deluxe Room
+            td 유정연
+            td.text-center 2017-10-17
+            td.text-right ₩ 160,000
             td.text-right
-              a.btn.btn-xsmall.btn-white(onclick='location.href="/setting/step/edit"')
+              a.btn.btn-xsmall.btn-white
                 i.fa.fa-pencil
-                span 수정
+                span 수정         
             
           

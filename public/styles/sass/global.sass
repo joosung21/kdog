@@ -13,7 +13,7 @@ $color-reverse: #3BC9DB
 
 $white-gray: #F1F3F5
 $gray: #C9D3DC
-$red: #F03E3E
+$red: lighten(#F03E3E, 5%)
 
 $font-color-defualt: rgba(73, 80, 87, 0.5)
 $font-color-thic: rgba(73, 80, 87, 0.7)
@@ -186,6 +186,10 @@ h1,h2
 h1
   font-size: 22pt
   margin-top: -0.2em
+  &.lined
+    border-bottom: 1px solid $white-gray
+    padding-bottom: 5px
+    margin-bottom: 40px
 h2
   font-size: 17pt
 h3
@@ -199,10 +203,15 @@ a
   @extend .noselect
   text-decoration: none
   cursor: pointer
+  i.fa
+    &:hover
+      opacity: 0.8
 a.link
   color: $color-reverse
   &:hover
     opacity: 0.8
+  span, i.fa
+    color: $color-reverse
 p
   line-height: 1.5em
   font-weight: $font-light
@@ -598,6 +607,9 @@ a.btn
     font-size: $font-size-large
     color: $font-color-thic
     font-weight: $font-light
+  tbody tr:hover
+    background-color: rgba($white-gray, 0.3)
+
   thead th
     border-bottom: 1px solid $gray
 
@@ -663,12 +675,16 @@ a.btn
   margin-left: 140px
   padding: 40px
   background-color: $white-gray
+  height: 100%
+  min-height: calc(100vh - 140px)
   &.folded
     margin-left: 60px
     transition: all 0.5s
   &.unfolded
     margin-left: 140px
     transition: all 0.5s
+  &.full-width
+    margin-left: 0
 
 #sub-menu
   width: 240px
@@ -697,16 +713,20 @@ a.btn
 
 .board
   position: relative
-  min-width: 580px
+  min-width: 700px
   background-color: white
   margin-left: 260px
   padding: 40px
   width: calc(100% - 340px)
-  min-height: 760px
+  min-height: calc(100vh - 220px)
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1)
   &.full-width
     margin-left: 0
     width: calc(100% - 80px)
+  &.centered
+    margin: 10vh auto 0 auto
+    width: 700px
+    min-height: 500px
   .title-bar
     margin: -40px -40px 40px -40px
     padding: 20px 20px 17px 20px
@@ -722,7 +742,6 @@ a.btn
         position: relative
         &:hover
           color: $color-priority
-          transition: all 0.5s
         &.active
           color: $color-priority
           &::before
@@ -911,6 +930,154 @@ a.btn
       float: none
       font-size: $font-size-default
 
+// date-bar
+#date-bar
+  margin: -40px -40px 0 -40px
+  border-bottom: 1px solid darken($white-gray, 10%)
+  .leftbox
+    float: left
+    width: 159px
+    height: 69px
+    border-right: 1px solid $white-gray
+    cursor: pointer
+    .this-month
+      position: relative
+      padding: 9px 15px 0 15px
+      .year
+        display: block
+        float: left
+        padding: 18px 0 0 22px
+        font-size: 13pt
+        color: $font-color-thic
+      .month
+        display: block
+        float: left
+        padding: 5px 0 0 10px
+        font-size: 28pt
+        color: $font-color-thic
+        font-weight: $font-normal
+    &:hover
+      .controls
+        display: block
+        transition: all 1s
+    .controls
+      display: none
+      position: absolute
+      top: 0
+      left: 0
+      a.btn
+        height: 15px
+        padding: 27px 13px
+        border: none
+        i.fa
+          margin: -6px 0
+  .date-wrapper
+    width: calc(100% - 160px)
+    overflow: hidden
+    white-space: nowrap
+    height: 69px
+    .date-box
+      position: relative
+      display: inline-block
+      width: 50px
+      height: 51px
+      padding-top: 18px
+      margin-top: -16px
+      .date
+        text-align: center
+        font-size: 14pt
+        color: $font-color-thic
+        font-weight: $font-light
+      .day
+        text-align: center
+        font-size: 7pt
+        letter-spacing: 1px
+        margin-top: 4px
+        text-transform: uppercase
+      &.weekend
+        .date, .day
+          color: $red
+      &.today
+        // background-color: lighten($gray, 8%)
+        &::after
+          content: 'TODAY'
+          position: absolute
+          font-weight: $font-medium
+          color: $font-color-thic
+          left: 0
+          top: 1px
+          font-size: 7pt
+          padding: 5px
+          width: calc(100% - 10px)
+          text-align: center
+
+// Roomchart page
+.room-chart
+  .roomtype-title
+    padding: 12px 20px 8px 20px
+    margin: 0 -40px
+    border-bottom: 1px solid darken($white-gray, 10%)
+    background-color: $white-gray
+    font-size: 10pt
+    font-weight: $font-medium
+  .room-line
+    margin: 0 -40px
+    border-bottom: 1px solid $white-gray
+    height: 50px
+    &:hover
+      background-color: lighten($color-reverse, 30%)
+      .chart-wrapper .rec, .room-name
+        border-color: lighten($color-reverse, 25%)
+      .chart-wrapper
+        .rec .price
+          color: lighten($color-reverse, 10%)
+    .room-name
+      float: left
+      width: 119px
+      height: 15px
+      padding: 18px 20px 17px 20px
+      font-size: 11pt
+      border-right: 1px solid $gray
+      color: $font-color-thic
+      white-space: nowrap
+      text-overflow: ellipsis
+      overflow: hidden
+      cursor: ns-resize
+      &:hover
+        overflow-x: visible
+        text-overflow: clip
+        white-space: normal
+        padding: 7px 20px 28px 20px
+        transition: all 0.5s
+
+    .chart-wrapper
+      width: calc(100% - 160px)
+      white-space: nowrap
+      height: 50px
+      float: left
+      overflow: hidden
+      .rec
+        display: inline-block
+        position: relative
+        width: 50px
+        height: 50px
+        box-sizing: border-box
+        border-right: 1px solid $white-gray
+        cursor: pointer
+        &:hover
+          background-color: lighten($color-reverse, 20%)
+          .price
+            color: white
+        .price
+          position: absolute
+          width: 50px
+          text-align: center
+          left: 0
+          top: 20px
+          font-size: 9pt
+          color: lighten($font-color-defualt, 30%)
+
+
 // login Page
 body.login
   background-color: $color-brand
@@ -981,7 +1148,6 @@ body.login
   .readonly-textbox
     margin-bottom: 20px
 
-
 // step-update Page
 .step-update
   .select-list
@@ -993,9 +1159,14 @@ body.login
       .form-group
         margin-bottom: 0
 
-// Customize Sweetalert
-  
-
+// Start Page
+table.start
+  width: 100%
+  border-spacing: 10px
+  .form-group
+    margin-bottom: 0
+  h1
+    padding-top: 4px
 
 
 // ---------- DOCS Demo  ---------- //

@@ -2,7 +2,7 @@ nav#leftnav.unfolded
   li(onclick='foldNav()')
     .symbol.toogle-btn
       img(src='/images/icons/nav-close.svg')    
-  li.reservation-stat
+  li.room-chart(onclick='location.href="/room-chart"')
     .symbol
       img(src='/images/icons/nav-fire.svg')
     .text 예약현황
@@ -18,7 +18,7 @@ nav#leftnav.unfolded
     .symbol
       img(src='/images/icons/nav-report.svg')
     .text 리포트
-  li.room-manage(onclick='location.href="/room-manage/"')
+  li.room-manage(onclick='location.href="/room-manage"')
     .symbol
       img(src='/images/icons/nav-rooms.svg')
     .text 객실관리

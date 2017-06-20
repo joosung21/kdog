@@ -4,8 +4,7 @@ include ../includes/header.pug
   
   #content.unfolded(name='sweetalert')
     .board.full-width
-      h1.uppercase sweetalert
-      .devider
+      h1.lined sweetalert      
       .content-wrapper
         
         h2 Version: 1.1.3
@@ -42,7 +41,7 @@ include ../includes/header.pug
         - 
           var message04 = `
             swal({
-              title: "정말로 객실을 삭제 하시겠습니까?",
+              title: "정말로 삭제 하시겠습니까?",
               text: "객실의 모든 예약이 함께 삭제됩니다!",
               type: "warning",
               showCancelButton: true,
@@ -52,7 +51,7 @@ include ../includes/header.pug
               closeOnConfirm: false
             },
             function(){
-              swal("삭제 되었습니다!", "객실의 모든 예약도 함께 삭제되었습니다", "success");
+              swal("삭제 되었습니다!", "모든 예약도 함께 삭제되었습니다", "success");
             });
             `        
         pre
@@ -66,7 +65,7 @@ include ../includes/header.pug
         - 
           var message05 = `
             swal({
-              title: "정말로 객실을 삭제 하시겠습니까?",
+              title: "정말로 삭제 하시겠습니까?",
               text: "객실의 모든 예약이 함께 삭제됩니다!",
               type: "warning",
               showCancelButton: true,
@@ -78,9 +77,9 @@ include ../includes/header.pug
             },
             function(isConfirm){
               if (isConfirm) {
-                swal("삭제 되었습니다!", "객실의 모든 예약도 함께 삭제되었습니다", "success");
+                swal("삭제 되었습니다!", "모든 예약도 함께 삭제되었습니다", "success");
               } else {
-                swal("취소되었습니다!", "신중한 선택이었네요", "error");
+                swal("취소 되었습니다!", "신중한 선택이었네요", "error");
               }
             });
             `        
@@ -120,4 +119,75 @@ include ../includes/header.pug
           code.
             #{message07}   
         a.btn.btn-small(onclick= message07) 예제보기
+        
+        .devider
+        
+        h3 AUTO CLOSE
+        - 
+          var message08 = `
+            swal({
+              title: "자동으로 닫힙니다!",
+              text: "2초 후에 닫힐꺼에요",
+              timer: 2000,
+              showConfirmButton: false
+            });
+            `        
+        pre
+          code.
+            #{message08}   
+        a.btn.btn-small(onclick= message08) 예제보기
+        
+        .devider
+        
+        h3 Prompt
+        - 
+          var message09 = `
+            swal({
+              title: "제목을 입력해 주세요",
+              text: "요금제 제목:",
+              type: "input",
+              showCancelButton: true,
+              closeOnConfirm: false,
+              animation: "slide-from-top",
+              inputPlaceholder: "예) 평창동계올림픽 성수기"
+              },
+              function(inputValue){
+              if (inputValue === false) return false;
+
+              if (inputValue === "") {
+                swal.showInputError("You need to write something!");
+                return false
+              }
+
+              swal("저장 되었습니다!", "요금제 제목: " + inputValue, "success");
+            });
+            `        
+        pre
+          code.
+            #{message09}   
+        a.btn.btn-small(onclick= message09) 예제보기
+        
+        .devider
+        
+        h3 Ajax request
+        - 
+          var message10 = `
+            swal({
+              title: "동기화를 시작합니다!",
+              text: "서버통신에 따라 시간이 걸릴 수 있습니다",
+              type: "info",
+              showCancelButton: true,
+              closeOnConfirm: false,
+              showLoaderOnConfirm: true,
+              },
+              function(){
+              setTimeout(function(){
+                swal("동기화가 완료되었습니다!");
+              }, 2000);
+              });
+            `        
+        pre
+          code.
+            #{message10}   
+        a.btn.btn-small(onclick= message10) 예제보기
           

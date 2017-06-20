@@ -8,14 +8,18 @@ app.use('/', express.static('public'))
 app.use('/assets/', express.static('assets'))
 // app.use('/node_modules/', express.static('node_modules'))
 
-app.get('/', function (req, res){res.render('room-setting')})
+app.get('/', function (req, res){res.render('room-chart')})
 
 app.get('/login', function (req, res){res.render('login')})
 app.get('/join-01', function (req, res){res.render('join-01')})
 app.get('/join-02', function (req, res){res.render('join-02')})
 app.get('/join-03', function (req, res){res.render('join-03')})
 
-app.get('/room-manage/', function (req, res){res.render('room-setting')})
+app.get('/start', function (req, res){res.render('start')})
+
+app.get('/room-chart', function (req, res){res.render('room-chart')})
+
+app.get('/room-manage', function (req, res){res.render('room-setting')})
 
 app.get('/setting/company', function (req, res){res.render('setting-company')})
 app.get('/setting/step', function (req, res){res.render('setting-step')})
