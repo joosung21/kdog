@@ -46,6 +46,48 @@
 .bg-white {
   background: white; }
 
+.bg-booking {
+  background: #D9480F; }
+
+.text-booking {
+  color: #D9480F; }
+
+.bg-booked {
+  background: #FD7E14; }
+
+.text-booked {
+  color: #FD7E14; }
+
+.bg-paid {
+  background: #F1C40F; }
+
+.text-paid {
+  color: #F1C40F; }
+
+.bg-checkin {
+  background: #2ECC71; }
+
+.text-checkin {
+  color: #2ECC71; }
+
+.bg-checkout {
+  background: #b0b6bc; }
+
+.text-checkout {
+  color: #b0b6bc; }
+
+.bg-ect {
+  background: #9B59B6; }
+
+.text-ect {
+  color: #9B59B6; }
+
+.bg-disabled {
+  background: #697077; }
+
+.text-disabled {
+  color: #697077; }
+
 .border {
   border: 1px solid #C9D3DC; }
 
@@ -194,6 +236,8 @@ a.link {
     opacity: 0.8; }
   a.link span, a.link i.fa {
     color: #3BC9DB; }
+  a.link i.fa {
+    margin-right: 5px; }
 
 p {
   line-height: 1.5em;
@@ -204,7 +248,8 @@ table {
   border-spacing: 0; }
 
 strong {
-  font-weight: 500; }
+  font-weight: 500;
+  color: rgba(73, 80, 87, 0.7); }
 
 ul, li {
   list-style: none; }
@@ -216,7 +261,7 @@ ul, li {
   vertical-align: middle;
   padding-right: 0.5em; }
 
-.noselect, a, input[type="checkbox"] + label, input[type="radio"] + label, a.btn, #sub-menu ul li, #topbar .right-wrapper .toptab, #leftnav {
+.noselect, a, input[type="checkbox"] + label, input[type="radio"] + label, a.btn, #sub-menu ul li, #topbar .right-wrapper .toptab, #leftnav, .board.room-chart .room-line .room-name {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -267,6 +312,10 @@ ul, li {
 span.empty {
   display: inline-block;
   width: 1em; }
+
+span.empty-2x {
+  display: inline-block;
+  width: 2em; }
 
 .form-group {
   position: relative;
@@ -897,6 +946,27 @@ a.btn {
     float: none;
     font-size: 11pt; }
 
+.bottom-bar {
+  z-index: 11;
+  width: calc(100% - 20px);
+  padding: 13px 20px 2px 0;
+  height: 40px;
+  text-align: right;
+  position: fixed;
+  bottom: 0;
+  background: #495057; }
+  .bottom-bar .last-update {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 300;
+    color: #b3b3b3; }
+  .bottom-bar a.link {
+    vertical-align: middle;
+    padding-top: 7px; }
+    .bottom-bar a.link i.fa, .bottom-bar a.link span {
+      font-weight: 300;
+      color: #e6e6e6; }
+
 #date-bar {
   margin: -40px -40px 0 -40px;
   border-bottom: 1px solid #d3dae0; }
@@ -946,8 +1016,7 @@ a.btn {
       display: inline-block;
       width: 50px;
       height: 51px;
-      padding-top: 18px;
-      margin-top: -16px; }
+      padding-top: 18px; }
       #date-bar .date-wrapper .date-box .date {
         text-align: center;
         font-size: 14pt;
@@ -973,9 +1042,22 @@ a.btn {
         width: calc(100% - 10px);
         text-align: center; }
 
+.right-slider {
+  z-index: 10;
+  position: absolute;
+  top: 60px;
+  padding: 40px;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background: #495057; }
+  .right-slider h1 {
+    color: white; }
+
 .board.room-chart {
   min-height: 100px;
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  margin-bottom: 60px; }
   .board.room-chart .roomtype-title {
     padding: 12px 20px 8px 20px;
     margin: 0 -40px;
@@ -985,34 +1067,39 @@ a.btn {
     font-weight: 500; }
   .board.room-chart .room-line {
     margin: 0 -40px;
-    border-bottom: 1px solid #F1F3F5;
     height: 50px; }
-    .board.room-chart .room-line:hover {
-      background-color: #bcedf3; }
-      .board.room-chart .room-line:hover .chart-wrapper .rec, .board.room-chart .room-line:hover .room-name {
-        border-color: #a7e7ef; }
-      .board.room-chart .room-line:hover .chart-wrapper .rec .price {
-        color: #66d5e3; }
+    .board.room-chart .room-line:hover .room-name {
+      background-color: #e7f8fb; }
     .board.room-chart .room-line:last-child {
       border-bottom: none; }
+    .board.room-chart .room-line.unassigned .assign {
+      width: 160px;
+      float: left;
+      padding: 0; }
+      .board.room-chart .room-line.unassigned .assign a.btn {
+        padding: 17px 0 14px 0;
+        opacity: 0.9; }
+        .board.room-chart .room-line.unassigned .assign a.btn span {
+          font-weight: 300; }
     .board.room-chart .room-line .room-name {
       float: left;
-      width: 119px;
+      width: 160px;
       height: 15px;
-      padding: 18px 20px 17px 20px;
+      padding: 18px 10px 31px 20px;
       font-size: 11pt;
       border-right: 1px solid #C9D3DC;
+      border-bottom: 1px solid #F1F3F5;
+      box-sizing: border-box;
       color: rgba(73, 80, 87, 0.7);
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
-      cursor: ns-resize;
-      word-break: keep-all; }
+      cursor: default; }
       .board.room-chart .room-line .room-name:hover {
         overflow-x: visible;
         text-overflow: clip;
         white-space: normal;
-        padding: 7px 20px 28px 20px;
+        padding: 7px 10px 42px 20px;
         transition: all 0.5s; }
     .board.room-chart .room-line .chart-wrapper {
       width: calc(100% - 160px);
@@ -1027,12 +1114,56 @@ a.btn {
         height: 50px;
         box-sizing: border-box;
         border-right: 1px solid #F1F3F5;
+        border-bottom: 1px solid #F1F3F5;
         cursor: pointer; }
+        .board.room-chart .room-line .chart-wrapper .rec .bar {
+          z-index: 10;
+          background-color: #C9D3DC;
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 50px;
+          box-sizing: border-box;
+          border: 1px solid rgba(0, 0, 0, 0.05); }
+          .board.room-chart .room-line .chart-wrapper .rec .bar.booking {
+            background: #D9480F; }
+            .board.room-chart .room-line .chart-wrapper .rec .bar.booking:hover {
+              background: #c1400d; }
+          .board.room-chart .room-line .chart-wrapper .rec .bar.booked {
+            background: #FD7E14; }
+            .board.room-chart .room-line .chart-wrapper .rec .bar.booked:hover {
+              background: #f57102; }
+          .board.room-chart .room-line .chart-wrapper .rec .bar.paid {
+            background: #F1C40F; }
+            .board.room-chart .room-line .chart-wrapper .rec .bar.paid:hover {
+              background: #dab10d; }
+          .board.room-chart .room-line .chart-wrapper .rec .bar.checkin {
+            background: #2ECC71; }
+            .board.room-chart .room-line .chart-wrapper .rec .bar.checkin:hover {
+              background: #29b765; }
+          .board.room-chart .room-line .chart-wrapper .rec .bar.checkout {
+            background: #b0b6bc; }
+            .board.room-chart .room-line .chart-wrapper .rec .bar.checkout:hover {
+              background: #a2a9b1; }
+          .board.room-chart .room-line .chart-wrapper .rec .bar.ect {
+            background: #9B59B6; }
+            .board.room-chart .room-line .chart-wrapper .rec .bar.ect:hover {
+              background: #8f4bab; }
+          .board.room-chart .room-line .chart-wrapper .rec .bar.disabled {
+            background: #697077; }
+            .board.room-chart .room-line .chart-wrapper .rec .bar.disabled:hover {
+              background: #5d6369; }
+          .board.room-chart .room-line .chart-wrapper .rec .bar .name {
+            color: white;
+            padding: 18px 5px 0 10px;
+            font-size: 10pt;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis; }
         .board.room-chart .room-line .chart-wrapper .rec:hover {
-          background-color: #91e1eb; }
-          .board.room-chart .room-line .chart-wrapper .rec:hover .price {
-            color: white; }
-        .board.room-chart .room-line .chart-wrapper .rec .price {
+          background-color: #e7f8fb; }
+        .board.room-chart .room-line .chart-wrapper .rec .price, .board.room-chart .room-line .chart-wrapper .rec .stock {
           position: absolute;
           width: 50px;
           text-align: center;
@@ -1040,6 +1171,12 @@ a.btn {
           top: 20px;
           font-size: 9pt;
           color: rgba(148, 157, 165, 0.5); }
+        .board.room-chart .room-line .chart-wrapper .rec .stock {
+          font-size: 11pt;
+          top: 17px;
+          color: rgba(203, 208, 212, 0.5); }
+          .board.room-chart .room-line .chart-wrapper .rec .stock.over {
+            color: rgba(73, 80, 87, 0.7); }
   .board.room-chart .dorm-wrapper {
     margin: 0 -40px 0 -40px;
     border-top: 1px solid #C9D3DC; }
@@ -1059,17 +1196,78 @@ a.btn {
       .board.room-chart .dorm-wrapper .beds .room-line {
         margin: 0; }
         .board.room-chart .dorm-wrapper .beds .room-line .room-name {
-          width: 52px;
+          width: 69px;
           font-size: 9pt;
           top: 2px;
           border-left: 1px solid #F1F3F5;
           text-align: center;
-          padding: 19px 8px 16px 8px; }
+          padding: 19px 8px 30px 8px; }
           .board.room-chart .dorm-wrapper .beds .room-line .room-name:hover {
-            padding: 7px 8px 28px 8px;
+            padding: 9px 8px 40px 8px;
             transition: all 0.5s; }
         .board.room-chart .dorm-wrapper .beds .room-line .chart-wrapper {
-          width: calc(100% - 72px); }
+          width: calc(100% - 69px); }
+
+.bar-hover-layer {
+  z-index: 12;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 300px;
+  background: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); }
+  .bar-hover-layer li {
+    padding: 15px 20px; }
+    .bar-hover-layer li .label {
+      font-size: 10pt;
+      color: rgba(148, 157, 165, 0.5);
+      font-weight: 300; }
+    .bar-hover-layer li .text {
+      color: rgba(73, 80, 87, 0.7); }
+  .bar-hover-layer .title {
+    border-bottom: 1px solid #F1F3F5;
+    background: #f7f8f9; }
+    .bar-hover-layer .title .status {
+      width: 63px;
+      display: inline-block;
+      vertical-align: middle; }
+    .bar-hover-layer .title .name {
+      display: inline-block;
+      width: 197px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      vertical-align: middle; }
+  .bar-hover-layer .checkin, .bar-hover-layer .checkout, .bar-hover-layer .id {
+    float: left;
+    width: 59px;
+    height: 40px;
+    border-bottom: 1px solid #F1F3F5; }
+  .bar-hover-layer .checkin, .bar-hover-layer .checkout {
+    border-right: 1px solid #F1F3F5; }
+    .bar-hover-layer .checkin .text, .bar-hover-layer .checkout .text {
+      font-size: 23px; }
+  .bar-hover-layer .id {
+    width: 60px; }
+    .bar-hover-layer .id .text {
+      margin-top: 7px;
+      font-size: 11pt; }
+  .bar-hover-layer .balance {
+    border-bottom: 1px solid #F1F3F5; }
+    .bar-hover-layer .balance .text {
+      font-size: 32pt;
+      text-align: center;
+      font-weight: 300; }
+  .bar-hover-layer .agency {
+    border-bottom: 1px solid #F1F3F5; }
+    .bar-hover-layer .agency .label {
+      margin-bottom: 5px; }
+    .bar-hover-layer .agency .text strong {
+      margin-right: 1em; }
+  .bar-hover-layer li.memo .label {
+    margin-bottom: 5px; }
+  .bar-hover-layer li.memo .text {
+    white-space: pre-line; }
 
 body.login {
   background-color: #D9480F; }

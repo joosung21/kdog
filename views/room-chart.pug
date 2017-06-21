@@ -1,6 +1,49 @@
 include includes/header.pug
 body
   include includes/topbar.pug
+  
+  .bottom-bar
+    a.link
+      i.fa.fa-history
+      span.text-small 변경내역 보기
+    span.empty-2x
+    .last-update #2015778 장미선 예약현황 변경 3:57pm
+    span.empty-2x
+    a.btn.btn-small.btn-dark
+      i.fa.fa-reply
+        span 변경 취소하기
+
+  ul.bar-hover-layer
+    li.title
+      .status.text-booked 예약완료      
+      .name 서은교
+    li.checkin
+      .label 체크인 
+      .text 06-05
+    li.checkout
+      .label 체크아웃
+      .text 06-08
+    li.id
+      .label 예약번호
+      .text 1126029
+    .clear-fix
+    li.balance 
+      .label 받을돈
+      .text ₩ 190,000
+    li.agency
+      .label 예이전시
+      .text
+        strong Agoda.com
+        | 1123803425
+    li.memo
+      .label 예약메모
+      p.text.
+        ** Genius Booker **
+        adult: 1, children: 0, extrabeds: 0      
+    
+  //- .right-slider
+    h1 right-slider
+        
   .wrapper
     include includes/leftnav.pug
 
@@ -110,85 +153,406 @@ body
               .day tue
             .date-box
               .date 19
-              .day thu
-            .date-box.weekend
+              .day wed
+            .date-box
               .date 20
-              .day fri
+              .day thu
             .date-box.weekend
               .date 21
-              .day sat
-            .date-box
-              .date 22
-              .day sun
-            .date-box
-              .date 23
-              .day mon
-            .date-box
-              .date 24
-              .day tue
-            .date-box
-              .date 25
-              .day thu
-            .date-box.weekend
-              .date 26
               .day fri
             .date-box.weekend
-          .clear-fix
-        .roomtype-title 디럭스룸        
-        .room-line(draggable='true')
+              .date 22
+              .day sat
+            .date-box
+              .date 23
+              .day sun
+            .date-box
+              .date 24
+              .day mon
+            .date-box
+              .date 25
+              .day tue
+            .date-box
+              .date 26
+              .day thu
+            .date-box.weekend
+              .date 27
+              .day fri
+            .date-box.weekend
+              .date 28
+              .day sat
+            .date-box
+              .date 29
+              .day sun
+            .date-box
+              .date 30
+              .day mon
+            .date-box
+              .date 31
+              .day tue
+            .date-box
+              .date 8/1
+              .day thu
+            .date-box.weekend
+              .date 2
+              .day fri
+            .date-box.weekend
+              .date 3
+              .day sat
+              
+        .roomtype-title 객실 미배정 예약        
+        .room-line.unassigned
+          .assign
+            a.btn.btn-dark.btn-small.full-width
+              i.fa.fa-download.fa-lg
+              span 객실 배정하기
+          .chart-wrapper
+            ul
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0                
+              li.rec
+                .stock.over 1                
+              li.rec
+                .stock.over 3             
+              li.rec
+                .stock.over 12                
+              li.rec
+                .stock.over 7
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+        
+        .roomtype-title 디럭스룸
+        .room-line
           .room-name 501호          
           .chart-wrapper
             ul
               - var r1 = 0
-              while r1 < 40          
+              while r1 < 50          
                 li.rec(name= r1++)
                   .price 12만
-          .clear-fix
+          .clear-fix        
             
-        .room-line(draggable='true')
+        .room-line
           .room-name 502호          
           .chart-wrapper
             ul
-              - var r2 = 0
-              while r2 < 40          
-                li.rec(name= r2++)
-                  .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+                .bar.booking(style='width: 100px', draggable='true')
+                  .name Mark Thobraski
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+                .bar.booked(style='width: 150px', draggable='true')
+                  .name 서은교
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+                .bar.paid(style='width: 200px', draggable='true')
+                  .name Steve kim
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+                .bar.checkin(style='width: 150px', draggable='true')
+                  .name 장미선
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              
           .clear-fix
-        .room-line(draggable='true')
+        .room-line
           .room-name 503호          
           .chart-wrapper
             ul
-              - var r3 = 0
-              while r3 < 40          
-                li.rec(name= r3++)
-                  .price 12만
+              li.rec
+                .price 12.5만
+                .bar.checkout(style='width: 100px', draggable='true')
+                  .name 유인나
+              li.rec
+                .price 12.5만                
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만                
+              li.rec
+                .price 12.5만
+                .bar.ect(style='width: 50px', draggable='true')
+                  .name 기타
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만                
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+                .bar.checkin(style='width: 150px', draggable='true')
+                  .name 장미선
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+                .bar.disabled(style='width: 600px', draggable='true')
+                  .name 인테리어 공사
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
+              li.rec
+                .price 12.5만
           .clear-fix
           
         .roomtype-title 스위트룸        
-        .room-line(draggable='true')
-          .room-name Long room name word-break
+        .room-line
+          .room-name Long room name english
           .chart-wrapper
             ul
               - var r4 = 0
-              while r4 < 40          
+              while r4 < 50          
                 li.rec(name= r4++)
                   .price 12만
           .clear-fix
-        .room-line(draggable='true')
+        .room-line
           .room-name Luxury Room          
           .chart-wrapper
             ul
               - var r5 = 0
-              while r5 < 40          
+              while r5 < 50          
                 li.rec(name= r5++)
                   .price 12.5만
           .clear-fix
-        .room-line(draggable='true')
-          .room-name 한글로 이름이 긴 경우 Word-Break
+        .room-line
+          .room-name 한글로 이름이 방이름이 긴 경우
           .chart-wrapper
             ul
               - var r6 = 0
-              while r6 < 40          
+              while r6 < 50          
                 li.rec(name= r6++)
                   .price 12만          
           .clear-fix
@@ -198,30 +562,30 @@ body
         .dorm-wrapper
           .dorm-name 4인 여성 도미토리 1
           .beds
-            .room-line(draggable='true')
+            .room-line
               .room-name 침대1
               .chart-wrapper
                 ul
                   - var r7 = 0
-                  while r7 < 40          
+                  while r7 < 50          
                     li.rec(name= r7++)
                       .price 2만
               .clear-fix
-            .room-line(draggable='true')
+            .room-line
               .room-name 침대2
               .chart-wrapper
                 ul
                   - var r8 = 0
-                  while r8 < 40          
+                  while r8 < 50          
                     li.rec(name= r8++)
                       .price 2만
               .clear-fix
-            .room-line(draggable='true')
+            .room-line
               .room-name 창가쪽 침대
               .chart-wrapper
                 ul
                   - var r9 = 0
-                  while r9 < 40          
+                  while r9 < 50          
                     li.rec(name= r9++)
                       .price 2만
               .clear-fix
@@ -229,34 +593,30 @@ body
         .dorm-wrapper
           .dorm-name 4인 여성 도미토리 2
           .beds
-            .room-line(draggable='true')
+            .room-line
               .room-name 침대1
               .chart-wrapper
                 ul
                   - var r7 = 0
-                  while r7 < 40          
+                  while r7 < 50          
                     li.rec(name= r7++)
                       .price 2만
               .clear-fix
-            .room-line(draggable='true')
+            .room-line
               .room-name 침대2
               .chart-wrapper
                 ul
                   - var r8 = 0
-                  while r8 < 40          
+                  while r8 < 50          
                     li.rec(name= r8++)
                       .price 2만
               .clear-fix
-            .room-line(draggable='true')
+            .room-line
               .room-name 창가쪽 침대
               .chart-wrapper
                 ul
                   - var r9 = 0
-                  while r9 < 40          
+                  while r9 < 50          
                     li.rec(name= r9++)
                       .price 2만
               .clear-fix
-            
-          
-            
-            

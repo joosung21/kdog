@@ -11,6 +11,15 @@ $color-priority: #FD7E14
 $color-dark: #495057
 $color-reverse: #3BC9DB
 
+$color-booking: #D9480F
+$color-booked: #FD7E14
+$color-paid: #F1C40F
+$color-checkin: #2ECC71
+// $color-checkout: #3498DB 체크아웃 파란색버젼
+$color-checkout: lighten($color-dark, 40%)
+$color-ect: #9B59B6
+$color-disabled: #697077
+
 $white-gray: #F1F3F5
 $gray: #C9D3DC
 $red: lighten(#F03E3E, 5%)
@@ -52,6 +61,7 @@ $font-bold: 700
 
 // ---------- QUICK STYLE CSS  ---------- //
 
+// Layout colors
 .bg-brand
   background: $color-brand
 .text-brand
@@ -84,11 +94,44 @@ $font-bold: 700
   color: white
 .bg-white
   background: white
+
+//Status colors
+.bg-booking
+  background: $color-booking
+.text-booking
+  color: $color-booking
+.bg-booked
+  background: $color-booked
+.text-booked
+  color: $color-booked
+.bg-paid
+  background: $color-paid
+.text-paid
+  color: $color-paid
+.bg-checkin
+  background: $color-checkin
+.text-checkin
+  color: $color-checkin
+.bg-checkout
+  background: $color-checkout
+.text-checkout
+  color: $color-checkout
+.bg-ect
+  background: $color-ect
+.text-ect
+  color: $color-ect
+.bg-disabled
+  background: $color-disabled
+.text-disabled
+  color: $color-disabled
+
+// Borders
 .border
   border: 1px solid $gray
 .border-light
   border: 1px solid $white-gray
 
+// Text Sizes
 .text-defualt, .text-defualt *
   font-size: $font-size-default
 .text-small, .text-small *
@@ -98,6 +141,7 @@ $font-bold: 700
 .text-large, .text-large *
   font-size: $font-size-large
 
+// Font Weights
 .font-thin
   font-weight: $font-thin
 .font-light
@@ -109,6 +153,7 @@ $font-bold: 700
 .font-bold
   font-weight: $font-bold
 
+// Transforms
 .uppercase
   text-transform: uppercase
 .lowercase
@@ -118,6 +163,7 @@ $font-bold: 700
 .no-transform
   text-decoration: none
 
+// Text Aligns
 .text-center
   text-align: center !important
 .text-right
@@ -134,6 +180,7 @@ $font-bold: 700
 .clear-fix
   clear: both
 
+// Padding & Margin
 .padding-thin
   padding: 10px
 .padding
@@ -155,8 +202,6 @@ body,p,ul,li,h1,h2,h3,h4,h5,h6
 
 body,body *
   font-family: 'Roboto', sans-serif
-  // font-family: 'Noto Sans KR', 'Roboto', sans-serif
-  // font-family: 'Spoqa Han Sans', Sans-serif
   font-weight: $font-normal
   font-size: $font-size-default
   color: $font-color-defualt
@@ -212,6 +257,8 @@ a.link
     opacity: 0.8
   span, i.fa
     color: $color-reverse
+  i.fa
+    margin-right: 5px
 p
   line-height: 1.5em
   font-weight: $font-light
@@ -220,6 +267,7 @@ table
   border-spacing: 0
 strong
   font-weight: $font-medium
+  color: $font-color-thic
 ul,li
   list-style: none
 .icon
@@ -275,6 +323,9 @@ ul,li
 span.empty
   display: inline-block
   width: 1em
+span.empty-2x
+  display: inline-block
+  width: 2em
 
 
 // ---------- FORM CONTROLS  ---------- //
@@ -933,6 +984,28 @@ a.btn
       float: none
       font-size: $font-size-default
 
+// Bottom bar
+.bottom-bar
+  z-index: 11
+  width: calc(100% - 20px)
+  padding: 13px 20px 2px 0
+  height: 40px
+  text-align: right
+  position: fixed
+  bottom: 0
+  background: $color-dark
+  .last-update
+    display: inline-block
+    vertical-align: middle
+    font-weight: $font-light
+    color: darken(white, 30%)
+  a.link
+    vertical-align: middle
+    padding-top: 7px
+    i.fa, span
+      font-weight: $font-light
+      color: darken(white, 10%)
+
 // date-bar
 #date-bar
   margin: -40px -40px 0 -40px
@@ -985,7 +1058,6 @@ a.btn
       width: 50px
       height: 51px
       padding-top: 18px
-      margin-top: -16px
       .date
         text-align: center
         font-size: 14pt
@@ -1014,10 +1086,26 @@ a.btn
           width: calc(100% - 10px)
           text-align: center
 
+// Right-slider
+.right-slider
+  z-index: 10
+  position: absolute
+  top: 60px
+  padding: 40px
+  right: 0
+  width: 300px
+  height: 100%
+  background: $color-dark
+  h1
+    color: white
+
+
 // Roomchart page
 .board.room-chart
   min-height: 100px
   padding-bottom: 0
+  margin-bottom: 60px
+
   .roomtype-title
     padding: 12px 20px 8px 20px
     margin: 0 -40px
@@ -1025,37 +1113,45 @@ a.btn
     background-color: $white-gray
     font-size: 10pt
     font-weight: $font-medium
+
   .room-line
     margin: 0 -40px
-    border-bottom: 1px solid $white-gray
     height: 50px
     &:hover
-      background-color: lighten($color-reverse, 30%)
-      .chart-wrapper .rec, .room-name
-        border-color: lighten($color-reverse, 25%)
-      .chart-wrapper
-        .rec .price
-          color: lighten($color-reverse, 10%)
+      .room-name
+        background-color: lighten($color-reverse, 40%)
     &:last-child
       border-bottom: none
+    &.unassigned
+      .assign
+        width: 160px
+        float: left
+        padding: 0
+        a.btn
+          padding: 17px 0 14px 0
+          opacity: 0.9
+          span
+            font-weight: $font-light
     .room-name
+      @extend .noselect
       float: left
-      width: 119px
+      width: 160px
       height: 15px
-      padding: 18px 20px 17px 20px
+      padding: 18px 10px 31px 20px
       font-size: 11pt
       border-right: 1px solid $gray
+      border-bottom: 1px solid $white-gray
+      box-sizing: border-box
       color: $font-color-thic
       white-space: nowrap
       text-overflow: ellipsis
       overflow: hidden
-      cursor: ns-resize
-      word-break: keep-all
+      cursor: default
       &:hover
         overflow-x: visible
         text-overflow: clip
         white-space: normal
-        padding: 7px 20px 28px 20px
+        padding: 7px 10px 42px 20px
         transition: all 0.5s
 
     .chart-wrapper
@@ -1071,12 +1167,56 @@ a.btn
         height: 50px
         box-sizing: border-box
         border-right: 1px solid $white-gray
+        border-bottom: 1px solid $white-gray
         cursor: pointer
-        &:hover
-          background-color: lighten($color-reverse, 20%)
-          .price
+        .bar
+          z-index: 10
+          background-color: $gray
+          display: block
+          position: absolute
+          left: 0
+          top: 0
+          height: 50px
+          box-sizing: border-box
+          border: 1px solid rgba(black, 0.05)
+          &.booking
+            background: $color-booking
+            &:hover
+              background: darken($color-booking, 5%)
+          &.booked
+            background: $color-booked
+            &:hover
+              background: darken($color-booked, 5%)
+          &.paid
+            background: $color-paid
+            &:hover
+              background: darken($color-paid, 5%)
+          &.checkin
+            background: $color-checkin
+            &:hover
+              background: darken($color-checkin, 5%)
+          &.checkout
+            background: $color-checkout
+            &:hover
+              background: darken($color-checkout, 5%)
+          &.ect
+            background: $color-ect
+            &:hover
+              background: darken($color-ect, 5%)
+          &.disabled
+            background: $color-disabled
+            &:hover
+              background: darken($color-disabled, 5%)
+          .name
             color: white
-        .price
+            padding: 18px 5px 0 10px
+            font-size: 10pt
+            overflow: hidden
+            white-space: nowrap
+            text-overflow: ellipsis
+        &:hover
+          background-color: lighten($color-reverse, 40%)
+        .price, .stock
           position: absolute
           width: 50px
           text-align: center
@@ -1084,6 +1224,12 @@ a.btn
           top: 20px
           font-size: 9pt
           color: lighten($font-color-defualt, 30%)
+        .stock
+          font-size: 11pt
+          top: 17px
+          color: lighten($font-color-defualt, 50%)
+          &.over
+            color: $font-color-thic
 
   .dorm-wrapper
     margin: 0 -40px 0 -40px
@@ -1104,20 +1250,82 @@ a.btn
       .room-line
         margin: 0
         .room-name
-          width: 52px
+          width: 69px
           font-size: 9pt
           top: 2px
           border-left: 1px solid $white-gray
           text-align: center
-          padding: 19px 8px 16px 8px
+          padding: 19px 8px 30px 8px
           &:hover
-            padding: 7px 8px 28px 8px
+            padding: 9px 8px 40px 8px
             transition: all 0.5s
         .chart-wrapper
-          width: calc(100% - 72px)
+          width: calc(100% - 69px)
 
-
-
+// Bar Hover Layer
+.bar-hover-layer
+  z-index: 12
+  position: absolute
+  left: 0
+  top: 0
+  width: 300px
+  background: white
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5)
+  li
+    padding: 15px 20px
+    .label
+      font-size: 10pt
+      color: lighten($font-color-defualt, 30%)
+      font-weight: $font-light
+    .text
+      color: $font-color-thic
+  .title
+    border-bottom: 1px solid $white-gray
+    background: lighten($white-gray, 2%)
+    .status
+      width: 63px
+      display: inline-block
+      vertical-align: middle
+    .name
+      display: inline-block
+      width: 197px
+      text-overflow: ellipsis
+      white-space: nowrap
+      overflow: hidden
+      vertical-align: middle
+  .checkin, .checkout, .id
+    float: left
+    width: 59px
+    height: 40px
+    border-bottom: 1px solid $white-gray
+  .checkin, .checkout
+    border-right: 1px solid $white-gray
+    .text
+      font-size: 23px
+  .id
+    width: 60px
+    .text
+      margin-top: 7px
+      font-size: 11pt
+  .balance
+    border-bottom: 1px solid $white-gray
+    .label
+    .text
+      font-size: 32pt
+      text-align: center
+      font-weight: $font-light
+  .agency
+    border-bottom: 1px solid $white-gray
+    .label
+      margin-bottom: 5px
+    .text
+      strong
+        margin-right: 1em
+  li.memo
+    .label
+      margin-bottom: 5px
+    .text
+      white-space: pre-line
 
 
 // login Page

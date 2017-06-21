@@ -5,10 +5,11 @@ include ../includes/header.pug
   #content.unfolded(name='colors')
     .board.full-width
       h1.lined colors      
+      h2 Layout colors
       .colorbox
         .text.padding.text-brand .text-brand
         .view.padding-2x.text-white.bg-brand .bg-brand        
-        .sass.padding $color-brand      
+        .sass.padding $color-brand  
       .colorbox
         .text.padding.text-priority .text-priority
         .view.padding-2x.bg-priority.text-white .bg-priority
@@ -38,3 +39,36 @@ include ../includes/header.pug
         .sass.padding $red
         
       .clear-fix
+      .margin
+        
+      h2 Status colors
+      .colorbox
+        .text.padding 예약중
+        .view.padding-2x.bg-booking.text-white .bg-booking
+        .sass.padding $color-booking
+      .colorbox
+        .text.padding 예약완료
+        .view.padding-2x.bg-booked.text-white .bg-booked
+        .sass.padding $color-booking
+      .colorbox
+        .text.padding 결제완료
+        .view.padding-2x.bg-paid.text-white .bg-paid
+        .sass.padding $color-booking
+      .colorbox
+        .text.padding 체크인
+        .view.padding-2x.bg-checkin.text-white .bg-checkin
+        .sass.padding $color-booking
+      .colorbox
+        .text.padding 체크아웃
+        .view.padding-2x.bg-checkout.text-white .bg-checkout
+        .sass.padding $color-booking
+      .colorbox
+        .text.padding 기타
+        .view.padding-2x.bg-ect.text-white .bg-ect
+        .sass.padding $color-booking
+      .colorbox
+        .text.padding 예약불가
+        .view.padding-2x.bg-disabled.text-white .bg-disabled
+        .sass.padding $color-booking
+      
+      .clear-fix      
