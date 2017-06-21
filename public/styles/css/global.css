@@ -199,6 +199,10 @@ p {
   line-height: 1.5em;
   font-weight: 300; }
 
+table {
+  border-collapse: separate;
+  border-spacing: 0; }
+
 strong {
   font-weight: 500; }
 
@@ -969,67 +973,103 @@ a.btn {
         width: calc(100% - 10px);
         text-align: center; }
 
-.room-chart .roomtype-title {
-  padding: 12px 20px 8px 20px;
-  margin: 0 -40px;
-  border-bottom: 1px solid #d3dae0;
-  background-color: #F1F3F5;
-  font-size: 10pt;
-  font-weight: 500; }
-.room-chart .room-line {
-  margin: 0 -40px;
-  border-bottom: 1px solid #F1F3F5;
-  height: 50px; }
-  .room-chart .room-line:hover {
-    background-color: #bcedf3; }
-    .room-chart .room-line:hover .chart-wrapper .rec, .room-chart .room-line:hover .room-name {
-      border-color: #a7e7ef; }
-    .room-chart .room-line:hover .chart-wrapper .rec .price {
-      color: #66d5e3; }
-  .room-chart .room-line .room-name {
-    float: left;
-    width: 119px;
-    height: 15px;
-    padding: 18px 20px 17px 20px;
-    font-size: 11pt;
-    border-right: 1px solid #C9D3DC;
-    color: rgba(73, 80, 87, 0.7);
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    cursor: ns-resize; }
-    .room-chart .room-line .room-name:hover {
-      overflow-x: visible;
-      text-overflow: clip;
-      white-space: normal;
-      padding: 7px 20px 28px 20px;
-      transition: all 0.5s; }
-  .room-chart .room-line .chart-wrapper {
-    width: calc(100% - 160px);
-    white-space: nowrap;
-    height: 50px;
-    float: left;
-    overflow: hidden; }
-    .room-chart .room-line .chart-wrapper .rec {
-      display: inline-block;
-      position: relative;
-      width: 50px;
+.board.room-chart {
+  min-height: 100px;
+  padding-bottom: 0; }
+  .board.room-chart .roomtype-title {
+    padding: 12px 20px 8px 20px;
+    margin: 0 -40px;
+    border-bottom: 1px solid #d3dae0;
+    background-color: #F1F3F5;
+    font-size: 10pt;
+    font-weight: 500; }
+  .board.room-chart .room-line {
+    margin: 0 -40px;
+    border-bottom: 1px solid #F1F3F5;
+    height: 50px; }
+    .board.room-chart .room-line:hover {
+      background-color: #bcedf3; }
+      .board.room-chart .room-line:hover .chart-wrapper .rec, .board.room-chart .room-line:hover .room-name {
+        border-color: #a7e7ef; }
+      .board.room-chart .room-line:hover .chart-wrapper .rec .price {
+        color: #66d5e3; }
+    .board.room-chart .room-line:last-child {
+      border-bottom: none; }
+    .board.room-chart .room-line .room-name {
+      float: left;
+      width: 119px;
+      height: 15px;
+      padding: 18px 20px 17px 20px;
+      font-size: 11pt;
+      border-right: 1px solid #C9D3DC;
+      color: rgba(73, 80, 87, 0.7);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      cursor: ns-resize;
+      word-break: keep-all; }
+      .board.room-chart .room-line .room-name:hover {
+        overflow-x: visible;
+        text-overflow: clip;
+        white-space: normal;
+        padding: 7px 20px 28px 20px;
+        transition: all 0.5s; }
+    .board.room-chart .room-line .chart-wrapper {
+      width: calc(100% - 160px);
+      white-space: nowrap;
       height: 50px;
-      box-sizing: border-box;
-      border-right: 1px solid #F1F3F5;
-      cursor: pointer; }
-      .room-chart .room-line .chart-wrapper .rec:hover {
-        background-color: #91e1eb; }
-        .room-chart .room-line .chart-wrapper .rec:hover .price {
-          color: white; }
-      .room-chart .room-line .chart-wrapper .rec .price {
-        position: absolute;
+      float: left;
+      overflow: hidden; }
+      .board.room-chart .room-line .chart-wrapper .rec {
+        display: inline-block;
+        position: relative;
         width: 50px;
-        text-align: center;
-        left: 0;
-        top: 20px;
-        font-size: 9pt;
-        color: rgba(148, 157, 165, 0.5); }
+        height: 50px;
+        box-sizing: border-box;
+        border-right: 1px solid #F1F3F5;
+        cursor: pointer; }
+        .board.room-chart .room-line .chart-wrapper .rec:hover {
+          background-color: #91e1eb; }
+          .board.room-chart .room-line .chart-wrapper .rec:hover .price {
+            color: white; }
+        .board.room-chart .room-line .chart-wrapper .rec .price {
+          position: absolute;
+          width: 50px;
+          text-align: center;
+          left: 0;
+          top: 20px;
+          font-size: 9pt;
+          color: rgba(148, 157, 165, 0.5); }
+  .board.room-chart .dorm-wrapper {
+    margin: 0 -40px 0 -40px;
+    border-top: 1px solid #C9D3DC; }
+    .board.room-chart .dorm-wrapper .dorm-name {
+      margin-left: 20px;
+      padding-right: 10px;
+      width: 60px;
+      display: inline-block;
+      vertical-align: middle;
+      color: rgba(73, 80, 87, 0.7);
+      font-size: 10pt;
+      word-break: keep-all; }
+    .board.room-chart .dorm-wrapper .beds {
+      width: calc(100% - 90px);
+      display: inline-block;
+      vertical-align: middle; }
+      .board.room-chart .dorm-wrapper .beds .room-line {
+        margin: 0; }
+        .board.room-chart .dorm-wrapper .beds .room-line .room-name {
+          width: 52px;
+          font-size: 9pt;
+          top: 2px;
+          border-left: 1px solid #F1F3F5;
+          text-align: center;
+          padding: 19px 8px 16px 8px; }
+          .board.room-chart .dorm-wrapper .beds .room-line .room-name:hover {
+            padding: 7px 8px 28px 8px;
+            transition: all 0.5s; }
+        .board.room-chart .dorm-wrapper .beds .room-line .chart-wrapper {
+          width: calc(100% - 72px); }
 
 body.login {
   background-color: #D9480F; }

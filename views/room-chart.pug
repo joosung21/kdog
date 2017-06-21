@@ -166,7 +166,7 @@ body
           
         .roomtype-title 스위트룸        
         .room-line(draggable='true')
-          .room-name River View Suite Room
+          .room-name Long room name word-break
           .chart-wrapper
             ul
               - var r4 = 0
@@ -184,7 +184,7 @@ body
                   .price 12.5만
           .clear-fix
         .room-line(draggable='true')
-          .room-name Enterprize
+          .room-name 한글로 이름이 긴 경우 Word-Break
           .chart-wrapper
             ul
               - var r6 = 0
@@ -194,36 +194,68 @@ body
           .clear-fix
             
         .roomtype-title 여성4인 도미토리
+        
         .dorm-wrapper
-          .dorm-name
-          .room-line(draggable='true')
-            .room-name 침대1
-            .chart-wrapper
-              ul
-                - var r7 = 0
-                while r7 < 40          
-                  li.rec(name= r7++)
-                    .price 2만
-            .clear-fix
-          .room-line(draggable='true')
-            .room-name 침대2
-            .chart-wrapper
-              ul
-                - var r8 = 0
-                while r8 < 40          
-                  li.rec(name= r8++)
-                    .price 2만
-            .clear-fix
-          .room-line(draggable='true')
-            .room-name 침대3
-            .chart-wrapper
-              ul
-                - var r9 = 0
-                while r9 < 40          
-                  li.rec(name= r9++)
-                    .price 2만
-            .clear-fix
-          
+          .dorm-name 4인 여성 도미토리 1
+          .beds
+            .room-line(draggable='true')
+              .room-name 침대1
+              .chart-wrapper
+                ul
+                  - var r7 = 0
+                  while r7 < 40          
+                    li.rec(name= r7++)
+                      .price 2만
+              .clear-fix
+            .room-line(draggable='true')
+              .room-name 침대2
+              .chart-wrapper
+                ul
+                  - var r8 = 0
+                  while r8 < 40          
+                    li.rec(name= r8++)
+                      .price 2만
+              .clear-fix
+            .room-line(draggable='true')
+              .room-name 창가쪽 침대
+              .chart-wrapper
+                ul
+                  - var r9 = 0
+                  while r9 < 40          
+                    li.rec(name= r9++)
+                      .price 2만
+              .clear-fix
+        
+        .dorm-wrapper
+          .dorm-name 4인 여성 도미토리 2
+          .beds
+            .room-line(draggable='true')
+              .room-name 침대1
+              .chart-wrapper
+                ul
+                  - var r7 = 0
+                  while r7 < 40          
+                    li.rec(name= r7++)
+                      .price 2만
+              .clear-fix
+            .room-line(draggable='true')
+              .room-name 침대2
+              .chart-wrapper
+                ul
+                  - var r8 = 0
+                  while r8 < 40          
+                    li.rec(name= r8++)
+                      .price 2만
+              .clear-fix
+            .room-line(draggable='true')
+              .room-name 창가쪽 침대
+              .chart-wrapper
+                ul
+                  - var r9 = 0
+                  while r9 < 40          
+                    li.rec(name= r9++)
+                      .price 2만
+              .clear-fix
             
           
             

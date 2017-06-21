@@ -215,6 +215,9 @@ a.link
 p
   line-height: 1.5em
   font-weight: $font-light
+table
+  border-collapse: separate
+  border-spacing: 0
 strong
   font-weight: $font-medium
 ul,li
@@ -1012,7 +1015,9 @@ a.btn
           text-align: center
 
 // Roomchart page
-.room-chart
+.board.room-chart
+  min-height: 100px
+  padding-bottom: 0
   .roomtype-title
     padding: 12px 20px 8px 20px
     margin: 0 -40px
@@ -1031,6 +1036,8 @@ a.btn
       .chart-wrapper
         .rec .price
           color: lighten($color-reverse, 10%)
+    &:last-child
+      border-bottom: none
     .room-name
       float: left
       width: 119px
@@ -1043,6 +1050,7 @@ a.btn
       text-overflow: ellipsis
       overflow: hidden
       cursor: ns-resize
+      word-break: keep-all
       &:hover
         overflow-x: visible
         text-overflow: clip
@@ -1076,6 +1084,40 @@ a.btn
           top: 20px
           font-size: 9pt
           color: lighten($font-color-defualt, 30%)
+
+  .dorm-wrapper
+    margin: 0 -40px 0 -40px
+    border-top: 1px solid $gray
+    .dorm-name
+      margin-left: 20px
+      padding-right: 10px
+      width: 60px
+      display: inline-block
+      vertical-align: middle
+      color: $font-color-thic
+      font-size: 10pt
+      word-break: keep-all
+    .beds
+      width: calc(100% - 90px)
+      display: inline-block
+      vertical-align: middle
+      .room-line
+        margin: 0
+        .room-name
+          width: 52px
+          font-size: 9pt
+          top: 2px
+          border-left: 1px solid $white-gray
+          text-align: center
+          padding: 19px 8px 16px 8px
+          &:hover
+            padding: 7px 8px 28px 8px
+            transition: all 0.5s
+        .chart-wrapper
+          width: calc(100% - 72px)
+
+
+
 
 
 // login Page
