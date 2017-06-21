@@ -25,6 +25,8 @@ $( document ).ready(function() {
   $('.modal').hide();
   $('.bar-hover-layer').hide();
 
+  $('#r-window').show();
+
   // Open Top menu layers
   $('.toptab.notice').click(function(){
     if($('#notice-layer').hasClass('show') == false){

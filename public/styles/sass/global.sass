@@ -1032,10 +1032,6 @@ a.btn
         font-size: 28pt
         color: $font-color-thic
         font-weight: $font-normal
-    &:hover
-      .controls
-        display: block
-        transition: all 1s
     .controls
       display: none
       position: absolute
@@ -1047,6 +1043,9 @@ a.btn
         border: none
         i.fa
           margin: -6px 0
+  &:hover
+    .controls
+      display: block
   .date-wrapper
     width: calc(100% - 160px)
     overflow: hidden
@@ -1119,7 +1118,8 @@ a.btn
     height: 50px
     &:hover
       .room-name
-        background-color: lighten($color-reverse, 40%)
+        // background-color: lighten($color-reverse, 40%)
+        background-color: lighten($white-gray, 2%)
     &:last-child
       border-bottom: none
     &.unassigned
@@ -1215,7 +1215,8 @@ a.btn
             white-space: nowrap
             text-overflow: ellipsis
         &:hover
-          background-color: lighten($color-reverse, 40%)
+          // background-color: lighten($color-reverse, 40%)
+          background-color: $white-gray
         .price, .stock
           position: absolute
           width: 50px
@@ -1230,7 +1231,6 @@ a.btn
           color: lighten($font-color-defualt, 50%)
           &.over
             color: $font-color-thic
-
   .dorm-wrapper
     margin: 0 -40px 0 -40px
     border-top: 1px solid $gray
@@ -1261,6 +1261,42 @@ a.btn
             transition: all 0.5s
         .chart-wrapper
           width: calc(100% - 69px)
+
+// Reservation Window
+#r-window
+  .modal-board
+    width: 1000px
+    .title-bar
+      background: $color-dark
+      color: white
+      font-weight: $font-light
+      padding: 15px 20px
+    section
+      width: 300px
+      border-right: 1px solid $gray
+      .header
+        background-color: $white-gray
+        padding: 15px 20px
+        .title
+          float: left
+          img
+            opacity: 0.7
+            vertical-align: middle
+            padding-right: 10px
+          span
+            vertical-align: middle
+            font-size: 12pt
+            position: relative
+            top: 2px
+        .num
+          float: right
+          padding-top: 4px
+      .
+    section.customer
+
+
+
+
 
 // Bar Hover Layer
 .bar-hover-layer
