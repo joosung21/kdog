@@ -5,36 +5,40 @@ include ../includes/header.pug
   #content.unfolded(name='form-controls')
     .board.full-width
       h1.lined form controls      
-      .content-wrapper
-        h2.margin Input box
-        .form-group
-          label DEFAULT INPUT BOX
-          input(type='text', value='', placeholder='Place Holder')
-        .form-group
-          label TOOLTIP
-            .tooltip.icon           
-              .desc 도움이 될만한 팁을 여기에 적어주세요. 한줄 또는 여러줄도 가능합니다.              
-                a(href='#').link 링크
-                | 도 활용 가능합니다.
-          input(type='text', value='', placeholder='Place Holder')            
-        .form-group
-          label INNER BUTTON
-          input(type='text', value='', placeholder='Place Holder')
-          .inner-text-wrapper
-            a.inner-text.link(href='javascript:') button
-        .form-group
-          label INNER TEXT
-          input(type='text', value='', placeholder='Place Holder')
-          .inner-text-wrapper
-            .inner-text.link(href='javascript:') text here
-        .form-group
-          label DISABLED INPUT BOX
-          input(type='text', value='Some delicate data value here', disabled)
-      
-        .devider
-            
-        h2.margin Select box
-        .form-group
+      .row
+        .col-2-left
+          h2.margin Input box
+          .form-group
+            label DEFAULT
+            input(type='text', value='', placeholder='Place Holder')
+          .form-group
+            label WITH COUNTER
+            input(type='text', value='', placeholder='Place Holder')
+            .counter 0/30
+          .form-group
+            label TOOLTIP
+              .tooltip.icon           
+                .desc 도움이 될만한 팁을 여기에 적어주세요. 한줄 또는 여러줄도 가능합니다.              
+                  a(href='#').link 링크
+                  | 도 활용 가능합니다.
+            input(type='text', value='', placeholder='Place Holder')            
+          .form-group
+            label INNER BUTTON
+            input(type='text', value='', placeholder='Place Holder')
+            .inner-text-wrapper
+              a.inner-text.link(href='javascript:') button
+          .form-group
+            label INNER TEXT
+            input(type='text', value='', placeholder='Place Holder')
+            .inner-text-wrapper
+              .inner-text.link(href='javascript:') text here
+          .form-group
+            label DISABLED INPUT BOX
+            input(type='text', value='Some delicate data value here', disabled)          
+        
+          .devider
+              
+          h2.margin Select box          
           .form-group
             label LABEL  
             .select-wrapper
@@ -43,45 +47,108 @@ include ../includes/header.pug
                 option option 2
                 option option 3
                 option option 4
+          
+          .devider
+          
+          h2.margin Text area
+          .form-group          
+            label LABEL
+            textarea(rows='4', value='', placeholder='Place Holder')
+              
+          .devider
+          
+          h2.margin Boxed label - Full width
+          .form-group          
+            .box-label
+              label INPUT
+              input(type='text', value='', placeholder='Place Holder')
+          .form-group          
+            .box-label
+              label SELECT
+              .select-wrapper
+                select
+                  option option 1
+                  option option 2
+                  option option 3
+                  option option 4
+          
+          .devider
+          
+          h2.margin Colum example
+          .row
+            .form-group.col-2-left
+              label LEFT
+              input(type='text', value='', placeholder='Place Holder')
+            .form-group.col-2-right
+              label RIGHT
+              input(type='text', value='', placeholder='Place Holder')
+            .clear-fix
+              
+          .margin
         
-        .devider
-        
-        h2.margin Text area
-        .form-group          
-          label LABEL
-          textarea(rows='4', value='', placeholder='Place Holder')
-            
-        .devider
-        
-        h2.margin Boxed label - Full width
-        .form-group          
-          .box-label
-            label INPUT
+        .col-2-right
+          h2.margin Light Form
+          .form-group.light
+            label DEFAULT
             input(type='text', value='', placeholder='Place Holder')
-        .form-group          
-          .box-label
-            label SELECT
+          .form-group.light
+            label WITH COUNTER
+            input(type='text', value='', placeholder='Place Holder')
+            .counter 0/30
+          .form-group.light
+            label TOOLTIP
+              .tooltip.icon           
+                .desc 도움이 될만한 팁을 여기에 적어주세요. 한줄 또는 여러줄도 가능합니다.              
+                  a(href='#').link 링크
+                  | 도 활용 가능합니다.
+            input(type='text', value='', placeholder='Place Holder')            
+          .form-group.light
+            label DISABLED
+            input(type='text', value='Some delicate data value here', disabled)
+          .form-group.light
+            label SELECT  
             .select-wrapper
-              select
+              select(dir='rtl')
                 option option 1
                 option option 2
                 option option 3
                 option option 4
+          .form-group.light
+            textarea(rows='4', value='', placeholder='Place Holder')
+            label TEXTAREA
+          .row
+            .col-2-left
+              .form-group.light
+                label LEFT
+                input(type='text', value='', placeholder='Place Holder')
+            .col-2-right
+              .form-group.light
+                label RIGHT
+                .select-wrapper
+                  select(dir='rtl')
+                    option option 1
+                    option option 2
+                    option option 3
+                    option option 4
+            .clear-fix
+          
+          .devider
+          
+          h2.margin Light Form - No margin          
+          .form-group.light.no-margin
+            label LABEL
+            input(type='text', value='', placeholder='Sometimes, we do not need a margin')
+          .form-group.light.no-margin
+            label LABEL
+            input(type='text', value='', placeholder='Then, just add .no-margin class')
+          .form-group.light.no-margin
+            label LABEL
+            input(type='text', value='', placeholder='Like this')
         
+        .clear-fix
+          
         .devider
-        
-        h2.margin Colum example
-        .row
-          .form-group.col-2-left
-            label LEFT
-            input(type='text', value='', placeholder='Place Holder')
-          .form-group.col-2-right
-            label RIGHT
-            input(type='text', value='', placeholder='Place Holder')
-          .clear-fix
-        
-        .devider
-        
+          
         h2.margin inline form group
         .form-group.form-inline
           label INPUT
@@ -119,6 +186,7 @@ include ../includes/header.pug
         label(for='r2')
           span
           | 라디오박스 2
-          
+        
         .margin-2x
+          
                    

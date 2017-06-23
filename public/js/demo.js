@@ -27,6 +27,10 @@ $( document ).ready(function() {
 
   $('#r-window').show();
 
+  $('.modal .layover').click(function(){
+    $('.modal').hide();
+  });
+
   // Open Top menu layers
   $('.toptab.notice').click(function(){
     if($('#notice-layer').hasClass('show') == false){
@@ -77,7 +81,7 @@ $( document ).ready(function() {
     }
   });
 
-  // Room-chart Bar Hover layers
+  // Room-chart Bar Action
   $('.room-line .bar').mouseover(function(){
     var offset = $(this).offset()
     $('.bar-hover-layer').offset({
@@ -92,6 +96,9 @@ $( document ).ready(function() {
       left: 0
     });
     $('.bar-hover-layer').hide();
+  });
+  $('.room-line .bar').click(function(){
+    $('#r-window').show();
   });
 
 });

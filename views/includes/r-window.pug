@@ -1,18 +1,204 @@
 #r-window.modal
+  .layover
   .modal-board
-    .title-bar 유인나 - 3개의 객실
-    section.customer
+    .title-bar
+      | 유인나 - 3개의 객실
+      .close
+        a(onclick='closeModal()')       
+          img(src='/images/icons/close-x.svg')
+    section
       .header        
         .title
           img(src='/images/icons/gray-male-user.svg')
           span 고객정보
         .num #1121567
         .clear-fix
-      .content
-        .form-group
+      .content        
+        .form-group.light
           label 고객명
-          input(type='text')
+          input(type='text', value='유인나')
+        .form-group.light
+          label 성별
+          .select-wrapper
+            select(dir='rtl')
+              option 성별모름
+              option 여자
+              option 남자
+        .form-group.light
+          label 연락처
+          input(type='text', value='010-2268-5399')
+        .form-group.light
+          label 국적
+          input(type='text', value='')
+        .form-group.light
+          label 여권ID
+          input(type='text', value='')
+        .form-group.light
+          label 생년월일
+          input(type='text', value='1991-05-01')
+        .form-group.light
+          textarea(rows='7').
+            이 고객은 착한 고객입니다.
+            바베큐 신청하셨음. 아이랑 같이옴
+            은근 컴플레인 많음.
+            과연 착한가...
+          label 고객메모
+          
+    section
+      .header        
+        .title
+          img(src='/images/icons/gray-bell.svg')
+          span 예약정보
+        .num #8097383
+        .clear-fix
+      .content
+        .form-group.light
+          label 체크인
+          input(type='text', value='2017-05-24')
+        .form-group.light
+          label 체크아웃
+          input(type='text', value='2017-05-27')
+        .row
+          .col-2-left
+            .form-group.light
+              label 숙박일
+              input(type='text', value='2박')
+          .col-2-right
+            .form-group.light
+              label 객실수
+              input(type='text', value='3')
+          .clear-fix
+        .row
+          .col-2-left
+            .form-group.light
+              label 남자인원
+              input(type='text', value='3')
+          .col-2-right
+            .form-group.light
+              label 여자인원
+              input(type='text', value='3')
+          .clear-fix
+        .row
+          .col-2-left
+            .form-group.light
+              label 항공편
+              input(type='text', value='CZ313')
+          .col-2-right
+            .form-group.light
+              label 도착예정
+              input(type='text', value='오후3시')
+          .clear-fix            
+        .form-group.light
+          label 에이전시
+          .select-wrapper
+            select(dir='rtl')
+              option 선택하세요
+              option Airbnb
+              option Booking.com
+              option Agoda
+        .form-group.light
+          label 에이전시 예약번호
+          input(type='text', value='1121715')        
+        .form-group.light
+          textarea(rows='4').
+            ** Genius Booker **
+            You have a booker that prefers communication by email
+          label 예약메모
+    
+    section.payment
+      .header        
+        .title
+          img(src='/images/icons/gray-credit-card.svg')
+          span 결제정보
+        .num 
+          a.link
+            i.fa.fa-angle-down
+            span 객실요금표
+        .clear-fix
+      .content        
+        .form-group.light.no-margin
+          label Room Charge
+          input(type='text', value='₩ 560,000')
+        .form-group.light.no-margin
+          label 조식비
+          input(type='text', value='₩ 120,000')
+        .text-right
+          a.link.text-xsmall
+            i.fa.fa-plus
+            span 새로운 항목 추가
+        
+        .margin
+          
+        .form-group.light.no-margin
+          label TOTAL
+          input(type='text', value='₩ 680,000')
+        .form-group.light.no-margin.indent
+          label 할인액/할증액
+          input(type='text', value='-10,000')
+        .form-group.light.no-margin.indent
+          label 현금
+          input(type='text', value='0')
+        .form-group.light.no-margin.indent
+          label 카드
+          input(type='text', value='240,000')
+        .card-history
+          a.link
+            span.text 결제승인(4283)
+            span.amount ₩ 100,000 
+        .card-history
+          a.link
+            span.text 결제승인(1650)
+            span.amount ₩ 180,000
+        .card-history
+          a.link
+            span.text 결제취소(1650)
+            span.amount - ₩ 40,000 
+        .form-group.light.no-margin.indent
+          label 에이전시결제
+          input(type='text', value='0')
+        .form-group.light.no-margin.indent
+          label 무통장입금
+          input(type='text', value='0')
+        .form-group.light.no-margin.indent
+          label 환불
+          input(type='text', value='0')
+        
+        .margin
+        
+        .form-group.light.no-margin
+          label 받을돈
+          input(type='text', value='₩ 430,000')
+        
+        .margin
+        
+        a.btn.btn-white.btn-small.full-width
+          i.fa.fa-file-text-o
+          span 영수증 출력
+    
+    section.status
+      .header
+        .title 예약상태        
+      ul
+        li.booking 예약중
+        li.booked.active 예약완료
+        li.paid 결제완료
+        li.checkin 체크인
+        li.checkout 체크아웃
+        li.etc 기타
+        li.disabled 예약불가
+        li.canceled 예약취소
+    
+    .clear-fix
+    
+    section.buttons
+      a.btn.btn-dark(style='width: 145px')
+        i.fa.fa-history
+        span 변경내역 보기
+      a.btn(style='width: 500px')
+        i.fa.fa-check
+        span 저장
+      a.btn.btn-dark(style='width: 146px', onclick='closeModal()') 닫기
         
         
-      
+        
       
