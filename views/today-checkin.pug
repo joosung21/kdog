@@ -1,0 +1,150 @@
+include includes/header.pug
+body
+  include includes/topbar.pug
+  include includes/r-window.pug
+  .wrapper
+    include includes/leftnav.pug
+    
+    #content.unfolded(name='today-stat', page='checkin')
+      .left-wrapper
+        include includes/menu-today.pug
+            
+        .left-box
+          h4.title
+            i.fa.fa-filter
+            | 필터
+          .form-group.small
+            input(type='text', placeholder='고객명')
+          .form-group.small
+            input(type='text', placeholder='예약번호')
+          .form-group.small
+            input(type='text', placeholder='객실번호')
+          .form-group.small              
+            .select-wrapper
+              select
+                option 에이전시 전체
+                option Expedia
+                option Agoda
+                option Booking.com
+                option 네이버
+        .margin
+        a.btn.btn-gray.btn-lg.full-width
+          i.fa.fa-bell-o.fa-lg
+          span 비예약 체크인
+            
+                     
+      .board
+        .title-bar
+          h4 체크인/체크아웃
+        
+        h1 
+          | 2017년 5월 15일 목요일
+          span.empty
+          a.btn.btn-white.btn-small.btn-arrow
+            i.fa.fa-angle-left.fa-lg
+          a.btn.btn-white.btn-small.btn-arrow
+            i.fa.fa-angle-right.fa-lg
+              
+        table.banners
+          tr
+            td.bg-priority
+              .title
+                | 체크인예정
+                .sub Due in
+              .number 15
+            td.bg-checkin
+              .title
+                | 체크인
+                .sub checked in
+              .number 74
+            td.bg-ect
+              .title
+                | 노쇼
+                .sub No show
+              .number 2
+          tr
+            td.bg-reverse
+              .title
+                | 체크아웃예정
+                .sub Due out
+              .number 2
+            td.bg-checkout
+              .title
+                | 체크아웃
+                .sub checked out
+              .number 52
+            td.bg-red
+              .title
+                | 청소미완료
+                .sub Dirty rooms
+              .number 10
+        
+        .margin-2x
+            
+        table.table
+          thead
+            tr
+              th.sortable.desc 예약번호 
+              th.sortable 고객명
+              th.sortable 에이전시
+              th.sortable 객실
+              th.sortable 청소상태
+              th 발랜스
+              th.sortable 상태               
+          tbody
+            tr
+              td                 
+                a.link(onclick='openRwindow()') 8055215              
+              td Kent Desiment
+              td Booking.com
+              td 414
+              td 검수완료
+              td -120,000
+              td.text-priority 체크인 예정
+            tr
+              td 
+                a.link(onclick='openRwindow()') 8055214
+              td 김빛나
+              td Expedia
+              td 미배정
+              td -
+              td -120,000
+              td.text-priority 체크인 예정
+            tr
+              td 
+                a.link(onclick='openRwindow()') 8055213
+              td 이승헌
+              td 네이버
+              td 210
+              td 미완료
+              td 0
+              td.text-reverse 체크아웃 예정
+            tr
+              td 
+                a.link(onclick='openRwindow()') 8055212
+              td Julia Lee
+              td 티몬
+              td 810
+              td 미완료
+              td 0
+              td.text-checkin 체크인
+            tr
+              td 
+                a.link(onclick='openRwindow()') 8055210
+              td 문자숙
+              td Agoda
+              td 506
+              td 청소완료 
+              td 0
+              td.text-checkout 체크아웃
+            tr
+              td 
+                a.link(onclick='openRwindow()') 8055209
+              td 정혜임
+              td 네이버
+              td 402
+              td 검수완료
+              td 0
+              td.text-ect 노쇼
+              
+              

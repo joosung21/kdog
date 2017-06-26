@@ -1,0 +1,106 @@
+include includes/header.pug
+body
+  include includes/topbar.pug
+  include includes/r-window.pug
+  .wrapper
+    include includes/leftnav.pug
+    
+    #content.unfolded(name='today-stat', page='reservation')
+      .left-wrapper
+        include includes/menu-today.pug
+            
+        .left-box
+          h4.title
+            i.fa.fa-filter
+            | 필터
+          .form-group.small
+            input(type='text', placeholder='고객명')
+          .form-group.small            
+            input(type='text', placeholder='예약번호')
+          .form-group.small            
+            .select-wrapper
+              select
+                option 객실타입 전체
+                option 스위트룸
+                option 트윈룸
+          .form-group.small            
+            .select-wrapper
+              select
+                option 에이전시 전체
+                option Expedia
+                option Agoda
+                option Booking.com
+                option 네이버
+                     
+      .board
+        .title-bar
+          h4 들어온 예약
+            
+        table.table
+          thead
+            tr
+              th.sortable.desc 예약번호                  
+              th.sortable 예약일시
+              th 고객명
+              th.sortable 객실타입
+              th.sortable 투숙일
+              th.sortable 판매처
+              th.sortable 총숙박비 
+              th.sortable 상태          
+          tbody
+            tr
+              td
+                a.link(onclick='openRwindow()') 800145
+              td 오늘 10:12AM
+              td 홍승찬
+              td 디럭스룸
+              td 2017-05-16(3박)
+              td 판매대행 - 네이버
+              td ₩ 170,000
+              td
+                .tag.green 확정
+            tr
+              td
+                a.link(onclick='openRwindow()') 800144
+              td 어제 9:03AM
+              td 임유진
+              td 트윈룸
+              td 2017-05-21(1박)
+              td Agoda
+              td ₩ 550,000
+              td
+                .tag.yellow 대기
+            tr
+              td
+                a.link(onclick='openRwindow()') 800143
+              td 2017-04-13
+              td 홍숙자
+              td 여성 4인 도미토리
+              td 2017-05-18(3박)
+              td Booking.com 
+              td ₩ 22,000
+              td
+                .tag.gray 취소
+        
+        .pagination
+          a.btn
+            i.fa.fa-angle-double-left.fa-lg
+          a.btn
+            i.fa.fa-angle-left.fa-lg
+          a.btn.active 1
+          a.btn 2
+          a.btn 3
+          a.btn 4
+          a.btn 5
+          a.btn 6
+          a.btn 7
+          a.btn 8
+          a.btn 9
+          a.btn 10
+          a.btn
+            i.fa.fa-angle-right.fa-lg
+          a.btn
+            i.fa.fa-angle-double-right.fa-lg
+                
+                
+              

@@ -8,7 +8,7 @@ app.use('/', express.static('public'))
 app.use('/assets/', express.static('assets'))
 // app.use('/node_modules/', express.static('node_modules'))
 
-app.get('/', function (req, res){res.render('room-chart')})
+app.get('/', function (req, res){res.render('today-checkin')})
 
 app.get('/login', function (req, res){res.render('login')})
 app.get('/join-01', function (req, res){res.render('join-01')})
@@ -16,6 +16,10 @@ app.get('/join-02', function (req, res){res.render('join-02')})
 app.get('/join-03', function (req, res){res.render('join-03')})
 
 app.get('/start', function (req, res){res.render('start')})
+
+app.get('/today/checkin', function (req, res){res.render('today-checkin')})
+app.get('/today/reservation', function (req, res){res.render('today-reservation')})
+app.get('/today/clean', function (req, res){res.render('today-clean')})
 
 app.get('/room-chart', function (req, res){res.render('room-chart')})
 

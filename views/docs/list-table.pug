@@ -4,7 +4,9 @@ include ../includes/header.pug
   
   #content.unfolded(name='list-table')
     .board.full-width
-      h1.lined list table      
+      h1.lined list table
+      h2 aligns
+      .margin
       table.table
         thead
           tr
@@ -40,5 +42,46 @@ include ../includes/header.pug
               a.btn.btn-xsmall.btn-white
                 i.fa.fa-pencil
                 span 수정         
-            
-          
+                
+      .margin-2x
+              
+      h2 Sortable
+      p Just add css on 'th' tag.
+      .margin
+      table.table
+        thead
+          tr
+            th.sortable.desc Desc Sorted
+            th.sortable.asc Asc Sorted
+            th.sortable Sortable
+            th Not Sortable
+        tbody
+          tr
+            td .sortable + .desc
+            td .sortable + .asc
+            td .sortable (Try hover on title)
+            td 
+      
+      .margin-2x
+      
+      h2 pagination
+      .margin
+      .pagination
+        a.btn
+          i.fa.fa-angle-double-left.fa-lg
+        a.btn
+          i.fa.fa-angle-left.fa-lg
+        a.btn.active 1
+        a.btn 2
+        a.btn 3
+        a.btn 4
+        a.btn 5
+        a.btn 6
+        a.btn 7
+        a.btn 8
+        a.btn 9
+        a.btn 10
+        a.btn
+          i.fa.fa-angle-right.fa-lg
+        a.btn
+          i.fa.fa-angle-double-right.fa-lg

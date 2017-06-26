@@ -1,0 +1,81 @@
+include includes/header.pug
+body
+  include includes/topbar.pug  
+  
+  .context-menu
+    .layover
+    ul
+      li 미완료
+      li 청소완료
+      li 검사완료
+  
+  
+  .wrapper
+    include includes/leftnav.pug
+    
+    #content.unfolded(name='today-stat', page='clean')
+      .left-wrapper
+        include includes/menu-today.pug
+                     
+      .board
+        .title-bar
+          h4 오늘의 청소현황
+            
+        .text-right
+          | 청소상태
+          span.empty 
+          .tag.gray 미완료
+          span.empty 
+          .tag.green 청소완료
+          span.empty 
+          .tag.skyblue 검사완료
+          
+        h2 트윈룸
+        .margin
+        
+        a.btn.btn-small.btn-gray.openContextMenu
+          | 510호
+          span.empty
+          i.fa.fa-angle-down.fa-lg
+        
+        span.empty
+        
+        a.btn.btn-small.btn-green.openContextMenu
+          | 511호
+          span.empty
+          i.fa.fa-angle-down.fa-lg
+        
+        span.empty
+        
+        a.btn.btn-small.btn-reverse.openContextMenu
+          | 513호
+          span.empty
+          i.fa.fa-angle-down.fa-lg
+        
+        .margin-2x
+          
+        h2 더블룸
+        .margin
+        
+        a.btn.btn-small.btn-gray.openContextMenu
+          | 610호
+          span.empty
+          i.fa.fa-angle-down.fa-lg
+        
+        span.empty
+        
+        a.btn.btn-small.btn-gray.openContextMenu
+          | 611호
+          span.empty
+          i.fa.fa-angle-down.fa-lg
+        
+        span.empty
+        
+        a.btn.btn-small.btn-gray.openContextMenu
+          | 613호
+          span.empty
+          i.fa.fa-angle-down.fa-lg
+        
+                
+                
+              

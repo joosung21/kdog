@@ -14,6 +14,14 @@ function closeModal(){
   $('.modal').hide()
 }
 
+function closeContextMenu(){
+  $('.context-menu').hide()
+}
+
+function openRwindow(){
+  $('#r-window').show();
+}
+
 // Fold & Unfold Vertical
 function toggleFold(id){
   $(id).toggleClass('folded');
@@ -23,12 +31,24 @@ function toggleFold(id){
 $( document ).ready(function() {
 
   $('.modal').hide();
+  $('.context-menu').hide();
   $('.bar-hover-layer').hide();
-
-  $('#r-window').show();
 
   $('.modal .layover').click(function(){
     $('.modal').hide();
+  });
+
+  $('.context-menu .layover').click(function(){
+    $('.context-menu').hide();
+  });
+
+  $('.openContextMenu').click(function(){
+    var offset = $(this).offset()
+    $('.context-menu ul').css({
+      top: offset.top + 15,
+      left: offset.left + 60
+    });
+    $('.context-menu').show()
   });
 
   // Open Top menu layers
@@ -84,7 +104,7 @@ $( document ).ready(function() {
   // Room-chart Bar Action
   $('.room-line .bar').mouseover(function(){
     var offset = $(this).offset()
-    $('.bar-hover-layer').offset({
+    $('.bar-hover-layer').css({
       top: offset.top + 50,
       left: offset.left + 50
     });
@@ -96,9 +116,6 @@ $( document ).ready(function() {
       left: 0
     });
     $('.bar-hover-layer').hide();
-  });
-  $('.room-line .bar').click(function(){
-    $('#r-window').show();
   });
 
 });

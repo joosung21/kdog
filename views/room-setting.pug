@@ -1,21 +1,22 @@
 include includes/header.pug
 body
   include includes/topbar.pug
-  .wrapper
+  .wrapper    
     include includes/leftnav.pug
     
     #content.unfolded(name='room-manage')
-      #sub-menu
-        h4.title 
-          img.icon(src='/images/icons/door-black.svg')
-          | 객실관리
-        ul
-          li.active 디럭스룸
-          li  트윈룸
-          li  스위트룸
-          li  여성4인 도미토리        
-        .padding(style='padding-top:0; margin-left:10px')
-          a.link.text-small(href='javascript:') + 객실타입추가
+      .left-wrapper
+        #sub-menu
+          h4.title 
+            img.icon(src='/images/icons/door-black.svg')
+            | 객실관리
+          ul
+            li.active 디럭스룸
+            li  트윈룸
+            li  스위트룸
+            li  여성4인 도미토리        
+          .padding(style='padding-top:0; margin-left:10px')
+            a.link.text-small(href='javascript:') + 객실타입추가
       .board
         .title-bar
           h4 디럭스룸

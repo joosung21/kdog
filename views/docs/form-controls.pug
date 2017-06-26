@@ -34,13 +34,24 @@ include ../includes/header.pug
               .inner-text.link(href='javascript:') text here
           .form-group
             label DISABLED INPUT BOX
-            input(type='text', value='Some delicate data value here', disabled)          
+            input(type='text', value='Some delicate data value here', disabled)
+          .form-group.small
+            label .small
+            input(type='text', value='', placeholder='Place Holder')
         
           .devider
               
           h2.margin Select box          
           .form-group
             label LABEL  
+            .select-wrapper
+              select
+                option option 1
+                option option 2
+                option option 3
+                option option 4
+          .form-group.small
+            label .small
             .select-wrapper
               select
                 option option 1
@@ -68,6 +79,19 @@ include ../includes/header.pug
               .select-wrapper
                 select
                   option option 1
+                  option option 2
+                  option option 3
+                  option option 4
+          .form-group.small
+            .box-label
+              label INPUT
+              input(type='text', value='', placeholder='.small')
+          .form-group.small         
+            .box-label
+              label SELECT
+              .select-wrapper
+                select
+                  option .small
                   option option 2
                   option option 3
                   option option 4

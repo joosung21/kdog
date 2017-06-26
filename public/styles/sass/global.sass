@@ -65,33 +65,33 @@ $font-bold: 700
 .bg-brand
   background: $color-brand
 .text-brand
-  color: $color-brand
+  color: $color-brand !important
 .bg-priority
   background: $color-priority
 .text-priority
-  color: $color-priority
+  color: $color-priority !important
 .bg-dark
   background: $color-dark
 .text-dark
-  color: $color-dark
+  color: $color-dark !important
 .bg-reverse
   background: $color-reverse
 .text-reverse
-  color: $color-reverse
+  color: $color-reverse !important
 .bg-gray
   background: $gray
 .text-gray
-  color: $gray
+  color: $gray !important
 .bg-white-gray
   background: $white-gray
 .text-white-gray
-  color: $white-gray
+  color: $white-gray !important
 .bg-red
   background: $red
 .text-red
-  color: $red
+  color: $red !important
 .text-white
-  color: white
+  color: white !important
 .bg-white
   background: white
 
@@ -99,31 +99,31 @@ $font-bold: 700
 .bg-booking
   background: $color-booking
 .text-booking
-  color: $color-booking
+  color: $color-booking !important
 .bg-booked
   background: $color-booked
 .text-booked
-  color: $color-booked
+  color: $color-booked !important
 .bg-paid
   background: $color-paid
 .text-paid
-  color: $color-paid
+  color: $color-paid !important
 .bg-checkin
   background: $color-checkin
 .text-checkin
-  color: $color-checkin
+  color: $color-checkin !important
 .bg-checkout
   background: $color-checkout
 .text-checkout
-  color: $color-checkout
+  color: $color-checkout !important
 .bg-ect
   background: $color-ect
 .text-ect
-  color: $color-ect
+  color: $color-ect !important
 .bg-disabled
   background: $color-disabled
 .text-disabled
-  color: $color-disabled
+  color: $color-disabled !important
 
 // Borders
 .border
@@ -214,10 +214,10 @@ body
 
 -moz-selection
   color: white
-  background: $color-priority
+  background: $color-reverse
 ::selection
   color: white
-  background: $color-priority
+  background: $color-reverse
 
 input:focus, select:focus, textarea:focus, button:focus
   outline: none
@@ -255,6 +255,7 @@ a.link
   color: $color-reverse
   &:hover
     opacity: 0.8
+    text-decoration: underline
   span, i.fa
     color: $color-reverse
   i.fa
@@ -356,7 +357,7 @@ span.empty-2x
       min-width: 160px
   .box-label
     position: relative
-    height: 42px
+    // height: 42px
     label
       position: absolute
       left: 0
@@ -370,12 +371,16 @@ span.empty-2x
       padding: 14px 12px 14px 12px
       overflow-x: hidden
       text-align: center
+      font-size: $font-size-small
+      height: 12px
     input[type='text'], input[type='email'], input[type='password'], input[type='number']
       margin-left: 75px
       width: calc(100% - 77px)
     .select-wrapper
       margin-left: 75px
       width: calc(100% - 101px)
+      font-size: $font-size-small
+      height: 14px
     &.bottom-collapse
       margin-bottom: -1px
       input:focus
@@ -405,15 +410,13 @@ span.empty-2x
     margin: 0
     padding: 0
     color: $font-color-thic
-    &:focus
-      border: 2px solid $color-priority
-      padding: 11px 11px 9px 11px
 
   input[type='text'], input[type='email'], input[type='password'], input[type='number'], textarea
     box-sizing: border-box
     width: 100%
     padding: 12px 12px 10px 12px
     border: 1px solid $gray
+    font-size: $font-size-default
     &::placeholder
       color: $gray
       font-weight: $font-light
@@ -429,6 +432,10 @@ span.empty-2x
     &:-moz-placeholder
       color: $gray
       font-weight: $font-light
+    &:focus
+      border: 2px solid $color-priority
+      padding: 11px 11px 9px 11px
+
   input[type='text'], input[type='email'], input[type='password'], input[type='number']
     height: 42px
 
@@ -444,15 +451,14 @@ span.empty-2x
     overflow: hidden
     border: 1px solid $gray
     background-color: white
-
-  .select-wrapper select
-    margin: 0
-    padding: 0
-    background: transparent
-    border: none
-    font-size: $font-size-default
-    width: 100%
-    font-size: $font-size-default
+    select
+      margin: 0
+      padding: 0
+      background: transparent
+      border: none
+      font-size: $font-size-default
+      width: 100%
+      font-size: $font-size-default
 
   .counter
     display: block
@@ -461,6 +467,33 @@ span.empty-2x
     text-align: right
     font-size: 9pt
     height: 0
+
+.form-group.small
+  margin-bottom: 10px
+  input[type='text'], input[type='email'], input[type='password'], input[type='number']
+    height: 34px
+    font-size: $font-size-small
+    padding: 3px 9px 0 9px
+  .select-wrapper
+    background: url(/images/icons/triangle.svg) no-repeat right 8px center
+    height: 16px
+    padding: 10px 9px 8px 9px
+    select
+      font-size: $font-size-small
+  .box-label
+    label
+      font-size: $font-size-xsmall
+      padding: 10px 6px
+    input[type='text'], input[type='email'], input[type='password'], input[type='number']
+      margin-left: 63px
+      width: calc(100% - 65px)
+    .select-wrapper
+      margin-left: 63px
+      width: calc(100% - 85px)
+      font-size: $font-size-small
+      height: 14px
+
+
 
 input
   &[type="checkbox"]
@@ -573,7 +606,7 @@ a.btn
   vertical-align: middle
   background-color: $color-priority
   border: 1px solid $color-priority
-  padding: 11px 26px
+  padding: 12px 26px 10px 26px
   font-size: $font-size-default
   font-weight: $font-light
   cursor: pointer
@@ -615,6 +648,24 @@ a.btn
     color: darken(white, 20%)
     &:hover
       background-color: lighten($color-dark, 5%)
+  &.btn-gray
+    background-color: lighten($color-dark, 27%)
+    border-color: lighten($color-dark, 27%)
+    color: white
+    &:hover
+      background-color: lighten($color-dark, 23%)
+  &.btn-reverse
+    background-color: $color-reverse
+    border-color: $color-reverse
+    color: white
+    &:hover
+      background-color: darken($color-reverse, 5%)
+  &.btn-green
+    background-color: #2ECC71
+    border-color: #2ECC71
+    color: white
+    &:hover
+      background-color: darken(#2ECC71, 5%)
   &.btn-small
     padding: 8px 10px 6px 10px
     font-size: $font-size-small
@@ -625,10 +676,21 @@ a.btn
     font-size: $font-size-xsmall
     span
       font-size: $font-size-xsmall
+  &.btn-arrow
+    position: relative
+    top: 2px
+    vertical-align: text-top
+    padding: 6px 10px 6px 9px
+    margin: 0 -1px 0 0
+    i.fa.fa-angle-right
+      position: relative
+      left: 1px
+
   span
     margin-left: 0.4em
 
 .badge
+  display: inline-block
   font-size: 9pt
   color: white
   width: 14px
@@ -638,6 +700,51 @@ a.btn
   background-color: $color-priority
   font-weight: $font-light
   +border-radius(13px)
+  &.blue
+    background: #3498DB
+  &.skyblue
+    background: #3BC9DB
+  &.green
+    background: #2ECC71
+  &.red
+    background: lighten(#F03E3E, 5%)
+  &.orange
+    background: #FD7E14
+  &.yellow
+    background: #F1C40F
+  &.purple
+    background: #9B59B6
+  &.gray
+    background: lighten($color-dark, 20%)
+
+.tag
+  display: inline-block
+  background: $color-dark
+  padding: 6px 9px
+  position: relative
+  font-size: 10pt
+  margin: -2px 0 -2px 0
+  height: 14px
+  color: white
+  font-weight: $font-light
+  &.blue
+    background: #3498DB
+  &.skyblue
+    background: #3BC9DB
+  &.green
+    background: #2ECC71
+  &.red
+    background: lighten(#F03E3E, 5%)
+  &.orange
+    background: #FD7E14
+  &.yellow
+    background: #F1C40F
+  &.purple
+    background: #9B59B6
+  &.gray
+    background: lighten($color-dark, 20%)
+
+
 
 .pop-layer
   position: absolute
@@ -691,18 +798,35 @@ a.btn
 
 .table
   border-spacing: 0
-  border-collapse: separate
   width: 100%
   margin-bottom: 20px
   th
+    position: relative
     font-size: $font-size-small
+    &.sortable
+      cursor: pointer
+      &:hover::after, &.desc::after, &.asc::after
+        width: 0
+        margin-right: -5px
+        font-family: FontAwesome
+        content: '\f0dc'
+        display: inline-block
+        vertical-align: middle
+        padding-left: 5px
+        position: relative
+      &.desc::after
+        content: '\f0dd'
+        top: -4px
+      &.asc::after
+        content: '\f0de'
+        top: 2px
+
   th,td
     text-align: left
     padding: 0 7px 7px 7px
   tbody td
     padding: 18px 7px
     border-bottom: 1px solid $white-gray
-    font-size: $font-size-large
     color: $font-color-thic
     font-weight: $font-light
   tbody tr:hover
@@ -710,6 +834,27 @@ a.btn
 
   thead th
     border-bottom: 1px solid $gray
+
+.pagination
+  margin-top: 40px
+  text-align: right
+  a.btn
+    background: white
+    border: 1px solid $white-gray
+    color: $font-color-defualt
+    padding: 8px 11px 7px 11px
+    font-size: $font-size-small
+    margin-left: -1px
+    i.fa-lg
+      color: $font-color-defualt
+      position: relative
+      top: -1px
+    &:hover
+      background: $white-gray
+    &.active
+      background: $color-reverse
+      color: white
+      border-color: $color-reverse
 
 .modal
   position: absolute
@@ -757,6 +902,36 @@ a.btn
     color: white
     padding-right: 10px
 
+.context-menu
+  position: absolute
+  z-index: 1000
+  width: 100%
+  height: 100%
+  left: 0
+  top: 0
+  .layover
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+  ul
+    position: absolute
+    left: 0
+    top: 0
+    display: inline-block
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3)
+    padding: 5px 0
+    background-color: white
+    li
+      padding: 5px 20px
+      cursor: pointer
+      color: $font-color-thic
+      font-size: $font-size-small
+      &:hover
+        background: $white-gray
+
+
 
 // ---------- LAYOUTS  ---------- //
 
@@ -790,30 +965,44 @@ a.btn
   &.full-width
     margin-left: 0
 
-#sub-menu
+#content > .left-wrapper
   width: 240px
-  background-color: white
   position: absolute
   left: 40px
   top: 40px
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1)
-  .title
-    padding: 20px 20px 10px 20px
-    .icon
-      opacity: 0.7
-      margin-right: 5px
-  ul
-    padding-bottom: 12px
-    li
-      padding: 13px 30px 10px 30px
-      @extend .noselect
-      cursor: pointer
-      &:hover
-        +darker-background(0.05)
-      &.active
-        background-color: $color-priority
-        color: white
-        font-weight: $font-light
+  #sub-menu
+    background-color: white
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1)
+    .title
+      padding: 20px 20px 10px 20px
+      .icon
+        opacity: 0.7
+        margin-right: 5px
+    ul
+      padding-bottom: 12px
+      li
+        padding: 13px 30px 10px 30px
+        @extend .noselect
+        cursor: pointer
+        &:hover
+          +darker-background(0.05)
+        &.active
+          background-color: $color-priority
+          color: white
+          font-weight: $font-light
+  .left-box
+    background-color: white
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1)
+    margin-top: 20px
+    padding: 20px
+    h4
+      margin-bottom: 20px
+      i.fa
+        margin-right: 5px
+    .form-group
+      margin-bottom: 10px
+      &:last-child
+        margin-bottom: 0
 
 .board
   position: relative
@@ -1572,6 +1761,31 @@ table.start
     margin-bottom: 0
   h1
     padding-top: 4px
+
+// Today Checkin Page
+
+table.banners
+  width: calc(100% + 20px)
+  border-spacing: 10px
+  margin: 0 -10px 0 -10px
+  .title, .sub, .number
+    color: white
+  td
+    width: 33%
+    padding: 18px 20px
+    .title
+      float: left
+      font-size: 14pt
+      font-weight: $font-thin
+      .sub
+        text-transform: uppercase
+        font-weight: $font-thin
+        font-size: 8pt
+    .number
+      float: right
+      font-size: 31pt
+      height: 38px
+      margin: -5px 0
 
 
 // ---------- DOCS Demo  ---------- //
