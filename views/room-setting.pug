@@ -43,41 +43,8 @@ body
                     option 일반룸
                     option 독채형
                     option 도미토리
-            .clear-fix          
-            .row
-              .form-group.col-2-left
-                label 객실수
-                input(type='text', value='5' disabled)
-                .text-right(style='padding:10px')
-                  a.link.text-small(href='javascript:') + 객실추가
-              .form-group.col-2-right
-                label 객실명
-                .box-label.bottom-collapse
-                  label 객실1
-                  input(type='text', value='101호')
-                  .inner-text-wrapper
-                    a.inner-text.link.text-small(href='javascript:') 삭제
-                .box-label.bottom-collapse
-                  label 객실2
-                  input(type='text', placeholder='번호나 이름')
-                  .inner-text-wrapper
-                    a.inner-text.link.text-small(href='javascript:') 삭제
-                .box-label.bottom-collapse
-                  label 객실3
-                  input(type='text', placeholder='번호나 이름')
-                  .inner-text-wrapper
-                    a.inner-text.link.text-small(href='javascript:') 삭제
-                .box-label.bottom-collapse
-                  label 객실4
-                  input(type='text', placeholder='번호나 이름')
-                  .inner-text-wrapper
-                    a.inner-text.link.text-small(href='javascript:') 삭제
-                .box-label
-                  label 객실5
-                  input(type='text', placeholder='번호나 이름')
-                  .inner-text-wrapper
-                    a.inner-text.link.text-small(href='javascript:') 삭제
-            .devider
+            .clear-fix
+              
             .row
               .form-group.col-2-left
                 label 기준인원
@@ -124,6 +91,64 @@ body
                   .inner-text-wrapper
                     .inner-text.text-small +60,000
               .clear-fix
+            
+              table.table.no-border
+                thead
+                  tr
+                    th.text-center(style='width: 50px') 순서
+                    th.text-center 객실명
+                    th
+                tbody
+                  tr(draggable='true')
+                    td.reorder.text-center
+                      h2.font-normal 1
+                      i.fa.fa-bars.orderbtn
+                    td
+                      .form-group.small.no-margin
+                        input(type='text', value='객실 1')
+                    td.text-right
+                      a.link
+                        i.fa.fa-close.text-gray.fa-lg
+                  tr(draggable='true')
+                    td.reorder.text-center
+                      h2.font-normal 2
+                      i.fa.fa-bars.orderbtn
+                    td
+                      .form-group.small.no-margin
+                        input(type='text', value='객실 2')
+                    td.text-right
+                      a.link
+                        i.fa.fa-close.text-gray.fa-lg
+                  tr(draggable='true')
+                    td.reorder.text-center
+                      h2.font-normal 3
+                      i.fa.fa-bars.orderbtn
+                    td
+                      .form-group.small.no-margin
+                        input(type='text', value='객실 3')
+                    td.text-right
+                      a.link
+                        i.fa.fa-close.text-gray.fa-lg
+                  tr(draggable='true')
+                    td.reorder.text-center
+                      h2.font-normal 4
+                      i.fa.fa-bars.orderbtn
+                    td
+                      .form-group.small.no-margin
+                        input(type='text', value='객실 4')
+                    td.text-right
+                      a.link
+                        i.fa.fa-close.text-gray.fa-lg
+                  tr(draggable='true')
+                    td.reorder.text-center
+                      h2.font-normal 5
+                      i.fa.fa-bars.orderbtn
+                    td
+                      .form-group.small.no-margin
+                        input(type='text', value='객실 5')
+                    td.text-right
+                      a.link
+                        i.fa.fa-close.text-gray.fa-lg
                                
             .devider.end-page
             a.btn.full-width(href='#') 저장하기

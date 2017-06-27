@@ -169,6 +169,76 @@ include ../includes/header.pug
             label LABEL
             input(type='text', value='', placeholder='Like this')
         
+          .devider
+          h2.margin Check Box
+          input#c1(type='checkbox', name='cc', checked)
+          label(for='c1')
+            span
+            | 체크박스 1
+          input#c2(type='checkbox', name='cc')
+          label(for='c2')
+            span
+            | 체크박스 2
+            
+          .devider
+          
+          h2.margin Checkbox group
+          .checkbox-group
+            .wrapper
+              input#c10(type='checkbox')
+              label(for='c10')
+                span
+                | Wi-Fi
+            .wrapper
+              input#c11(type='checkbox')
+              label(for='c11')
+                span
+                | 컨시어지
+            .wrapper
+              input#c12(type='checkbox')
+              label(for='c12')
+                span
+                | 드라이크리닝
+            .wrapper
+              input#c13(type='checkbox')            
+              label(for='c13')
+                span
+                | 발렛파킹            
+            .wrapper
+              input#c14(type='checkbox')
+              label(for='c14')
+                span
+                | 새차서비스
+            .wrapper
+              input#c15(type='checkbox')
+              label(for='c15')
+                span
+                | 룸서비스
+            .wrapper
+              input#c16(type='checkbox')
+              label(for='c16')
+                span
+                | 환전
+            .wrapper
+              input#c17(type='checkbox')
+              label(for='c17')
+                span
+                | 베이비시팅
+          
+          .devider
+          
+          h2.margin Radio Box
+          input#r1(type='radio', name='rr', checked)
+          label(for='r1')
+            span
+            | 라디오박스 1
+          input#r2(type='radio', name='rr')
+          label(for='r2')
+            span
+            | 라디오박스 2
+          
+          
+        
         .clear-fix
           
         .devider
@@ -190,26 +260,7 @@ include ../includes/header.pug
         .form-group.form-inline
           label LABEL
           input(type='text', value='', size='50', placeholder='size="50"')
-          a.btn BUTTON 
-        
-        .devider
-        h2.margin Check-Box / Radio-Box
-        input#c1(type='checkbox', name='cc', checked)
-        label(for='c1')
-          span
-          | 체크박스 1
-        input#c2(type='checkbox', name='cc')
-        label(for='c2')
-          span
-          | 체크박스 2
-        input#r1(type='radio', name='rr', checked)
-        label(for='r1')
-          span
-          | 라디오박스 1
-        input#r2(type='radio', name='rr')
-        label(for='r2')
-          span
-          | 라디오박스 2
+          a.btn BUTTON         
         
         .margin-2x
           

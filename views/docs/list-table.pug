@@ -5,7 +5,8 @@ include ../includes/header.pug
   #content.unfolded(name='list-table')
     .board.full-width
       h1.lined list table
-      h2 aligns
+      
+      h2 Cell aligns
       .margin
       table.table
         thead
@@ -62,6 +63,30 @@ include ../includes/header.pug
             td .sortable (Try hover on title)
             td 
       
+      .margin-2x
+        
+      h2 No-Border lines
+      .margin
+      table.table.no-border
+        thead
+          tr
+            th 예약번호
+            th 숙소이름
+            th 객실이름
+            th 고객명
+        tbody
+          tr
+            td 
+              a.link 8100514
+            td 티포트 펜션
+            td 개발트윈룸
+            td James Huh
+          tr
+            td 
+              a.link 8100513
+            td 판교라마다호텔
+            td Deluxe Room
+            td 유정연
       .margin-2x
       
       h2 pagination

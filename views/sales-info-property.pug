@@ -1,0 +1,355 @@
+include includes/header.pug
+body
+  include includes/topbar.pug
+  
+  .wrapper
+    include includes/leftnav.pug
+    
+    #content.unfolded(name='sales-info', page='property')
+      .left-wrapper
+        include includes/menu-sales-info.pug
+                     
+      .board
+        .title-bar
+          h4 숙소정보
+        
+        .content-wrapper
+          .row
+            .col-2-left
+              .form-group
+                label 숙소이름
+                input(type='text', value='판교라마다호텔')
+            .col-2-right
+              .form-group
+                label 숙소형태
+                .select-wrapper
+                  select
+                    option 호텔
+                    option 리조트
+                    option 펜션
+                    option 게스트하우스
+                    option 모텔
+                    option 캠핑장
+            .clear-fix
+          .form-group
+            label 숙소 소개글
+            textarea(rows='4')
+              | 경기도 성남시 판교 테크노벨리에 위치한 라마다호텔 판교는 최상의 시설과 세련된 서비스를 제공하는 고품격 비즈니스 호텔입니다.
+          .form-group
+            label 예약 안내글
+            textarea(rows='4', placeholder='ex) 미성년자는 법적 동의없이 입실 및 혼숙이 불가합니다.')
+          .form-group
+            label 공지
+            textarea(rows='2', placeholder='프로모션 등의 예약공지 정보를 입력해 주세요.')
+          .row
+            .col-2-left
+              .form-group
+                label 체크인
+                input(type='text', value='14:00')
+            .col-2-right
+              .form-group
+                label 체크아웃
+                input(type='text', value='11:00')
+          
+          .devider
+          
+          .info
+            i.fa.fa-info-circle.fa-lg
+            | 리스트를 위아래로 드래그하면 사진순서를 변경할 수 있습니다. 10~20개의 숙소사진을 권장합니다.
+            a.link.close
+              i.fa.fa-times-circle.fa-lg
+          .margin
+            
+          table.table
+            thead
+              tr
+                th.text-center(style='width: 40px') 순서
+                th(style='width: 135px') 사진
+                th 설명
+                th(style='width: 50px')
+            tbody
+              tr(draggable='true')
+                td.reorder.text-center
+                  h2.font-normal 1
+                  i.fa.fa-bars.orderbtn
+                td 
+                  a
+                    img(src='/images/temp01.png')
+                td
+                  | 설명없음
+                  span.empty
+                  a
+                    i.fa.fa-pencil
+                td.text-right
+                  a.btn.btn-xsmall.btn-white
+                    i.fa.fa-trash-o
+                    span 삭제
+              tr(draggable='true')
+                td.reorder.text-center
+                  h2.font-normal 2
+                  i.fa.fa-bars.orderbtn
+                td 
+                  a
+                    img(src='/images/temp02.png')
+                td
+                  .form-group.no-margin
+                    textarea(rows='2')
+                td.text-right
+                  a.btn.btn-xsmall.btn-reverse.full-width 완료
+                  .margin-thin
+                  a.btn.btn-xsmall.btn-white.full-width 취소
+              tr(draggable='true')
+                td.reorder.text-center
+                  h2.font-normal 3
+                  i.fa.fa-bars.orderbtn
+                td 
+                  a
+                    img(src='/images/temp03.png')
+                td
+                  | 숙소 옥상 외부전경 입니다. 여름에는 바베큐파티를 할 수 있는 넓은 공간이 준비되어 있습니다.
+                  span.empty
+                  a
+                    i.fa.fa-pencil
+                td.text-right
+                  a.btn.btn-xsmall.btn-white
+                    i.fa.fa-trash-o
+                    span 삭제
+          
+          .margin
+          
+          a.btn.btn-reverse
+            i.fa.fa-cloud-upload
+            span 사진올리기
+          
+          .devider
+          
+          h4.margin-thin 숙소시설
+          .checkbox-group
+            .wrapper
+              input#c1(type='checkbox')
+              label(for='c1')
+                span
+                | 피트니스
+            .wrapper
+              input#c2(type='checkbox')
+              label(for='c2')
+                span
+                | 실내수영장
+            .wrapper
+              input#c3(type='checkbox')
+              label(for='c3')
+                span
+                | 실외수영장
+            .wrapper
+              input#c4(type='checkbox')
+              label(for='c4')
+                span
+                | 세미나실
+            .wrapper
+              input#c5(type='checkbox')
+              label(for='c5')
+                span
+                | 카페
+            .wrapper
+              input#c6(type='checkbox')
+              label(for='c6')
+                span
+                | 스파/사우나
+            .wrapper    
+              input#c7(type='checkbox')
+              label(for='c7')
+                span
+                | 식당
+            .wrapper
+              input#c8(type='checkbox')
+              label(for='c8')
+                span
+                | 기념품샵
+            .wrapper
+              input#c9(type='checkbox')
+              label(for='c9')
+                span
+                | 테니스코트
+          
+          .margin
+          
+          h4.margin-thin 서비스
+          .checkbox-group
+            .wrapper
+              input#c10(type='checkbox')
+              label(for='c10')
+                span
+                | Wi-Fi
+            .wrapper
+              input#c11(type='checkbox')
+              label(for='c11')
+                span
+                | 컨시어지
+            .wrapper
+              input#c12(type='checkbox')
+              label(for='c12')
+                span
+                | 드라이크리닝
+            .wrapper
+              input#c13(type='checkbox')
+              label(for='c13')
+                span
+                | 발렛파킹
+            .wrapper
+              input#c14(type='checkbox')
+              label(for='c14')
+                span
+                | 새차서비스
+            .wrapper     
+              input#c15(type='checkbox')
+              label(for='c15')
+                span
+                | 룸서비스
+            .wrapper
+              input#c16(type='checkbox')
+              label(for='c16')
+                span
+                | 환전
+            .wrapper
+              input#c17(type='checkbox')
+              label(for='c17')
+                span
+                | 베이비시팅
+          
+          .devider
+            
+          .form-group
+            label 웹사이트
+            input(type='text', value='', placeholder='http://')          
+          .form-group.form-inline
+            label 숙소주소
+            input(type='text', value='', placeholder='숙소찾기 버튼을 클릭하세요', style='width: 503px')
+            a.btn.btn-reverse
+              i.fa.fa-map-marker
+              span 주소찾기
+          .row
+            .col-2-left
+              .form-group          
+                .box-label
+                  label 상세주소
+                  input(type='text', value='')
+            .col-2-right
+              .form-group          
+                .box-label
+                  label 우편번호
+                  input(type='text', value='', placeholder='숙소찾기 버튼을 클릭하세요')
+            
+          .devider
+          
+          .row
+            .col-2-left
+              .form-group
+                label 예약담당자 이메일
+                input(type='text', value='', placeholder='')
+            .col-2-right
+              .form-group
+                label 대표번호
+                  .tooltip.icon           
+                    .desc 예약문자 발송시 발신자 연락처로 사용됩니다.                  
+                input(type='text', value='', placeholder='')
+                  
+          .devider
+            
+          .form-group
+            label 환불안내
+            textarea(rows='3')
+          
+          table.table.no-border
+            thead
+              tr
+                th(style='width: 200px') 취소시점
+                th 환불금액
+                th
+            tbody
+              tr
+                td 방문 당일
+                td 
+                  .form-group.form-inline.no-margin
+                    label 총 금액의
+                    input(type='number', value='0')
+                    label %
+                td
+              tr
+                td 방문 1일 전
+                td 
+                  .form-group.form-inline.no-margin
+                    label 총 금액의
+                    input(type='number', value='50')
+                    label %
+                td
+              tr
+                td 방문 2일 전
+                td 
+                  .form-group.form-inline.no-margin
+                    label 총 금액의
+                    input(type='number', value='70')
+                    label %
+                td
+              tr
+                td 방문 3일 전
+                td 
+                  .form-group.form-inline.no-margin
+                    label 총 금액의
+                    input(type='number', value='80')
+                    label %
+                td
+              tr
+                td 방문 4일 전
+                td 
+                  .form-group.form-inline.no-margin
+                    label 총 금액의
+                    input(type='number', value='80')
+                    label %
+                td
+              tr
+                td 방문 5일 전
+                td 
+                  .form-group.form-inline.no-margin
+                    label 총 금액의
+                    input(type='number', value='80')
+                    label %
+                td
+              tr
+                td 방문 6일 전
+                td 
+                  .form-group.form-inline.no-margin
+                    label 총 금액의
+                    input(type='number', value='80')
+                    label %
+                td
+              tr
+                td 방문 7일 전
+                td 
+                  .form-group.form-inline.no-margin
+                    label 총 금액의
+                    input(type='number', value='90')
+                    label %
+                td
+              tr
+                td 방문 8일 전
+                td 
+                  .form-group.form-inline.no-margin
+                    label 총 금액의
+                    input(type='number', value='100')
+                    label %
+                td
+                  a.btn.btn-white.btn-small
+                    i.fa.fa-minus
+                    span 기준삭제
+              tr
+                td
+                  a.btn.btn-dark.btn-small
+                    i.fa.fa-plus
+                    span 기준추가
+                td
+                td
+          
+          .devider.end-page
+          a.btn.full-width 저장하기
+                    
+            

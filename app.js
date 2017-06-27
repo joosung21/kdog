@@ -25,6 +25,9 @@ app.get('/room-chart', function (req, res){res.render('room-chart')})
 
 app.get('/room-manage', function (req, res){res.render('room-setting')})
 
+app.get('/sales-info/property', function (req, res){res.render('sales-info-property')})
+app.get('/sales-info/rooms', function (req, res){res.render('sales-info-rooms')})
+
 app.get('/setting/company', function (req, res){res.render('setting-company')})
 app.get('/setting/step', function (req, res){res.render('setting-step')})
 app.get('/setting/step/edit', function (req, res){res.render('setting-step-edit')})

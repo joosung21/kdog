@@ -1,42 +1,42 @@
 @charset "UTF-8";
 .bg-brand {
-  background: #D9480F; }
+  background: #D9480F !important; }
 
 .text-brand {
   color: #D9480F !important; }
 
 .bg-priority {
-  background: #FD7E14; }
+  background: #FD7E14 !important; }
 
 .text-priority {
   color: #FD7E14 !important; }
 
 .bg-dark {
-  background: #495057; }
+  background: #495057 !important; }
 
 .text-dark {
   color: #495057 !important; }
 
 .bg-reverse {
-  background: #3BC9DB; }
+  background: #3BC9DB !important; }
 
 .text-reverse {
   color: #3BC9DB !important; }
 
 .bg-gray {
-  background: #C9D3DC; }
+  background: #C9D3DC !important; }
 
 .text-gray {
   color: #C9D3DC !important; }
 
 .bg-white-gray {
-  background: #F1F3F5; }
+  background: #F1F3F5 !important; }
 
 .text-white-gray {
   color: #F1F3F5 !important; }
 
 .bg-red {
-  background: #f25656; }
+  background: #f25656 !important; }
 
 .text-red {
   color: #f25656 !important; }
@@ -45,7 +45,7 @@
   color: white !important; }
 
 .bg-white {
-  background: white; }
+  background: white !important; }
 
 .bg-booking {
   background: #D9480F; }
@@ -173,6 +173,9 @@
 .margin-thin {
   margin-bottom: 10px; }
 
+.no-margin {
+  margin: 0 !important; }
+
 body, p, ul, li, h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0; }
@@ -283,7 +286,7 @@ ul, li {
     top: -5px;
     left: -5px;
     width: 240px;
-    background: url(/images/icons/question.svg) no-repeat 5px 5px #3BC9DB;
+    background: url(/images/icons/question.svg) no-repeat 5px 5px #495057;
     color: rgba(255, 255, 255, 0.8);
     font-size: 9pt;
     padding: 6px 10px 6px 30px;
@@ -328,8 +331,9 @@ span.empty-2x {
     display: inline-block;
     background: #F1F3F5;
     border: 1px solid #C9D3DC;
-    padding: 14px 12px 14px 12px;
-    margin: 0 -1px 0 0; }
+    padding: 14px 15px 13px 15px;
+    margin: 0 -1px 0 0;
+    font-size: 10pt; }
   .form-group.form-inline span {
     display: inline-block;
     color: rgba(73, 80, 87, 0.7); }
@@ -337,7 +341,8 @@ span.empty-2x {
     color: inherit; }
   .form-group.form-inline input[type='text'], .form-group.form-inline input[type='email'], .form-group.form-inline input[type='password'], .form-group.form-inline input[type='number'] {
     display: inline-block;
-    width: auto; }
+    width: auto;
+    margin: 0 -1px 0 0; }
   .form-group.form-inline .select-wrapper {
     display: inline-block;
     min-width: 160px; }
@@ -417,6 +422,11 @@ span.empty-2x {
     .form-group input[type='text']:focus, .form-group input[type='email']:focus, .form-group input[type='password']:focus, .form-group input[type='number']:focus, .form-group textarea:focus {
       border: 2px solid #FD7E14;
       padding: 11px 11px 9px 11px; }
+  .form-group textarea {
+    line-height: 1.5em;
+    padding: 10px 12px 8px 12px; }
+    .form-group textarea:focus {
+      padding: 9px 11px 7px 11px; }
   .form-group input[type='text'], .form-group input[type='email'], .form-group input[type='password'], .form-group input[type='number'] {
     height: 42px; }
   .form-group input[disabled] {
@@ -508,6 +518,14 @@ input[type="radio"] {
   input[type="radio"]:checked + label span {
     background: url(/images/icons/checked.svg) 3px 4px no-repeat; }
 
+.checkbox-group {
+  padding: 30px 0 10px 30px;
+  background: #F1F3F5; }
+  .checkbox-group .wrapper {
+    display: inline-block;
+    width: 167px;
+    margin-bottom: 20px; }
+
 .form-group.light {
   margin-bottom: 26px; }
   .form-group.light.no-margin {
@@ -566,11 +584,12 @@ input[type="radio"] {
 
 a.btn {
   color: white;
+  height: 18px;
   display: inline-block;
   vertical-align: middle;
   background-color: #FD7E14;
   border: 1px solid #FD7E14;
-  padding: 12px 26px 10px 26px;
+  padding: 11px 26px;
   font-size: 11pt;
   font-weight: 300;
   cursor: pointer; }
@@ -596,7 +615,11 @@ a.btn {
     a.btn.btn-white i.fa {
       color: rgba(73, 80, 87, 0.7); }
     a.btn.btn-white:hover {
-      background-color: #f2f2f2; }
+      background-color: #59626a;
+      border-color: #59626a;
+      color: white; }
+      a.btn.btn-white:hover i.fa, a.btn.btn-white:hover span {
+        color: white; }
   a.btn.btn-white-gray {
     color: rgba(73, 80, 87, 0.5);
     background: #F1F3F5;
@@ -633,13 +656,15 @@ a.btn {
     a.btn.btn-green:hover {
       background-color: #29b765; }
   a.btn.btn-small {
-    padding: 8px 10px 6px 10px;
-    font-size: 10pt; }
+    padding: 7px 10px;
+    font-size: 10pt;
+    height: 15px; }
     a.btn.btn-small span {
       font-size: 10pt; }
   a.btn.btn-xsmall {
-    padding: 4px 7px;
-    font-size: 9pt; }
+    padding: 4px 6px;
+    font-size: 9pt;
+    height: 13px; }
     a.btn.btn-xsmall span {
       font-size: 9pt; }
   a.btn.btn-arrow {
@@ -790,17 +815,27 @@ a.btn {
         content: "";
         top: 2px; }
   .table th, .table td {
-    text-align: left;
-    padding: 0 7px 7px 7px; }
+    text-align: left; }
+  .table th {
+    padding: 0 7px 7px 7px;
+    border-bottom: 1px solid #C9D3DC; }
+  .table tbody .orderbtn {
+    display: none;
+    cursor: move; }
   .table tbody td {
-    padding: 18px 7px;
+    padding: 18px 7px 16px 7px;
     border-bottom: 1px solid #F1F3F5;
     color: rgba(73, 80, 87, 0.7);
     font-weight: 300; }
+  .table.no-border tbody td {
+    padding: 12px 7px 10px 7px;
+    border: none; }
   .table tbody tr:hover {
-    background-color: rgba(241, 243, 245, 0.3); }
-  .table thead th {
-    border-bottom: 1px solid #C9D3DC; }
+    background-color: #f8f8f8; }
+    .table tbody tr:hover .reorder h2 {
+      display: none; }
+    .table tbody tr:hover .reorder .orderbtn {
+      display: inline-block; }
 
 .pagination {
   margin-top: 40px;
@@ -860,14 +895,23 @@ a.btn {
       border-top: 1px solid #F1F3F5; }
 
 .info {
-  opacity: 0.7;
+  position: relative;
   font-weight: 300;
   background: #3BC9DB;
-  padding: 20px;
-  color: white; }
+  padding: 17px 40px 17px 20px;
+  color: white;
+  line-height: 1.5em;
+  word-break: keep-all;
+  opacity: 0.8; }
   .info i.fa {
     color: white;
-    padding-right: 10px; }
+    padding-right: 7px; }
+  .info a.link, .info a.link i.fa {
+    color: white; }
+  .info .close {
+    position: absolute;
+    top: 17px;
+    right: 5px; }
 
 .context-menu {
   position: absolute;
@@ -888,10 +932,10 @@ a.btn {
     top: 0;
     display: inline-block;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
-    padding: 5px 0;
+    padding: 7px 0 5px 0;
     background-color: white; }
     .context-menu ul li {
-      padding: 5px 20px;
+      padding: 7px 40px 5px 20px;
       cursor: pointer;
       color: rgba(73, 80, 87, 0.7);
       font-size: 10pt; }
