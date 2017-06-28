@@ -24,9 +24,16 @@ app.get('/today/clean', function (req, res){res.render('today-clean')})
 app.get('/room-chart', function (req, res){res.render('room-chart')})
 
 app.get('/room-manage', function (req, res){res.render('room-setting')})
+app.get('/room-manage/reorder', function (req, res){res.render('room-setting-reorder')})
+app.get('/room-manage/detail', function (req, res){res.render('room-setting-detail')})
 
 app.get('/sales-info/property', function (req, res){res.render('sales-info-property')})
 app.get('/sales-info/rooms', function (req, res){res.render('sales-info-rooms')})
+
+app.get('/payment/pg', function (req, res){res.render('payment-pg')})
+app.get('/payment/gds', function (req, res){res.render('payment-gds')})
+app.get('/payment/transfer', function (req, res){res.render('payment-transfer')})
+app.get('/payment/deposit', function (req, res){res.render('payment-deposit')})
 
 app.get('/setting/company', function (req, res){res.render('setting-company')})
 app.get('/setting/step', function (req, res){res.render('setting-step')})
@@ -36,6 +43,7 @@ app.get('/setting/step/edit', function (req, res){res.render('setting-step-edit'
 app.get('/docs/', function (req, res){res.render('docs/empty-page')})
 app.get('/docs/empty-page', function (req, res){res.render('docs/empty-page')})
 app.get('/docs/empty-page2', function (req, res){res.render('docs/empty-page2')})
+app.get('/docs/empty-page3', function (req, res){res.render('docs/empty-page3')})
 app.get('/docs/layout', function (req, res){res.render('docs/layout')})
 app.get('/docs/colors', function (req, res){res.render('docs/colors')})
 app.get('/docs/typography', function (req, res){res.render('docs/typography')})

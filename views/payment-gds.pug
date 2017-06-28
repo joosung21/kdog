@@ -1,0 +1,128 @@
+include includes/header.pug
+body
+  include includes/topbar.pug
+  include includes/r-window.pug
+  .wrapper
+    include includes/leftnav.pug
+    
+    #content.unfolded(name='payment', page='gds')
+      .left-wrapper
+        include includes/menu-payment.pug
+            
+        .left-box
+          h4.title
+            i.fa.fa-search
+            | 검색
+          .form-group.small
+            .box-label
+              label 검색조건              
+              .select-wrapper
+                select        
+                  option 결제일자
+                  option 체크인날짜
+          .form-group.small
+            .box-label
+              label 시작일
+              input(type='text')
+          .form-group.small
+            .box-label
+              label 종료일
+              input(type='text')
+          .form-group.small
+            .box-label
+              label 판매사
+              .select-wrapper
+                select
+                  option 전체
+                  option 네이버
+                  option 티몬
+          a.btn.btn-small.btn-gray.full-width 검색
+                     
+      .board
+        .title-bar
+          h4 판매대행 내역
+          
+        .info          
+          | 판매대행은 월-일 체크인을 합산하여 차차주 수요일에 정산 됩니다. 
+          br
+          | 수수료는 모든판매사 동일하게 15% 입니다.
+        
+        .margin-2x
+        
+        .text-right
+          a.btn.btn-white.btn-small
+            i.fa.fa-file-o
+            span CVS 다운로드
+          span.empty
+          a.btn.btn-white.btn-small
+            i.fa.fa-print
+            span 프린트
+        
+        .margin-2x
+          
+        table.table
+          thead
+            tr
+              th 판매사
+              th 예약번호
+              th 예약일자
+              th 체크인날짜
+              th.text-right 환불
+              th.text-right 총금액              
+              th.text-right 정산예정액
+              th.text-right 상태
+          tbody
+            tr
+              td 네이버
+              td 
+                a.link(onclick='openRwindow()') 546098
+              td 2017-04-15
+              td 2017-04-18
+              td.text-right ₩ 0
+              td.text-right ₩ 200,000
+              td.text-right ₩ 170,000
+              td.text-right
+                .tag.skyblue 정산예정
+            tr
+              td 티몬
+              td 
+                a.link(onclick='openRwindow()') 546097
+              td 2017-04-14
+              td 2017-04-27
+              td.text-right ₩ 100,000
+              td.text-right ₩ 100,000
+              td.text-right ₩ 0
+              td.text-right
+                .tag.red 취소
+            tr
+              td 네이버
+              td 
+                a.link(onclick='openRwindow()') 546096
+              td 2017-04-15
+              td 2017-04-28
+              td.text-right ₩ 0
+              td.text-right ₩ 200,000
+              td.text-right ₩ 170,000
+              td.text-right
+                .tag.green 예약완료
+            tr
+              td 티몬
+              td 
+                a.link(onclick='openRwindow()') 546095
+              td 2017-04-14
+              td 2017-04-27
+              td.text-right ₩ 0
+              td.text-right ₩ 100,000
+              td.text-right ₩ 85,000
+              td.text-right
+                .tag.green 예약완료
+            tr.summary                              
+              td.text-right(colspan='4') TOTAL              
+              td.text-right ₩ 100,000
+              td.text-right ₩ 600,000
+              td.text-right ₩ 425,000
+              td
+                
+        
+          
+              

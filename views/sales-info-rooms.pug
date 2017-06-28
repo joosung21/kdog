@@ -1,0 +1,181 @@
+include includes/header.pug
+body
+  include includes/topbar.pug
+  
+  .wrapper
+    include includes/leftnav.pug
+    
+    #content.unfolded(name='sales-info', page='rooms', tab='room01')
+      .left-wrapper
+        include includes/menu-sales-info.pug
+                     
+      .board
+        .tab-menu
+          .tab.room01 디럭스룸
+          .tab.room02 트윈룸          
+          .tab.room03 여성 6인 도미토리
+          .tab.room04 여성 8인 도미토리
+          .tab.room05 남성 6인 도미토리
+        
+        .content-wrapper
+          .form-group
+            label 객실이름(손님에게 보여질 이름)
+            input(type='text', value='디럭스룸')
+          .form-group
+            label 객실설명
+            textarea(rows='4')
+              | 디럭스한스 한 디럭스룸은 편안하고 퀸사이즈 베드의 안락한 객실입니다.
+          
+          .devider
+          
+          .info
+            i.fa.fa-info-circle.fa-lg
+            | 리스트를 위아래로 드래그하면 사진순서를 변경할 수 있습니다. 5~10개의 객실사진을 권장합니다.
+            a.link.close
+              i.fa.fa-times-circle.fa-lg
+          .margin
+            
+          table.table
+            thead
+              tr
+                th.text-center(style='width: 40px') 순서
+                th(style='width: 135px') 사진
+                th 설명
+                th(style='width: 50px')
+            tbody
+              tr(draggable='true')
+                td.reorder.text-center
+                  h2.font-normal 1
+                  i.fa.fa-bars.orderbtn
+                td 
+                  a
+                    img(src='/images/temp06.png')
+                td
+                  | 설명없음
+                  span.empty
+                  a
+                    i.fa.fa-pencil
+                td.text-right
+                  a.btn.btn-xsmall.btn-white
+                    i.fa.fa-trash-o
+                    span 삭제
+              tr(draggable='true')
+                td.reorder.text-center
+                  h2.font-normal 2
+                  i.fa.fa-bars.orderbtn
+                td 
+                  a
+                    img(src='/images/temp07.png')
+                td
+                  .form-group.no-margin
+                    textarea(rows='2')
+                td.text-right
+                  a.btn.btn-xsmall.btn-reverse.full-width 완료
+                  .margin-thin
+                  a.btn.btn-xsmall.btn-white.full-width 취소
+          
+          .margin
+          
+          a.btn.btn-reverse
+            i.fa.fa-cloud-upload
+            span 사진올리기
+          
+          .devider
+          
+          h4.margin-thin 객실내 시설
+          .checkbox-group
+            .wrapper
+              input#c1(type='checkbox')
+              label(for='c1')
+                span
+                | TV
+            .wrapper
+              input#c2(type='checkbox')
+              label(for='c2')
+                span
+                | 에어컨
+            .wrapper
+              input#c3(type='checkbox')
+              label(for='c3')
+                span
+                | 난방
+            .wrapper
+              input#c4(type='checkbox')
+              label(for='c4')
+                span
+                | 부엌
+            .wrapper
+              input#c5(type='checkbox')
+              label(for='c5')
+                span
+                | 미니바
+            .wrapper
+              input#c6(type='checkbox')
+              label(for='c6')
+                span
+                | Wi-Fi
+            .wrapper    
+              input#c7(type='checkbox')
+              label(for='c7')
+                span
+                | 유선인터넷
+            .wrapper
+              input#c8(type='checkbox')
+              label(for='c8')
+                span
+                | 욕조
+            .wrapper
+              input#c9(type='checkbox')
+              label(for='c9')
+                span
+                | 전화기
+            .wrapper
+              input#c10(type='checkbox')
+              label(for='c10')
+                span
+                | 헤어드라이어
+            .wrapper
+              input#c11(type='checkbox')
+              label(for='c11')
+                span
+                | 발코니
+            .wrapper
+              input#c12(type='checkbox')
+              label(for='c12')
+                span
+                | 커피포트
+            .wrapper
+              input#c13(type='checkbox')
+              label(for='c13')
+                span
+                | 타올
+            .wrapper
+              input#c14(type='checkbox')
+              label(for='c14')
+                span
+                | 냉장고
+            .wrapper
+              input#c15(type='checkbox')
+              label(for='c15')
+                span
+                | 세면비품
+            .wrapper    
+              input#c16(type='checkbox')
+              label(for='c16')
+                span
+                | 전자레인지
+            .wrapper
+              input#c17(type='checkbox')
+              label(for='c17')
+                span
+                | 월풀
+            .wrapper
+              input#c18(type='checkbox')
+              label(for='c18')
+                span
+                | 귀중품 금고
+          
+          .devider.end-page
+          a.btn.full-width 저장하기
+                    
+            

@@ -34,6 +34,8 @@ $( document ).ready(function() {
   $('.context-menu').hide();
   $('.bar-hover-layer').hide();
 
+  $('#deposit.modal').show();
+
   $('.modal .layover').click(function(){
     $('.modal').hide();
   });
@@ -88,6 +90,14 @@ $( document ).ready(function() {
   // Sub-menu Active
   $('#sub-menu li').each(function(){
     var thisPage = $('#content').attr('page');
+    if ($(this).hasClass(thisPage)) {
+      $(this).addClass('active');
+    }
+  });
+
+  // Tab-menu Active
+  $('.tab-menu .tab').each(function(){
+    var thisPage = $('#content').attr('tab');
     if ($(this).hasClass(thisPage)) {
       $(this).addClass('active');
     }

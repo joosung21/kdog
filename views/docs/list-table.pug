@@ -89,24 +89,78 @@ include ../includes/header.pug
             td 유정연
       .margin-2x
       
-      h2 pagination
-      .margin
-      .pagination
-        a.btn
-          i.fa.fa-angle-double-left.fa-lg
-        a.btn
-          i.fa.fa-angle-left.fa-lg
-        a.btn.active 1
-        a.btn 2
-        a.btn 3
-        a.btn 4
-        a.btn 5
-        a.btn 6
-        a.btn 7
-        a.btn 8
-        a.btn 9
-        a.btn 10
-        a.btn
-          i.fa.fa-angle-right.fa-lg
-        a.btn
-          i.fa.fa-angle-double-right.fa-lg
+      .content-wrapper
+      
+        h2 pagination
+        .margin
+        .pagination
+          a.btn
+            i.fa.fa-angle-double-left.fa-lg
+          a.btn
+            i.fa.fa-angle-left.fa-lg
+          a.btn.active 1
+          a.btn 2
+          a.btn 3
+          a.btn 4
+          a.btn 5
+          a.btn 6
+          a.btn 7
+          a.btn 8
+          a.btn 9
+          a.btn 10
+          a.btn
+            i.fa.fa-angle-right.fa-lg
+          a.btn
+            i.fa.fa-angle-double-right.fa-lg
+          
+        .margin-2x      
+      
+        h2 Reorder table
+        .margin
+        table.table
+          thead
+            tr
+              th.text-center(style='width: 50px') 순서
+              th 객실명
+              th
+          tbody
+            tr(draggable='true')
+              td.reorder.text-center
+                h2.font-normal 1
+                i.fa.fa-bars.orderbtn
+              td 4인 가족실                
+              td.text-right
+                a.link
+                  i.fa.fa-close.text-gray.fa-lg
+            tr(draggable='true')
+              td.reorder.text-center
+                h2.font-normal 2
+                i.fa.fa-bars.orderbtn
+              td 트윈룸      
+              td.text-right
+                a.link
+                  i.fa.fa-close.text-gray.fa-lg
+            tr(draggable='true')
+              td.reorder.text-center
+                h2.font-normal 3
+                i.fa.fa-bars.orderbtn
+              td 디럭스룸        
+              td.text-right
+                a.link
+                  i.fa.fa-close.text-gray.fa-lg
+            tr(draggable='true')
+              td.reorder.text-center
+                h2.font-normal 4
+                i.fa.fa-bars.orderbtn
+              td 스위트룸       
+              td.text-right
+                a.link
+                  i.fa.fa-close.text-gray.fa-lg
+            tr(draggable='true')
+              td.reorder.text-center
+                h2.font-normal 5
+                i.fa.fa-bars.orderbtn
+              td 여성 6인 도미토리       
+              td.text-right
+                a.link
+                  i.fa.fa-close.text-gray.fa-lg

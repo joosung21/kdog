@@ -2,7 +2,7 @@ include ../includes/header.pug
 .wrapper
   include ../includes/leftnav-docs.pug
   
-  #content.unfolded(name='empty-page2')
+  #content.unfolded(name='empty-page3')
     .left-wrapper
       #sub-menu
         h4.title 
@@ -14,9 +14,12 @@ include ../includes/header.pug
           li 서브메뉴3
           li 서브메뉴4 
     .board
-      .title-bar
-        h4 Page Title
+      .tab-menu
+        .tab.active Tab Menu1 
+        .tab Tab Menu2
+        .tab Tab Menu3
+        
       .content-wrapper
-        h1 Page with sub menu
+        h1 Page with Tab Menu
         .margin-2x
-        p This layout could be used for one(1) depth menu category.
+        p This layout could be used for two(2) depth menu category.

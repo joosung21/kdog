@@ -14,23 +14,31 @@ body
             i.fa.fa-filter
             | 필터
           .form-group.small
-            input(type='text', placeholder='고객명')
-          .form-group.small            
-            input(type='text', placeholder='예약번호')
-          .form-group.small            
-            .select-wrapper
-              select
-                option 객실타입 전체
-                option 스위트룸
-                option 트윈룸
-          .form-group.small            
-            .select-wrapper
-              select
-                option 에이전시 전체
-                option Expedia
-                option Agoda
-                option Booking.com
-                option 네이버
+            .box-label
+              label 고객명
+              input(type='text')
+          .form-group.small 
+            .box-label
+              label 예약번호
+              input(type='text')
+          .form-group.small
+            .box-label
+              label 객실타입
+              .select-wrapper
+                select
+                  option 전체
+                  option 스위트룸
+                  option 트윈룸
+          .form-group.small
+            .box-label
+              label 에이전시
+              .select-wrapper
+                select
+                  option 전체
+                  option Expedia
+                  option Agoda
+                  option Booking.com
+                  option 네이버
                      
       .board
         .title-bar

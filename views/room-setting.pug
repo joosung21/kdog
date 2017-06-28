@@ -4,7 +4,7 @@ body
   .wrapper    
     include includes/leftnav.pug
     
-    #content.unfolded(name='room-manage')
+    #content.unfolded(name='room-manage', tab='basic')
       .left-wrapper
         #sub-menu
           h4.title 
@@ -17,138 +17,107 @@ body
             li  여성4인 도미토리        
           .padding(style='padding-top:0; margin-left:10px')
             a.link.text-small(href='javascript:') + 객실타입추가
-      .board
-        .title-bar
-          h4 디럭스룸
-        .sub-left
-          ul
-            li
-              a.active(href='#') 기본정보
-            li
-              a(href='#') 날짜별 가격             
-        .sub-content
-          .content-wrapper
-            .row
-              .form-group.col-2-left
-                label 객실타입 이름
-                input(type='text', placeholder='예) 더블룸, 가족룸, 여성4인 도미토리')
-              .form-group.col-2-right
-                label 
-                  | 형태
-                  .tooltip.icon                  
-                    .desc 도미토리는 침대별 재고관리가 가능합니다.
-                .select-wrapper
-                  select
-                    option 선택하세요
-                    option 일반룸
-                    option 독채형
-                    option 도미토리
-            .clear-fix
-              
-            .row
-              .form-group.col-2-left
-                label 기준인원
-                input(type='text', value='2')
-              .form-group.col-2-right
-                label 최대인원
-                input(type='text', value='4')
-            .row
-              .form-group.col-2-left
-                label 성인 1인당 추가가격
-                input(type='text', value='₩ 20,000')
-              .form-group.col-2-right
-                label 아동 1인당 추가가격
-                input(type='text', value='₩ 10,000')      
-            .row
-              .form-group.col-2-left
-                label 기본가격
-                input(type='text', value='₩ 130,000')              
-              .form-group.col-2-right
-                label 요일별 가격
-                .box-label.bottom-collapse
-                  label 일요일
-                  input(type='text', value='₩130,000')
-                .box-label.bottom-collapse
-                  label 월요일
-                  input(type='text', value='₩130,000')
-                .box-label.bottom-collapse
-                  label 화요일
-                  input(type='text', value='₩130,000')
-                .box-label.bottom-collapse
-                  label 수요일
-                  input(type='text', value='₩130,000')
-                .box-label.bottom-collapse
-                  label 목요일
-                  input(type='text', value='₩130,000')
-                .box-label.bottom-collapse
-                  label.text-red 금요일
-                  input(type='text', value='₩180,000')
-                  .inner-text-wrapper
-                    .inner-text.text-small +60,000
-                .box-label.bottom-collapse
-                  label.text-red 토요일
-                  input(type='text', value='₩180,000')
-                  .inner-text-wrapper
-                    .inner-text.text-small +60,000
-              .clear-fix
             
-              table.table.no-border
-                thead
-                  tr
-                    th.text-center(style='width: 50px') 순서
-                    th.text-center 객실명
-                    th
-                tbody
-                  tr(draggable='true')
-                    td.reorder.text-center
-                      h2.font-normal 1
-                      i.fa.fa-bars.orderbtn
-                    td
-                      .form-group.small.no-margin
-                        input(type='text', value='객실 1')
-                    td.text-right
-                      a.link
-                        i.fa.fa-close.text-gray.fa-lg
-                  tr(draggable='true')
-                    td.reorder.text-center
-                      h2.font-normal 2
-                      i.fa.fa-bars.orderbtn
-                    td
-                      .form-group.small.no-margin
-                        input(type='text', value='객실 2')
-                    td.text-right
-                      a.link
-                        i.fa.fa-close.text-gray.fa-lg
-                  tr(draggable='true')
-                    td.reorder.text-center
-                      h2.font-normal 3
-                      i.fa.fa-bars.orderbtn
-                    td
-                      .form-group.small.no-margin
-                        input(type='text', value='객실 3')
-                    td.text-right
-                      a.link
-                        i.fa.fa-close.text-gray.fa-lg
-                  tr(draggable='true')
-                    td.reorder.text-center
-                      h2.font-normal 4
-                      i.fa.fa-bars.orderbtn
-                    td
-                      .form-group.small.no-margin
-                        input(type='text', value='객실 4')
-                    td.text-right
-                      a.link
-                        i.fa.fa-close.text-gray.fa-lg
-                  tr(draggable='true')
-                    td.reorder.text-center
-                      h2.font-normal 5
-                      i.fa.fa-bars.orderbtn
-                    td
-                      .form-group.small.no-margin
-                        input(type='text', value='객실 5')
-                    td.text-right
-                      a.link
-                        i.fa.fa-close.text-gray.fa-lg
-                               
-            .devider.end-page
-            a.btn.full-width(href='#') 저장하기
+      
+      .board
+        .tab-menu
+          .tab.basic(onclick='location.href="/room-manage"') 기본정보
+          .tab.reorder(onclick='location.href="/room-manage/reorder"') 객실등록/순서변경
+          .tab.detail(onclick='location.href="/room-manage/detail"') 날짜별 가격
+          
+        .content-wrapper
+                    
+          .row
+            .form-group.col-2-left
+              label 객실타입 이름
+              input(type='text', value='디럭스룸')
+            .form-group.col-2-right
+              label 
+                | 형태
+                .tooltip.icon                  
+                  .desc 도미토리는 침대별 재고관리가 가능합니다.
+              .select-wrapper
+                select
+                  option 선택하세요
+                  option 일반룸
+                  option 독채형
+                  option 도미토리
+          .clear-fix
+            
+          .row
+            .form-group.col-2-left
+              label 기준인원
+              input(type='text', value='2')
+            .form-group.col-2-right
+              label 최대인원
+              input(type='text', value='4')
+          .row
+            .form-group.col-2-left
+              label 성인 1인당 추가가격
+              input(type='text', value='₩ 20,000')
+            .form-group.col-2-right
+              label 아동 1인당 추가가격
+              input(type='text', value='₩ 10,000')      
+          .row
+            .form-group.col-2-left
+              label 기본가격
+              input(type='text', value='₩ 130,000')
+          
+          .devider
+            
+          h2.margin 요일별 가격설정
+          
+          table.table
+            thead
+              tr
+                th 요일
+                th 판매가
+                th 변동가
+            tbody
+              tr
+                td 일요일
+                td 
+                  .form-group.form-inline.no-margin
+                    input(type='text', value='130,000', size='30')
+                td.text-gray 0              
+              tr
+                td 월요일
+                td 
+                  .form-group.form-inline.no-margin
+                    input(type='text', value='130,000', size='30')
+                td.text-gray 0
+              tr
+                td 화요일
+                td 
+                  .form-group.form-inline.no-margin
+                    input(type='text', value='130,000', size='30')
+                td.text-gray 0
+              tr
+                td 수요일
+                td 
+                  .form-group.form-inline.no-margin
+                    input(type='text', value='130,000', size='30')
+                td.text-gray 0
+              tr
+                td 목요일
+                td 
+                  .form-group.form-inline.no-margin
+                    input(type='text', value='130,000', size='30')
+                td.text-gray 0
+              tr
+                td.text-red 금요일
+                td 
+                  .form-group.form-inline.no-margin
+                    input(type='text', value='160,000', size='30')
+                td.text-gray +30,000
+              tr
+                td.text-red 토요일
+                td 
+                  .form-group.form-inline.no-margin
+                    input(type='text', value='160,000', size='30')
+                td.text-gray +30,000
+                    
+                                       
+          .margin-2x
+            
+          a.btn.full-width(href='#') 저장하기

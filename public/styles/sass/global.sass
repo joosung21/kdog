@@ -153,6 +153,11 @@ $font-bold: 700
 .font-bold
   font-weight: $font-bold
 
+// Font Thic
+.font-color-defualt
+  color: $font-color-defualt
+.font-color-thic
+  color: $font-color-thic
 // Transforms
 .uppercase
   text-transform: uppercase
@@ -524,6 +529,19 @@ input
         background: url(/images/icons/checked-hover.svg) 3px 3px no-repeat
     &:checked + label span
       background: url(/images/icons/checked.svg) 3px 3px no-repeat
+    &.single
+      + label
+        margin: 0
+  &[disabled]
+    + label
+      span
+        opacity: 0.5
+        cursor: not-allowed
+        background-color: $white-gray !important
+    + label:hover
+      span
+        background: none
+
   &[type="radio"]
     display: none
     + label
@@ -822,7 +840,6 @@ a.btn
 .table
   border-spacing: 0
   width: 100%
-  margin-bottom: 20px
   th
     position: relative
     font-size: $font-size-small
@@ -868,6 +885,12 @@ a.btn
         display: none
       .orderbtn
         display: inline-block
+        height: 21px
+        padding-top: 6px
+  tr.summary
+    td
+      background: $white-gray
+      font-weight: $font-normal
 
 .pagination
   margin-top: 40px
@@ -907,10 +930,10 @@ a.btn
   .modal-board
     position: fixed
     width: 600px
-    height: 400px
-    background: white
-    top: calc(50vh - 200px)
+    height: 600px
     left: calc(50vw - 300px)
+    top: calc(50vh - 300px)
+    background: white
     .modal-header
       padding: 20px
       border-bottom: 1px solid $white-gray
@@ -919,11 +942,12 @@ a.btn
       .close
         float: right
     .modal-body
-      min-height: 200px
+      min-height: 400px
       padding: 40px 40px 0 40px
       margin-bottom: 40px
     .modal-footer
-      padding: 20px
+      text-align: right
+      padding: 10px 40px 0 40px
       border-top: 1px solid $white-gray
 
 .info
@@ -934,7 +958,7 @@ a.btn
   color: white
   line-height: 1.5em
   word-break: keep-all
-  opacity: 0.8
+  opacity: 0.6
   i.fa
     color: white
     padding-right: 7px
@@ -1067,35 +1091,31 @@ a.btn
     margin: -40px -40px 40px -40px
     padding: 20px 20px 17px 20px
     border-bottom: 1px solid $white-gray
-  .sub-left
-    position: absolute
-    top: 97px
-    left: 38px
-    width: 120px
-    li
-      padding: 0 30px 23px 0
-      a
-        position: relative
-        &:hover
-          color: $color-priority
-        &.active
-          color: $color-priority
-          &::before
-            position: absolute
-            top: 3px
-            left: -16px
-            width: 6px
-            height: 9px
-            content: ''
-            background: url(/images/icons/arrow-01.svg) no-repeat
-  .sub-content
-    min-width: 400px
-    margin: -40px -40px -40px 140px
-    padding: 40px
-    border-left: 1px solid $white-gray
-    min-height: 702px
   .content-wrapper
     max-width: 700px
+  .tab-menu
+    margin: -40px -42px 40px -40px
+    border-bottom: 1px solid lighten($gray, 10%)
+    background: $white-gray
+    .tab
+      display: inline-block
+      border-right: 1px solid lighten($gray, 10%)
+      padding: 18px 20px 14px 20px
+      cursor: pointer
+      background: white
+      font-weight: $font-light
+      color: $color-reverse
+      white-space: nowrap
+      &:hover
+        background: #f8f8f8
+      &.active
+        font-weight: $font-medium
+        border-bottom: 1px solid white
+        margin-bottom: -1px
+        color: $font-color-thic
+        background: white
+        font-size: $font-size-large
+        padding-bottom: 13px
 
 #topbar
   position: relative

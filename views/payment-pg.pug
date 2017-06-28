@@ -1,0 +1,123 @@
+include includes/header.pug
+body
+  include includes/topbar.pug
+  include includes/r-window.pug
+  .wrapper
+    include includes/leftnav.pug
+    
+    #content.unfolded(name='payment', page='pg')
+      .left-wrapper
+        include includes/menu-payment.pug
+            
+        .left-box
+          h4.title
+            i.fa.fa-search
+            | 검색
+          .form-group.small
+            .box-label
+              label 검색조건              
+              .select-wrapper
+                select                  
+                  option 결제일자
+                  option 체크인날짜
+          .form-group.small
+            .box-label
+              label 시작일
+              input(type='text')
+          .form-group.small
+            .box-label
+              label 종료일
+              input(type='text')
+          .form-group.small
+            .box-label
+              label 필터
+              .select-wrapper
+                select
+                  option 정산가능
+                  option 정산대기
+                  option 정산완료
+          a.btn.btn-small.btn-gray.full-width 검색
+                     
+      .board
+        .title-bar
+          h4 결제대행 내역
+          
+        .info          
+          | 수기결제는 결제 후 15일이 지나면 정산 가능 합니다. 수수료는 결제금액의 3.5% + VAT 입니다.
+          br
+          | 실시간예약창은 체크인 후 7일이 지나면 정산 가능 합니다. 수수료는 전체금액의 3.5% +  VAT 입니다.          
+        
+        .margin-2x
+        
+        .text-right
+          a.btn.btn-white.btn-small
+            i.fa.fa-file-o
+            span CVS 다운로드
+          span.empty
+          a.btn.btn-white.btn-small
+            i.fa.fa-print
+            span 프린트
+        
+        .margin-2x
+          
+        table.table
+          thead
+            tr
+              th(style='width: 60px')
+                input#c1(type='checkbox' checked)
+                label(for='c1')
+                  span 
+                  | 전체 
+              th 구분
+              th 예약번호
+              th 결제일자
+              th 체크인날짜
+              th.text-right 환불
+              th.text-right 결제금액
+              th.text-right 정산예정액
+              th.text-right 상태
+          tbody
+            tr
+              td
+                input#c2.single(type='checkbox' checked)
+                label(for='c2')
+                  span
+              td 수기결제
+              td 
+                a.link(onclick='openRwindow()') 540698
+              td 2017-04-15 17:28
+              td 2017-09-28
+              td.text-right ₩ 0
+              td.text-right ₩ 200,000
+              td.text-right ₩ 195,560
+              td.text-right
+                .tag.skyblue 정산가능
+            tr
+              td
+                input#c3.single(type='checkbox' disabled)
+                label(for='c3')
+                  span
+              td 실시간예약창
+              td 
+                a.link(onclick='openRwindow()') 546210
+              td 2017-04-14 09:20
+              td 2017-04-27
+              td.text-right ₩ 0
+              td.text-right ₩ 100,000
+              td.text-right ₩ 97,230
+              td.text-right
+                .tag.yellow 대기중
+            tr.summary
+              td                
+              td(colspan='3') 2개 선택됨              
+              td.text-right TOTAL
+              td.text-right ₩ 0
+              td.text-right ₩ 300,000
+              td.text-right ₩ 292,790
+              td
+        
+        .margin
+        .text-right
+          a.btn.btn-reverse ₩ 292,790 정산요청
+          
+              

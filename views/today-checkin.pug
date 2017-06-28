@@ -14,19 +14,27 @@ body
             i.fa.fa-filter
             | 필터
           .form-group.small
-            input(type='text', placeholder='고객명')
+            .box-label
+              label 고객명
+              input(type='text')
           .form-group.small
-            input(type='text', placeholder='예약번호')
+            .box-label
+              label 예약번호
+              input(type='text')
           .form-group.small
-            input(type='text', placeholder='객실번호')
-          .form-group.small              
-            .select-wrapper
-              select
-                option 에이전시 전체
-                option Expedia
-                option Agoda
-                option Booking.com
-                option 네이버
+            .box-label
+              label 객실번호
+              input(type='text')
+          .form-group.small
+            .box-label
+              label 필터
+              .select-wrapper
+                select
+                  option 에이전시 전체
+                  option Expedia
+                  option Agoda
+                  option Booking.com
+                  option 네이버
         .margin
         a.btn.btn-gray.btn-lg.full-width
           i.fa.fa-bell-o.fa-lg
