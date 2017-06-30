@@ -69,12 +69,19 @@ include ../includes/header.pug
         .devider
         
         h2.margin WORD SPACING
-        p= '간격을 띄울때에는 &nbsp; 대신 span.empty 을 사용하세요.' 
-        p 
-          | Some text
+        p= '인라인에서 가로간격을 띄울때에는 &nbsp; 대신 span.empty 을 사용하세요.'
+        .margin 
+        p.font-color-thic
+          | span.empty
           span.empty
-          | Next text
-          
+          | Next Text
+        .margin
+        p.font-color-thic
+          | span.empty-2x
+          span.empty-2x
+          | Next Text
+        
+        .margin-2x
         
         
           

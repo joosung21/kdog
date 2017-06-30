@@ -968,20 +968,26 @@ a.btn
     top: calc(50vh - 300px)
     background: white
     .modal-header
-      padding: 20px
+      padding: 15px 20px
       border-bottom: 1px solid $white-gray
       .title
         float: left
       .close
         float: right
+        margin-top: 3px
     .modal-body
-      min-height: 376px
+      height: 395px
       padding: 40px 40px 0 40px
       margin-bottom: 40px
+      overflow-y: auto
     .modal-footer
       text-align: right
-      padding: 20px 20px 0 20px
+      padding: 15px 20px 0 20px
       border-top: 1px solid $white-gray
+  &.wide
+    .modal-board
+      width: 1000px
+      left: calc(50vw - 500px)
 
 .info
   position: relative
@@ -1299,7 +1305,7 @@ a.btn
     padding: 20px 0
     font-weight: $font-light
     color: #ADB0B4
-    text-transform: uppercase
+    text-transform: capitalize
   .symbol.toogle-btn
     position: relative
   &.folded
@@ -1928,6 +1934,11 @@ table
       width: 36px
       height: 36px
       margin: 0 10px 0 0
+
+// SMS page
+.tag-buttons
+  a.btn
+    margin: 5px
 
 
 

@@ -4,16 +4,129 @@ body
   .wrapper
     include includes/leftnav.pug
 
-    #content.unfolded(name='plugin', page='key-in')
+    #content.unfolded(name='plugin', page='sms')
       
       .left-wrapper
         include includes/menu-plugin.pug
               
       .board
         .title-bar
-          h4 수기결제
+          h4 문자발송
         .content-wrapper
           
+          h4.margin-thin 예치금 잔액:
+          h1 ₩ 49,930
+            span.empty
+            a.btn.btn-reverse.btn-small(onclick='openModal("#deposit")')
+              i.fa.fa-plus
+              span 충전하기
+          
+          .margin-2x
+          
+          .form-group
+            label 문자 송수신 전화번호
+            input(type='text', placeholder='010-000-0000')
+          
+          .form-group
+            label 자동 문자발송 설정
+            .select-wrapper
+              select
+                option 실시간 예약창에서 예약이 발생하면 문자를 자동으로 발송합니다.
+                option 자동 문자발송을 사용하지 않습니다.
+          .info.warning
+            i.fa.fa-ban.fa-lg
+            | 해외번호로 발송은 불가능합니다.
+            a.link.close
+              i.fa.fa-times-circle.fa-lg
+          
+          .devider
+          .row
+            .col-2-left
+              .form-group(style='width: 233px')
+                label 자동발송 문자내용
+                textarea(rows='12').
+                  안녕하세요 {{고객명}}님,
+                  {{숙소명}}에 예약해 주셔서 감사합니다.
+                  
+                  예약번호: {{예약번호}}
+                  체크인: {{체크인날짜}}
+                  숙박일: {{숙박일}}
+                  객실: {{객실타입}}
+                  총금액: {{금액}}
+                  
+            .col-2-right.tag-buttons
+              .margin
+              a.btn.btn-reverse.btn-small 회사이름
+              a.btn.btn-reverse.btn-small 고객명
+              a.btn.btn-reverse.btn-small 체크인날짜
+              a.btn.btn-reverse.btn-small 체크아웃날짜
+              a.btn.btn-reverse.btn-small 숙박일
+              a.btn.btn-reverse.btn-small 예약변호
+              a.btn.btn-reverse.btn-small 금액
+              a.btn.btn-reverse.btn-small 객실타입
+              a.btn.btn-reverse.btn-small 결제금액
+              a.btn.btn-reverse.btn-small 예약확인주소
+              a.btn.btn-reverse.btn-small 전화번호
+              a.btn.btn-reverse.btn-small 주소
+            .clear-fix
+              
+          .row
+            .col-2-left
+              .form-group(style='width: 233px')
+                label 무통장입금 추가내용
+                textarea(rows='5').
+                  * 무통장입금 안내
+                  {{계좌번호}}
+                  입금할 금액: {{결제금액}}
+                  입금기한: {{입금기한}}
+                  
+            .col-2-right.tag-buttons
+              .margin
+              a.btn.btn-reverse.btn-small 계좌번호
+              a.btn.btn-reverse.btn-small 입금기한
+              a.btn.btn-reverse.btn-small 결제금액
+            .clear-fix
+          
+          .row
+            .col-2-left
+              .form-group(style='width: 233px')
+                label 카드결제 추가내용
+                textarea(rows='5').
+                  결제수단: 신용카드
+                  결제액: {{결제금액}}
+                  
+            .col-2-right.tag-buttons
+              .margin
+              a.btn.btn-reverse.btn-small 결제금액
+            .clear-fix
               
           .devider.end-page
           a.btn.full-width 저장하기
+
+#deposit.modal
+  .layover
+  .modal-board
+    .modal-header 
+      h4.tigle 예치금 충전하기
+        a.close(href='javascript:closeModal()')
+          img(src='/images/icons/close-x.svg')
+    .modal-body        
+      p 아래 계좌로 
+        strong.text-priority 송금하신 후 
+        | 충전요청을 해 주시면 1~2 영업일 이내로 입금을 확인하여 충전하여 드립니다.
+      .margin-2x
+      h2.font-color-thic
+        | 예금주: 티포트 주식회사
+        br
+        | 기업은행: 131-106880-01-018
+      .margin
+      .form-group
+        label 충전금액
+        input(type='text', value='₩ ')
+      .form-group
+        label 입금자명
+        input(type='text', placeholder='반드시 입금자명이 일치하여야 합니다.')
+    .modal-footer
+      a.btn.btn-long 충전 요청하기
+      span.empty
+      a.btn.btn-gray(href='javascript:closeModal()') 닫기

@@ -143,6 +143,11 @@ $( document ).ready(function() {
     $('#bar-hover-layer').hide();
   });
 
+});
 
-
+// Modal esc key close
+$(document).keyup(function(e) {
+  if (e.keyCode == 27) {
+    $('.modal').hide();
+  }
 });
