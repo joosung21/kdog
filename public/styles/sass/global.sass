@@ -340,7 +340,7 @@ span.empty-2x
 
 .form-group
   position: relative
-  margin-bottom: 28px
+  margin-bottom: 22px
   &.form-inline
     *
       vertical-align: middle
@@ -421,7 +421,7 @@ span.empty-2x
   input[type='text'], input[type='email'], input[type='password'], input[type='number'], textarea
     box-sizing: border-box
     width: 100%
-    padding: 12px 12px 10px 12px
+    padding: 11px 12px
     border: 1px solid $gray
     font-size: $font-size-default
     &::placeholder
@@ -571,7 +571,7 @@ input
     margin-bottom: 20px
 
 .form-group.light
-  margin-bottom: 26px
+  margin-bottom: 23px
   &.no-margin
     margin-bottom: 6px !important
   input[type='text'], input[type='email'], input[type='password'], input[type='number'], textarea
@@ -599,13 +599,15 @@ input
     bottom: 0
     left: 1px
     padding: 0
+    white-space: nowrap
   textarea + label
     top: 5px
   .select-wrapper
     background: url(/images/icons/triangle.svg) no-repeat right 5px center
-    box-sizing: border-box
-    height: 30px
-    padding: 0 0 0 50px
+    // box-sizing: border-box
+    height: 15px
+    margin-top: -4px
+    padding: 0 0 14px 50px
     overflow: hidden
     border: none
     border-bottom: 2px solid lighten($gray, 8%)
@@ -640,9 +642,9 @@ a.btn
   vertical-align: middle
   background-color: $color-priority
   border: 1px solid $color-priority
-  padding: 9px 26px
+  padding: 9px 15px
   font-size: $font-size-default
-  font-weight: $font-light
+  // font-weight: $font-light
   cursor: pointer
   i.fa
     color: white
@@ -660,7 +662,6 @@ a.btn
       color: $font-color-thic
     background: white
     border-color: #d7d7d7
-    font-weight: $font-normal
     i.fa
       color: $font-color-thic
     &:hover
@@ -675,7 +676,6 @@ a.btn
       color: $font-color-defualt
     background: $white-gray
     border-color: $white-gray
-    font-weight: $font-normal
     i.fa
       color: $font-color-defualt
     &:hover
@@ -707,7 +707,7 @@ a.btn
   &.btn-small
     padding: 5px 10px
     font-size: $font-size-small
-    height: 20px
+    height: 21px
     span
       font-size: $font-size-small
   &.btn-xsmall
@@ -727,6 +727,43 @@ a.btn
       left: 1px
   span
     margin-left: 0.4em
+  &.btn-border
+    background: white
+    border-width: 2px
+    color: $color-priority
+    span, i.fa
+      color: $color-priority
+    &:hover
+      color: white !important
+      background: $color-priority
+      span, i.fa
+        color: white !important
+    &.btn-dark
+      color: $color-dark
+      span, i.fa
+        color: $color-dark
+      &:hover
+        background: $color-dark
+    &.btn-gray
+      color: lighten($color-dark, 27%)
+      span, i.fa
+        color: lighten($color-dark, 27%)
+      &:hover
+        background: lighten($color-dark, 27%)
+    &.btn-reverse
+      color: $color-reverse
+      span, i.fa
+        color: $color-reverse
+      &:hover
+        background: $color-reverse
+    &.btn-green
+      color: #2ECC71
+      span, i.fa
+        color: #2ECC71
+      &:hover
+        background: #2ECC71
+
+
 
 .badge
   display: inline-block
@@ -803,11 +840,8 @@ a.btn
       transition: all 0.5s
     .title
       font-weight: $font-medium
-      margin-bottom: 11px
-    p
-      opacity: 0.8
-      .text-xsmall
-        opacity: 0.6
+      color: $font-color-thic
+      margin-bottom: 7px
     .close
       position: absolute
       top: 15px
@@ -869,7 +903,7 @@ a.btn
     display: none
     cursor: move
   tbody td
-    padding: 18px 7px 16px 7px
+    padding: 17px 7px
     border-bottom: 1px solid $white-gray
     color: $font-color-thic
     font-weight: $font-light
@@ -941,32 +975,37 @@ a.btn
       .close
         float: right
     .modal-body
-      min-height: 400px
+      min-height: 376px
       padding: 40px 40px 0 40px
       margin-bottom: 40px
     .modal-footer
       text-align: right
-      padding: 10px 40px 0 40px
+      padding: 20px 20px 0 20px
       border-top: 1px solid $white-gray
 
 .info
   position: relative
   font-weight: $font-light
-  background: $color-reverse
+  background: lighten($color-reverse, 35%)
+  color: darken($color-reverse, 5%)
   padding: 17px 40px 17px 20px
-  color: white
   line-height: 1.5em
   word-break: keep-all
-  opacity: 0.6
   i.fa
-    color: white
     padding-right: 7px
-  a.link, a.link i.fa
-    color: white
+  a.link, i.fa
+    color: darken($color-reverse, 5%)
+    opacity: 0.8
   .close
     position: absolute
     top: 17px
     right: 5px
+  &.warning
+    background: lighten($red, 30%)
+    color: lighten($red, 10%)
+    a.link, i.fa
+      color: lighten($red, 10%)
+      opacity: 0.8
 
 .context-menu
   position: absolute
@@ -1047,7 +1086,7 @@ a.btn
     ul
       padding-bottom: 12px
       li
-        padding: 13px 30px 10px 30px
+        padding: 12px 30px
         @extend .noselect
         cursor: pointer
         &:hover
@@ -1088,7 +1127,7 @@ a.btn
     min-height: 500px
   .title-bar
     margin: -40px -40px 40px -40px
-    padding: 20px 20px 17px 20px
+    padding: 15px 20px
     border-bottom: 1px solid $white-gray
   .content-wrapper
     max-width: 700px
@@ -1153,7 +1192,7 @@ a.btn
       margin-top: 15px
       width: 220px
       height: 14px
-      padding: 10px 13px 6px 13px
+      padding: 8px 13px
       background: url(/images/icons/search.svg) no-repeat right 10px top 8px rgba(255, 255, 255, 0.1)
       +inner-shadow(#B83806)
       +border-radius(21px)
@@ -1257,7 +1296,7 @@ a.btn
   .text
     float: left
     height: 20px
-    padding: 22px 0 18px 0
+    padding: 20px 0
     font-weight: $font-light
     color: #ADB0B4
     text-transform: uppercase
@@ -1281,10 +1320,14 @@ a.btn
       left: 80px
       transition: all 0.5s
   &.docs
+    > li
+      height: 40px
     .text
       text-align: center
       float: none
       font-size: $font-size-default
+      padding: 9px 0
+
 
 // Bottom bar
 .bottom-bar
@@ -1301,6 +1344,7 @@ a.btn
     vertical-align: middle
     font-weight: $font-light
     color: darken(white, 30%)
+    white-space: nowrap
   a.link
     vertical-align: middle
     padding-top: 7px
@@ -1578,8 +1622,8 @@ a.btn
   .modal-board
     position: fixed
     width: 953px
-    height: 650px
-    top: calc(50vh - 325px)
+    height: 680px
+    top: calc(50vh - 340px)
     left: calc(50vw - 477px)
     overflow: hidden
     .title-bar
@@ -1597,7 +1641,7 @@ a.btn
     section
       float: left
       width: 270px
-      height: 560px
+      height: 590px
       overflow-y: scroll
       border-right: 1px solid lighten($gray, 8%)
       .header
@@ -1679,14 +1723,14 @@ a.btn
 
 
 // Bar Hover Layer
-.bar-hover-layer
+.hover-layer
   z-index: 12
   position: absolute
   left: 0
   top: 0
   width: 300px
   background: white
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5)
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3)
   li
     padding: 15px 20px
     .label
@@ -1714,8 +1758,11 @@ a.btn
     width: 59px
     height: 40px
     border-bottom: 1px solid $white-gray
+    .text
+      font-family: 'Roboto'
   .checkin, .checkout
     border-right: 1px solid $white-gray
+    white-space: nowrap
     .text
       font-size: 23px
   .id
@@ -1730,6 +1777,7 @@ a.btn
       font-size: 32pt
       text-align: center
       font-weight: $font-light
+      font-family: 'Roboto'
   .agency
     border-bottom: 1px solid $white-gray
     .label
@@ -1742,7 +1790,15 @@ a.btn
       margin-bottom: 5px
     .text
       white-space: pre-line
-
+  &#rec-hover-layer
+    .agency
+      strong
+        display: inline-block
+        width: 140px
+      .price
+        width: 105px
+        display: inline-block
+        text-align: right
 
 // login Page
 body.login
@@ -1840,7 +1896,6 @@ table.start
     padding-top: 4px
 
 // Today Checkin Page
-
 table.banners
   width: calc(100% + 20px)
   border-spacing: 10px
@@ -1865,8 +1920,18 @@ table.banners
       margin: -10px 0
       font-weight: $font-medium
 
+// GDS page
+table
+  td
+    img.logo-img
+      vertical-align: middle
+      width: 36px
+      height: 36px
+      margin: 0 10px 0 0
 
-// ---------- DOCS Demo  ---------- //
+
+
+// ---------- DOCS Only  ---------- //
 .colorbox
   float: left
   margin: 20px

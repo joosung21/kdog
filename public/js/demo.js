@@ -32,9 +32,7 @@ $( document ).ready(function() {
 
   $('.modal').hide();
   $('.context-menu').hide();
-  $('.bar-hover-layer').hide();
-
-  $('#deposit.modal').show();
+  $('.hover-layer').hide();
 
   $('.modal .layover').click(function(){
     $('.modal').hide();
@@ -111,21 +109,40 @@ $( document ).ready(function() {
     }
   });
 
-  // Room-chart Bar Action
-  $('.room-line .bar').mouseover(function(){
+  // Room-chart Empty Rec Hover Action
+  $('.room-line .rec.empty').mouseover(function(){
     var offset = $(this).offset()
-    $('.bar-hover-layer').css({
+    $('#rec-hover-layer').css({
       top: offset.top + 50,
       left: offset.left + 50
     });
-    $('.bar-hover-layer').show();
+    $('#rec-hover-layer').show();
   });
-  $('.room-line .bar').mouseout(function(){
-    $('.bar-hover-layer').offset({
+  $('.room-line .rec.empty').mouseout(function(){
+    $('#rec-hover-layer').offset({
       top: 0,
       left: 0
     });
-    $('.bar-hover-layer').hide();
+    $('#rec-hover-layer').hide();
   });
+
+  // Room-chart Bar Hover Action
+  $('.room-line .bar').mouseover(function(){
+    var offset = $(this).offset()
+    $('#bar-hover-layer').css({
+      top: offset.top + 50,
+      left: offset.left + 50
+    });
+    $('#bar-hover-layer').show();
+  });
+  $('.room-line .bar').mouseout(function(){
+    $('#bar-hover-layer').offset({
+      top: 0,
+      left: 0
+    });
+    $('#bar-hover-layer').hide();
+  });
+
+
 
 });

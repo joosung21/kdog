@@ -14,7 +14,7 @@ body
       i.fa.fa-reply
         span 변경 취소하기
 
-  ul.bar-hover-layer
+  ul#bar-hover-layer.hover-layer
     li.title
       .status.text-booked 예약완료      
       .name 서은교
@@ -40,7 +40,39 @@ body
       .label 예약메모
       p.text.
         ** Genius Booker **
-        adult: 1, children: 0, extrabeds: 0      
+        adult: 1, children: 0, extrabeds: 0
+  
+  ul#rec-hover-layer.hover-layer
+    li.title
+      h4 디럭스룸    
+    li.agency      
+      .text
+        strong 기본가격
+        .price ₩ 190,000
+    li.agency      
+      .text
+        strong 실시간예약창
+        .price ₩ 190,000
+    li.agency      
+      .text
+        strong 판매대행
+        .price ₩ 180,000
+    li.agency      
+      .text
+        strong Airbnb
+        .price ₩ 200,000
+    li.agency      
+      .text
+        strong Booking.com
+        .price ₩ 190,000
+    li.agency      
+      .text
+        strong Agoda
+        .price ₩ 190,000
+    li.agency      
+      .text
+        strong Hostelworld
+        .price ₩ 190,000    
     
   //- .right-slider
     h1 right-slider
@@ -315,15 +347,15 @@ body
             ul
               - var r1 = 0
               while r1 < 50          
-                li.rec(name= r1++)
+                li.rec.empty(name= r1++)
                   .price 12만
           .clear-fix        
             
         .room-line
-          .room-name 502호          
+          .room-name 502호
           .chart-wrapper
             ul
-              li.rec
+              li.rec.empty
                 .price 12.5만
               li.rec
                 .price 12.5만
@@ -331,7 +363,7 @@ body
                   .name Mark Thobraski
               li.rec
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
               li.rec
                 .price 12.5만
@@ -341,9 +373,9 @@ body
                 .price 12.5만
               li.rec
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
                 .bar.paid(style='width: 200px', draggable='true', onclick='openRwindow()')
                   .name Steve kim
@@ -361,67 +393,67 @@ body
                 .price 12.5만
               li.rec
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
               
           .clear-fix
@@ -435,27 +467,27 @@ body
                   .name 유인나
               li.rec
                 .price 12.5만                
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만                
               li.rec
                 .price 12.5만
                 .bar.ect(style='width: 50px', draggable='true', onclick='openRwindow()')
                   .name 기타
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만                
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
               li.rec
                 .price 12.5만
@@ -465,7 +497,7 @@ body
                 .price 12.5만
               li.rec
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
               li.rec
                 .price 12.5만
@@ -493,39 +525,39 @@ body
                 .price 12.5만
               li.rec
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
-              li.rec
+              li.rec.empty
                 .price 12.5만
           .clear-fix
           
@@ -536,7 +568,7 @@ body
             ul
               - var r4 = 0
               while r4 < 50          
-                li.rec(name= r4++)
+                li.rec.empty(name= r4++)
                   .price 12만
           .clear-fix
         .room-line
@@ -545,7 +577,7 @@ body
             ul
               - var r5 = 0
               while r5 < 50          
-                li.rec(name= r5++)
+                li.rec.empty(name= r5++)
                   .price 12.5만
           .clear-fix
         .room-line
@@ -554,7 +586,7 @@ body
             ul
               - var r6 = 0
               while r6 < 50          
-                li.rec(name= r6++)
+                li.rec.empty(name= r6++)
                   .price 12만          
           .clear-fix
             
@@ -569,7 +601,7 @@ body
                 ul
                   - var r7 = 0
                   while r7 < 50          
-                    li.rec(name= r7++)
+                    li.rec.empty(name= r7++)
                       .price 2만
               .clear-fix
             .room-line
@@ -578,7 +610,7 @@ body
                 ul
                   - var r8 = 0
                   while r8 < 50          
-                    li.rec(name= r8++)
+                    li.rec.empty(name= r8++)
                       .price 2만
               .clear-fix
             .room-line
@@ -587,7 +619,7 @@ body
                 ul
                   - var r9 = 0
                   while r9 < 50          
-                    li.rec(name= r9++)
+                    li.rec.empty(name= r9++)
                       .price 2만
               .clear-fix
         
@@ -600,7 +632,7 @@ body
                 ul
                   - var r7 = 0
                   while r7 < 50          
-                    li.rec(name= r7++)
+                    li.rec.empty(name= r7++)
                       .price 2만
               .clear-fix
             .room-line
@@ -609,7 +641,7 @@ body
                 ul
                   - var r8 = 0
                   while r8 < 50          
-                    li.rec(name= r8++)
+                    li.rec.empty(name= r8++)
                       .price 2만
               .clear-fix
             .room-line
@@ -618,6 +650,6 @@ body
                 ul
                   - var r9 = 0
                   while r9 < 50          
-                    li.rec(name= r9++)
+                    li.rec.empty(name= r9++)
                       .price 2만
               .clear-fix

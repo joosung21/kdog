@@ -1,0 +1,19 @@
+include includes/header.pug
+body
+  include includes/topbar.pug
+  .wrapper
+    include includes/leftnav.pug
+
+    #content.unfolded(name='plugin', page='key-in')
+      
+      .left-wrapper
+        include includes/menu-plugin.pug
+              
+      .board
+        .title-bar
+          h4 수기결제
+        .content-wrapper
+          
+              
+          .devider.end-page
+          a.btn.full-width 저장하기

@@ -1,0 +1,78 @@
+include includes/header.pug
+body
+  include includes/topbar.pug
+  .wrapper
+    include includes/leftnav.pug
+
+    #content.unfolded(name='plugin', page='gds')
+      
+      .left-wrapper
+        include includes/menu-plugin.pug
+              
+      .board
+        .title-bar
+          h4 판매대행
+        .content-wrapper
+          .info
+            | 판매대행 수수료: 15%
+            br
+            | 핀매대행 서비스를 이용하시려면 판매대행 이용동의가 필요합니다.
+            br
+            | 아래의 버튼을 눌러 이용동의 페이지로 이동합니다.
+            br
+            br
+            a.btn.btn-reverse.btn-small 판매대행 이용동의
+            
+          .margin
+          
+          .form-group
+            label 판매대행 설정
+            .select-wrapper
+              select
+                option 비어있는 객실을 판매해 주세요.
+                option 판매대행을 이용하지 않습니다.
+          .devider
+          
+          table.table
+            thead
+              tr
+                th 판매사
+                th 누적 판매량
+                th 누적 판매액
+                th 최근판매
+                th.text-right 상태
+            tbody
+              tr
+                td
+                  img(src='/images/logo-naver.png').logo-img
+                  | 네이버
+                td 57예약
+                td ₩ 5,350,000
+                td 2시간 전
+                td.text-right 
+                  .tag.green 연동중
+                  tbody
+              tr
+                td
+                  img(src='/images/logo-tmon.png').logo-img
+                  | 티몬
+                td -
+                td -
+                td -
+                td.text-right 
+                  .tag.skyblue 검수중
+                  tbody
+              tr
+                td
+                  img(src='/images/logo-11.png').logo-img
+                  | 11번가
+                td -
+                td -
+                td -
+                td.text-right 
+                  .tag.yellow 대기중
+          
+          .padding-thin.text-small * 판매사가 계속 추가될 예정입니다.  
+              
+          .devider.end-page
+          a.btn.full-width 저장하기

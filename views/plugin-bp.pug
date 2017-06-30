@@ -1,0 +1,97 @@
+include includes/header.pug
+body
+  include includes/topbar.pug
+  .wrapper
+    include includes/leftnav.pug
+
+    #content.unfolded(name='plugin', page='bp')
+      
+      .left-wrapper
+        include includes/menu-plugin.pug
+              
+      .board
+        .title-bar
+          h4 실시간 예약창   
+        .content-wrapper
+          .form-group
+            label 실시간 예약창 주소
+            input(type='text', value='pangyoramada')
+            .counter 0/10
+          table.table.no-border
+            tbody
+              tr
+                td 예약창주소
+                td 
+                  a.link http://app.zari.me/v2/booking/pangyoramada
+                td.text-right
+                  a.btn.btn-small.btn-gray
+                    i.fa.fa-clipboard 
+                    span 주소복사
+              tr
+                td 위젯주소
+                td
+                  a.link http://app.zari.me/v2/booking/pangyoramada/booking/widget
+                td.text-right
+                  a.btn.btn-small.btn-gray
+                    i.fa.fa-clipboard
+                    span 주소복사
+          .margin
+          .text-right
+            a.link 
+              i.fa.fa-book.fa-lg
+              span 실시간예약창 및 위젯 설치 메뉴얼
+          .devider
+          .form-group
+            label 설정
+            .select-wrapper
+              select
+                option 실시간 예약을 받습니다.
+                option 실시간 예약을 받지 않습니다.
+          .form-group
+            label 당일예약 여부
+            .select-wrapper
+              select
+                option 당일 예약을 받습니다.
+                option 당일 예약을 받지 않습니다.
+          .form-group
+            label 결제방식 선택
+            .select-wrapper
+              select
+                option 전화 예약만 받습니다.
+                option 무통장 입금을 받습니다.
+                option 무통장 입금과 간편 카드결제를 받습니다.
+          .devider
+          .form-group
+            label 무통장 입금 정보
+            textarea(rows='4', placeholder='계좌번호/은행/계좌주, 환불사항 등을 알려주세요.')
+          .form-group
+            label 무통장입금 기한설정(시간)
+            input(type='text', value='24')
+          .devider
+          .info
+            | 간편 카드결제 수수료 3.50% + VAT
+            br
+            | 간편 카드결제를 이용하시려면 결제대행 이용동의가 필요합니다.
+            br
+            br
+            a.btn.btn-reverse.btn-small 결제대행 이용동의
+          .margin
+          .form-group
+            label 카드결제 보증금 비율
+            input(type='text', value='100%')
+          .devider
+          .form-group
+            label 통산판매업 신고번호
+            input(type='text', value='')
+          .form-group
+            label 통신판매업 신고 관할지
+            input(type='text', value='')
+          a.btn.btn-reverse
+            i.fa.fa-paperclip.fa-lg
+            span 통신판매업신고증 첨부  
+              
+            
+            
+              
+          .devider.end-page
+          a.btn.full-width 저장하기

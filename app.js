@@ -35,6 +35,11 @@ app.get('/payment/gds', function (req, res){res.render('payment-gds')})
 app.get('/payment/transfer', function (req, res){res.render('payment-transfer')})
 app.get('/payment/deposit', function (req, res){res.render('payment-deposit')})
 
+app.get('/plugin/bp', function (req, res){res.render('plugin-bp')})
+app.get('/plugin/gds', function (req, res){res.render('plugin-gds')})
+app.get('/plugin/key-in', function (req, res){res.render('plugin-key-in')})
+app.get('/plugin/sms', function (req, res){res.render('plugin-sms')})
+
 app.get('/setting/company', function (req, res){res.render('setting-company')})
 app.get('/setting/step', function (req, res){res.render('setting-step')})
 app.get('/setting/step/edit', function (req, res){res.render('setting-step-edit')})
