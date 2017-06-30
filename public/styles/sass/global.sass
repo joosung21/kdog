@@ -1,6 +1,6 @@
 
-// Webfont Test
-// @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css)
+// Webfont
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css)
 // @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css)
 // @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css)
 
@@ -208,7 +208,7 @@ body,p,ul,li,h1,h2,h3,h4,h5,h6
   padding: 0
 
 body,body *
-  font-family: 'Roboto', sans-serif
+  font-family: 'Noto Sans KR', sans-serif
   font-weight: $font-normal
   font-size: $font-size-default
   color: $font-color-defualt
@@ -237,7 +237,7 @@ h1,h2
   font-weight: $font-light
 h1
   font-size: 22pt
-  margin-top: -0.2em
+  margin-top: -8px
   &.lined
     border-bottom: 1px solid $white-gray
     padding-bottom: 5px
@@ -348,9 +348,10 @@ span.empty-2x
       display: inline-block
       background: $white-gray
       border: 1px solid $gray
-      padding: 14px 15px 13px 15px
+      padding: 11px 15px 10px 15px
       margin: 0 -1px 0 0
       font-size: $font-size-small
+      white-space: nowrap
     span
       display: inline-block
       color: $font-color-thic
@@ -366,7 +367,6 @@ span.empty-2x
       min-width: 160px
   .box-label
     position: relative
-    // height: 42px
     label
       position: absolute
       left: 0
@@ -377,11 +377,10 @@ span.empty-2x
       background: $white-gray
       border: 1px solid $gray
       border-right: none
-      padding: 14px 12px 14px 12px
+      padding: 11px 12px 10px 12px
       overflow-x: hidden
       text-align: center
       font-size: $font-size-small
-      height: 12px
     input[type='text'], input[type='email'], input[type='password'], input[type='number']
       margin-left: 75px
       width: calc(100% - 77px)
@@ -389,7 +388,6 @@ span.empty-2x
       margin-left: 75px
       width: calc(100% - 101px)
       font-size: $font-size-small
-      height: 14px
     &.bottom-collapse
       margin-bottom: -1px
       input:focus
@@ -399,17 +397,17 @@ span.empty-2x
     .inner-text
       position: absolute
       right: 14px
-      top: -27px
+      top: -30px
       opacity: 0.6
       font-size: $font-size-small
+      white-space: nowrap
     a.inner-text:hover
       opacity: 1
 
   label
     display: block
-    margin-bottom: 5px
-    padding-left: 4px
-    height: 1em
+    margin-bottom: 4px
+    padding-left: 3px
     font-size: $font-size-xsmall
 
   input[type='text'], input[type='email'], input[type='password'], input[type='number'], select, button, textarea
@@ -443,7 +441,7 @@ span.empty-2x
       font-weight: $font-light
     &:focus
       border: 2px solid $color-priority
-      padding: 11px 11px 9px 11px
+
 
   textarea
     line-height: 1.5em
@@ -461,8 +459,8 @@ span.empty-2x
 
   .select-wrapper
     background: url(/images/icons/triangle.svg) no-repeat right 15px center
-    height: 1em
-    padding: 12px 11px 14px 11px
+    height: 22px
+    padding: 9px 11px
     overflow: hidden
     border: 1px solid $gray
     background-color: white
@@ -488,25 +486,25 @@ span.empty-2x
   input[type='text'], input[type='email'], input[type='password'], input[type='number']
     height: 34px
     font-size: $font-size-small
-    padding: 3px 9px 0 9px
+    padding: 3px 9px
   .select-wrapper
     background: url(/images/icons/triangle.svg) no-repeat right 8px center
-    height: 16px
-    padding: 10px 9px 8px 9px
+    height: 22px
+    padding: 5px 9px
     select
       font-size: $font-size-small
   .box-label
     label
       font-size: $font-size-xsmall
-      padding: 10px 6px
+      padding: 7px 6px
     input[type='text'], input[type='email'], input[type='password'], input[type='number']
       margin-left: 63px
       width: calc(100% - 65px)
     .select-wrapper
       margin-left: 63px
       width: calc(100% - 85px)
-      font-size: $font-size-small
-      height: 14px
+      font-size: 11pt
+
 
 input
   &[type="checkbox"]
@@ -575,10 +573,10 @@ input
 .form-group.light
   margin-bottom: 26px
   &.no-margin
-    margin-bottom: 6px
+    margin-bottom: 6px !important
   input[type='text'], input[type='email'], input[type='password'], input[type='number'], textarea
     width: 100%
-    padding: 0 2px 2px 50px !important
+    padding: 0 2px 5px 50px !important
     height: 26px
     border: none
     border-bottom: 2px solid lighten($gray, 8%)
@@ -598,16 +596,16 @@ input
     font-size: 11pt
   label
     position: absolute
-    bottom: 2px
+    bottom: 0
     left: 1px
     padding: 0
   textarea + label
     top: 5px
   .select-wrapper
-    background: url(/images/icons/triangle.svg) no-repeat right 5px top 8px
+    background: url(/images/icons/triangle.svg) no-repeat right 5px center
     box-sizing: border-box
-    height: 26px
-    padding: 0 0 13px 50px
+    height: 30px
+    padding: 0 0 0 50px
     overflow: hidden
     border: none
     border-bottom: 2px solid lighten($gray, 8%)
@@ -634,14 +632,15 @@ input
 a.btn
   @extend .noselect
   color: white
-  height: 18px
+  height: 22px
+  white-space: nowrap
   *
     color: white
   display: inline-block
   vertical-align: middle
   background-color: $color-priority
   border: 1px solid $color-priority
-  padding: 11px 26px
+  padding: 9px 26px
   font-size: $font-size-default
   font-weight: $font-light
   cursor: pointer
@@ -706,27 +705,26 @@ a.btn
     &:hover
       background-color: darken(#2ECC71, 5%)
   &.btn-small
-    padding: 7px 10px
+    padding: 5px 10px
     font-size: $font-size-small
-    height: 15px
+    height: 20px
     span
       font-size: $font-size-small
   &.btn-xsmall
-    padding: 4px 6px
+    padding: 2px 6px
     font-size: $font-size-xsmall
-    height: 13px
+    height: 19px
     span
       font-size: $font-size-xsmall
   &.btn-arrow
     position: relative
-    top: 2px
+    top: 6px
     vertical-align: text-top
     padding: 6px 10px 6px 9px
     margin: 0 -1px 0 0
     i.fa.fa-angle-right
       position: relative
       left: 1px
-
   span
     margin-left: 0.4em
 
@@ -734,9 +732,9 @@ a.btn
   display: inline-block
   font-size: 9pt
   color: white
-  width: 14px
-  height: 14px
-  padding: 3px
+  width: 16px
+  height: 20px
+  padding: 1px 3px
   text-align: center
   background-color: $color-priority
   font-weight: $font-light
@@ -759,13 +757,14 @@ a.btn
     background: lighten($color-dark, 20%)
 
 .tag
+  position: relative
+  top: -1px
   display: inline-block
   background: $color-dark
-  padding: 6px 9px
+  padding: 3px 9px 4px 9px
   position: relative
   font-size: 10pt
-  margin: -2px 0 -2px 0
-  height: 14px
+  margin: -3px 0 -4px 0
   color: white
   font-weight: $font-light
   &.blue
@@ -885,8 +884,8 @@ a.btn
         display: none
       .orderbtn
         display: inline-block
-        height: 21px
-        padding-top: 6px
+        height: 22px
+        padding-top: 10px
   tr.summary
     td
       background: $white-gray
@@ -1143,9 +1142,10 @@ a.btn
         opacity: 1
         transition: all 0.5s
     .company-name
-      margin: 20px 40px 0 0
+      margin: 17px 40px 0 0
       color: rgba(255, 255, 255, 0.8)
       font-size: 13pt
+      white-space: nowrap
       &:hover
         color: rgba(255, 255, 255, 0.9)
         transition: all 0.5s
@@ -1319,6 +1319,8 @@ a.btn
     border-right: 1px solid $white-gray
     cursor: pointer
     .this-month
+      *
+        font-family: 'Roboto'
       position: relative
       padding: 9px 15px 0 15px
       .year
@@ -1345,10 +1347,15 @@ a.btn
         border: none
         i.fa
           margin: -6px 0
+      .fa-calendar-o
+        position: relative
+        top: -3px
   &:hover
     .controls
       display: block
   .date-wrapper
+    *
+      font-family: 'Roboto'
     width: calc(100% - 160px)
     overflow: hidden
     white-space: nowrap
@@ -1408,7 +1415,7 @@ a.btn
   margin-bottom: 60px
 
   .roomtype-title
-    padding: 12px 20px 8px 20px
+    padding: 10px 20px
     margin: 0 -40px
     border-bottom: 1px solid darken($white-gray, 10%)
     background-color: $white-gray
@@ -1430,7 +1437,7 @@ a.btn
         float: left
         padding: 0
         a.btn
-          padding: 17px 0 14px 0
+          padding: 14px 0
           opacity: 0.9
           span
             font-weight: $font-light
@@ -1439,8 +1446,9 @@ a.btn
       float: left
       width: 160px
       height: 15px
-      padding: 18px 10px 31px 20px
-      font-size: 11pt
+      padding: 17px 10px 32px 20px
+      line-height: 17px
+      font-size: 10pt
       border-right: 1px solid $gray
       border-bottom: 1px solid $white-gray
       box-sizing: border-box
@@ -1511,7 +1519,7 @@ a.btn
               background: darken($color-disabled, 5%)
           .name
             color: white
-            padding: 18px 5px 0 10px
+            padding: 14px 5px 0 10px
             font-size: 10pt
             overflow: hidden
             white-space: nowrap
@@ -1524,12 +1532,13 @@ a.btn
           width: 50px
           text-align: center
           left: 0
-          top: 20px
+          top: 15px
           font-size: 9pt
           color: lighten($font-color-defualt, 30%)
+        .price
+          display: none
         .stock
           font-size: 11pt
-          top: 17px
           color: lighten($font-color-defualt, 50%)
           &.over
             color: $font-color-thic
@@ -1745,7 +1754,7 @@ body.login
   margin: 200px auto 100px auto
   &::before
     position: absolute
-    top: -15px
+    top: -8px
     left: -140px
     display: block
     content: url('/images/logo.png')
@@ -1765,6 +1774,7 @@ body.login
     text-align: left
     padding: 0 0 0 0
     width: 200px
+    height: auto
     img
       width: 30px
       padding: 7px
@@ -1776,6 +1786,9 @@ body.login
       top: 2px
       color: $font-color-defualt
       font-size: $font-size-small
+    &:hover
+      img
+        border-right: 1px solid rgba(white, 0.1)
   a.link
     font-weight: $font-light
     i.fa
@@ -1786,8 +1799,9 @@ body.login
   a.find-password
     position: absolute
     right: 0
-    top: 10px
+    top: 11px
     font-size: $font-size-small
+    white-space: nowrap
   .devider
     border-color: rgba(white, 0.2)
   input
@@ -1843,12 +1857,13 @@ table.banners
       .sub
         text-transform: uppercase
         font-weight: $font-thin
-        font-size: 8pt
+        font-size: 9pt
+        white-space: nowrap
     .number
       float: right
       font-size: 31pt
-      height: 38px
-      margin: -5px 0
+      margin: -10px 0
+      font-weight: $font-medium
 
 
 // ---------- DOCS Demo  ---------- //
