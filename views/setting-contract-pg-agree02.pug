@@ -1,0 +1,68 @@
+include includes/header.pug
+body
+  include includes/topbar.pug
+  .wrapper
+    include includes/leftnav.pug
+  
+    #content.unfolded(name='setting', page='contract')
+      
+      .left-wrapper
+        include includes/menu-setting.pug    
+              
+      .board
+        .title-bar        
+          a.btn.btn-small.btn-white-gray(href='/setting/contract')
+            i.fa.fa-reply
+            span 계약 리스트로 돌아가기
+        .content-wrapper
+          h1 결제대행 이용동의
+          .margin
+          table.progress-steps
+            tr
+              td
+                .title 사업자등록정보
+                .number 1
+              td.active
+                .title 정산정보
+                .number 2
+              td
+                .title 동의하기
+                .number 3
+          .margin-2x
+          .row
+            .col-2-left         
+              .form-group
+                label 정산 담당자명
+                input(type='text')
+            .col-2-right
+              .form-group
+                label 정산 담당자 휴대폰
+                input(type='text')
+            .clear-fix
+          .form-group
+            label 정산담당자 이메일 (전자세금계산서 수신)
+            input(type='text')
+          .row
+            .col-2-left
+              .form-group
+                label 은행명
+                input(type='text')
+            .col-2-right
+              .form-group
+                label 예금주
+                .select-wrapper
+                  select
+                    option 법인사업자
+                    option 개인사업자
+            .clear-fix          
+            .form-group
+              label 계좌번호
+              input(type='text')
+          a.btn.btn-reverse
+            i.fa.fa-cloud-upload
+            span 통장사본 올리기
+          
+          .devider.end-page
+          a.btn.btn-long(href='/setting/contract/pg-agree03') 다음단계로
+          span.empty
+          a.btn.btn-white-gray(href='/setting/contract/pg-agree01') 이전단계로

@@ -18,7 +18,6 @@
   "homepage": "https://github.com/joosung21/kdog#readme",
   "dependencies": {
     "express": "^4.15.3",
-    "pug": "^2.0.0-rc.2",
-    "sweetalert": "^1.1.3"
+    "pug": "^2.0.0-rc.2"
   }
 }

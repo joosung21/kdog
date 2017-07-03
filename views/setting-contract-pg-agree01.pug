@@ -1,0 +1,85 @@
+include includes/header.pug
+body
+  include includes/topbar.pug
+  .wrapper
+    include includes/leftnav.pug
+  
+    #content.unfolded(name='setting', page='contract')
+      
+      .left-wrapper
+        include includes/menu-setting.pug    
+              
+      .board
+        .title-bar        
+          a.btn.btn-small.btn-white-gray(href='/setting/contract')
+            i.fa.fa-reply
+            span 계약 리스트로 돌아가기
+        .content-wrapper
+          h1 결제대행 이용동의
+          .margin
+          table.progress-steps
+            tr
+              td.active
+                .title 사업자등록정보
+                .number 1
+              td
+                .title 정산정보
+                .number 2
+              td
+                .title 동의하기
+                .number 3
+          .margin-2x
+          .row
+            .col-2-left         
+              .form-group
+                label 사업자명
+                input(type='text')
+            .col-2-right
+              .form-group
+                label 사업자 등록번호
+                input(type='text')
+            .clear-fix
+          .form-group
+            label 사업자등록 주소지
+            input(type='text')
+          .row
+            .col-2-left
+              .form-group
+                label 대표자명
+                input(type='text')
+            .col-2-right
+              .form-group
+                label 사업자구분
+                .select-wrapper
+                  select
+                    option 법인사업자
+                    option 개인사업자
+            .clear-fix
+          .row
+            .col-2-left
+              .form-group
+                label 업종
+                input(type='text')
+            .col-2-right
+              .form-group
+                label 업태
+                input(type='text')
+            .clear-fix
+          .row
+            .col-2-left
+              .form-group
+                label 대표 연락처
+                input(type='text')
+            .col-2-right
+              .form-group
+                label 대표 이메일
+                input(type='text')
+            .clear-fix
+          a.btn.btn-reverse
+            i.fa.fa-cloud-upload
+            span 사업자등록증 올리기
+          
+          .devider.end-page
+          a.btn.btn-long(href='/setting/contract/pg-agree02') 다음단계로
+          span.empty
+          a.btn.btn-white-gray(href='/setting/contract') 취소하기
