@@ -23,6 +23,8 @@ app.get('/today/clean', function (req, res){res.render('today-clean')})
 
 app.get('/room-chart', function (req, res){res.render('room-chart')})
 
+app.get('/stock-table', function (req, res){res.render('stock-table')})
+
 app.get('/room-manage', function (req, res){res.render('room-setting')})
 app.get('/room-manage/reorder', function (req, res){res.render('room-setting-reorder')})
 app.get('/room-manage/detail', function (req, res){res.render('room-setting-detail')})

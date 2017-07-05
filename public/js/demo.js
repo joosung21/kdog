@@ -143,6 +143,11 @@ $( document ).ready(function() {
     $('#bar-hover-layer').hide();
   });
 
+  //Stock-table select
+  $('.room-line .rec').click(function(){
+    $(this).toggleClass('selected');
+  });
+
 });
 
 // Modal esc key close

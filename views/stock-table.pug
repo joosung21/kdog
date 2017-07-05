@@ -1,0 +1,1023 @@
+include includes/header.pug
+body
+  include includes/topbar.pug
+  include includes/r-window.pug
+  
+  .bottom-bar
+    a.link
+      i.fa.fa-history
+      span.text-small 변경내역 보기
+    span.empty-2x
+    .last-update #2015778 장미선 예약현황 변경 3:57pm
+    span.empty-2x
+    a.btn.btn-small.btn-dark
+      i.fa.fa-reply
+        span 변경 취소하기
+
+  //- ul#bar-hover-layer.hover-layer
+    li.title
+      .status.text-booked 예약완료      
+      .name 서은교
+    li.checkin
+      .label 체크인 
+      .text 06-05
+    li.checkout
+      .label 체크아웃
+      .text 06-08
+    li.id
+      .label 예약번호
+      .text 1126029
+    .clear-fix
+    li.balance 
+      .label 받을돈
+      .text ₩ 190,000
+    li.agency
+      .label 예이전시
+      .text
+        strong Agoda.com
+        | 1123803425
+    li.memo
+      .label 예약메모
+      p.text.
+        ** Genius Booker **
+        adult: 1, children: 0, extrabeds: 0
+  
+  //- ul#rec-hover-layer.hover-layer
+    li.title
+      h4 디럭스룸    
+    li.agency      
+      .text
+        strong 기본가격
+        .price ₩ 190,000
+    li.agency      
+      .text
+        strong 실시간예약창
+        .price ₩ 190,000
+    li.agency      
+      .text
+        strong 판매대행
+        .price ₩ 180,000
+    li.agency      
+      .text
+        strong Airbnb
+        .price ₩ 200,000
+    li.agency      
+      .text
+        strong Booking.com
+        .price ₩ 190,000
+    li.agency      
+      .text
+        strong Agoda
+        .price ₩ 190,000
+    li.agency      
+      .text
+        strong Hostelworld
+        .price ₩ 190,000    
+    
+  //- .right-slider
+    h1 right-slider
+        
+  .wrapper
+    include includes/leftnav.pug
+
+    #content.unfolded(name='stock-table')
+              
+      .board.full-width.room-chart.stock-table
+        #date-bar
+          .leftbox
+            .this-month            
+              .year 2017
+              .month 06       
+            .controls
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-left.fa-2x
+              a.btn.btn-small.btn-white
+                i.fa.fa-calendar-o.fa-lg
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-right.fa-2x
+              a.btn.btn-small.btn-white(style='padding-left:4px; padding-right:4px') TODAY
+          .date-wrapper
+            .date-box
+              .date 20
+              .day tue
+            .date-box
+              .date 21
+              .day wed
+            .date-box.today
+              .date 22
+              .day thu
+            .date-box.weekend
+              .date 23
+              .day fri
+            .date-box.weekend
+              .date 24
+              .day sat
+            .date-box
+              .date 25
+              .day sun
+            .date-box
+              .date 26
+              .day mon
+            .date-box
+              .date 27
+              .day tue
+            .date-box
+              .date 28
+              .day wed
+            .date-box
+              .date 29
+              .day thu
+            .date-box.weekend
+              .date 30
+              .day fri
+            .date-box.weekend
+              .date 7/1
+              .day sat
+            .date-box
+              .date 2
+              .day sun
+            .date-box
+              .date 3
+              .day mon
+            .date-box
+              .date 4
+              .day tue
+            .date-box
+              .date 5
+              .day wed
+            .date-box
+              .date 6
+              .day thu
+            .date-box.weekend
+              .date 7
+              .day fri            
+            .date-box.weekend
+              .date 8
+              .day sat
+            .date-box
+              .date 9
+              .day sun
+            .date-box
+              .date 10
+              .day mon
+            .date-box
+              .date 11
+              .day tue
+            .date-box
+              .date 12
+              .day wed
+            .date-box
+              .date 13
+              .day thu
+            .date-box.weekend
+              .date 14
+              .day fri
+            .date-box.weekend
+              .date 15
+              .day sat
+            .date-box
+              .date 16
+              .day sun
+            .date-box
+              .date 17
+              .day mon
+            .date-box
+              .date 18
+              .day tue
+            .date-box
+              .date 19
+              .day wed
+            .date-box
+              .date 20
+              .day thu
+            .date-box.weekend
+              .date 21
+              .day fri
+            .date-box.weekend
+              .date 22
+              .day sat
+            .date-box
+              .date 23
+              .day sun
+            .date-box
+              .date 24
+              .day mon
+            .date-box
+              .date 25
+              .day tue
+            .date-box
+              .date 26
+              .day thu
+            .date-box.weekend
+              .date 27
+              .day fri
+            .date-box.weekend
+              .date 28
+              .day sat
+            .date-box
+              .date 29
+              .day sun
+            .date-box
+              .date 30
+              .day mon
+            .date-box
+              .date 31
+              .day tue
+            .date-box
+              .date 8/1
+              .day thu
+            .date-box.weekend
+              .date 2
+              .day fri
+            .date-box.weekend
+              .date 3
+              .day sat
+        .padding
+          a.btn.btn-reverse.full-width 
+            i.fa.fa-bolt.fa-lg
+            span 일괄수정
+        
+        .roomtype-title.toggle
+          i.fa.fa-angle-down.fa-lg
+          span.empty
+          | 벙커트윈 테라스룸
+        .room-line.base
+          .room-name 기본설정
+          .chart-wrapper
+            ul
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 1      
+                .price 120,000          
+              li.rec
+                .stock 1      
+                .price 120,000          
+              li.rec
+                .stock 1
+                .price 120,000
+              li.rec
+                .stock 0      
+                .price 120,000          
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 1
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 1
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 1
+                .price 120,000
+              li.rec
+                .stock 1
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 1
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 1
+                .price 120,000
+              li.rec
+                .stock 1
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 1
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+        .room-line
+          .room-name.agency
+            img(src='/images/logo-agoda.png')
+            | Agoda
+          .chart-wrapper
+            ul
+              li.rec
+                .stock 0
+              li.rec
+                .stock 1                
+              li.rec
+                .stock 1                
+              li.rec
+                .stock 1
+              li.rec
+                .stock 0                
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 1
+              li.rec
+                .stock 0
+              li.rec
+                .stock 1
+              li.rec
+                .stock 0
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 1
+              li.rec
+                .stock 1
+              li.rec
+                .stock 0
+              li.rec
+                .stock 1
+              li.rec
+                .stock 2
+              li.rec
+                .stock 0
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 1
+              li.rec
+                .stock 1
+              li.rec
+                .stock 0
+              li.rec
+                .stock 1
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+        .room-line
+          .room-name.agency
+            img(src='/images/logo-booking.png')
+            | booking.com
+          .chart-wrapper
+            ul
+              li.rec
+                .stock 0
+              li.rec
+                .stock 1                
+              li.rec
+                .stock 1                
+              li.rec
+                .stock 1
+              li.rec
+                .stock 0                
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 1
+              li.rec
+                .stock 0
+              li.rec
+                .stock 1
+              li.rec
+                .stock 0
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 1
+              li.rec
+                .stock 1
+              li.rec
+                .stock 0
+              li.rec
+                .stock 1
+              li.rec
+                .stock 2
+              li.rec
+                .stock 0
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 1
+              li.rec
+                .stock 1
+              li.rec
+                .stock 0
+              li.rec
+                .stock 1
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+        .room-line
+          .room-name.agency
+            img(src='/images/logo-expedia.png')
+            | Expedia
+          .chart-wrapper
+            ul
+              li.rec
+                .stock 0
+              li.rec
+                .stock 1                
+              li.rec
+                .stock 1                
+              li.rec
+                .stock 1
+              li.rec
+                .stock 0                
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0              
+              li.rec.revised
+                .stock 1
+                .price 99,000
+              li.rec.revised
+                .stock 1
+                .price 99,000
+              li.rec.revised
+                .stock 1
+                .price 99,000
+              li.rec.revised
+                .stock 1
+                .price 99,000
+              li.rec
+                .stock 1
+              li.rec
+                .stock 0
+              li.rec
+                .stock 1
+              li.rec
+                .stock 0
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 1
+              li.rec
+                .stock 1
+              li.rec
+                .stock 0
+              li.rec
+                .stock 1
+              li.rec
+                .stock 2
+              li.rec
+                .stock 0
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 2
+              li.rec
+                .stock 1
+              li.rec
+                .stock 1
+              li.rec
+                .stock 0
+              li.rec
+                .stock 1
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+              li.rec
+                .stock 0
+        
+        .roomtype-title.toggle
+          i.fa.fa-angle-up.fa-lg
+          span.empty
+          | 디럭스룸
+        .room-line.base
+          .room-name 기본설정
+          .chart-wrapper
+            ul
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 1      
+                .price 120,000          
+              li.rec
+                .stock 1      
+                .price 120,000          
+              li.rec
+                .stock 1
+                .price 120,000
+              li.rec
+                .stock 0      
+                .price 120,000          
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 1
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 1
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 1
+                .price 120,000
+              li.rec
+                .stock 1
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 1
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 2
+                .price 120,000
+              li.rec
+                .stock 1
+                .price 120,000
+              li.rec
+                .stock 1
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 1
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+              li.rec
+                .stock 0
+                .price 120,000
+                
+        .roomtype-title.toggle
+          i.fa.fa-angle-up.fa-lg
+          span.empty
+          | 여성4인 도미토리
+        .room-line.base
+          .room-name 기본설정
+          .chart-wrapper
+            ul
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 1      
+                .price 25,000          
+              li.rec
+                .stock 1      
+                .price 25,000          
+              li.rec
+                .stock 1
+                .price 25,000
+              li.rec
+                .stock 0      
+                .price 25,000          
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 2
+                .price 25,000
+              li.rec
+                .stock 2
+                .price 25,000
+              li.rec
+                .stock 2
+                .price 25,000
+              li.rec
+                .stock 2
+                .price 25,000
+              li.rec
+                .stock 1
+                .price 25,000
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 1
+                .price 25,000
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 2
+                .price 25,000
+              li.rec
+                .stock 2
+                .price 25,000
+              li.rec
+                .stock 2
+                .price 25,000
+              li.rec
+                .stock 2
+                .price 25,000
+              li.rec
+                .stock 1
+                .price 25,000
+              li.rec
+                .stock 1
+                .price 25,000
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 1
+                .price 25,000
+              li.rec
+                .stock 2
+                .price 25,000
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 2
+                .price 25,000
+              li.rec
+                .stock 2
+                .price 25,000
+              li.rec
+                .stock 2
+                .price 25,000
+              li.rec
+                .stock 2
+                .price 25,000
+              li.rec
+                .stock 1
+                .price 25,000
+              li.rec
+                .stock 1
+                .price 25,000
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 1
+                .price 25,000
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 0
+                .price 25,000
+              li.rec
+                .stock 0
+                .price 25,000
+        

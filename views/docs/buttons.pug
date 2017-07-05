@@ -2,6 +2,13 @@ include ../includes/header.pug
 .wrapper
   include ../includes/leftnav-docs.pug
   
+  .context-menu
+    .layover
+    ul
+      li 액선 1
+      li 액션 2
+      li 액션 3
+  
   #content.unfolded(name='buttons')
     .board.full-width
       h1.lined buttons
@@ -86,6 +93,11 @@ include ../includes/header.pug
         a.btn.btn-reverse
           i.fa.fa-circle-o-notch.fa-spin.fa-lg
           span 저장중...
+        span.empty
+        a.btn.btn-green.openContextMenu
+          span Menu
+          span.empty
+          i.fa.fa-angle-down.fa-lg    
       h2.margin Long Button
       .margin-2x
         a.btn.btn-long BUTTON
