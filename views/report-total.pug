@@ -1,0 +1,311 @@
+include includes/header.pug
+body
+  include includes/topbar.pug
+  
+  .wrapper
+    include includes/leftnav.pug
+    
+    #content.unfolded(name='report', page='total')
+      .left-wrapper
+        include includes/menu-report.pug
+                     
+      .board.report
+        .title-bar
+          h4 종합 리포트
+        
+        .report-layout.full-width
+          .row
+            .col-2-left
+              h2 매출변동              
+                span.small 기간 별 매출 추이를 보여줍니다
+            .col-2-right.controls
+              a.btn.btn-white.btn-small 이번주
+              a.btn.btn-white.btn-small.active 지난주
+              a.btn.btn-white.btn-small 6개월
+              a.btn.btn-white.btn-small 1년
+              span.empty-2x
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-left.fa-lg
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-right.fa-lg
+            .clear-fix
+          .margin
+          img(src='/images/temp-chart01.png', style='width:100%')
+        
+        .clear-fix            
+        .margin-2x
+          
+        .report-layout.full-width
+          .row
+            .col-2-left(style="width: 80%")
+              h2 2017년 7월 7일 매출
+                span.small 당일 체크인으로 발생한 매출입니다.
+            .col-2-right.controls(style="width: 20%")              
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-left.fa-lg
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-right.fa-lg
+            .clear-fix
+          .margin
+          table.table
+            thead
+              th 현금
+              th 카드
+              th 에이전시 결제
+              th 무통장 입금
+              th 환불금액
+              th 할인 총금액
+              th 총합계
+            tbody
+              td ₩ 129,000
+              td ₩ 250,000
+              td ₩ 750,000
+              td ₩ 0
+              td ₩ 0
+              td ₩ 0
+              td.font-medium ₩ 1,029,000
+        
+        .clear-fix
+        .margin-2x
+        
+        .padding-2x(style='margin: 0 -40px; background: #FBFBFB')
+          
+          .report-layout
+            .row
+              .col-2-left(style="width: 80%")
+                h2 고객유입경로                
+              .col-2-right.controls(style="width: 20%")              
+                a.btn.btn-small.btn-white
+                  i.fa.fa-angle-left.fa-lg
+                a.btn.btn-small.btn-white
+                  i.fa.fa-angle-right.fa-lg
+              .clear-fix
+            .text-small.text-gray 고객이 어떤 채널로 유입되었는지 보여줍니다
+            .margin
+            .text-center
+              h2 2017년 7월
+              .circle-chart
+                img(src='/images/temp-chart02.png')
+              table.chart-desc
+                tr
+                  th 
+                    .tag.skyblue 
+                    | GDS
+                  td 175 건
+                tr
+                  th 
+                    .tag.red
+                    | 실시간 예약창
+                  td 202 건
+                tr
+                  th 
+                    .tag.yellow
+                    | OTA 에이전시
+                  td 2 건
+                tr
+                  th 
+                    .tag.green
+                    | 여행사
+                  td 15 건
+                tr
+                  th 
+                    .tag.gray
+                    | 직접예약
+                  td 2 건
+                tr
+                  th 
+                    | TOTAL
+                  td 392 건
+          
+          .report-layout
+            .row
+              .col-2-left(style="width: 80%")
+                h2 에이전시별 유입률                
+              .col-2-right.controls(style="width: 20%")              
+                a.btn.btn-small.btn-white
+                  i.fa.fa-angle-left.fa-lg
+                a.btn.btn-small.btn-white
+                  i.fa.fa-angle-right.fa-lg
+              .clear-fix
+            .text-small.text-gray 각 에이전시별로 유입률을 보여줍니다
+            .margin
+            .text-center
+              h2 2017년 7월
+              .circle-chart
+                img(src='/images/temp-chart03.png')
+              table.chart-desc
+                tr
+                  th 
+                    .tag.skyblue 
+                    | Expedia
+                  td 175 건
+                tr
+                  th 
+                    .tag.red
+                    | 티몬
+                  td 202 건
+                tr
+                  th 
+                    .tag.yellow
+                    | Agoda
+                  td 2 건
+                tr
+                  th 
+                    .tag.green
+                    | Naver
+                  td 15 건
+                tr
+                  th 
+                    .tag.gray
+                    | 기타
+                  td 2 건
+                tr
+                  th 
+                    | TOTAL
+                  td 392 건
+                  
+          .report-layout.no-margin
+            .row
+              .col-2-left(style="width: 80%")
+                h2 월매출                
+              .col-2-right.controls(style="width: 20%")              
+                a.btn.btn-small.btn-white
+                  i.fa.fa-angle-left.fa-lg
+                a.btn.btn-small.btn-white
+                  i.fa.fa-angle-right.fa-lg
+              .clear-fix
+            .text-small.text-gray 고객이 어떤 채널로 유입되었는지 보여줍니다
+            .margin
+            .text-center
+              h2 2017년 7월
+              .circle-chart
+                img(src='/images/temp-chart04.png')
+              table.chart-desc
+                tr
+                  th 
+                    .tag.skyblue 
+                    | 카드
+                  td 19,300,590
+                tr
+                  th 
+                    .tag.red
+                    | 판매대행
+                  td 4,501,000
+                tr
+                  th 
+                    .tag.yellow
+                    | 에이전시결제
+                  td 3,255,000
+                tr
+                  th 
+                    .tag.green
+                    | 현금
+                  td 0
+                tr
+                  th 
+                    .tag.gray
+                    | 기타
+                  td 0
+                tr
+                  th 
+                    | TOTAL
+                  td ₩ 27,091,590
+          
+          .clear-fix
+        
+        .margin-2x
+        
+        .report-layout.col-2
+          .row
+            .col-2-left(style="width: 80%")
+              h2 리드타임                
+            .col-2-right.controls(style="width: 20%")              
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-left.fa-lg
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-right.fa-lg
+            .clear-fix
+          .text-small.text-gray 이 기간에 따라 프로모션을 계획하세요
+          .margin
+          img(src='/images/temp-chart05.png', width='100%')
+        
+        .report-layout.col-2.no-margin
+          .row
+            .col-2-left(style="width: 80%")
+              h2 객실가동률/공실률
+            .col-2-right.controls(style="width: 20%")              
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-left.fa-lg
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-right.fa-lg
+            .clear-fix
+          .text-small.text-gray 객실가동률이 높을수록, 공실률이 낮을수록 좋습니다
+          .margin
+          img(src='/images/temp-chart06.png', width='100%')
+        
+        .clear-fix
+        .margin-2x
+        
+        .report-layout.col-2
+          .row
+            .col-2-left(style="width: 80%")
+              h2 객단가/인원당 매출액
+            .col-2-right.controls(style="width: 20%")              
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-left.fa-lg
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-right.fa-lg
+            .clear-fix
+          .text-small.text-gray 객실당 평균매출액, 인원당 평균매출액을 보여줍니다
+          .margin
+          img(src='/images/temp-chart07.png', width='100%')
+        
+        .report-layout.col-2.no-margin
+          .row
+            .col-2-left(style="width: 80%")
+              h2 남녀성비                
+            .col-2-right.controls(style="width: 20%")              
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-left.fa-lg
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-right.fa-lg
+            .clear-fix
+          .text-small.text-gray 고객의 남녀성비를 보여줍니다
+          .margin
+          img(src='/images/temp-chart08.png', width='100%')
+        
+        .clear-fix
+        .margin-2x
+        
+        .report-layout.col-2
+          .row
+            .col-2-left(style="width: 80%")
+              h2 취소율
+            .col-2-right.controls(style="width: 20%")              
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-left.fa-lg
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-right.fa-lg
+            .clear-fix
+          .text-small.text-gray 전체 예약대비 취소예약 비율을 보여줍니다
+          .margin
+          img(src='/images/temp-chart10.png', width='100%')
+        
+        .report-layout.col-2.no-margin
+          .row
+            .col-2-left(style="width: 80%")
+              h2 예약개수
+            .col-2-right.controls(style="width: 20%")              
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-left.fa-lg
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-right.fa-lg
+            .clear-fix
+          .text-small.text-gray 월별 예약 개수를 보여드립니다
+          .margin
+          img(src='/images/temp-chart09.png', width='100%')
+                  
+        .clear-fix
+        
+                    
+            

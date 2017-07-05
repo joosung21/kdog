@@ -235,6 +235,10 @@ h1,h2,h3,h4,h5,h6
 
 h1,h2
   font-weight: $font-light
+  span.small
+    color: lighten($font-color-defualt, 30%)
+    font-weight: $font-light
+    padding: 0 0 0 10px
 h1
   font-size: 22pt
   margin-top: -8px
@@ -273,6 +277,7 @@ p
 table
   border-collapse: separate
   border-spacing: 0
+  width: 100%
 strong
   font-weight: $font-medium
   color: $font-color-thic
@@ -665,8 +670,8 @@ a.btn
     i.fa
       color: $font-color-thic
     &:hover
-      background-color: #eeeeee
-      border-color: #eeeeee
+      background-color: $white-gray
+      border-color: $white-gray
   &.btn-white-gray
     color: $font-color-defualt
     *
@@ -704,7 +709,7 @@ a.btn
   &.btn-small
     padding: 5px 10px
     font-size: $font-size-small
-    height: 21px
+    height: 20px
     span
       font-size: $font-size-small
   &.btn-xsmall
@@ -791,8 +796,6 @@ a.btn
     background: lighten($color-dark, 20%)
 
 .tag
-  position: relative
-  top: -1px
   display: inline-block
   background: $color-dark
   padding: 3px 9px 4px 9px
@@ -800,7 +803,7 @@ a.btn
   font-size: 10pt
   margin: -3px 0 -4px 0
   color: white
-  font-weight: $font-light
+  white-space: nowrap
   &.blue
     background: #3498DB
   &.skyblue
@@ -869,7 +872,6 @@ a.btn
 
 .table
   border-spacing: 0
-  width: 100%
   th
     position: relative
     font-size: $font-size-small
@@ -902,8 +904,6 @@ a.btn
   tbody td
     padding: 17px 7px
     border-bottom: 1px solid $white-gray
-    color: $font-color-thic
-    font-weight: $font-light
   &.no-border
     tbody td
       padding: 12px 7px 10px 7px
@@ -1040,7 +1040,6 @@ a.btn
         background: $white-gray
 
 table.progress-steps
-  width: 100%
   tr
     td
       width: 33%
@@ -1121,7 +1120,6 @@ table.progress-steps
         &.active
           background-color: $color-priority
           color: white
-          font-weight: $font-light
   .left-box
     background-color: white
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1)
@@ -1168,7 +1166,6 @@ table.progress-steps
       padding: 18px 20px 14px 20px
       cursor: pointer
       background: white
-      font-weight: $font-light
       color: $color-reverse
       white-space: nowrap
       &:hover
@@ -1274,7 +1271,7 @@ table.progress-steps
         height: 24px
         color: rgba(255, 255, 255, 0.8)
         background: url(/images/icons/male.svg) no-repeat 15px 17px
-        padding: 22px 20px 14px 45px
+        padding: 19px 20px 17px 45px
         cursor: pointer
       &:hover, &.active
         +darker-background(0.05)
@@ -1325,7 +1322,6 @@ table.progress-steps
     float: left
     height: 20px
     padding: 20px 0
-    font-weight: $font-light
     color: #ADB0B4
     text-transform: capitalize
   .symbol.toogle-btn
@@ -1925,7 +1921,6 @@ body.login
 
 // Start Page
 table.start
-  width: 100%
   border-spacing: 10px
   .form-group
     margin-bottom: 0
@@ -1945,10 +1940,10 @@ table.banners
     .title
       float: left
       font-size: 14pt
-      font-weight: $font-thin
+      font-weight: $font-light
       .sub
         text-transform: uppercase
-        font-weight: $font-thin
+        font-weight: $font-light
         font-size: 9pt
         white-space: nowrap
     .number
@@ -2003,6 +1998,46 @@ img.sign
   img.sign
     display: block
 
+// Report pages
+.board.report
+  min-width: 922px
+.report-layout
+  width: 30%
+  min-width: 276px
+  float: left
+  margin-right: 5%
+  &.full-width
+    width: 100%
+    margin: 0
+  &.col-2
+    width: 47%
+    margin-right: 6%
+  .controls
+    text-align: right
+    a.btn
+      margin-left: -1px
+    .active
+      background: $white-gray
+    i.fa
+      position: relative
+      top: -1px
+  .circle-chart
+    margin: 10px 0
+  table.chart-desc
+    opacity: 0.7
+    margin: 0 auto
+    width: 200px
+    th, td
+      padding: 5px 0
+      color: $font-color-thic
+    th
+      text-align: left
+      .tag
+        height: 12px
+        width: 0px
+        margin-right: 7px
+    td
+      text-align: right
 
 // ---------- DOCS Only  ---------- //
 .colorbox

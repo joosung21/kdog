@@ -35,6 +35,8 @@ app.get('/payment/gds', function (req, res){res.render('payment-gds')})
 app.get('/payment/transfer', function (req, res){res.render('payment-transfer')})
 app.get('/payment/deposit', function (req, res){res.render('payment-deposit')})
 
+app.get('/report/total', function (req, res){res.render('report-total')})
+
 app.get('/plugin/bp', function (req, res){res.render('plugin-bp')})
 app.get('/plugin/gds', function (req, res){res.render('plugin-gds')})
 app.get('/plugin/key-in', function (req, res){res.render('plugin-key-in')})
