@@ -1,0 +1,43 @@
+include includes/header.pug
+body
+  include includes/topbar.pug
+  .wrapper
+    include includes/leftnav.pug
+
+    #content.unfolded(name='setting', page='cms')
+      
+      .left-wrapper
+        include includes/menu-setting.pug
+              
+      .board
+        .title-bar        
+          a.btn.btn-small.btn-white-gray(href='/setting/cms')
+            i.fa.fa-reply
+            span 채널매니져 리스트로 돌아가기
+        h1 Booking.com 연동하기
+        .margin
+        table.progress-steps
+          tr
+            td
+              .title 채널사에 신청하기
+              .number 1
+            td.active
+              .title 연동 승인대기
+              .number 2
+            td
+              .title 객실 연결하기
+              .number 3
+            td
+              .title 동기화 시작하기
+              .number 4
+        .margin-2x
+        .content-wrapper
+          p
+            | 자리 채널매니저 담당자가 검수중 입니다. 
+            strong 1~2 영업일 이내에 처리되니 기다려 주시기 바랍니다.
+            br
+            | 승인이 처리되면 이메일로 알림을 보내 드립니다.
+          .devider.end-page
+          a.btn.btn-long(href='/setting/cms') 돌아가기
+          span.empty
+          a.btn.btn-white-gray(href='/setting/cms/step03') 다음단계 임시버튼

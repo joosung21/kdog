@@ -1,0 +1,165 @@
+include includes/header.pug
+body
+  include includes/topbar.pug
+  .wrapper
+    include includes/leftnav.pug
+
+    #content.unfolded(name='setting', page='cms')
+      
+      .left-wrapper
+        include includes/menu-setting.pug
+              
+      .board
+        .title-bar        
+          a.btn.btn-small.btn-white-gray(href='/setting/cms')
+            i.fa.fa-reply
+            span 채널매니져 리스트로 돌아가기
+        h1 Booking.com 연동하기
+        .margin
+        table.progress-steps
+          tr
+            td
+              .title 채널사에 신청하기
+              .number 1
+            td
+              .title 연동 승인대기
+              .number 2
+            td.active
+              .title 객실 연결하기
+              .number 3
+            td
+              .title 동기화 시작하기
+              .number 4
+        .margin-2x
+        
+        p 부킹닷컴에 등록된 객실을 불러와서 자리와 연결합니다.
+        .margin
+        .row
+          .col-2-left
+            .form-group
+              label 채널사에 등록된 호텔 ID
+              input(type='text')
+          .col-2-right
+            .form-group
+              label 화폐단위
+              .select-wrapper
+                select
+                  option KRW
+                  option USD
+                  option JPY              
+          .clear-fix
+        a.btn.btn-gray.full-width
+          i.fa.fa-refresh
+          span 객실 불러오기
+          
+        .margin-2x
+          
+        table.table
+          thead
+            tr
+              th 자리 객실이름
+              th 부킹닷컴 객실이름
+              th 가격테이블
+              th
+              th         
+          tbody
+            tr
+              td 
+                .form-group.small.no-margin
+                  .select-wrapper
+                    select
+                      option 8 도미토리(여성)
+                      option 트윈룸
+                      option 더블룸
+              td
+                .form-group.small.no-margin
+                  .select-wrapper
+                    select
+                      option Bed 8-bed Female Dormitory Room
+                      option Twin Room
+                      option Double Room
+              td
+                .form-group.small.no-margin
+                  .select-wrapper
+                    select
+                      option Standard Rate
+                      option Second Rate
+              td
+                a.btn.btn-green.btn-small
+                  i.fa.fa-check
+                  span 연결성공
+              td
+                a.btn.btn-white-gray.btn-small 
+                  i.fa.fa-trash-o
+                  span 삭제
+              tr
+                td 
+                  .form-group.small.no-margin
+                    .select-wrapper
+                      select
+                        option 8 도미토리(여성)
+                        option(selected) 트윈룸
+                        option 더블룸
+                td
+                  .form-group.small.no-margin
+                    .select-wrapper
+                      select
+                        option Bed 8-bed Female Dormitory Room
+                        option(selected) Twin Room
+                        option Double Room
+                td
+                  .form-group.small.no-margin
+                    .select-wrapper
+                      select
+                        option Standard Rate
+                        option Second Rate
+                td
+                  a.btn.btn-green.btn-small
+                    i.fa.fa-check
+                    span 연결성공
+                td
+                  a.btn.btn-white-gray.btn-small 
+                    i.fa.fa-trash-o
+                    span 삭제
+              tr
+                td 
+                  .form-group.small.no-margin
+                    .select-wrapper
+                      select
+                        option 선택하세요
+                        option 8 도미토리(여성)
+                        option 트윈룸
+                        option 더블룸
+                td
+                  .form-group.small.no-margin
+                    .select-wrapper
+                      select
+                        option 선택하세요
+                        option Bed 8-bed Female Dormitory Room
+                        option Twin Room
+                        option Double Room
+                td
+                  .form-group.small.no-margin
+                    .select-wrapper
+                      select
+                        option -
+                td
+                  a.btn.btn-gray.btn-small 
+                    i.fa.fa-link
+                    span 연결
+                td
+                  a.btn.btn-white-gray.btn-small 
+                    i.fa.fa-trash-o
+                    span 삭제
+        .text-right.padding
+          a.btn.btn-white.btn-small
+            i.fa.fa-plus
+            span 연결할 객실 추가하기
+          
+        .devider.end-page
+        a.btn.btn-long(href='/setting/cms/step04') 저장하기
+        span.empty
+        a.btn.btn-white-gray(href='/setting/cms') 취소
+          
+          
+            

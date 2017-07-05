@@ -365,6 +365,7 @@ span.empty-2x
         color: inherit
     input[type='text'], input[type='email'], input[type='password'], input[type='number']
       display: inline-block
+
       width: auto
       margin: 0 -1px 0 0
     .select-wrapper
@@ -477,7 +478,10 @@ span.empty-2x
       font-size: $font-size-default
       width: 100%
       font-size: $font-size-default
-
+      &[disabled]
+        background-color: $white-gray
+        color: $font-color-defualt
+        cursor: not-allowed
   .counter
     display: block
     position: relative
@@ -495,7 +499,7 @@ span.empty-2x
   .select-wrapper
     background: url(/images/icons/triangle.svg) no-repeat right 8px center
     height: 22px
-    padding: 5px 9px
+    padding: 5px 20px 5px 9px
     select
       font-size: $font-size-small
   .box-label
@@ -654,7 +658,8 @@ a.btn
   i.fa
     color: white
   &:hover
-    background-color: darken($color-priority, 5%)
+    background-color: darken($color-priority, 7%)
+    border-color: darken($color-priority, 7%)
   &.full-width
     display: block
     text-align: center
@@ -685,27 +690,33 @@ a.btn
   &.btn-dark
     background-color: lighten($color-dark, 7%)
     border-color: lighten($color-dark, 7%)
-    color: darken(white, 20%)
+    color: darken(white, 15%)
     &:hover
-      background-color: lighten($color-dark, 5%)
+      background-color: lighten($color-dark, 0%)
   &.btn-gray
     background-color: lighten($color-dark, 27%)
     border-color: lighten($color-dark, 27%)
     color: white
     &:hover
-      background-color: lighten($color-dark, 23%)
+      background-color: lighten($color-dark, 20%)
   &.btn-reverse
     background-color: $color-reverse
     border-color: $color-reverse
     color: white
     &:hover
-      background-color: darken($color-reverse, 5%)
+      background-color: darken($color-reverse, 7%)
   &.btn-green
     background-color: #2ECC71
     border-color: #2ECC71
     color: white
     &:hover
-      background-color: darken(#2ECC71, 5%)
+      background-color: darken(#2ECC71, 7%)
+  &.btn-red
+    background-color: $red
+    border-color: $red
+    color: white
+    &:hover
+      background-color: darken($red, 7%)
   &.btn-small
     padding: 5px 10px
     font-size: $font-size-small
@@ -764,6 +775,12 @@ a.btn
         color: #2ECC71
       &:hover
         background: #2ECC71
+    &.btn-red
+      color: $red
+      span, i.fa
+        color: $red
+      &:hover
+        background: $red
 
 
 
@@ -804,6 +821,10 @@ a.btn
   margin: -3px 0 -4px 0
   color: white
   white-space: nowrap
+  i.fa, span
+    color: white
+  i.fa
+    margin-right: 7px
   &.blue
     background: #3498DB
   &.skyblue
@@ -910,6 +931,8 @@ a.btn
       border: none
   tbody tr:hover
     background-color: #f8f8f8
+    .form-group
+      background-color: white
     .reorder
       h2
         display: none
@@ -1042,7 +1065,6 @@ a.btn
 table.progress-steps
   tr
     td
-      width: 33%
       background: $white-gray
       padding: 20px 10px 0 20px
       border-right: 4px solid white
@@ -1051,6 +1073,7 @@ table.progress-steps
       .title
         float: left
         padding-top: 2px
+        white-space: nowrap
       .number
         float: right
         font-size: 50pt
@@ -2009,6 +2032,7 @@ img.sign
   &.full-width
     width: 100%
     margin: 0
+    float: none
   &.col-2
     width: 47%
     margin-right: 6%

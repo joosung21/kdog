@@ -1,0 +1,45 @@
+include includes/header.pug
+body
+  include includes/topbar.pug
+  .wrapper
+    include includes/leftnav.pug
+
+    #content.unfolded(name='setting', page='cms')
+      
+      .left-wrapper
+        include includes/menu-setting.pug
+              
+      .board
+        .title-bar        
+          a.btn.btn-small.btn-white-gray(href='/setting/cms')
+            i.fa.fa-reply
+            span 채널매니져 리스트로 돌아가기
+        h1 Booking.com 연동하기
+        .margin
+        table.progress-steps
+          tr
+            td.active
+              .title 채널사에 신청하기
+              .number 1
+            td
+              .title 연동 승인대기
+              .number 2
+            td
+              .title 객실 연결하기
+              .number 3
+            td
+              .title 동기화 시작하기
+              .number 4
+        .margin-2x
+        .content-wrapper
+          p
+            | 채널사의 엑스트라넷에 접속한 후 
+            strong 어카운트\채널매니저 
+            | 메뉴에 들어가서 Zari 채널매니저 연동을 신청 합니다. 만약 채널매니저 메뉴가 없을 시 채널사 지역매니저에게 전화하여 채널매니저 활성화를 요청하면 됩니다. 
+            br
+            br
+            | 신청하였으면 승인요청을 합니다.
+          .devider.end-page
+          a.btn.btn-long(href='/setting/cms/step02') 승인 요청하기
+          span.empty
+          a.btn.btn-white-gray(href='/setting/cms') 취소하기

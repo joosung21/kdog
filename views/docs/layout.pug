@@ -8,7 +8,7 @@ include ../includes/header.pug
       h2 CONTENT COLUMS
       p.margin 2단 레이아웃은 .row 하단에 위치하고 float속성을 종료하기 위해 .clear-fix로 닫아주면 됩니다.
       .bg-white-gray.text-center.margin.padding 1단      
-      .row.margin-2x
+      .row
         .bg-white-gray.col-2-left.text-center.padding
           | 2단 좌측 
           br
@@ -17,7 +17,20 @@ include ../includes/header.pug
           | 2단 우측 
           br
           | .col-2-right
-        .clear-fix      
+        .clear-fix
+      .margin
+      .row
+        .bg-white-gray.col-2-left.text-center.padding(style='width: 19%')
+          | 2단 좌측
+          br
+          | (style='width: 19%')
+        .bg-white-gray.col-2-right.text-center.padding(style='width: 79%')
+          | 2단 우측
+          br
+          | (style='width: 79%')
+        .clear-fix
+      
+      .margin-2x
         
       h2 CONTENT WRAPPER
       .content-wrapper

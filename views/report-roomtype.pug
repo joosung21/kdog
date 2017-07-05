@@ -1,0 +1,211 @@
+include includes/header.pug
+body
+  include includes/topbar.pug
+  
+  .wrapper
+    include includes/leftnav.pug
+    
+    #content.unfolded(name='report', page='roomtype')
+      .left-wrapper
+        include includes/menu-report.pug
+                     
+      .board.report
+        .title-bar
+          h4 객실별 분석
+        
+        .report-layout.full-width
+          .row
+            .col-2-left
+              h2 객실별 가동률
+                span.small OCCUPANCY RATE
+            .col-2-right.controls
+              a.btn.btn-white.btn-small 이번주
+              a.btn.btn-white.btn-small.active 지난주
+              a.btn.btn-white.btn-small 6개월
+              a.btn.btn-white.btn-small 1년
+              span.empty-2x
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-left.fa-lg
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-right.fa-lg
+            .clear-fix
+          .margin-2x
+          table.table
+            thead
+              tr
+                th
+                th 7월
+                th 8월
+                th 9월
+                th 10월
+                th 11월
+                th 12월
+                th 2017년 1월
+                th 2월
+                th 3월
+                th 4월
+            tbody
+              tr
+                td 
+                  strong 싱글룸
+                td 99.46%
+                td 71.43%
+                td 64.52%
+                td 66.67%
+                td 66.67%
+                td 97.78%
+                td 99.46%
+                td 99.46%
+                td 99.46%
+                td 66.67%
+              tr
+                td 
+                  strong 더블룸
+                td 99.46%
+                td 71.43%
+                td 64.52%
+                td 66.67%
+                td 66.67%
+                td 97.78%
+                td 99.46%
+                td 99.46%
+                td 99.46%
+                td 66.67%
+              tr
+                td 
+                  strong 디럭스룸
+                td 99.46%
+                td 71.43%
+                td 64.52%
+                td 66.67%
+                td 66.67%
+                td 97.78%
+                td 99.46%
+                td 99.46%
+                td 99.46%
+                td 66.67%
+              tr
+                td 
+                  strong 스위트룸
+                td 99.46%
+                td 71.43%
+                td 64.52%
+                td 66.67%
+                td 66.67%
+                td 97.78%
+                td 99.46%
+                td 99.46%
+                td 99.46%
+                td 66.67%
+        
+        .margin-2x
+          
+        .report-layout.full-width
+          .row
+            .col-2-left
+              h2 가동률 그래프                
+            .col-2-right.controls
+              a.btn.btn-white.btn-small 이번주
+              a.btn.btn-white.btn-small.active 지난주
+              a.btn.btn-white.btn-small 6개월
+              a.btn.btn-white.btn-small 1년
+              span.empty-2x
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-left.fa-lg
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-right.fa-lg
+            .clear-fix
+              
+          .margin-2x
+          img(src='/images/temp-chart12.png', style='width:100%')
+        
+        .margin-2x
+          
+        .report-layout.full-width
+          .row
+            .col-2-left
+              h2 객실별 매출
+                span.small 단위 KRW
+            .col-2-right.controls
+              a.btn.btn-white.btn-small 이번주
+              a.btn.btn-white.btn-small.active 지난주
+              a.btn.btn-white.btn-small 6개월
+              a.btn.btn-white.btn-small 1년
+              span.empty-2x
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-left.fa-lg
+              a.btn.btn-small.btn-white
+                i.fa.fa-angle-right.fa-lg
+            .clear-fix
+          .margin-2x
+          table.table
+            thead
+              tr
+                th
+                th 7월
+                th 8월
+                th 9월
+                th 10월
+                th 11월
+                th 12월
+                th 2017년 1월
+                th 2월
+                th 3월
+                th 4월
+            tbody
+              tr
+                td 
+                  strong 싱글룸
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+              tr
+                td 
+                  strong 더블룸
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+              tr
+                td 
+                  strong 디럭스룸
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+              tr
+                td 
+                  strong 스위트룸
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                td 1,175,000
+                
+        
+        .clear-fix            
+        .margin-2x

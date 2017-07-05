@@ -36,6 +36,8 @@ app.get('/payment/transfer', function (req, res){res.render('payment-transfer')}
 app.get('/payment/deposit', function (req, res){res.render('payment-deposit')})
 
 app.get('/report/total', function (req, res){res.render('report-total')})
+app.get('/report/agency', function (req, res){res.render('report-agency')})
+app.get('/report/roomtype', function (req, res){res.render('report-roomtype')})
 
 app.get('/plugin/bp', function (req, res){res.render('plugin-bp')})
 app.get('/plugin/gds', function (req, res){res.render('plugin-gds')})
@@ -50,6 +52,11 @@ app.get('/setting/contract/pg-agree01', function (req, res){res.render('setting-
 app.get('/setting/contract/pg-agree02', function (req, res){res.render('setting-contract-pg-agree02')})
 app.get('/setting/contract/pg-agree03', function (req, res){res.render('setting-contract-pg-agree03')})
 app.get('/setting/subscribe', function (req, res){res.render('setting-subscribe')})
+app.get('/setting/cms', function (req, res){res.render('setting-cms')})
+app.get('/setting/cms/step01', function (req, res){res.render('setting-cms-step01')})
+app.get('/setting/cms/step02', function (req, res){res.render('setting-cms-step02')})
+app.get('/setting/cms/step03', function (req, res){res.render('setting-cms-step03')})
+app.get('/setting/cms/step04', function (req, res){res.render('setting-cms-step04')})
 
 // DOCS
 app.get('/docs/', function (req, res){res.render('docs/empty-page')})
