@@ -1,0 +1,179 @@
+#s-window.modal.modal-pack
+  .layover
+  .modal-board
+    .title-bar
+      | 재고/가격 수정
+      .close
+        a(onclick='closeModal()')       
+          img(src='/images/icons/close-x.svg')
+    section(style='width: 353px') 
+      .content
+        .margin
+        .form-group.light
+          label 시작일
+          input(type='text', value='2017-05-23')
+        .form-group.light
+          label 종료일
+          input(type='text', value='2017-06-23')
+        .form-group.light
+          label 가격
+          input(type='text', value='₩ 65,000')
+        .form-group.light
+          label 조식포함여부
+          .select-wrapper
+            select(dir='rtl')
+              option 수정안함
+              option 조식포함 안됨
+              option 조식포함
+        .form-group.light
+          label 최대판매수량
+          input(type='text', value='')
+        .form-group.light
+          label 최소숙박일
+          input(type='text', value='')
+        .form-group.light
+          label 최대숙박일
+          input(type='text', value='')
+        .form-group.light
+          label 객실마감여부
+          .select-wrapper
+            select(dir='rtl')
+              option 예약가능
+              option 마감
+        
+        .margin
+        
+        .text-xsmall.margin-thin 요일지정          
+        a.btn.btn-switch 일
+        a.btn.btn-switch 월
+        a.btn.btn-switch 화
+        a.btn.btn-switch 수
+        a.btn.btn-switch 목
+        a.btn.btn-switch.on 금
+        a.btn.btn-switch.on 토
+          
+    
+    section(style='width: 598px')
+      .content
+        .channel-wrapper
+          h4 트윈룸          
+          ul
+            li
+              input#c1(type='checkbox')
+              label(for='c1')
+                span
+                | 모든채널
+            li
+              input#c2(type='checkbox')
+              label(for='c2')
+                span
+                | Booking.com
+            li
+              input#c3(type='checkbox')
+              label(for='c3')
+                span
+                | Expedia
+            li
+              input#c4(type='checkbox')
+              label(for='c4')
+                span
+                | Agoda
+            li
+              input#c9(type='checkbox')
+              label(for='c9')
+                span
+                | Hotels.com
+        .channel-wrapper
+          h4 디럭스룸          
+          ul
+            li
+              input#c5(type='checkbox')
+              label(for='c5')
+                span
+                | 모든채널
+            li
+              input#c6(type='checkbox')
+              label(for='c6')
+                span
+                | Booking.com
+            li
+              input#c7(type='checkbox')
+              label(for='c7')
+                span
+                | Expedia
+            li
+              input#c8(type='checkbox')
+              label(for='c8')
+                span
+                | Agoda
+            li
+              input#c10(type='checkbox')
+              label(for='c10')
+                span
+                | Hotels.com
+        .channel-wrapper
+          h4 더블룸          
+          ul
+            li
+              input#c11(type='checkbox')
+              label(for='c11')
+                span
+                | 모든채널
+            li
+              input#c12(type='checkbox')
+              label(for='c12')
+                span
+                | Booking.com
+            li
+              input#c13(type='checkbox')
+              label(for='c13')
+                span
+                | Expedia
+            li
+              input#c14(type='checkbox')
+              label(for='c14')
+                span
+                | Agoda
+            li
+              input#c15(type='checkbox')
+              label(for='c15')
+                span
+                | Hotels.com
+        .channel-wrapper
+          h4 스위트룸    
+          ul
+            li
+              input#c16(type='checkbox')
+              label(for='c16')
+                span
+                | 모든채널
+            li
+              input#c17(type='checkbox')
+              label(for='c17')
+                span
+                | Booking.com
+            li
+              input#c18(type='checkbox')
+              label(for='c18')
+                span
+                | Expedia
+            li
+              input#c19(type='checkbox')
+              label(for='c19')
+                span
+                | Agoda
+            li
+              input#c20(type='checkbox')
+              label(for='c20')
+                span
+                | Hotels.com
+        
+          
+      
+    .clear-fix    
+    section.buttons      
+      a.btn(style='width: 691px')
+        i.fa.fa-check
+        span 수정하기
+      a.btn.btn-dark(style='width: 198px', onclick='closeModal()') 닫기
+    

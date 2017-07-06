@@ -1,7 +1,6 @@
 
 // Webfont
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css)
-// @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css)
 // @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css)
 
 // ---------- VARIABLES ---------- //
@@ -200,6 +199,9 @@ $font-bold: 700
   margin-bottom: 10px
 .no-margin
   margin: 0 !important
+
+.nowrap
+  white-space: nowrap
 
 // ---------- INITAILIZE  ---------- //
 
@@ -511,7 +513,7 @@ span.empty-2x
       width: calc(100% - 65px)
     .select-wrapper
       margin-left: 63px
-      width: calc(100% - 85px)
+      width: calc(100% - 97px)
       font-size: 11pt
 
 
@@ -641,6 +643,8 @@ input
 // ---------- COMPONETS  ---------- //
 
 a.btn
+  + a.btn
+    margin-left: -1px
   @extend .noselect
   color: white
   height: 22px
@@ -781,8 +785,17 @@ a.btn
         color: $red
       &:hover
         background: $red
-
-
+  &.btn-switch
+    border-collapse: collapse
+    background-color: $white-gray
+    border-color: lighten($gray, 5%)
+    color: $gray
+    &:hover
+      background-color: darken($white-gray, 3%)
+    &.on
+      background-color: $color-reverse
+      border-color: darken($color-reverse, 10%)
+      color: white
 
 .badge
   display: inline-block
@@ -841,8 +854,6 @@ a.btn
     background: #9B59B6
   &.gray
     background: lighten($color-dark, 20%)
-
-
 
 .pop-layer
   position: absolute
@@ -931,7 +942,7 @@ a.btn
       border: none
   tbody tr:hover
     background-color: #f8f8f8
-    .form-group
+    .input, .select-wrapper
       background-color: white
     .reorder
       h2
@@ -1085,6 +1096,44 @@ table.progress-steps
         background: $color-priority
         .title, .number
           color: white
+
+.top-slide-ui
+  box-sizing: border-box
+  color: white
+  width: 100vw
+  z-index: 15
+  position: fixed
+  top: 0
+  left: 0
+  background-color: $color-reverse
+  padding: 40px
+  height: 120px
+  *
+    color: white
+  span.comment
+    font-size: 13pt
+    margin-right: 40px
+  a.btn
+    background: none
+    border-color: white
+    vertical-align: middle
+    opacity: 0.8
+    &:hover
+      opacity: 1
+
+  .close
+    cursor: pointer
+    float: right
+    padding-top: 10px
+    opacity: 0.7
+    &:hover
+      opacity: 1
+  &.show
+    top: 0
+    transition: all 0.5s
+  &.hidden
+    top: -120px
+    transition: all 0.5s
 
 
 // ---------- LAYOUTS  ---------- //
@@ -1666,7 +1715,7 @@ table.progress-steps
           width: calc(100% - 69px)
 
 // Stock-table Page
-.board.room-chart
+.board.stock-table
   .roomtype-title.toggle
     cursor: pointer
   .room-line
@@ -1707,7 +1756,7 @@ table.progress-steps
         color: $font-color-thic
 
 // Reservation Window
-#r-window
+.modal-pack
   .modal-board
     position: fixed
     width: 953px
@@ -1809,6 +1858,28 @@ table.progress-steps
       height: 60px
       .btn
         text-align: center
+
+#s-window.modal-pack
+  section
+    .content
+      .channel-wrapper
+        background: $white-gray
+        padding: 20px
+        margin-bottom: 20px
+        h4
+          display: inline-block
+          vertical-align: top
+          width: 240px
+        ul
+          display: inline-block
+#s-window-small
+  .modal-board
+    width: 353px
+    left: calc(50vw - 177px)
+    height: 550px
+    top: calc(50vh - 285px)
+    section
+      height: 460px
 
 
 // Bar Hover Layer
@@ -2016,6 +2087,72 @@ table.banners
       font-size: 31pt
       margin: -10px 0
       font-weight: $font-medium
+
+// Room Detail Page
+table.room-calendar
+  min-width: 700px
+  thead
+    th
+      border-bottom: 1px solid lighten($gray, 10%)
+      font-size: 10pt
+      padding-bottom: 5px
+      &.weekend
+        color: lighten($red, 10%)
+  tbody
+    td
+      @extend .noselect
+      position: relative
+      border-right: 1px solid lighten($gray, 10%)
+      border-bottom: 1px solid lighten($gray, 10%)
+      width: 10%
+      padding-top: 14.2%
+      cursor: pointer
+      &:first-child
+        border-left: 1px solid lighten($gray, 10%)
+      .day
+        font-size: 14pt
+        color: $font-color-thic
+        position: absolute
+        top: 7px
+        right: 13px
+        &.weekend
+          color: lighten($red, 10%)
+      .content
+        position: absolute
+        bottom: 10px
+        right: 13px
+        text-align: right
+        line-height: 1.2em
+        opacity: 0.7
+      .today
+        font-size: 11pt
+        color: $font-color-thic
+        position: absolute
+        top: 11px
+        left: 13px
+        font-weight: bold
+      &.dimed
+        *
+          color: darken($white-gray, 10%) !important
+      .revised
+        position: absolute
+        top: 0
+        left: 0
+        width: calc(100% + 1px)
+        height: 42px
+        background-color: rgba($color-priority, 0.7)
+        .title
+          color: white
+          padding: 12px 0 0 5px
+          white-space: nowrap
+          text-overflow: ellipsis
+          overflow: hidden
+          font-size: 9pt
+      &.selected
+        background-color: lighten($color-reverse, 20%)
+        border-color: $color-reverse
+        *
+          color: $color-reverse !important
 
 // GDS page
 table

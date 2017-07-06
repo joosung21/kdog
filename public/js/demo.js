@@ -7,6 +7,26 @@ function foldNav(){
   $('#content').toggleClass('unfolded');
 }
 
+function openTopSlider(){
+  $('.top-slide-ui').removeClass('hidden');
+  $('.top-slide-ui').addClass('show');
+}
+function closeTopSlider(){
+  $('.top-slide-ui').removeClass('show');
+  $('.top-slide-ui').addClass('hidden');
+}
+
+function switchBtnToggle(thisBtn){
+  $(thisBtn).toggleClass('on');
+}
+
+function sWindowShow(){
+  $('#s-window').show();
+}
+function sWindowSmallShow(){
+  $('#s-window-small').show();
+}
+
 function openModal(id){
   $(id).show();
 }
@@ -146,7 +166,19 @@ $( document ).ready(function() {
   //Stock-table select
   $('.room-line .rec').click(function(){
     $(this).toggleClass('selected');
+    openTopSlider();
   });
+
+  //Switch Button Action
+  $('.btn-switch').click(function(){
+    switchBtnToggle($(this));
+  })
+
+  //Room-calendar select toggle
+  $('.room-calendar td').click(function(){
+    $(this).toggleClass('selected');
+    openTopSlider();
+  })
 
 });
 

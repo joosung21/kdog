@@ -1,0 +1,49 @@
+#s-window-small.modal.modal-pack
+  .layover
+  .modal-board
+    .title-bar
+      | 재고/가격 수정
+      .close
+        a(onclick='closeModal()')       
+          img(src='/images/icons/close-x.svg')
+    section(style='width: 352px')
+      .content
+        .margin
+        h2 14개의 선택을 수정합니다
+        .margin-2x        
+        .form-group.light
+          label 가격
+          input(type='text', value='₩ 65,000')
+        .form-group.light
+          label 조식포함여부
+          .select-wrapper
+            select(dir='rtl')
+              option 수정안함
+              option 조식포함 안됨
+              option 조식포함
+        .form-group.light
+          label 최대판매수량
+          input(type='text', value='')
+        .form-group.light
+          label 최소숙박일
+          input(type='text', value='')
+        .form-group.light
+          label 최대숙박일
+          input(type='text', value='')
+        .form-group.light
+          label 객실마감여부
+          .select-wrapper
+            select(dir='rtl')
+              option 예약가능
+              option 마감
+        
+        .margin
+          
+      
+    .clear-fix    
+    section.buttons      
+      a.btn(style='width: 220px')
+        i.fa.fa-check
+        span 수정하기
+      a.btn.btn-dark(style='width: 70px', onclick='closeModal()') 닫기
+    

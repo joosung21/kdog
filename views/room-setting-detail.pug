@@ -1,0 +1,329 @@
+include includes/header.pug
+body
+  include includes/topbar.pug
+  
+  #s-window-small.modal.modal-pack
+    .layover
+    .modal-board
+      .title-bar
+        | 날짜별 가격 업데이트
+        .close
+          a(onclick='closeModal()')       
+            img(src='/images/icons/close-x.svg')
+      section(style='width: 353px')
+        .content          
+          .form-group.light
+            label 시작일
+            input(type='text', value='2017-05-05')
+          .form-group.light
+            label 종료일
+            input(type='text', value='2017-05-16')
+          .form-group.light
+            label 제목
+            input(type='text', value='', placeholder='예) 주중 프로모션')
+          .form-group.light
+            label 가격
+            input(type='text', value='₩ 130,000')
+          .form-group.light
+            label 인당 추가가격
+            input(type='text', value='₩ 20,000')
+          .form-group.light
+            label 최소숙박일
+            input(type='text', value='')
+          .form-group.light
+            label 최대숙박일
+            input(type='text', value='')
+          
+          .margin
+          
+          .text-xsmall.margin-thin 요일지정          
+          a.btn.btn-switch 일
+          a.btn.btn-switch 월
+          a.btn.btn-switch 화
+          a.btn.btn-switch 수
+          a.btn.btn-switch 목
+          a.btn.btn-switch.on 금
+          a.btn.btn-switch.on 토
+          
+          
+      .clear-fix    
+      section.buttons      
+        a.btn(style='width: 220px')
+          i.fa.fa-check
+          span 수정하기
+        a.btn.btn-dark(style='width: 70px', onclick='closeModal()') 닫기
+  
+  .top-slide-ui.hidden
+    span.comment 05월 21일 - 05월 31일
+    a.btn(onclick='sWindowSmallShow()') 가격바꾸기
+    span.empty
+    a.btn(onclick='closeTopSlider()') 초기화
+    .close(onclick='closeTopSlider()')
+      img(src='/images/icons/close-white.svg')
+  
+  .wrapper    
+    include includes/leftnav.pug
+    
+    #content.unfolded(name='room-manage', tab='detail')
+      .left-wrapper
+        #sub-menu
+          h4.title 
+            img.icon(src='/images/icons/door-black.svg')
+            | 객실관리
+          ul
+            li.active 디럭스룸
+            li  트윈룸
+            li  스위트룸
+            li  여성4인 도미토리        
+          .padding(style='padding-top:0; margin-left:10px')
+            a.link.text-small(href='javascript:') + 객실타입추가
+            
+      
+      .board
+        .tab-menu
+          .tab.basic(onclick='location.href="/room-manage"') 기본정보
+          .tab.reorder(onclick='location.href="/room-manage/reorder"') 객실등록/순서변경
+          .tab.detail(onclick='location.href="/room-manage/detail"') 날짜별 가격
+          
+        
+        
+        .float-left(style='width: 30%')
+          a.btn.btn-white.btn-small
+            i.fa.fa-angle-left.fa-lg
+          a.btn.btn-white.btn-small
+            i.fa.fa-angle-right.fa-lg                  
+          a.btn.btn-white.btn-small TODAY
+        h1.float-left.text-center(style='width: 40%; margin-top: -7px') 2017년 7월
+        .float-right.text-right(style='width: 30%')
+          a.btn.btn-gray.btn-small(onclick='sWindowSmallShow()') 가격 수정하기
+        .clear-fix
+        .margin-2x
+          
+        table.room-calendar
+          thead
+            tr
+              th SUN
+              th MON
+              th TUE
+              th WED
+              th THU
+              th.weekend FRI
+              th.weekend SAT
+          tbody
+            tr
+              td.dimed
+                .day 25
+                .content
+                  | 220,000
+              td.dimed
+                .day 26
+                .content
+                  | 220,000
+              td.dimed
+                .day 27
+                .content
+                  | 220,000
+              td.dimed
+                .day 28
+                .content
+                  | 220,000
+              td.dimed
+                .day 29    
+                .content
+                  | 220,000
+              td.dimed
+                .day.weekend 30
+                .content
+                  | 220,000
+              td
+                .day.weekend 1
+                .content
+                  | 180,000
+                  br                  
+                  | +20,000
+                  br         
+                  | m2 M7
+                .revised
+                  .title 스페샬 프로모션
+            tr
+              td
+                .day 2
+                .content
+                  | 180,000
+                  br                  
+                  | +20,000
+                  br         
+                  | m2 M7
+                .revised
+                  .title 스페샬 프로모션
+              td
+                .day 3
+                .content
+                  | 180,000
+                  br                  
+                  | +20,000
+                  br         
+                  | m2 M7
+                .revised
+                  .title 스페샬 프로모션
+              td
+                .day 4
+                .content
+                  | 180,000
+                  br     
+                  | +20,000
+                  br         
+                  | m2 M7
+                .revised
+                  .title 스페샬 프로모션
+              td
+                .day 5
+                .content
+                  | 180,000
+                  br                  
+                  | +20,000
+                  br         
+                  | m2 M7
+                .revised
+                  .title 스페샬 프로모션
+              td
+                .day 6
+                .content
+                  | 220,000
+              td
+                .day.weekend 7
+                .content
+                  | 220,000                
+              td
+                .day.weekend 8
+                .content
+                  | 220,000
+            tr
+              td
+                .day 9
+                .content
+                  | 220,000
+              td
+                .day 10
+                .content
+                  | 220,000
+              td
+                .day 11
+                .content
+                  | 220,000
+              td
+                .day 12
+                .content
+                  | 220,000
+              td
+                .day 13
+                .content
+                  | 220,000
+                .today 
+                  .tag.orange Today
+              td
+                .day.weekend 14
+                .content
+                  | 220,000
+              td
+                .day.weekend 15
+                .content
+                  | 220,000
+            tr
+              td 
+                .day 16
+                .content
+                  | 220,000
+              td
+                .day 17
+                .content
+                  | 220,000
+              td
+                .day 18
+                .content
+                  | 220,000
+              td
+                .day 19
+                .content
+                  | 220,000
+              td
+                .day 20
+                .content
+                  | 220,000
+              td
+                .day.weekend 21
+                .content
+                  | 220,000
+              td
+                .day.weekend 22
+                .content
+                  | 220,000
+            tr
+              td
+                .day 23
+                .content
+                  | 220,000
+              td
+                .day 24
+                .content
+                  | 220,000
+              td
+                .day 25
+                .content
+                  | 220,000
+              td
+                .day 26
+                .content
+                  | 220,000
+              td
+                .day 27
+                .content
+                  | 220,000
+              td
+                .day.weekend 28
+                .content
+                  | 220,000
+              td
+                .day.weekend 29
+                .content
+                  | 220,000
+            tr
+              td
+                .day 30
+                .content
+                  | 220,000
+              td
+                .day 31
+                .content
+                  | 220,000
+              td.dimed
+                .day 1
+                .content
+                  | 220,000
+              td.dimed
+                .day 2
+                .content
+                  | 220,000
+              td.dimed
+                .day 3
+                .content
+                  | 220,000
+              td.dimed
+                .day.weekend 4
+                .content
+                  | 220,000
+              td.dimed
+                .day.weekend 5
+                .content
+                  | 220,000
+        
+        .margin
+        .float-left.nowrap 날짜를 드래그하여 가격을 수정하세요          
+        .float-right.nowrap + 인당 추가가격, m 최소숙박일, M 최대숙박일
+        .clear-fix
+          
+              
+                  
+              
+            
+            

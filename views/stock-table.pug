@@ -1,7 +1,16 @@
 include includes/header.pug
 body
   include includes/topbar.pug
-  include includes/r-window.pug
+  include includes/s-window.pug
+  include includes/s-window-small.pug
+  
+  .top-slide-ui.hidden
+    span.comment 14개의 선택을
+    a.btn(onclick='sWindowSmallShow()') 수정하기
+    span.empty
+    a.btn(onclick='closeTopSlider()') 선택취소
+    .close(onclick='closeTopSlider()')
+      img(src='/images/icons/close-white.svg')
   
   .bottom-bar
     a.link
@@ -13,69 +22,6 @@ body
     a.btn.btn-small.btn-dark
       i.fa.fa-reply
         span 변경 취소하기
-
-  //- ul#bar-hover-layer.hover-layer
-    li.title
-      .status.text-booked 예약완료      
-      .name 서은교
-    li.checkin
-      .label 체크인 
-      .text 06-05
-    li.checkout
-      .label 체크아웃
-      .text 06-08
-    li.id
-      .label 예약번호
-      .text 1126029
-    .clear-fix
-    li.balance 
-      .label 받을돈
-      .text ₩ 190,000
-    li.agency
-      .label 예이전시
-      .text
-        strong Agoda.com
-        | 1123803425
-    li.memo
-      .label 예약메모
-      p.text.
-        ** Genius Booker **
-        adult: 1, children: 0, extrabeds: 0
-  
-  //- ul#rec-hover-layer.hover-layer
-    li.title
-      h4 디럭스룸    
-    li.agency      
-      .text
-        strong 기본가격
-        .price ₩ 190,000
-    li.agency      
-      .text
-        strong 실시간예약창
-        .price ₩ 190,000
-    li.agency      
-      .text
-        strong 판매대행
-        .price ₩ 180,000
-    li.agency      
-      .text
-        strong Airbnb
-        .price ₩ 200,000
-    li.agency      
-      .text
-        strong Booking.com
-        .price ₩ 190,000
-    li.agency      
-      .text
-        strong Agoda
-        .price ₩ 190,000
-    li.agency      
-      .text
-        strong Hostelworld
-        .price ₩ 190,000    
-    
-  //- .right-slider
-    h1 right-slider
         
   .wrapper
     include includes/leftnav.pug
@@ -233,7 +179,7 @@ body
               .date 3
               .day sat
         .padding
-          a.btn.btn-reverse.full-width 
+          a.btn.btn-reverse.full-width(onclick='sWindowShow()')
             i.fa.fa-bolt.fa-lg
             span 일괄수정
         
