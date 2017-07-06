@@ -1,278 +1,279 @@
 include ../includes/header.pug
-.wrapper
-  include ../includes/leftnav-docs.pug
-  
-  #content.unfolded(name='form-controls')
-    .board.full-width
-      h1.lined form controls      
-      .row
-        .col-2-left
-          h2.margin Input box
-          .form-group
-            label DEFAULT
-            input(type='text', value='', placeholder='Place Holder')
-          .form-group
-            label COUNTER
-            input(type='text', value='', placeholder='Place Holder')
-            .counter 0/30
-          .form-group
-            label TOOLTIP
-              .tooltip.icon           
-                .desc 도움이 될만한 팁을 여기에 적어주세요. 한줄 또는 여러줄도 가능합니다.              
-                  a(href='#').link 링크
-                  | 도 활용 가능합니다.
-            input(type='text', value='', placeholder='Place Holder')            
-          .form-group
-            label INNER BUTTON
-            input(type='text', value='', placeholder='Place Holder')
-            .inner-text-wrapper
-              a.inner-text.link(href='javascript:') button
-          .form-group
-            label INNER TEXT
-            input(type='text', value='', placeholder='Place Holder')
-            .inner-text-wrapper
-              .inner-text.link(href='javascript:') text here
-          .form-group
-            label DISABLED INPUT BOX
-            input(type='text', value='Some delicate data value here', disabled)
-          .form-group.small
-            label .small
-            input(type='text', value='', placeholder='Place Holder')
-        
-          .devider
-              
-          h2.margin Select box          
-          .form-group
-            label DEFAULT
-            .select-wrapper
-              select
-                option option 1
-                option option 2
-                option option 3
-                option option 4
-          .form-group.small
-            label .small
-            .select-wrapper
-              select
-                option option 1
-                option option 2
-                option option 3
-                option option 4
-          
-          .devider
-          
-          h2.margin Text area
-          .form-group          
-            label LABEL
-            textarea(rows='4', value='', placeholder='Place Holder')
-              
-          .devider
-          
-          h2.margin Boxed label - Full width
-          .form-group          
-            .box-label
-              label INPUT
+body
+  .wrapper
+    include ../includes/leftnav-docs.pug
+    
+    #content.unfolded(name='form-controls')
+      .board.full-width
+        h1.lined form controls      
+        .row
+          .col-2-left
+            h2.margin Input box
+            .form-group
+              label DEFAULT
               input(type='text', value='', placeholder='Place Holder')
-          .form-group          
-            .box-label
-              label SELECT
+            .form-group
+              label COUNTER
+              input(type='text', value='', placeholder='Place Holder')
+              .counter 0/30
+            .form-group
+              label TOOLTIP
+                .tooltip.icon           
+                  .desc 도움이 될만한 팁을 여기에 적어주세요. 한줄 또는 여러줄도 가능합니다.              
+                    a(href='#').link 링크
+                    | 도 활용 가능합니다.
+              input(type='text', value='', placeholder='Place Holder')            
+            .form-group
+              label INNER BUTTON
+              input(type='text', value='', placeholder='Place Holder')
+              .inner-text-wrapper
+                a.inner-text.link(href='javascript:') button
+            .form-group
+              label INNER TEXT
+              input(type='text', value='', placeholder='Place Holder')
+              .inner-text-wrapper
+                .inner-text.link(href='javascript:') text here
+            .form-group
+              label DISABLED INPUT BOX
+              input(type='text', value='Some delicate data value here', disabled)
+            .form-group.small
+              label .small
+              input(type='text', value='', placeholder='Place Holder')
+          
+            .devider
+                
+            h2.margin Select box          
+            .form-group
+              label DEFAULT
               .select-wrapper
                 select
                   option option 1
                   option option 2
                   option option 3
                   option option 4
-          .form-group.small
-            .box-label
-              label INPUT
-              input(type='text', value='', placeholder='.small')
-          .form-group.small         
-            .box-label
-              label SELECT
+            .form-group.small
+              label .small
               .select-wrapper
                 select
-                  option .small
+                  option option 1
                   option option 2
                   option option 3
                   option option 4
-          
-          .devider
-          
-          h2.margin Colum example
-          .row
-            .form-group.col-2-left
-              label LEFT
-              input(type='text', value='', placeholder='Place Holder')
-            .form-group.col-2-right
-              label RIGHT
-              input(type='text', value='', placeholder='Place Holder')
-            .clear-fix
-              
-          .margin
-        
-        .col-2-right
-          h2.margin Light Form
-          .form-group.light
-            label DEFAULT
-            input(type='text', value='', placeholder='Place Holder')
-          .form-group.light
-            label COUNTER
-            input(type='text', value='', placeholder='Place Holder')
-            .counter 0/30
-          .form-group.light
-            label TOOLTIP
-              .tooltip.icon           
-                .desc 도움이 될만한 팁을 여기에 적어주세요. 한줄 또는 여러줄도 가능합니다.              
-                  a(href='#').link 링크
-                  | 도 활용 가능합니다.
-            input(type='text', value='', placeholder='Place Holder')            
-          .form-group.light
-            label DISABLED
-            input(type='text', value='Some delicate data value here', disabled)
-          .form-group.light
-            label SELECT  
-            .select-wrapper
-              select(dir='rtl')
-                option option 1
-                option option 2
-                option option 3
-                option option 4
-          .form-group.light
-            textarea(rows='4', value='', placeholder='Place Holder')
-            label TEXTAREA
-          .row
-            .col-2-left
-              .form-group.light
-                label LEFT
+            
+            .devider
+            
+            h2.margin Text area
+            .form-group          
+              label LABEL
+              textarea(rows='4', value='', placeholder='Place Holder')
+                
+            .devider
+            
+            h2.margin Boxed label - Full width
+            .form-group          
+              .box-label
+                label INPUT
                 input(type='text', value='', placeholder='Place Holder')
-            .col-2-right
-              .form-group.light
-                label RIGHT
+            .form-group          
+              .box-label
+                label SELECT
                 .select-wrapper
-                  select(dir='rtl')
+                  select
                     option option 1
                     option option 2
                     option option 3
                     option option 4
-            .clear-fix
+            .form-group.small
+              .box-label
+                label INPUT
+                input(type='text', value='', placeholder='.small')
+            .form-group.small         
+              .box-label
+                label SELECT
+                .select-wrapper
+                  select
+                    option .small
+                    option option 2
+                    option option 3
+                    option option 4
+            
+            .devider
+            
+            h2.margin Colum example
+            .row
+              .form-group.col-2-left
+                label LEFT
+                input(type='text', value='', placeholder='Place Holder')
+              .form-group.col-2-right
+                label RIGHT
+                input(type='text', value='', placeholder='Place Holder')
+              .clear-fix
+                
+            .margin
           
-          .devider
+          .col-2-right
+            h2.margin Light Form
+            .form-group.light
+              label DEFAULT
+              input(type='text', value='', placeholder='Place Holder')
+            .form-group.light
+              label COUNTER
+              input(type='text', value='', placeholder='Place Holder')
+              .counter 0/30
+            .form-group.light
+              label TOOLTIP
+                .tooltip.icon           
+                  .desc 도움이 될만한 팁을 여기에 적어주세요. 한줄 또는 여러줄도 가능합니다.              
+                    a(href='#').link 링크
+                    | 도 활용 가능합니다.
+              input(type='text', value='', placeholder='Place Holder')            
+            .form-group.light
+              label DISABLED
+              input(type='text', value='Some delicate data value here', disabled)
+            .form-group.light
+              label SELECT  
+              .select-wrapper
+                select(dir='rtl')
+                  option option 1
+                  option option 2
+                  option option 3
+                  option option 4
+            .form-group.light
+              textarea(rows='4', value='', placeholder='Place Holder')
+              label TEXTAREA
+            .row
+              .col-2-left
+                .form-group.light
+                  label LEFT
+                  input(type='text', value='', placeholder='Place Holder')
+              .col-2-right
+                .form-group.light
+                  label RIGHT
+                  .select-wrapper
+                    select(dir='rtl')
+                      option option 1
+                      option option 2
+                      option option 3
+                      option option 4
+              .clear-fix
+            
+            .devider
+            
+            h2.margin Light Form - No margin          
+            .form-group.light.no-margin
+              label LABEL
+              input(type='text', value='', placeholder='Sometimes, we do not need a margin')
+            .form-group.light.no-margin
+              label LABEL
+              input(type='text', value='', placeholder='Then, just add .no-margin class')
+            .form-group.light.no-margin
+              label LABEL
+              input(type='text', value='', placeholder='Like this')
           
-          h2.margin Light Form - No margin          
-          .form-group.light.no-margin
-            label LABEL
-            input(type='text', value='', placeholder='Sometimes, we do not need a margin')
-          .form-group.light.no-margin
-            label LABEL
-            input(type='text', value='', placeholder='Then, just add .no-margin class')
-          .form-group.light.no-margin
-            label LABEL
-            input(type='text', value='', placeholder='Like this')
-        
-          .devider
-          h2.margin Check Box
-          input#c1(type='checkbox', name='cc', checked)
-          label(for='c1')
-            span
-            | 체크박스 1
-          input#c2(type='checkbox', name='cc')
-          label(for='c2')
-            span
-            | 체크박스 2
-          input#c21(type='checkbox', name='cc' Disabled)
-          label(for='c21')
-            span
-            | Disabled
+            .devider
+            h2.margin Check Box
+            input#c1(type='checkbox', name='cc', checked)
+            label(for='c1')
+              span
+              | 체크박스 1
+            input#c2(type='checkbox', name='cc')
+            label(for='c2')
+              span
+              | 체크박스 2
+            input#c21(type='checkbox', name='cc' Disabled)
+            label(for='c21')
+              span
+              | Disabled
+            
+            .devider
+            h2.margin Single
+            input#c19.single(type='checkbox' checked)
+            label(for='c19')
+              span
+            input#c20.single(type='checkbox')
+            label(for='c20')
+              span
+              
+            .devider
+            
+            h2.margin Checkbox group
+            .checkbox-group
+              .wrapper
+                input#c10(type='checkbox')
+                label(for='c10')
+                  span
+                  | Wi-Fi
+              .wrapper
+                input#c11(type='checkbox')
+                label(for='c11')
+                  span
+                  | 컨시어지
+              .wrapper
+                input#c12(type='checkbox')
+                label(for='c12')
+                  span
+                  | 드라이크리닝
+              .wrapper
+                input#c13(type='checkbox')            
+                label(for='c13')
+                  span
+                  | 발렛파킹            
+              .wrapper
+                input#c14(type='checkbox')
+                label(for='c14')
+                  span
+                  | 새차서비스
+              .wrapper
+                input#c15(type='checkbox')
+                label(for='c15')
+                  span
+                  | 룸서비스
+              .wrapper
+                input#c16(type='checkbox')
+                label(for='c16')
+                  span
+                  | 환전
+              .wrapper
+                input#c17(type='checkbox')
+                label(for='c17')
+                  span
+                  | 베이비시팅
+            
+            .devider
+            
+            h2.margin Radio Box
+            input#r1(type='radio', name='rr', checked)
+            label(for='r1')
+              span
+              | 라디오박스 1
+            input#r2(type='radio', name='rr')
+            label(for='r2')
+              span
+              | 라디오박스 2
           
-          .devider
-          h2.margin Single
-          input#c19.single(type='checkbox' checked)
-          label(for='c19')
-            span
-          input#c20.single(type='checkbox')
-          label(for='c20')
-            span
+          .clear-fix
             
           .devider
+            
+          h2.margin inline form group
+          .form-group.form-inline
+            label INPUT
+            input(type='text', value='', placeholder='Place Holder')          
+            a.btn BUTTON
+          .form-group.form-inline
+            label SELECT
+            .select-wrapper
+              select
+                option option 1
+                option option 2
+                option option 3
+                option option 4
+            a.btn BUTTON
+          .form-group.form-inline
+            label LABEL
+            input(type='text', value='', size='50', placeholder='size="50"')
+            a.btn BUTTON         
           
-          h2.margin Checkbox group
-          .checkbox-group
-            .wrapper
-              input#c10(type='checkbox')
-              label(for='c10')
-                span
-                | Wi-Fi
-            .wrapper
-              input#c11(type='checkbox')
-              label(for='c11')
-                span
-                | 컨시어지
-            .wrapper
-              input#c12(type='checkbox')
-              label(for='c12')
-                span
-                | 드라이크리닝
-            .wrapper
-              input#c13(type='checkbox')            
-              label(for='c13')
-                span
-                | 발렛파킹            
-            .wrapper
-              input#c14(type='checkbox')
-              label(for='c14')
-                span
-                | 새차서비스
-            .wrapper
-              input#c15(type='checkbox')
-              label(for='c15')
-                span
-                | 룸서비스
-            .wrapper
-              input#c16(type='checkbox')
-              label(for='c16')
-                span
-                | 환전
-            .wrapper
-              input#c17(type='checkbox')
-              label(for='c17')
-                span
-                | 베이비시팅
-          
-          .devider
-          
-          h2.margin Radio Box
-          input#r1(type='radio', name='rr', checked)
-          label(for='r1')
-            span
-            | 라디오박스 1
-          input#r2(type='radio', name='rr')
-          label(for='r2')
-            span
-            | 라디오박스 2
-        
-        .clear-fix
-          
-        .devider
-          
-        h2.margin inline form group
-        .form-group.form-inline
-          label INPUT
-          input(type='text', value='', placeholder='Place Holder')          
-          a.btn BUTTON
-        .form-group.form-inline
-          label SELECT
-          .select-wrapper
-            select
-              option option 1
-              option option 2
-              option option 3
-              option option 4
-          a.btn BUTTON
-        .form-group.form-inline
-          label LABEL
-          input(type='text', value='', size='50', placeholder='size="50"')
-          a.btn BUTTON         
-        
-        .margin-2x
+          .margin-2x
           
                    

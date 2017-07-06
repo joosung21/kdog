@@ -1,59 +1,60 @@
 include ../includes/header.pug
-.wrapper
-  include ../includes/leftnav-docs.pug
-  
-  #content.unfolded(name='typography')        
-    .board.full-width
-      h1.lined Typography        
-      .row
-        .col-2-left          
-          h2 Titles
-          p.margin h태그는 문맥적 의미가 아니라 크기에 맞게 사용하시면 됩니다.
-          h1 h1
-          h2 h2
-          h3 h3
-          h4 h4
-          
-          .devider
-          
-          h2 TEXT SIZE
-          p.margin 렌더링 최적화를 위해 pt단위로 설정되어 있습니다.
-          h3 CSS
-          .text-large .text-large
-          .text-defualt .text-defualt
-          .text-small .text-small
-          .text-xsmall .text-xsmall
-          
-          .margin
+body
+  .wrapper
+    include ../includes/leftnav-docs.pug
+    
+    #content.unfolded(name='typography')        
+      .board.full-width
+        h1.lined Typography        
+        .row
+          .col-2-left          
+            h2 Titles
+            p.margin h태그는 문맥적 의미가 아니라 크기에 맞게 사용하시면 됩니다.
+            h1 h1
+            h2 h2
+            h3 h3
+            h4 h4
             
-          h3 SASS
-          .text-large $font-size-large
-          .text-defualt $font-size-default
-          .text-small $font-size-small
-          .text-xsmall $font-size-xsmall
+            .devider
+            
+            h2 TEXT SIZE
+            p.margin 렌더링 최적화를 위해 pt단위로 설정되어 있습니다.
+            h3 CSS
+            .text-large .text-large
+            .text-defualt .text-defualt
+            .text-small .text-small
+            .text-xsmall .text-xsmall
+            
+            .margin
+              
+            h3 SASS
+            .text-large $font-size-large
+            .text-defualt $font-size-default
+            .text-small $font-size-small
+            .text-xsmall $font-size-xsmall
+            
+          .col-2-right
+            h2 TEXT WEIGHT
+            p.margin 큰 글씨일수록 가벼운 굵기가 어울립니다.
+            .font-thin .font-thin
+            .font-light .font-light
+            .font-normal .font-normal
+            .font-medium .font-medium
+            .font-bold .font-bold
+            
+            .devider
+            
+            h2.margin TEXT transform
+            .uppercase .uppercase
+            .lowercase .lowercase
+            .capitalize .capitalize
+            .no-transform .no-transform
+            
+            .devider
+            
+            h2.margin FONT color Thickenss
+            .font-color-defualt .font-color-defualt
+            .font-color-thic .font-color-thic
           
-        .col-2-right
-          h2 TEXT WEIGHT
-          p.margin 큰 글씨일수록 가벼운 굵기가 어울립니다.
-          .font-thin .font-thin
-          .font-light .font-light
-          .font-normal .font-normal
-          .font-medium .font-medium
-          .font-bold .font-bold
-          
-          .devider
-          
-          h2.margin TEXT transform
-          .uppercase .uppercase
-          .lowercase .lowercase
-          .capitalize .capitalize
-          .no-transform .no-transform
-          
-          .devider
-          
-          h2.margin FONT color Thickenss
-          .font-color-defualt .font-color-defualt
-          .font-color-thic .font-color-thic
-        
-        .clear-fix
+          .clear-fix
     

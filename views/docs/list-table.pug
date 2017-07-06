@@ -1,166 +1,167 @@
 include ../includes/header.pug
-.wrapper
-  include ../includes/leftnav-docs.pug
-  
-  #content.unfolded(name='list-table')
-    .board.full-width
-      h1.lined list table
-      
-      h2 Cell aligns
-      .margin
-      table.table
-        thead
-          tr
-            th 예약번호
-            th 숙소이름
-            th 객실이름
-            th 고객명
-            th.text-center 가운데정렬
-            th.text-right 우측정렬           
-            th.text-right 버튼
-        tbody
-          tr
-            td 
-              a.link 8100514
-            td 티포트 펜션
-            td 개발트윈룸
-            td James Huh
-            td.text-center 2017-10-15
-            td.text-right ₩ 270,000
-            td.text-right
-              a.btn.btn-xsmall.btn-white
-                i.fa.fa-pencil
-                span 수정
-          tr
-            td 
-              a.link 8100513
-            td 판교라마다호텔
-            td Deluxe Room
-            td 유정연
-            td.text-center 2017-10-17
-            td.text-right ₩ 160,000
-            td.text-right
-              a.btn.btn-xsmall.btn-white
-                i.fa.fa-pencil
-                span 수정         
-                
-      .margin-2x
-              
-      h2 Sortable
-      p Just add css on 'th' tag.
-      .margin
-      table.table
-        thead
-          tr
-            th.sortable.desc Desc Sorted
-            th.sortable.asc Asc Sorted
-            th.sortable Sortable
-            th Not Sortable
-        tbody
-          tr
-            td .sortable + .desc
-            td .sortable + .asc
-            td .sortable (Try hover on title)
-            td 
-      
-      .margin-2x
+body
+  .wrapper
+    include ../includes/leftnav-docs.pug
+    
+    #content.unfolded(name='list-table')
+      .board.full-width
+        h1.lined list table
         
-      h2 No-Border lines
-      .margin
-      table.table.no-border
-        thead
-          tr
-            th 예약번호
-            th 숙소이름
-            th 객실이름
-            th 고객명
-        tbody
-          tr
-            td 
-              a.link 8100514
-            td 티포트 펜션
-            td 개발트윈룸
-            td James Huh
-          tr
-            td 
-              a.link 8100513
-            td 판교라마다호텔
-            td Deluxe Room
-            td 유정연
-      .margin-2x
-      
-      .content-wrapper
-      
-        h2 pagination
-        .margin
-        .pagination
-          a.btn
-            i.fa.fa-angle-double-left.fa-lg
-          a.btn
-            i.fa.fa-angle-left.fa-lg
-          a.btn.active 1
-          a.btn 2
-          a.btn 3
-          a.btn 4
-          a.btn 5
-          a.btn 6
-          a.btn 7
-          a.btn 8
-          a.btn 9
-          a.btn 10
-          a.btn
-            i.fa.fa-angle-right.fa-lg
-          a.btn
-            i.fa.fa-angle-double-right.fa-lg
-          
-        .margin-2x      
-      
-        h2 Reorder table
+        h2 Cell aligns
         .margin
         table.table
           thead
             tr
-              th.text-center(style='width: 50px') 순서
-              th 객실명
-              th
+              th 예약번호
+              th 숙소이름
+              th 객실이름
+              th 고객명
+              th.text-center 가운데정렬
+              th.text-right 우측정렬           
+              th.text-right 버튼
           tbody
-            tr(draggable='true')
-              td.reorder.text-center
-                h2.font-normal 1
-                i.fa.fa-bars.orderbtn
-              td 4인 가족실                
+            tr
+              td 
+                a.link 8100514
+              td 티포트 펜션
+              td 개발트윈룸
+              td James Huh
+              td.text-center 2017-10-15
+              td.text-right ₩ 270,000
               td.text-right
-                a.link
-                  i.fa.fa-close.text-gray.fa-lg
-            tr(draggable='true')
-              td.reorder.text-center
-                h2.font-normal 2
-                i.fa.fa-bars.orderbtn
-              td 트윈룸      
+                a.btn.btn-xsmall.btn-white
+                  i.fa.fa-pencil
+                  span 수정
+            tr
+              td 
+                a.link 8100513
+              td 판교라마다호텔
+              td Deluxe Room
+              td 유정연
+              td.text-center 2017-10-17
+              td.text-right ₩ 160,000
               td.text-right
-                a.link
-                  i.fa.fa-close.text-gray.fa-lg
-            tr(draggable='true')
-              td.reorder.text-center
-                h2.font-normal 3
-                i.fa.fa-bars.orderbtn
-              td 디럭스룸        
-              td.text-right
-                a.link
-                  i.fa.fa-close.text-gray.fa-lg
-            tr(draggable='true')
-              td.reorder.text-center
-                h2.font-normal 4
-                i.fa.fa-bars.orderbtn
-              td 스위트룸       
-              td.text-right
-                a.link
-                  i.fa.fa-close.text-gray.fa-lg
-            tr(draggable='true')
-              td.reorder.text-center
-                h2.font-normal 5
-                i.fa.fa-bars.orderbtn
-              td 여성 6인 도미토리       
-              td.text-right
-                a.link
-                  i.fa.fa-close.text-gray.fa-lg
+                a.btn.btn-xsmall.btn-white
+                  i.fa.fa-pencil
+                  span 수정         
+                  
+        .margin-2x
+                
+        h2 Sortable
+        p Just add css on 'th' tag.
+        .margin
+        table.table
+          thead
+            tr
+              th.sortable.desc Desc Sorted
+              th.sortable.asc Asc Sorted
+              th.sortable Sortable
+              th Not Sortable
+          tbody
+            tr
+              td .sortable + .desc
+              td .sortable + .asc
+              td .sortable (Try hover on title)
+              td 
+        
+        .margin-2x
+          
+        h2 No-Border lines
+        .margin
+        table.table.no-border
+          thead
+            tr
+              th 예약번호
+              th 숙소이름
+              th 객실이름
+              th 고객명
+          tbody
+            tr
+              td 
+                a.link 8100514
+              td 티포트 펜션
+              td 개발트윈룸
+              td James Huh
+            tr
+              td 
+                a.link 8100513
+              td 판교라마다호텔
+              td Deluxe Room
+              td 유정연
+        .margin-2x
+        
+        .content-wrapper
+        
+          h2 pagination
+          .margin
+          .pagination
+            a.btn
+              i.fa.fa-angle-double-left.fa-lg
+            a.btn
+              i.fa.fa-angle-left.fa-lg
+            a.btn.active 1
+            a.btn 2
+            a.btn 3
+            a.btn 4
+            a.btn 5
+            a.btn 6
+            a.btn 7
+            a.btn 8
+            a.btn 9
+            a.btn 10
+            a.btn
+              i.fa.fa-angle-right.fa-lg
+            a.btn
+              i.fa.fa-angle-double-right.fa-lg
+            
+          .margin-2x      
+        
+          h2 Reorder table
+          .margin
+          table.table
+            thead
+              tr
+                th.text-center(style='width: 50px') 순서
+                th 객실명
+                th
+            tbody
+              tr(draggable='true')
+                td.reorder.text-center
+                  h2.font-normal 1
+                  i.fa.fa-bars.orderbtn
+                td 4인 가족실                
+                td.text-right
+                  a.link
+                    i.fa.fa-close.text-gray.fa-lg
+              tr(draggable='true')
+                td.reorder.text-center
+                  h2.font-normal 2
+                  i.fa.fa-bars.orderbtn
+                td 트윈룸      
+                td.text-right
+                  a.link
+                    i.fa.fa-close.text-gray.fa-lg
+              tr(draggable='true')
+                td.reorder.text-center
+                  h2.font-normal 3
+                  i.fa.fa-bars.orderbtn
+                td 디럭스룸        
+                td.text-right
+                  a.link
+                    i.fa.fa-close.text-gray.fa-lg
+              tr(draggable='true')
+                td.reorder.text-center
+                  h2.font-normal 4
+                  i.fa.fa-bars.orderbtn
+                td 스위트룸       
+                td.text-right
+                  a.link
+                    i.fa.fa-close.text-gray.fa-lg
+              tr(draggable='true')
+                td.reorder.text-center
+                  h2.font-normal 5
+                  i.fa.fa-bars.orderbtn
+                td 여성 6인 도미토리       
+                td.text-right
+                  a.link
+                    i.fa.fa-close.text-gray.fa-lg

@@ -1,16 +1,17 @@
 include ../includes/header.pug
-.wrapper
-  include ../includes/leftnav-docs.pug 
-  
-  
-  #content.unfolded(name='topbar')
-    .board.full-width
-      h1.lined Top bar
-      .content-wrapper
-        h2 Full function
-        include ../includes/topbar.pug
-        .margin-2x
-        h2 Empty
-        p 독립된 페이지에서는 다른 네비게이션으로 빠지지 않도록 검색과 메뉴들을 숨겨줍니다.        
-        include ../includes/topbar-empty.pug
+body
+  .wrapper
+    include ../includes/leftnav-docs.pug 
+    
+    
+    #content.unfolded(name='topbar')
+      .board.full-width
+        h1.lined Top bar
+        .content-wrapper
+          h2 Full function
+          include ../includes/topbar.pug
+          .margin-2x
+          h2 Empty
+          p 독립된 페이지에서는 다른 네비게이션으로 빠지지 않도록 검색과 메뉴들을 숨겨줍니다.        
+          include ../includes/topbar-empty.pug
       

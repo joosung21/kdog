@@ -1,46 +1,15 @@
 include ../includes/header.pug
-.wrapper
-  include ../includes/leftnav-docs.pug
-  
-  #content.unfolded(name='layout')
-    .board.full-width.layout-demo
-      h1.lined layout      
-      h2 CONTENT COLUMS
-      p.margin 2단 레이아웃은 .row 하단에 위치하고 float속성을 종료하기 위해 .clear-fix로 닫아주면 됩니다.
-      .bg-white-gray.text-center.margin.padding 1단      
-      .row
-        .bg-white-gray.col-2-left.text-center.padding
-          | 2단 좌측 
-          br
-          | .col-2-left
-        .bg-white-gray.col-2-right.text-center.padding
-          | 2단 우측 
-          br
-          | .col-2-right
-        .clear-fix
-      .margin
-      .row
-        .bg-white-gray.col-2-left.text-center.padding(style='width: 19%')
-          | 2단 좌측
-          br
-          | (style='width: 19%')
-        .bg-white-gray.col-2-right.text-center.padding(style='width: 79%')
-          | 2단 우측
-          br
-          | (style='width: 79%')
-        .clear-fix
-      
-      .margin-2x
-        
-      h2 CONTENT WRAPPER
-      .content-wrapper
-        p.margin
-          i .content-wrapper
-          |  는 
-          i max-width: 700px 
-          |  속성을 가집니다. 와이드 화면에서 컨텐츠가 지나치게 길어지는 것을 방지하기 위함입니다.        
-        .bg-white-gray.text-center.margin.padding 1단        
-        .row.margin-2x
+body
+  .wrapper
+    include ../includes/leftnav-docs.pug
+    
+    #content.unfolded(name='layout')
+      .board.full-width.layout-demo
+        h1.lined layout      
+        h2 CONTENT COLUMS
+        p.margin 2단 레이아웃은 .row 하단에 위치하고 float속성을 종료하기 위해 .clear-fix로 닫아주면 됩니다.
+        .bg-white-gray.text-center.margin.padding 1단      
+        .row
           .bg-white-gray.col-2-left.text-center.padding
             | 2단 좌측 
             br
@@ -50,51 +19,83 @@ include ../includes/header.pug
             br
             | .col-2-right
           .clear-fix
-          
-        h2 Border, Padding &amp; margin
-        p.margin 기본 Grid는 20px 입니다. Padding은 4방향 모두, Margin은 Bottom에만 적용됩니다.
-        .border.padding.margin .border
-        .border-light.padding.margin .border-light
-        .bg-white-gray.padding-thin.margin .padding-thin
-        .bg-white-gray.padding.margin .padding
-        .bg-white-gray.padding-2x.margin .padding-2x
-        .border-light.margin-thin
-          .bg-white-gray.padding.margin-thin .margin-thin
-        .border-light.margin
-          .bg-white-gray.padding.margin .margin
-        .border-light.margin-2x
-          .bg-white-gray.padding.margin-2x .margin-2x        
-        
-        h2.margin FLOAT        
-        .row.margin-2x
-          .bg-white-gray.float-left.padding .float-left
-          .bg-white-gray.float-right.padding .float-right
-          .clear-fix.padding .clear-fix
-          .bg-white-gray.float-none.padding .float-none        
-          
-        h2.margin TEXT ALIGN
-        .bg-white-gray.text-left.padding .text-left
-        .bg-white-gray.text-center.padding .text-center
-        .bg-white-gray.text-right.padding.margin-2x .text-right        
-          
-        h2.margin DEVIDER
-        p .devider
-        .devider
-        
-        h2.margin WORD SPACING
-        p= '인라인에서 가로간격을 띄울때에는 &nbsp; 대신 span.empty 을 사용하세요.'
-        .margin 
-        p.font-color-thic
-          | span.empty
-          span.empty
-          | Next Text
         .margin
-        p.font-color-thic
-          | span.empty-2x
-          span.empty-2x
-          | Next Text
+        .row
+          .bg-white-gray.col-2-left.text-center.padding(style='width: 19%')
+            | 2단 좌측
+            br
+            | (style='width: 19%')
+          .bg-white-gray.col-2-right.text-center.padding(style='width: 79%')
+            | 2단 우측
+            br
+            | (style='width: 79%')
+          .clear-fix
         
         .margin-2x
+          
+        h2 CONTENT WRAPPER
+        .content-wrapper
+          p.margin
+            i .content-wrapper
+            |  는 
+            i max-width: 700px 
+            |  속성을 가집니다. 와이드 화면에서 컨텐츠가 지나치게 길어지는 것을 방지하기 위함입니다.        
+          .bg-white-gray.text-center.margin.padding 1단        
+          .row.margin-2x
+            .bg-white-gray.col-2-left.text-center.padding
+              | 2단 좌측 
+              br
+              | .col-2-left
+            .bg-white-gray.col-2-right.text-center.padding
+              | 2단 우측 
+              br
+              | .col-2-right
+            .clear-fix
+            
+          h2 Border, Padding &amp; margin
+          p.margin 기본 Grid는 20px 입니다. Padding은 4방향 모두, Margin은 Bottom에만 적용됩니다.
+          .border.padding.margin .border
+          .border-light.padding.margin .border-light
+          .bg-white-gray.padding-thin.margin .padding-thin
+          .bg-white-gray.padding.margin .padding
+          .bg-white-gray.padding-2x.margin .padding-2x
+          .border-light.margin-thin
+            .bg-white-gray.padding.margin-thin .margin-thin
+          .border-light.margin
+            .bg-white-gray.padding.margin .margin
+          .border-light.margin-2x
+            .bg-white-gray.padding.margin-2x .margin-2x        
+          
+          h2.margin FLOAT        
+          .row.margin-2x
+            .bg-white-gray.float-left.padding .float-left
+            .bg-white-gray.float-right.padding .float-right
+            .clear-fix.padding .clear-fix
+            .bg-white-gray.float-none.padding .float-none        
+            
+          h2.margin TEXT ALIGN
+          .bg-white-gray.text-left.padding .text-left
+          .bg-white-gray.text-center.padding .text-center
+          .bg-white-gray.text-right.padding.margin-2x .text-right        
+            
+          h2.margin DEVIDER
+          p .devider
+          .devider
+          
+          h2.margin WORD SPACING
+          p= '인라인에서 가로간격을 띄울때에는 &nbsp; 대신 span.empty 을 사용하세요.'
+          .margin 
+          p.font-color-thic
+            | span.empty
+            span.empty
+            | Next Text
+          .margin
+          p.font-color-thic
+            | span.empty-2x
+            span.empty-2x
+            | Next Text
+          
+          .margin-2x
         
         
           

@@ -1,193 +1,194 @@
 include ../includes/header.pug
-.wrapper
-  include ../includes/leftnav-docs.pug
-  
-  #content.unfolded(name='sweetalert')
-    .board.full-width
-      h1.lined sweetalert      
-      .content-wrapper
-        
-        h2 Version: 1.1.3
-        .margin-2x
-        
-        h3 Title only
-        - var message01 = 'swal("업데이트 되었습니다!")'          
-        pre
-          code.
-            #{message01}
-        a.btn.btn-small(onclick= message01) 예제보기
-        
-        .devider
-                  
-        h3 Title &amp; text
-        - var message02 = 'swal("발송되었습니다!", "메일함을 확인해주세요. 메일이 보이지 않는다면 스팸함을 확인해 주세요")'
-        pre
-          code.
-            #{message02}      
-        a.btn.btn-small(onclick= message02) 예제보기
-        
-        .devider
+body
+  .wrapper
+    include ../includes/leftnav-docs.pug
+    
+    #content.unfolded(name='sweetalert')
+      .board.full-width
+        h1.lined sweetalert      
+        .content-wrapper
           
-        h3 Success message
-        - var message03 = 'swal("업데이트 되었습니다!!", "변경된 가격은 5분후에 적용됩니다", "success")'
-        pre
-          code.
-            #{message03}
-        a.btn.btn-small(onclick= message03) 예제보기
-        
-        .devider
+          h2 Version: 1.1.3
+          .margin-2x
           
-        h3 Warning &amp; Confirm
-        - 
-          var message04 = `
-            swal({
-              title: "정말로 삭제 하시겠습니까?",
-              text: "객실의 모든 예약이 함께 삭제됩니다!",
-              type: "warning",
-              showCancelButton: true,
-              confirmButtonColor: "#DD6B55",
-              confirmButtonText: "네, 삭제합니다",
-              cancelButtonText: "취소",
-              closeOnConfirm: false
-            },
-            function(){
-              swal("삭제 되었습니다!", "모든 예약도 함께 삭제되었습니다", "success");
-            });
-            `        
-        pre
-          code.
-            #{message04}   
-        a.btn.btn-small(onclick= message04) 예제보기
-      
-        .devider
+          h3 Title only
+          - var message01 = 'swal("업데이트 되었습니다!")'          
+          pre
+            code.
+              #{message01}
+          a.btn.btn-small(onclick= message01) 예제보기
           
-        h3 Add cancel message
-        - 
-          var message05 = `
-            swal({
-              title: "정말로 삭제 하시겠습니까?",
-              text: "객실의 모든 예약이 함께 삭제됩니다!",
-              type: "warning",
-              showCancelButton: true,
-              confirmButtonColor: "#DD6B55",
-              confirmButtonText: "네, 삭제합니다",
-              cancelButtonText: "취소",
-              closeOnConfirm: false,
-              closeOnCancel: false
-            },
-            function(isConfirm){
-              if (isConfirm) {
-                swal("삭제 되었습니다!", "모든 예약도 함께 삭제되었습니다", "success");
-              } else {
-                swal("취소 되었습니다!", "신중한 선택이었네요", "error");
-              }
-            });
-            `        
-        pre
-          code.
-            #{message05}   
-        a.btn.btn-small(onclick= message05) 예제보기
-        
-        .devider
+          .devider
+                    
+          h3 Title &amp; text
+          - var message02 = 'swal("발송되었습니다!", "메일함을 확인해주세요. 메일이 보이지 않는다면 스팸함을 확인해 주세요")'
+          pre
+            code.
+              #{message02}      
+          a.btn.btn-small(onclick= message02) 예제보기
           
-        h3 Custom Icon
-        - 
-          var message06 = `
-            swal({
-              title: "객실이 생성되었습니다!",
-              text: "도미토리 여성 6인실",
-              imageUrl: "/images/icons/door-black.svg"
-            });
-            `        
-        pre
-          code.
-            #{message06}   
-        a.btn.btn-small(onclick= message06) 예제보기
-        
-        .devider
+          .devider
+            
+          h3 Success message
+          - var message03 = 'swal("업데이트 되었습니다!!", "변경된 가격은 5분후에 적용됩니다", "success")'
+          pre
+            code.
+              #{message03}
+          a.btn.btn-small(onclick= message03) 예제보기
           
-        h3 HTML
-        - 
-          var message07 = `
-            swal({
-              title: "이문송님",
-              text: "예약상태가 <span class='text-brand'>예약완료<span>로 변경되었습니다",
-              html: true
-            });
-            `        
-        pre
-          code.
-            #{message07}   
-        a.btn.btn-small(onclick= message07) 예제보기
-        
-        .devider
-        
-        h3 AUTO CLOSE
-        - 
-          var message08 = `
-            swal({
-              title: "자동으로 닫힙니다!",
-              text: "2초 후에 닫힐꺼에요",
-              timer: 2000,
-              showConfirmButton: false
-            });
-            `        
-        pre
-          code.
-            #{message08}   
-        a.btn.btn-small(onclick= message08) 예제보기
-        
-        .devider
-        
-        h3 Prompt
-        - 
-          var message09 = `
-            swal({
-              title: "제목을 입력해 주세요",
-              text: "요금제 제목:",
-              type: "input",
-              showCancelButton: true,
-              closeOnConfirm: false,
-              animation: "slide-from-top",
-              inputPlaceholder: "예) 평창동계올림픽 성수기"
-              },
-              function(inputValue){
-              if (inputValue === false) return false;
-
-              if (inputValue === "") {
-                swal.showInputError("You need to write something!");
-                return false
-              }
-
-              swal("저장 되었습니다!", "요금제 제목: " + inputValue, "success");
-            });
-            `        
-        pre
-          code.
-            #{message09}   
-        a.btn.btn-small(onclick= message09) 예제보기
-        
-        .devider
-        
-        h3 Ajax request
-        - 
-          var message10 = `
-            swal({
-              title: "동기화를 시작합니다!",
-              text: "서버통신에 따라 시간이 걸릴 수 있습니다",
-              type: "info",
-              showCancelButton: true,
-              closeOnConfirm: false,
-              showLoaderOnConfirm: true,
+          .devider
+            
+          h3 Warning &amp; Confirm
+          - 
+            var message04 = `
+              swal({
+                title: "정말로 삭제 하시겠습니까?",
+                text: "객실의 모든 예약이 함께 삭제됩니다!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "네, 삭제합니다",
+                cancelButtonText: "취소",
+                closeOnConfirm: false
               },
               function(){
-              setTimeout(function(){
-                swal("동기화가 완료되었습니다!");
-              }, 2000);
+                swal("삭제 되었습니다!", "모든 예약도 함께 삭제되었습니다", "success");
               });
-            `        
-        pre
-          code.
-            #{message10}   
-        a.btn.btn-small(onclick= message10) 예제보기
+              `        
+          pre
+            code.
+              #{message04}   
+          a.btn.btn-small(onclick= message04) 예제보기
+        
+          .devider
+            
+          h3 Add cancel message
+          - 
+            var message05 = `
+              swal({
+                title: "정말로 삭제 하시겠습니까?",
+                text: "객실의 모든 예약이 함께 삭제됩니다!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "네, 삭제합니다",
+                cancelButtonText: "취소",
+                closeOnConfirm: false,
+                closeOnCancel: false
+              },
+              function(isConfirm){
+                if (isConfirm) {
+                  swal("삭제 되었습니다!", "모든 예약도 함께 삭제되었습니다", "success");
+                } else {
+                  swal("취소 되었습니다!", "신중한 선택이었네요", "error");
+                }
+              });
+              `        
+          pre
+            code.
+              #{message05}   
+          a.btn.btn-small(onclick= message05) 예제보기
+          
+          .devider
+            
+          h3 Custom Icon
+          - 
+            var message06 = `
+              swal({
+                title: "객실이 생성되었습니다!",
+                text: "도미토리 여성 6인실",
+                imageUrl: "/images/icons/door-black.svg"
+              });
+              `        
+          pre
+            code.
+              #{message06}   
+          a.btn.btn-small(onclick= message06) 예제보기
+          
+          .devider
+            
+          h3 HTML
+          - 
+            var message07 = `
+              swal({
+                title: "이문송님",
+                text: "예약상태가 <span class='text-brand'>예약완료<span>로 변경되었습니다",
+                html: true
+              });
+              `        
+          pre
+            code.
+              #{message07}   
+          a.btn.btn-small(onclick= message07) 예제보기
+          
+          .devider
+          
+          h3 AUTO CLOSE
+          - 
+            var message08 = `
+              swal({
+                title: "자동으로 닫힙니다!",
+                text: "2초 후에 닫힐꺼에요",
+                timer: 2000,
+                showConfirmButton: false
+              });
+              `        
+          pre
+            code.
+              #{message08}   
+          a.btn.btn-small(onclick= message08) 예제보기
+          
+          .devider
+          
+          h3 Prompt
+          - 
+            var message09 = `
+              swal({
+                title: "제목을 입력해 주세요",
+                text: "요금제 제목:",
+                type: "input",
+                showCancelButton: true,
+                closeOnConfirm: false,
+                animation: "slide-from-top",
+                inputPlaceholder: "예) 평창동계올림픽 성수기"
+                },
+                function(inputValue){
+                if (inputValue === false) return false;
+
+                if (inputValue === "") {
+                  swal.showInputError("You need to write something!");
+                  return false
+                }
+
+                swal("저장 되었습니다!", "요금제 제목: " + inputValue, "success");
+              });
+              `        
+          pre
+            code.
+              #{message09}   
+          a.btn.btn-small(onclick= message09) 예제보기
+          
+          .devider
+          
+          h3 Ajax request
+          - 
+            var message10 = `
+              swal({
+                title: "동기화를 시작합니다!",
+                text: "서버통신에 따라 시간이 걸릴 수 있습니다",
+                type: "info",
+                showCancelButton: true,
+                closeOnConfirm: false,
+                showLoaderOnConfirm: true,
+                },
+                function(){
+                setTimeout(function(){
+                  swal("동기화가 완료되었습니다!");
+                }, 2000);
+                });
+              `        
+          pre
+            code.
+              #{message10}   
+          a.btn.btn-small(onclick= message10) 예제보기
           

@@ -1,22 +1,23 @@
 include ../includes/header.pug
-.wrapper
-  include ../includes/leftnav-docs.pug
-  
-  #content.unfolded(name='empty-page2')
-    .left-wrapper
-      #sub-menu
-        h4.title 
-          img.icon(src='/images/icons/door-black.svg')
-          | 페이지제목
-        ul
-          li.active 서브메뉴1
-          li 서브메뉴2
-          li 서브메뉴3
-          li 서브메뉴4 
-    .board
-      .title-bar
-        h4 Page Title
-      .content-wrapper
-        h1 Page with sub menu
-        .margin-2x
-        p This layout could be used for one(1) depth menu category.
+body
+  .wrapper
+    include ../includes/leftnav-docs.pug
+    
+    #content.unfolded(name='empty-page2')
+      .left-wrapper
+        #sub-menu
+          h4.title 
+            img.icon(src='/images/icons/door-black.svg')
+            | 페이지제목
+          ul
+            li.active 서브메뉴1
+            li 서브메뉴2
+            li 서브메뉴3
+            li 서브메뉴4 
+      .board
+        .title-bar
+          h4 Page Title
+        .content-wrapper
+          h1 Page with sub menu
+          .margin-2x
+          p This layout could be used for one(1) depth menu category.

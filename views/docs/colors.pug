@@ -1,74 +1,75 @@
 include ../includes/header.pug
-.wrapper
-  include ../includes/leftnav-docs.pug
-  
-  #content.unfolded(name='colors')
-    .board.full-width
-      h1.lined colors      
-      h2 Layout colors
-      .colorbox
-        .text.padding.text-brand .text-brand
-        .view.padding-2x.text-white.bg-brand .bg-brand        
-        .sass.padding $color-brand  
-      .colorbox
-        .text.padding.text-priority .text-priority
-        .view.padding-2x.bg-priority.text-white .bg-priority
-        .sass.padding $color-priority
-      .colorbox
-        .text.padding.text-dark .text-dark
-        .view.padding-2x.bg-dark.text-white .bg-dark
-        .sass.padding $color-dark
-      .colorbox
-        .text.padding.text-reverse .text-reverse
-        .view.padding-2x.bg-reverse.text-white .bg-reverse
-        .sass.padding $color-reverse
-      
-      .clear-fix
-      
-      .colorbox
-        .text.padding.text-gray .text-gray
-        .view.padding-2x.bg-gray .bg-gray
-        .sass.padding $gray
-      .colorbox
-        .text.padding.text-gray .text-white-gray
-        .view.padding-2x.bg-white-gray .bg-white-gray
-        .sass.padding $white-gray
-      .colorbox
-        .text.padding.text-red .text-red
-        .view.padding-2x.bg-red.text-white .bg-red
-        .sass.padding $red
+body
+  .wrapper
+    include ../includes/leftnav-docs.pug
+    
+    #content.unfolded(name='colors')
+      .board.full-width
+        h1.lined colors      
+        h2 Layout colors
+        .colorbox
+          .text.padding.text-brand .text-brand
+          .view.padding-2x.text-white.bg-brand .bg-brand        
+          .sass.padding $color-brand  
+        .colorbox
+          .text.padding.text-priority .text-priority
+          .view.padding-2x.bg-priority.text-white .bg-priority
+          .sass.padding $color-priority
+        .colorbox
+          .text.padding.text-dark .text-dark
+          .view.padding-2x.bg-dark.text-white .bg-dark
+          .sass.padding $color-dark
+        .colorbox
+          .text.padding.text-reverse .text-reverse
+          .view.padding-2x.bg-reverse.text-white .bg-reverse
+          .sass.padding $color-reverse
         
-      .clear-fix
-      .margin
+        .clear-fix
         
-      h2 Status colors
-      .colorbox
-        .text.padding 예약중
-        .view.padding-2x.bg-booking.text-white .bg-booking
-        .sass.padding $color-booking
-      .colorbox
-        .text.padding 예약완료
-        .view.padding-2x.bg-booked.text-white .bg-booked
-        .sass.padding $color-booking
-      .colorbox
-        .text.padding 결제완료
-        .view.padding-2x.bg-paid.text-white .bg-paid
-        .sass.padding $color-booking
-      .colorbox
-        .text.padding 체크인
-        .view.padding-2x.bg-checkin.text-white .bg-checkin
-        .sass.padding $color-booking
-      .colorbox
-        .text.padding 체크아웃
-        .view.padding-2x.bg-checkout.text-white .bg-checkout
-        .sass.padding $color-booking
-      .colorbox
-        .text.padding 기타
-        .view.padding-2x.bg-ect.text-white .bg-ect
-        .sass.padding $color-booking
-      .colorbox
-        .text.padding 예약불가
-        .view.padding-2x.bg-disabled.text-white .bg-disabled
-        .sass.padding $color-booking
-      
-      .clear-fix      
+        .colorbox
+          .text.padding.text-gray .text-gray
+          .view.padding-2x.bg-gray .bg-gray
+          .sass.padding $gray
+        .colorbox
+          .text.padding.text-gray .text-white-gray
+          .view.padding-2x.bg-white-gray .bg-white-gray
+          .sass.padding $white-gray
+        .colorbox
+          .text.padding.text-red .text-red
+          .view.padding-2x.bg-red.text-white .bg-red
+          .sass.padding $red
+          
+        .clear-fix
+        .margin
+          
+        h2 Status colors
+        .colorbox
+          .text.padding 예약중
+          .view.padding-2x.bg-booking.text-white .bg-booking
+          .sass.padding $color-booking
+        .colorbox
+          .text.padding 예약완료
+          .view.padding-2x.bg-booked.text-white .bg-booked
+          .sass.padding $color-booking
+        .colorbox
+          .text.padding 결제완료
+          .view.padding-2x.bg-paid.text-white .bg-paid
+          .sass.padding $color-booking
+        .colorbox
+          .text.padding 체크인
+          .view.padding-2x.bg-checkin.text-white .bg-checkin
+          .sass.padding $color-booking
+        .colorbox
+          .text.padding 체크아웃
+          .view.padding-2x.bg-checkout.text-white .bg-checkout
+          .sass.padding $color-booking
+        .colorbox
+          .text.padding 기타
+          .view.padding-2x.bg-ect.text-white .bg-ect
+          .sass.padding $color-booking
+        .colorbox
+          .text.padding 예약불가
+          .view.padding-2x.bg-disabled.text-white .bg-disabled
+          .sass.padding $color-booking
+        
+        .clear-fix      

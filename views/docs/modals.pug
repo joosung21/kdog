@@ -1,46 +1,47 @@
 include ../includes/header.pug
-.wrapper
-  include ../includes/leftnav-docs.pug
-  
-  #content.unfolded(name='modals')
-    .board.full-width
-      h1.lined Modals            
-      .content-wrapper
-        h2 default Modal
-        .margin
-        a.btn(onclick='openModal("#default")') OPEN
-        .margin-2x
-        h2 Wide Modal
-        .margin
-        a.btn(onclick='openModal("#wide")') OPEN
-        .margin-2x
-        
+body
+  .wrapper
+    include ../includes/leftnav-docs.pug
+    
+    #content.unfolded(name='modals')
+      .board.full-width
+        h1.lined Modals            
+        .content-wrapper
+          h2 default Modal
+          .margin
+          a.btn(onclick='openModal("#default")') OPEN
+          .margin-2x
+          h2 Wide Modal
+          .margin
+          a.btn(onclick='openModal("#wide")') OPEN
+          .margin-2x
+          
 
-#default.modal
-  .layover
-  .modal-board
-    .modal-header 
-      h4.tigle Title Here
-        a.close(href='javascript:closeModal()')
-          img(src='/images/icons/close-x.svg')
-    .modal-body        
-      p Modal Body
-    .modal-footer
-      a.btn OKAY
-      span.empty
-      a.btn.btn-gray(href='javascript:closeModal()') CLOSE
+    #default.modal
+      .layover
+      .modal-board
+        .modal-header 
+          h4.tigle Title Here
+            a.close(href='javascript:closeModal()')
+              img(src='/images/icons/close-x.svg')
+        .modal-body        
+          p Modal Body
+        .modal-footer
+          a.btn OKAY
+          span.empty
+          a.btn.btn-gray(href='javascript:closeModal()') CLOSE
 
-#wide.modal.wide
-  .layover
-  .modal-board
-    .modal-header 
-      h4.tigle Title Here
-        a.close(href='javascript:closeModal()')
-          img(src='/images/icons/close-x.svg')
-    .modal-body        
-      p Modal Body
-    .modal-footer
-      a.btn OKAY
-      span.empty
-      a.btn.btn-gray(href='javascript:closeModal()') CLOSE
+    #wide.modal.wide
+      .layover
+      .modal-board
+        .modal-header 
+          h4.tigle Title Here
+            a.close(href='javascript:closeModal()')
+              img(src='/images/icons/close-x.svg')
+        .modal-body        
+          p Modal Body
+        .modal-footer
+          a.btn OKAY
+          span.empty
+          a.btn.btn-gray(href='javascript:closeModal()') CLOSE
           
