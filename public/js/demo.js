@@ -27,6 +27,31 @@ function sWindowSmallShow(){
   $('#s-window-small').show();
 }
 
+function toggleAssign(){
+  $('.room-line.assign-ui').toggleClass('show')
+  openTopSlider();
+}
+
+function showSMS(){
+  $('#r-window .modal-board.main').hide();
+  $('#r-window .modal-board.sms').show();
+  $('.context-menu').hide()
+}
+function closeSMS(){
+  $('#r-window .modal-board.sms').hide();
+  $('#r-window .modal-board.main').show();
+}
+
+function showCard(){
+  $('#r-window .modal-board.main').hide();
+  $('#r-window .modal-board.card').show();
+  $('.context-menu2').hide()
+}
+function closeCard(){
+  $('#r-window .modal-board.card').hide();
+  $('#r-window .modal-board.main').show();
+}
+
 function openModal(id){
   $(id).show();
 }
@@ -36,6 +61,7 @@ function closeModal(){
 
 function closeContextMenu(){
   $('.context-menu').hide()
+  $('.context-menu2').hide()
 }
 
 function openRwindow(){
@@ -52,7 +78,10 @@ $( document ).ready(function() {
 
   $('.modal').hide();
   $('.context-menu').hide();
+  $('.context-menu2').hide();
   $('.hover-layer').hide();
+  $('#r-window .modal-board.sms').hide();
+  $('#r-window .modal-board.card').hide();
 
   $('.modal .layover').click(function(){
     $('.modal').hide();
@@ -61,14 +90,25 @@ $( document ).ready(function() {
   $('.context-menu .layover').click(function(){
     $('.context-menu').hide();
   });
+  $('.context-menu2 .layover').click(function(){
+    $('.context-menu2').hide();
+  });
 
   $('.openContextMenu').click(function(){
     var offset = $(this).offset()
     $('.context-menu ul').css({
-      top: offset.top + 15,
+      top: offset.top + 25,
       left: offset.left + 60
     });
     $('.context-menu').show()
+  });
+  $('.openContextMenu2').click(function(){
+    var offset = $(this).offset()
+    $('.context-menu2 ul').css({
+      top: offset.top + 25,
+      left: offset.left + 60
+    });
+    $('.context-menu2').show()
   });
 
   // Open Top menu layers
@@ -164,7 +204,7 @@ $( document ).ready(function() {
   });
 
   //Stock-table select
-  $('.room-line .rec').click(function(){
+  $('.stock-table .room-line .rec').click(function(){
     $(this).toggleClass('selected');
     openTopSlider();
   });

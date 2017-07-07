@@ -3,6 +3,14 @@ body
   include includes/topbar.pug
   include includes/r-window.pug
   
+  .top-slide-ui.hidden
+    span.comment 2014년 7월 24일 객실배치
+    
+    
+    a.btn(onclick='closeTopSlider()') 닫기
+    .close(onclick='closeTopSlider()')
+      img(src='/images/icons/close-white.svg')
+  
   .bottom-bar
     a.link
       i.fa.fa-history
@@ -87,7 +95,7 @@ body
           .leftbox
             .this-month              
               .year 2017
-              .month 06       
+              .month 07       
             .controls
               a.btn.btn-small.btn-white
                 i.fa.fa-angle-left.fa-2x
@@ -236,7 +244,7 @@ body
         .roomtype-title 객실 미배정 예약        
         .room-line.unassigned
           .assign
-            a.btn.btn-dark.btn-small.full-width
+            a.btn.btn-dark.btn-small.full-width(onclick='toggleAssign()')
               i.fa.fa-download.fa-lg
               span 객실 배정하기
           .chart-wrapper
@@ -340,16 +348,239 @@ body
               li.rec
                 .stock 0
         
-        .roomtype-title 디럭스룸
+        .roomtype-title 디럭스룸      
+        
+        .room-line.assign-ui
+          .room-name.no-move
+            | 7월 24일
+            .badge 4
+          .chart-wrapper
+            ul
+              li.rec
+              li.rec                    
+              li.rec  
+              li.rec                    
+              li.rec
+                .bar.booked(style='width: 150px', draggable='true', onclick='openRwindow()')
+                  .name 서은교
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              
+          .clear-fix
+        .room-line.assign-ui
+          .room-name.no-move
+            a.btn.btn-small.btn-white 
+              i.fa.fa-magic.fa-lg
+              span 자동배정         
+          .chart-wrapper
+            ul
+              li.rec
+              li.rec                    
+              li.rec                    
+              li.rec                    
+              li.rec
+                .bar.booked(style='width: 250px', draggable='true', onclick='openRwindow()')
+                  .name Steve Kim
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              
+          .clear-fix
+        .room-line.assign-ui
+          .room-name            
+          .chart-wrapper
+            ul
+              li.rec
+              li.rec                    
+              li.rec                    
+              li.rec                    
+              li.rec
+                .bar.booked(style='width: 50px', draggable='true', onclick='openRwindow()')
+                  .name 홍준희
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              
+          .clear-fix
+        .room-line.assign-ui
+          .room-name            
+          .chart-wrapper
+            ul
+              li.rec
+              li.rec                    
+              li.rec                    
+              li.rec                    
+              li.rec
+                .bar.booked(style='width: 1400px', draggable='true', onclick='openRwindow()')
+                  .name 장기투숙자
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              
+          .clear-fix
+            
         .room-line
-          .room-name 501호          
+          .room-name 501호
           .chart-wrapper
             ul
               - var r1 = 0
               while r1 < 50          
                 li.rec.empty(name= r1++)
                   .price 12만
-          .clear-fix        
+          .clear-fix
             
         .room-line
           .room-name 502호
@@ -457,6 +688,7 @@ body
                 .price 12.5만
               
           .clear-fix
+            
         .room-line
           .room-name 503호          
           .chart-wrapper
@@ -561,7 +793,117 @@ body
                 .price 12.5만
           .clear-fix
           
-        .roomtype-title 스위트룸        
+        .roomtype-title 스위트룸
+        .room-line.assign-ui
+          .room-name.no-move
+            | 7월 24일
+            .badge 2
+          .chart-wrapper
+            ul
+              li.rec
+              li.rec                    
+              li.rec  
+              li.rec                    
+              li.rec
+                .bar.booked(style='width: 150px', draggable='true', onclick='openRwindow()')
+                  .name Micheal Jackson
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              
+          .clear-fix
+        .room-line.assign-ui
+          .room-name            
+          .chart-wrapper
+            ul
+              li.rec
+              li.rec                    
+              li.rec  
+              li.rec                    
+              li.rec
+                .bar.booked(style='width: 200px', draggable='true', onclick='openRwindow()')
+                  .name Shoy Slavaski
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              li.rec
+              
+          .clear-fix
         .room-line
           .room-name Long room name english
           .chart-wrapper

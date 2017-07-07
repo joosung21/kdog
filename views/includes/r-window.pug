@@ -1,6 +1,26 @@
+.context-menu
+  .layover
+  ul
+    li(onclick='showSMS()') 문자 보내기
+
+.context-menu2
+  .layover
+  ul
+    li(onclick='showCard()') 카드수기결제
+    li 100%
+    li 90%
+    li 80%
+    li 70%
+    li 60%
+    li 50%
+    li 40%
+    li 30%
+    li 20%
+    li 10%
+    
 #r-window.modal.modal-pack
   .layover
-  .modal-board
+  .modal-board.main
     .title-bar
       | 유인나 - 3개의 객실
       .close
@@ -26,7 +46,7 @@
               option 남자
         .form-group.light
           label 연락처
-          input(type='text', value='010-2268-5399')
+          input.clickable(type='text', value='010-2268-5399').openContextMenu
         .form-group.light
           label 국적
           input(type='text', value='')
@@ -140,7 +160,7 @@
           input(type='text', value='0')
         .form-group.light.no-margin.indent
           label 카드
-          input(type='text', value='240,000')
+          input.clickable.openContextMenu2(type='text', value='240,000')
         .card-history
           a.link
             span.text 결제승인(4283)
@@ -198,6 +218,60 @@
         i.fa.fa-check
         span 저장
       a.btn.btn-dark(style='width: 166px', onclick='closeModal()') 닫기
+  
+  .modal-board.sms
+    .title-bar
+      | 유인나 - 3개의 객실
+      .close
+        a(onclick='closeModal()')       
+          img(src='/images/icons/close-x.svg')    
+    section.sms
+      .padding-2x
+        .form-group(style='width: 233px; margin:0 auto')
+          label 문자보내기
+          textarea(rows='16').
+            문자내용
+          .counter 0/2000
+        .margin-2x
+        .text-center
+          a.btn.btn-gray 
+            i.fa.fa-history
+            span 이전내용 불러오기
+        
+            
+    section.buttons      
+      a.btn(style='width: 724px', onclick='closeSMS()')
+        i.fa.fa-paper-plane
+        span 보내기
+      a.btn.btn-dark(style='width: 166px', onclick='closeSMS()') 취소
+  
+  .modal-board.card
+    .title-bar
+      | 유인나 - 3개의 객실
+      .close
+        a(onclick='closeModal()')       
+          img(src='/images/icons/close-x.svg')    
+    section.sms      
+      .padding-2x(style='width: 300px; margin: 0 auto')
+        .margin-2x
+        h2 카드수기결제
+        .margin-2x
+        .form-group
+          label 결제금액
+          input(type='text', value='₩ 0')
+        .form-group
+          label 카드번호
+          input(type='text', value='')
+        .form-group
+          label 유효기간
+          input(type='text', value='', placeholder='MM/YY')
+            
+    section.buttons      
+      a.btn(style='width: 724px', onclick='closeCard()')
+        i.fa.fa-check
+        span 승인요청
+      a.btn.btn-dark(style='width: 166px', onclick='closeCard()') 취소
+      
         
         
         

@@ -599,6 +599,8 @@ input
     background: none
     color: lighten($font-color-defualt, 30%)
     cursor: not-allowed
+  input.clickable
+    color: darken($color-reverse, 5%)
   textarea
     height: auto
     text-align: left
@@ -936,6 +938,7 @@ a.btn
   tbody td
     padding: 17px 7px
     border-bottom: 1px solid $white-gray
+    color: lighten($font-color-thic, 10%)
   &.no-border
     tbody td
       padding: 12px 7px 10px 7px
@@ -990,7 +993,7 @@ a.btn
     top: 0
     width: 100%
     height: 100%
-    background: rgba(0,0,0,0.5)
+    background: rgba(0,0,0,0.7)
   .modal-board
     position: fixed
     width: 600px
@@ -1046,7 +1049,7 @@ a.btn
 
 .context-menu
   position: absolute
-  z-index: 1000
+  z-index: 2000
   width: 100%
   height: 100%
   left: 0
@@ -1066,12 +1069,16 @@ a.btn
     padding: 7px 0 5px 0
     background-color: white
     li
+      white-space: nowrap
       padding: 7px 40px 5px 20px
       cursor: pointer
       color: $font-color-thic
       font-size: $font-size-small
       &:hover
         background: $white-gray
+
+.context-menu2
+  @extend .context-menu
 
 table.progress-steps
   tr
@@ -1220,7 +1227,7 @@ table.progress-steps
     width: calc(100% - 80px)
   &.centered
     margin: 4vh auto 0 auto
-    width: 700px
+    width: 800px
     min-height: 500px
   .title-bar
     margin: -40px -40px 40px -40px
@@ -1586,8 +1593,8 @@ table.progress-steps
       float: left
       width: 160px
       height: 15px
-      padding: 17px 10px 32px 20px
-      line-height: 17px
+      padding: 16px 10px 33px 20px
+      line-height: 18px
       font-size: 10pt
       border-right: 1px solid $gray
       border-bottom: 1px solid $white-gray
@@ -1603,6 +1610,8 @@ table.progress-steps
         white-space: normal
         padding: 7px 10px 42px 20px
         transition: all 0.5s
+      &.no-move
+        padding: 16px 10px 33px 20px
 
     .chart-wrapper
       width: calc(100% - 160px)
@@ -1620,51 +1629,6 @@ table.progress-steps
         border-right: 1px solid $white-gray
         border-bottom: 1px solid $white-gray
         cursor: pointer
-        .bar
-          z-index: 10
-          background-color: $gray
-          display: block
-          position: absolute
-          left: 0
-          top: 0
-          height: 50px
-          box-sizing: border-box
-          border: 1px solid rgba(black, 0.05)
-          &.booking
-            background: $color-booking
-            &:hover
-              background: darken($color-booking, 5%)
-          &.booked
-            background: $color-booked
-            &:hover
-              background: darken($color-booked, 5%)
-          &.paid
-            background: $color-paid
-            &:hover
-              background: darken($color-paid, 5%)
-          &.checkin
-            background: $color-checkin
-            &:hover
-              background: darken($color-checkin, 5%)
-          &.checkout
-            background: $color-checkout
-            &:hover
-              background: darken($color-checkout, 5%)
-          &.ect
-            background: $color-ect
-            &:hover
-              background: darken($color-ect, 5%)
-          &.disabled
-            background: $color-disabled
-            &:hover
-              background: darken($color-disabled, 5%)
-          .name
-            color: white
-            padding: 14px 5px 0 10px
-            font-size: 10pt
-            overflow: hidden
-            white-space: nowrap
-            text-overflow: ellipsis
         &:hover
           // background-color: lighten($color-reverse, 40%)
           background-color: lighten($white-gray, 2%)
@@ -1683,6 +1647,68 @@ table.progress-steps
           color: lighten($font-color-defualt, 50%)
           &.over
             color: $font-color-thic
+    &.assign-ui
+      height: 0
+      overflow: hidden
+      .badge
+        margin: 0 5px
+      .room-name
+        background-color: $color-dark
+        border-color: $color-dark
+        color: white
+      .chart-wrapper
+        .rec
+          background-color: $color-dark
+          border-color: $color-dark
+      &.show
+        height: auto
+
+  .bar
+    z-index: 10
+    background-color: $gray
+    display: block
+    position: absolute
+    left: 0
+    top: 0
+    height: 50px
+    box-sizing: border-box
+    border: 1px solid rgba(black, 0.05)
+    &.booking
+      background: $color-booking
+      &:hover
+        background: darken($color-booking, 5%)
+    &.booked
+      background: $color-booked
+      &:hover
+        background: darken($color-booked, 5%)
+    &.paid
+      background: $color-paid
+      &:hover
+        background: darken($color-paid, 5%)
+    &.checkin
+      background: $color-checkin
+      &:hover
+        background: darken($color-checkin, 5%)
+    &.checkout
+      background: $color-checkout
+      &:hover
+        background: darken($color-checkout, 5%)
+    &.ect
+      background: $color-ect
+      &:hover
+        background: darken($color-ect, 5%)
+    &.disabled
+      background: $color-disabled
+      &:hover
+        background: darken($color-disabled, 5%)
+    .name
+      color: white
+      padding: 14px 5px 0 10px
+      font-size: 10pt
+      overflow: hidden
+      white-space: nowrap
+      text-overflow: ellipsis
+
   .dorm-wrapper
     margin: 0 -40px 0 -40px
     border-top: 1px solid $gray
@@ -1822,13 +1848,14 @@ table.progress-steps
     section.status
       width: 140px
       border-right: none
+      overflow: hidden
       .header
         padding: 18px 20px 16px 20px
         .title
           float: none
           text-align: center
       ul li
-        padding: 24px 0 21px 0
+        padding: 23px 0 21px 0
         text-align: center
         border-bottom: 1px solid lighten($gray, 8%)
         cursor: pointer
@@ -1858,6 +1885,9 @@ table.progress-steps
       height: 60px
       .btn
         text-align: center
+
+    section.sms
+      width: 100%
 
 #s-window.modal-pack
   section
