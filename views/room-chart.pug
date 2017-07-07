@@ -5,9 +5,14 @@ body
   
   .top-slide-ui.hidden
     span.comment 2014년 7월 24일 객실배치
-    
-    
-    a.btn(onclick='closeTopSlider()') 닫기
+    a.btn
+      i.fa.fa-angle-left.fa-lg
+      span 이전 날
+    a.btn
+      i.fa.fa-angle-right.fa-lg
+      span 다음 날
+    span.empty
+    a.btn(onclick='closeTopSlider()') 객실배치 종료
     .close(onclick='closeTopSlider()')
       img(src='/images/icons/close-white.svg')
   
