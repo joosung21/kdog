@@ -14,6 +14,7 @@ function openTopSlider(){
 function closeTopSlider(){
   $('.top-slide-ui').removeClass('show');
   $('.top-slide-ui').addClass('hidden');
+  $('.room-line.assign-ui').removeClass('show')
 }
 
 function switchBtnToggle(thisBtn){
