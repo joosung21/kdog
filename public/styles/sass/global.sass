@@ -306,24 +306,31 @@ ul,li
   height: 15px
   margin-left: 4px
   background: url(/images/icons/question.svg) 0 0 no-repeat
-  .desc
-    display: none
+  .tooltiptext
+    visibility: hidden
+    width: 400px
+    background-color: $color-dark
+    color: #fff
+    text-align: center
+    padding: 5px 0
+    border-radius: 6px
     position: absolute
-    top: -5px
-    left: -5px
-    width: 240px
-    background: url(/images/icons/question.svg) no-repeat 5px 5px $color-dark
-    color: rgba(255, 255, 255, 0.8)
-    font-size: $font-size-xsmall
-    padding: 6px 10px 6px 30px
-    +border-radius(2px)
-    a
-      color: white
-      font-size: $font-size-xsmall
-      text-decoration: underline
-  &:hover
-    .desc
-      display: block
+    z-index: 1
+    top: -9px
+    left: 105%
+  &:hover .tooltiptext
+    visibility: visible
+  .tooltiptext::after
+    content: " "
+    position: absolute
+    top: 50%
+    right: 100%
+    margin-top: -5px
+    border-width: 5px
+    border-style: solid
+    border-color: transparent $color-dark transparent transparent
+
+
 .devider
   clear: both
   width: 100%

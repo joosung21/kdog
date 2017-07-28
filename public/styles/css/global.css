@@ -295,26 +295,29 @@ ul, li {
   height: 15px;
   margin-left: 4px;
   background: url(/images/icons/question.svg) 0 0 no-repeat; }
-  .tooltip .desc {
-    display: none;
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 400px;
+    background-color: #495057;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
     position: absolute;
-    top: -5px;
-    left: -5px;
-    width: 240px;
-    background: url(/images/icons/question.svg) no-repeat 5px 5px #495057;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 9pt;
-    padding: 6px 10px 6px 30px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    border-radius: 2px; }
-    .tooltip .desc a {
-      color: white;
-      font-size: 9pt;
-      text-decoration: underline; }
-  .tooltip:hover .desc {
-    display: block; }
+    z-index: 1;
+    top: -9px;
+    left: 105%; }
+  .tooltip:hover .tooltiptext {
+    visibility: visible; }
+  .tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #495057 transparent transparent; }
 
 .devider {
   clear: both;
