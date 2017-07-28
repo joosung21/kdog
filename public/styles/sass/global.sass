@@ -1178,6 +1178,11 @@ table.progress-steps
     padding: 0 20px
     box-sizing: border-box
 
+  /* For mobile phones: */
+  @media only screen and (max-width: 768px)
+    [class*="col-"]
+      width: 100%
+
 .row::after
   content: ''
   clear: both

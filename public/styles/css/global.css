@@ -1102,7 +1102,8 @@ table.progress-steps tr td {
     transition: all 0.5s; }
 
 .row {
-  margin: 0 -20px; }
+  margin: 0 -20px;
+  /* For mobile phones: */ }
   .row .col-1 {
     width: 8.33%; }
   .row .col-2 {
@@ -1131,6 +1132,9 @@ table.progress-steps tr td {
     float: left;
     padding: 0 20px;
     box-sizing: border-box; }
+  @media only screen and (max-width: 768px) {
+    .row [class*="col-"] {
+      width: 100%; } }
 
 .row::after {
   content: "";
