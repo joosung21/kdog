@@ -1101,14 +1101,41 @@ table.progress-steps tr td {
     top: -120px;
     transition: all 0.5s; }
 
-.row .col-2-left {
-  box-sizing: border-box;
-  width: 47%;
-  float: left; }
-.row .col-2-right {
-  box-sizing: border-box;
-  width: 47%;
-  float: right; }
+.row {
+  margin: 0 -20px; }
+  .row .col-1 {
+    width: 8.33%; }
+  .row .col-2 {
+    width: 16.66%; }
+  .row .col-3 {
+    width: 25%; }
+  .row .col-4 {
+    width: 33.33%; }
+  .row .col-5 {
+    width: 41.66%; }
+  .row .col-6 {
+    width: 50%; }
+  .row .col-7 {
+    width: 58.33%; }
+  .row .col-8 {
+    width: 66.66%; }
+  .row .col-9 {
+    width: 75%; }
+  .row .col-10 {
+    width: 83.33%; }
+  .row .col-11 {
+    width: 91.66%; }
+  .row .col-12 {
+    width: 100%; }
+  .row [class*="col-"] {
+    float: left;
+    padding: 0 20px;
+    box-sizing: border-box; }
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table; }
 
 .wrapper {
   z-index: 1;
@@ -1961,12 +1988,12 @@ body.login {
   .login-wrapper .readonly-textbox {
     margin-bottom: 20px; }
 
-.step-update .select-list .col-2-left {
+.step-update .select-list .left {
   padding-top: 12px;
   color: rgba(73, 80, 87, 0.7); }
-.step-update .select-list .col-2-right {
+.step-update .select-list .right {
   width: 200px; }
-  .step-update .select-list .col-2-right .form-group {
+  .step-update .select-list .right .form-group {
     margin-bottom: 0; }
 
 .attachment-wrapper {

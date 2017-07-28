@@ -41,7 +41,7 @@ body
           
           .devider
           .row
-            .col-2-left
+            .col-6
               .form-group(style='width: 233px')
                 label 자동발송 문자내용
                 textarea(rows='12').
@@ -54,7 +54,7 @@ body
                   객실: {{객실타입}}
                   총금액: {{금액}}
                   
-            .col-2-right.tag-buttons
+            .col-6.tag-buttons
               .margin
               a.btn.btn-reverse.btn-small 회사이름
               a.btn.btn-reverse.btn-small 고객명
@@ -68,10 +68,10 @@ body
               a.btn.btn-reverse.btn-small 예약확인주소
               a.btn.btn-reverse.btn-small 전화번호
               a.btn.btn-reverse.btn-small 주소
-            .clear-fix
+            
               
           .row
-            .col-2-left
+            .col-6
               .form-group(style='width: 233px')
                 label 무통장입금 추가내용
                 textarea(rows='5').
@@ -80,25 +80,25 @@ body
                   입금할 금액: {{결제금액}}
                   입금기한: {{입금기한}}
                   
-            .col-2-right.tag-buttons
+            .col-6.tag-buttons
               .margin
               a.btn.btn-reverse.btn-small 계좌번호
               a.btn.btn-reverse.btn-small 입금기한
               a.btn.btn-reverse.btn-small 결제금액
-            .clear-fix
+            
           
           .row
-            .col-2-left
+            .col-6
               .form-group(style='width: 233px')
                 label 카드결제 추가내용
                 textarea(rows='5').
                   결제수단: 신용카드
                   결제액: {{결제금액}}
                   
-            .col-2-right.tag-buttons
+            .col-6.tag-buttons
               .margin
               a.btn.btn-reverse.btn-small 결제금액
-            .clear-fix
+            
               
           .devider.end-page
           a.btn.full-width 저장하기

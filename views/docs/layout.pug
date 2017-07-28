@@ -6,30 +6,38 @@ body
     #content.unfolded(name='layout')
       .board.full-width.layout-demo
         h1.lined layout      
-        h2 CONTENT COLUMS
-        p.margin 2단 레이아웃은 .row 하단에 위치하고 float속성을 종료하기 위해 .clear-fix로 닫아주면 됩니다.
-        .bg-white-gray.text-center.margin.padding 1단      
+        h2 Grid system
+        p.margin .row 하위에 .col-1부터 .col-12까지 12등분으로 적절히 사용하면 됩니다.
+        
         .row
-          .bg-white-gray.col-2-left.text-center.padding
-            | 2단 좌측 
-            br
-            | .col-2-left
-          .bg-white-gray.col-2-right.text-center.padding
-            | 2단 우측 
-            br
-            | .col-2-right
-          .clear-fix
+          .box.col-12
+            .bg-white-gray.padding .col-12
+        
         .margin
+        
         .row
-          .bg-white-gray.col-2-left.text-center.padding(style='width: 19%')
-            | 2단 좌측
-            br
-            | (style='width: 19%')
-          .bg-white-gray.col-2-right.text-center.padding(style='width: 79%')
-            | 2단 우측
-            br
-            | (style='width: 79%')
-          .clear-fix
+          .box.col-4
+            .bg-white-gray.padding .col-4
+          .box.col-8
+            .bg-white-gray.padding .col-8
+        
+        .margin
+      
+        .row
+          .box.col-4
+            .bg-white-gray.padding .col-4
+          .box.col-4
+            .bg-white-gray.padding .col-4      
+          .box.col-4
+            .bg-white-gray.padding .col-4
+          
+        .margin
+          
+        .row
+          .box.col-6
+            .bg-white-gray.padding .col-6
+          .box.col-6
+            .bg-white-gray.padding .col-6
         
         .margin-2x
           
@@ -40,17 +48,18 @@ body
             |  는 
             i max-width: 700px 
             |  속성을 가집니다. 와이드 화면에서 컨텐츠가 지나치게 길어지는 것을 방지하기 위함입니다.        
-          .bg-white-gray.text-center.margin.padding 1단        
-          .row.margin-2x
-            .bg-white-gray.col-2-left.text-center.padding
-              | 2단 좌측 
-              br
-              | .col-2-left
-            .bg-white-gray.col-2-right.text-center.padding
-              | 2단 우측 
-              br
-              | .col-2-right
-            .clear-fix
+          .row
+            .box.col-12
+              .bg-white-gray.padding .col-12
+          .margin
+          .row
+            .box.col-6
+              .bg-white-gray.padding .col-6
+            .box.col-6
+              .bg-white-gray.padding .col-6
+          
+          .margin-2x
+            
             
           h2 Border, Padding &amp; margin
           p.margin 기본 Grid는 20px 입니다. Padding은 4방향 모두, Margin은 Bottom에만 적용됩니다.
@@ -67,10 +76,11 @@ body
             .bg-white-gray.padding.margin-2x .margin-2x        
           
           h2.margin FLOAT        
-          .row.margin-2x
+          .row.padding.margin-2x
             .bg-white-gray.float-left.padding .float-left
             .bg-white-gray.float-right.padding .float-right
-            .clear-fix.padding .clear-fix
+            .clear-fix
+            .margin            
             .bg-white-gray.float-none.padding .float-none        
             
           h2.margin TEXT ALIGN

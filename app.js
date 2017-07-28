@@ -77,6 +77,9 @@ app.get('/docs/list-table', function (req, res){res.render('docs/list-table')})
 app.get('/docs/form-controls', function (req, res){res.render('docs/form-controls')})
 app.get('/docs/sweetalert', function (req, res){res.render('docs/sweetalert')})
 
+// Test
+app.get('/test', function (req, res){res.render('test')})
+
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
