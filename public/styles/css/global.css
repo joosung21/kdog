@@ -625,6 +625,7 @@ a.btn {
   color: white;
   height: 22px;
   white-space: nowrap;
+  transition: all 0.3s ease;
   display: inline-block;
   vertical-align: middle;
   background-color: #FD7E14;
@@ -649,7 +650,7 @@ a.btn {
   a.btn:active:after {
     padding: 0;
     margin: 0;
-    opacity: 0.4;
+    opacity: 0.5;
     transition: 0s; }
   a.btn * {
     color: white; }
@@ -962,6 +963,8 @@ a.btn {
   .table.no-border tbody td {
     padding: 12px 7px 10px 7px;
     border: none; }
+  .table tbody tr {
+    transition: all 0.3s ease; }
   .table tbody tr:hover {
     background-color: #f8f8f8; }
     .table tbody tr:hover .input, .table tbody tr:hover .select-wrapper {
@@ -1201,7 +1204,8 @@ table.progress-steps tr td {
       padding-bottom: 12px; }
       #content > .left-wrapper #sub-menu ul li {
         padding: 12px 30px;
-        cursor: pointer; }
+        cursor: pointer;
+        transition: all 0.3s ease; }
         #content > .left-wrapper #sub-menu ul li:hover {
           background-color: rgba(0, 0, 0, 0.05); }
         #content > .left-wrapper #sub-menu ul li.active {
@@ -1254,7 +1258,8 @@ table.progress-steps tr td {
       cursor: pointer;
       background: white;
       color: #3BC9DB;
-      white-space: nowrap; }
+      white-space: nowrap;
+      transition: all 0.3s ease; }
       .board .tab-menu .tab:hover {
         background: #f8f8f8; }
       .board .tab-menu .tab.active {
@@ -1285,18 +1290,18 @@ table.progress-steps tr td {
       width: 51px;
       height: 34px;
       margin: 16px 20px 0 0;
-      opacity: 0.9; }
+      opacity: 0.9;
+      transition: all 0.3s ease; }
       #topbar .left-wrapper .logo img:hover {
-        opacity: 1;
-        transition: all 0.5s; }
+        opacity: 1; }
     #topbar .left-wrapper .company-name {
       margin: 17px 40px 0 0;
       color: rgba(255, 255, 255, 0.8);
       font-size: 13pt;
-      white-space: nowrap; }
+      white-space: nowrap;
+      transition: all 0.3s ease; }
       #topbar .left-wrapper .company-name:hover {
-        color: rgba(255, 255, 255, 0.9);
-        transition: all 0.5s; }
+        color: rgba(255, 255, 255, 0.9); }
     #topbar .left-wrapper .search-box {
       margin-top: 15px;
       width: 220px;
@@ -1311,7 +1316,8 @@ table.progress-steps tr td {
       -ms-border-radius: 21px;
       border-radius: 21px;
       border: none;
-      color: white; }
+      color: white;
+      transition: all 0.3s ease; }
       #topbar .left-wrapper .search-box::placeholder {
         color: rgba(255, 255, 255, 0); }
       #topbar .left-wrapper .search-box::-webkit-input-placeholder {
@@ -1349,7 +1355,8 @@ table.progress-steps tr td {
       height: 30px;
       text-align: center;
       padding: 16px 10px 14px 10px;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: all 0.3s ease; }
       #topbar .right-wrapper .toptab.account {
         width: auto;
         min-width: 48px;
@@ -1388,7 +1395,8 @@ table.progress-steps tr td {
     clear: both;
     display: block;
     width: 140px;
-    height: 60px; }
+    height: 60px;
+    transition: all 0.3s ease; }
     #leftnav > li:hover {
       background-color: rgba(0, 0, 0, 0.15); }
     #leftnav > li.active {
@@ -1591,7 +1599,8 @@ table.progress-steps tr td {
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
-      cursor: default; }
+      cursor: default;
+      transition: all 0.3s ease; }
       .board.room-chart .room-line .room-name:hover {
         overflow-x: visible;
         text-overflow: clip;
@@ -1614,7 +1623,8 @@ table.progress-steps tr td {
         box-sizing: border-box;
         border-right: 1px solid #F1F3F5;
         border-bottom: 1px solid #F1F3F5;
-        cursor: pointer; }
+        cursor: pointer;
+        transition: all 0.3s ease; }
         .board.room-chart .room-line .chart-wrapper .rec:hover {
           background-color: #f7f8f9; }
         .board.room-chart .room-line .chart-wrapper .rec .price, .board.room-chart .room-line .chart-wrapper .rec .stock {
@@ -1655,7 +1665,8 @@ table.progress-steps tr td {
     top: 0;
     height: 50px;
     box-sizing: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.05); }
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease; }
     .board.room-chart .bar.booking {
       background: #D9480F; }
       .board.room-chart .bar.booking:hover {
