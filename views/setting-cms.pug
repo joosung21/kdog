@@ -1,13 +1,6 @@
 include includes/header.pug
 body
-  include includes/topbar.pug
-  
-  .context-menu
-    .layover
-    ul
-      li 설정중
-      li(onclick='location.href="/setting/cms/step01"') 연동하기
-      li 일시중지
+  include includes/topbar.pug  
   
   .wrapper
     include includes/leftnav.pug
@@ -36,85 +29,113 @@ body
                   | Booking.com
                 td -
                 td -                
-                td.text-right 
-                  a.btn.btn-small.btn-reverse.openContextMenu
-                    | 설정중
-                    span.empty
-                    i.fa.fa-angle-down.fa-lg              
+                td.text-right
+                  .dropdown
+                    a.btn.btn-small.btn-reverse.dropbtn
+                      | 설정중
+                      span.empty
+                      i.fa.fa-angle-down.fa-lg 
+                    .dropdown-content.right
+                      a 설정 계속하기
+                      a 설정 취소하기
               tr
                 td
                   img(src='/images/logo-agoda.png').logo-img
                   | Agoda
                 td 18분 전
                 td 2일 전
-                td.text-right 
-                  a.btn.btn-small.btn-green.openContextMenu
-                    | 연동중
-                    span.empty
-                    i.fa.fa-angle-down.fa-lg
+                td.text-right
+                  .dropdown
+                    a.btn.btn-small.btn-green.dropbtn
+                      | 연동중
+                      span.empty
+                      i.fa.fa-angle-down.fa-lg
+                    .dropdown-content.right
+                      a 판매중지
+                      a 객실설정
               tr
                 td
                   img(src='/images/logo-expedia.png').logo-img
                   | Expedia
                 td 5시간 전
                 td 15일 전
-                td.text-right 
-                  a.btn.btn-small.btn-green.openContextMenu
-                    | 연동중
-                    span.empty
-                    i.fa.fa-angle-down.fa-lg
+                td.text-right
+                  .dropdown
+                    a.btn.btn-small.btn-green.dropbtn
+                      | 연동중
+                      span.empty
+                      i.fa.fa-angle-down.fa-lg
+                    .dropdown-content.right
+                      a 판매중지
+                      a 객실설정
               tr
                 td
                   img(src='/images/logo-hostelworld.png').logo-img
                   | Hostelworld
                 td 28일 전
                 td 28일 전
-                td.text-right 
-                  a.btn.btn-small.btn-red.openContextMenu
-                    | 일시중지
-                    span.empty
-                    i.fa.fa-angle-down.fa-lg
+                td.text-right
+                  .dropdown
+                    a.btn.btn-small.btn-red.dropbtn
+                      | 일시중지
+                      span.empty
+                      i.fa.fa-angle-down.fa-lg
+                    .dropdown-content.right
+                      a 판매시작
+                      a 객실설정
               tr
                 td
                   img(src='/images/logo-hotels.png').logo-img
                   | Hotels.com
                 td 28일 전
                 td 28일 전
-                td.text-right 
-                  a.btn.btn-small.btn-white-gray.openContextMenu
-                    | 미설정
-                    span.empty
-                    i.fa.fa-angle-down.fa-lg
+                td.text-right
+                  .dropdown
+                    a.btn.btn-small.btn-white-gray.dropbtn
+                      | 미설정
+                      span.empty
+                      i.fa.fa-angle-down.fa-lg
+                    .dropdown-content.right
+                      a 연동설정
               tr
                 td
                   img(src='/images/logo-airbnb.png').logo-img
                   | Airbnb
                 td -
                 td -
-                td.text-right 
-                  a.btn.btn-small.btn-white-gray.openContextMenu
-                    | 미설정
-                    span.empty
-                    i.fa.fa-angle-down.fa-lg
+                td.text-right
+                  .dropdown
+                    a.btn.btn-small.btn-white-gray.dropbtn
+                      | 미설정
+                      span.empty
+                      i.fa.fa-angle-down.fa-lg
+                    .dropdown-content.right
+                      a 연동설정
               tr
                 td
                   img(src='/images/logo-ctrip.png').logo-img
                   | Ctrip
                 td -
                 td -
-                td.text-right 
-                  a.btn.btn-small.btn-white-gray.openContextMenu
-                    | 미설정
-                    span.empty
-                    i.fa.fa-angle-down.fa-lg
+                td.text-right
+                  .dropdown
+                    a.btn.btn-small.btn-white-gray.dropbtn
+                      | 미설정
+                      span.empty
+                      i.fa.fa-angle-down.fa-lg
+                    .dropdown-content.right
+                      a 연동설정
               tr
                 td
                   img(src='/images/logo-venere.png').logo-img
                   | Venere.com
                 td -
                 td -
-                td.text-right 
-                  a.btn.btn-small.btn-white-gray.openContextMenu
-                    | 미설정
-                    span.empty
-                    i.fa.fa-angle-down.fa-lg
+                td.text-right
+                  .dropdown
+                    a.btn.btn-small.btn-white-gray.dropbtn
+                      | 미설정
+                      span.empty
+                      i.fa.fa-angle-down.fa-lg
+                    .dropdown-content.right
+                      a 연동설정

@@ -1,14 +1,6 @@
 include includes/header.pug
 body
-  include includes/topbar.pug  
-  
-  .context-menu
-    .layover
-    ul
-      li 미완료
-      li 청소완료
-      li 검사완료
-  
+  include includes/topbar.pug
   
   .wrapper
     include includes/leftnav.pug
@@ -33,48 +25,78 @@ body
         h2 트윈룸
         .margin
         
-        a.btn.btn-small.btn-gray.openContextMenu
-          | 510호
-          span.empty
-          i.fa.fa-angle-down.fa-lg
+        .dropdown
+          a.btn.btn-small.btn-gray.dropbtn
+            | 510호
+            span.empty
+            i.fa.fa-angle-down.fa-lg
+          .dropdown-content
+            a 미완료
+            a 청소완료
+            a 검사완료
         
         span.empty
         
-        a.btn.btn-small.btn-green.openContextMenu
-          | 511호
-          span.empty
-          i.fa.fa-angle-down.fa-lg
+        .dropdown
+          a.btn.btn-small.btn-green.dropbtn
+            | 511호
+            span.empty
+            i.fa.fa-angle-down.fa-lg
+          .dropdown-content
+            a 미완료
+            a 청소완료
+            a 검사완료
         
         span.empty
         
-        a.btn.btn-small.btn-reverse.openContextMenu
-          | 513호
-          span.empty
-          i.fa.fa-angle-down.fa-lg
+        .dropdown
+          a.btn.btn-small.btn-reverse.dropbtn
+            | 513호
+            span.empty
+            i.fa.fa-angle-down.fa-lg
+          .dropdown-content
+            a 미완료
+            a 청소완료
+            a 검사완료
         
         .margin-2x
           
         h2 더블룸
         .margin
         
-        a.btn.btn-small.btn-gray.openContextMenu
-          | 610호
-          span.empty
-          i.fa.fa-angle-down.fa-lg
+        .dropdown
+          a.btn.btn-small.btn-gray.dropbtn
+            | 610호
+            span.empty
+            i.fa.fa-angle-down.fa-lg
+          .dropdown-content
+            a 미완료
+            a 청소완료
+            a 검사완료
         
         span.empty
         
-        a.btn.btn-small.btn-gray.openContextMenu
-          | 611호
-          span.empty
-          i.fa.fa-angle-down.fa-lg
+        .dropdown
+          a.btn.btn-small.btn-gray.dropbtn
+            | 611호
+            span.empty
+            i.fa.fa-angle-down.fa-lg
+          .dropdown-content
+            a 미완료
+            a 청소완료
+            a 검사완료
         
         span.empty
         
-        a.btn.btn-small.btn-gray.openContextMenu
-          | 613호
-          span.empty
-          i.fa.fa-angle-down.fa-lg
+        .dropdown
+          a.btn.btn-small.btn-gray.dropbtn
+            | 613호
+            span.empty
+            i.fa.fa-angle-down.fa-lg
+          .dropdown-content
+            a 미완료
+            a 청소완료
+            a 검사완료
         
                 
                 

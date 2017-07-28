@@ -36,7 +36,6 @@ function toggleAssign(){
 function showSMS(){
   $('#r-window .modal-board.main').hide();
   $('#r-window .modal-board.sms').show();
-  $('.context-menu').hide()
 }
 function closeSMS(){
   $('#r-window .modal-board.sms').hide();
@@ -46,7 +45,6 @@ function closeSMS(){
 function showCard(){
   $('#r-window .modal-board.main').hide();
   $('#r-window .modal-board.card').show();
-  $('.context-menu2').hide()
 }
 function closeCard(){
   $('#r-window .modal-board.card').hide();
@@ -58,11 +56,6 @@ function openModal(id){
 }
 function closeModal(){
   $('.modal').hide()
-}
-
-function closeContextMenu(){
-  $('.context-menu').hide()
-  $('.context-menu2').hide()
 }
 
 function openRwindow(){
@@ -78,38 +71,12 @@ function toggleFold(id){
 $( document ).ready(function() {
 
   $('.modal').hide();
-  $('.context-menu').hide();
-  $('.context-menu2').hide();
   $('.hover-layer').hide();
   $('#r-window .modal-board.sms').hide();
   $('#r-window .modal-board.card').hide();
 
   $('.modal .layover').click(function(){
     $('.modal').hide();
-  });
-
-  $('.context-menu .layover').click(function(){
-    $('.context-menu').hide();
-  });
-  $('.context-menu2 .layover').click(function(){
-    $('.context-menu2').hide();
-  });
-
-  $('.openContextMenu').click(function(){
-    var offset = $(this).offset()
-    $('.context-menu ul').css({
-      top: offset.top + 25,
-      left: offset.left + 60
-    });
-    $('.context-menu').show()
-  });
-  $('.openContextMenu2').click(function(){
-    var offset = $(this).offset()
-    $('.context-menu2 ul').css({
-      top: offset.top + 25,
-      left: offset.left + 60
-    });
-    $('.context-menu2').show()
   });
 
   // Open Top menu layers

@@ -1,14 +1,7 @@
 include ../includes/header.pug
 body
   .wrapper
-    include ../includes/leftnav-docs.pug
-    
-    .context-menu
-      .layover
-      ul
-        li 액선 1
-        li 액션 2
-        li 액션 3
+    include ../includes/leftnav-docs.pug    
     
     #content.unfolded(name='buttons')
       .board.full-width
@@ -102,11 +95,17 @@ body
           a.btn.btn-reverse
             i.fa.fa-circle-o-notch.fa-spin.fa-lg
             span 저장중...
-          span.empty
-          a.btn.btn-green.openContextMenu
-            span Menu
-            span.empty
-            i.fa.fa-angle-down.fa-lg
+          span.empty          
+          .dropdown
+            a.btn.dropbtn.btn-green
+              span Dropdown
+              span.empty
+              i.fa.fa-angle-down.fa-lg
+            .dropdown-content
+              a 액션 1
+              a 액션 2
+              a 액션 3
+              
         .margin   
         h2 Long Button
         .padding
