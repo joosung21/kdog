@@ -660,9 +660,28 @@ a.btn
   + a.btn
     margin-left: -1px
   @extend .noselect
+  position: relative
+  overflow: hidden
   color: white
   height: 22px
   white-space: nowrap
+  &:after
+    content: ""
+    background: #f1f1f1
+    display: block
+    position: absolute
+    padding-top: 300%
+    padding-left: 350%
+    margin-left: -70% !important
+    margin-top: -120%
+    opacity: 0
+    transition: all 1.0s
+    border-radius: 100%
+  &:active:after
+    padding: 0
+    margin: 0
+    opacity: 0.4
+    transition: 0s
   *
     color: white
   display: inline-block
@@ -671,7 +690,6 @@ a.btn
   border: 1px solid $color-priority
   padding: 9px 15px
   font-size: $font-size-default
-  // font-weight: $font-light
   cursor: pointer
   i.fa
     color: white
