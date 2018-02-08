@@ -80,6 +80,6 @@ app.get('/docs/sweetalert', function (req, res){res.render('docs/sweetalert')})
 // Test
 app.get('/test', function (req, res){res.render('test')})
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
+app.listen(3100, function () {
+  console.log('Example app listening on port 3100!')
 })
